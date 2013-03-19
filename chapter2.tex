@@ -1,3 +1,4 @@
+\setstretch{1.6}
 \chapter{The Basics.}
 As outlined in the introduction inverse semigroups and groupoids play a large role in the development of many aspects of combinatorics, graph theory and analysis. In this section we provide some basics concerning these objects and the connections between them, developing the notion of Paterson and Exel of a \textit{universal groupoid} associated to an inverse semigroup. We then give a brief introduction to coarse geometry and operator algebras, focusing on the situation that arises naturally from both inverse semigroups and groupoids. Lastly, we consider topological K-theory of $C^{*}$-algebras.
 
@@ -305,10 +306,38 @@ A metric space $X$ is said to admit a coarse embedding into Hilbert space $\math
 
 This connects to the notion of an effectively proper, bornologous map by observing that our controls (i.e the $S$'s that appear within the definitions) will pop out as the value of the control functions $\rho_{\pm}$ at $R$.
 
-\subsection{Properties of finitely generated discrete groups.}
+This property is exceptionally flexible; many constructions of metric spaces preserve coarse embeddability \cite{}. This property will be important in Chapter 4 where it plays an important role in results concerning groupoids and the coarse Baum-Connes conjecture.
+
+\subsection{Properties of finitely generated discrete groups and \'etale groupoids.}
+Via the construction of a Cayley graph, it is possible to introduce to a finitely generated group a metric that is compatable with the group structure. The majority of ideas in geometric group theory centralise in computing coarse properties, such as coarse embeddings, for finitely generated groups. Analytically, these properties often connect to analytic properties of groups that are equivariant.
+
+The role of positive and conditionally negative type kernels within group theory is well known and plays an important role in studying both anayltic and representation theoretic properties of groups \cite{MR2415834,MR1487204}. These ideas were extended to groupoids by Tu \cite{MR1703305}, and we define and consider them in that generality. Let $\G$ be a locally compact, Hausdorff groupoid.
+
+\begin{definition}
+A continuous function $F: \G \rightarrow \mathbb{R}$ is said to be of \textit{negative type} if 
+\begin{enumerate}
+\item $F|_{\G^{(0)}}=0$;
+\item $\forall x \in \G, F(x)=F(x^{-1})$;
+\item Given $x_{1},...,x_{n} \in \G$ all having the same range and $\sigma_{1},...,\sigma_{n} \in \mathbb{R}$ such that $\sum_{i}\sigma_{i}=0$ we have $\sum_{j,k}\sigma_{j}\sigma_{k}F(x_{j}^{-1}x_{k})\leq 0$.
+\end{enumerate}
+\end{definition}
+
+The important feature of functions of this type is their connection to the Haagerup property for locally compact, $\sigma$-compact groupoids, in fact:
+\begin{theorem}Let $\G$ be a locally compact, Hausdorff groupoid. Then the following are equivalent \cite{MR1703305}:
+\begin{enumerate}
+\item There exists a proper negative type function on $\G$
+\item There exists a continuous field of Hilbert spaces over $\G^{(0)}$ with a proper affine action of $\G$.
+\end{enumerate}
+\end{theorem}
+
+This property has many connections to the Baum-Connes conjecture for locally compact groupoids, via the work of Tu \cite{}, which we will discuss in detail in Chapter 4. Here however we give a connection with coarse embeddings that highlights part of this properties important nature.
+
+\begin{proposition}
+Let $\Gamma$ be a discrete finitely generated group. If $\Gamma$ has the Haagerup property then $\Gamma$ coarsely embeds into Hilbert space.\qed
+\end{proposition}
 
 \section{Prehomomorphisms of inverse monoids and general partial actions of discrete groups.}\label{Sect:S3} 
-In this section we outline some basic properties of partial actions of discrete groups on topological spaces, paying particular attention to the type of inverse monoid these generate. We then use analytic information associated to the group together with properties of inverse monoid to understand analytic properties of the \'etale groupoid. We begin with a definition.
+In this section we outline some basic properties of partial actions of discrete groups on topological spaces, paying particular attention to the type of inverse monoid these generate. We then use analytic information associated to the group together with properties of inverse monoid to understand analytic properties of the universal \'etale groupoid that is built from the inverse monoid. We begin with a definition.
 
 \begin{definition}
 Let $\rho: S \rightarrow T$ be a map between inverse semigroups. This map is called a prehomomorphism if for every $s,t \in S$, $\rho(st) \leq \rho(s)\rho(t)$ and a dual prehomomorphism if for every $s,t \in S$ $\rho(s)\rho(t) \leq \rho(st)$.
@@ -342,9 +371,10 @@ Let $G$ be a finitely generated discrete group and let $X$ be a (locally compact
 Given this data we can generate an inverse monoid $S$ using the set of $\theta_{g}$. This would then give a representation of $S$ into $\mathcal{I}(X)$. If the space $X$ is a coarse space, then it makes sense to ask if each $\theta_{g}$ is a close to the identity. In this case, we would get a representation into the bounded symmetric inverse monoid $\mathcal{I}_{b}(X)$. We call such a $\theta$ a \textit{bounded partial action} of $G$.
 
 \begin{example}
-If we consider a subspace $X$ of a finitely generated group $\Gamma$ we can always equip $X$ with a partial action of $\Gamma$ in an obvious way; we restrict each element of $\Gamma$ to $X$. This gives us a partial representation when we consider $X$ with the standard subspace topology coming from the metric on $\Gamma$. This truncation provides a very nice example of a dual prehomomorphism of a group that will give rise to a bounded partial action.
+If we consider a subspace $X$ of a finitely generated group $\Gamma$ we can always equip $X$ with a partial action of $\Gamma$ in an obvious way; we restrict each element of $\Gamma$ to $X$. This gives us a partial representation when we consider $X$ with the standard subspace topology coming from the metric on $\Gamma$. This truncation provides a very nice example of a dual prehomomorphism of a group that will give rise to a bounded partial action. This example will be developed further in Chapter 3.
 \end{example}
-
+ 
+The primary given an inverse monoid that is built from a partial action of a discrete group we would like to know precisely
 
 We are interested in understanding those analytic properties the groupoid $\G_{\widehat{X}}$ has, in particular we are interested in showing that the groupoid has the Haagerup property, that is admits a proper affine isometric action on a field of Hilbert spaces. From results of Tu in \cite{MR1703305} this enough to conclude the Baum-Connes assembly map is an isomorphism for all coefficients for this groupoid. To do this we study the inverse monoid $S$ associated to the partial action $\theta$.
 
@@ -387,11 +417,9 @@ So consider the map $\Phi$ applied to a $\theta_{g}$:
 Now assume that $\Phi(\theta_{g}) = e_{G}$. Then it follows that $\sigma (m (\overline{\theta}^{-1}(\theta_{g})))=e_{G}$. As $\sigma$ is idempotent pure, it follows then that $m(\overline{\theta}^{-1}(\theta_{g}))=1$, hence for any preimage $t\in \theta}^{-1}(\theta_{g})$ we know that $t \leq 1$, and by the property of being 0-E-unitary it then follows that $t \in E(G^{pr})$. Mapping this back onto $\theta_{g}$ we can conclude that $\theta_{g}$ is idempotent, but by assumption this only occurs if $g = e$.\end{proof}
 
 \begin{proposition}\label{Prop:GrpoidHom}
-Let $S = \langle \theta_{g} | g \in G \rangle$ be a strongly 0-F-inverse monoid with maximal elements $Max(S)= \lbrace \theta_{g}:g \in G \rbrace$, where $\theta: G \rightarrow S$ is a dual prehomomorphism. Then the groupoid $G_{\E}$ is Hausdorff, second countable and ample with compact unit space. Also it admits a continous proper groupoid homomorphism onto the group $G$.
+Let $S = \langle \theta_{g} | g \in G \rangle$ be a strongly 0-F-inverse monoid with maximal elements $Max(S)= \lbrace \theta_{g}:g \in G \rbrace$, where $\theta: G \rightarrow S$ is a dual prehomomorphism. Then the groupoid $G_{\E}$ admits a continous proper groupoid homomorphism onto the group $G$.
 \end{proposition}
 \begin{proof}
-We record the topological facts about this groupoid here for reference.
-
 Using the map $\Phi$ we construct a map $\rho: \G_{\E} \rightarrow G$ as follows:
 \begin{equation*}
 \rho([m,\phi]) = \Phi(m)
@@ -416,15 +444,14 @@ Let $G$ and $H$ be locally compact, Hausdorff, \'etale topological groupoids and
 
 This lets us conclude the following:
 \begin{corollary}\label{Cor:Gpoid}
-Let $\theta$ be a partial action of $G$ on $X$ such that all the conditions of Proposition \ref{Prop:Aug} are satisfied and such that the inverse monoid $S_{inf}$ is strongly 0-F-inverse. If $G$ has the Haagerup property then so does $\G_{\widehat{X}}$.
+Let $\theta$ be a partial action of $G$ on $X$ such that all the conditions of Proposition \ref{Prop:GrpoidHom} are satisfied. If $G$ has the Haagerup property then so does $\G_{\widehat{X}}$.
 \end{enumerate}
 \end{corollary}
 \begin{proof}
 The map induced by the idempotent pure 0-restricted prehomomorphism from $S_{inf}$ to $G$ induces a continuous proper groupoid homomorphism from $G_{\widehat{X}}$ to $G$. This then follows from Lemma \ref{Lem:Lemme}.\end{proof}
 
 \section{\texorpdfstring{$C^{*}$}{C*}-algebras of groupoids and inverse semigroups.}
-
-We introduce the concept of a $C^{*}$-algebra via the commutative case, building up to a non-commutative setting via natural $C^{*}$-algebras associated to a group. We then generalize these algebras to the groupoid case.
+Now we change directions slightly by introducing the analytic counterparts to topological spaces; $C^{*}$-algebras play an important role in generalising the notions of topology into a noncommutative setting. The work we initially outline below is the duality theorem of Geifand, Neimark and Segal that connects topology with analysis. Then we develop some purely noncommutative ideas by outlining the construction of a natural $C^{*}$-algebras associated to a group. We then generalize these algebras to the groupoid and inverse semigroup cases.
 
 \subsection{Topological Spaces and Commutative $C^{*}$-algebras}
 
