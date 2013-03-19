@@ -1,0 +1,390 @@
+\chapter{A counterexample of the boundary coarse Baum-Connes conjecture.}
+In this chapter we develop the ideas of Higson, Lafforgue and Skandalis concerning the counterexamples to the coarse Baum-Connes conjecture further, to construct a metric space that has the properties constructed in \cite{} at infinity. The main idea is to decompose the boundary groupoid further, giving a new short exact sequence at infinity similar to the sequences considered in Chapter 4. From this, we then construct an operator that is not a ghost operator, but is ghostly on certain parts of the boundary. A tracelike argument, similar to those of \cite{higsonpreprint, explg1, }, then completes the proof.
+
+\section{The space and its non-ghosts.}
+
+The space we are going to consider first appeared in \cite{MR2363697}.
+
+Let $\lbrace X_{i} \rbrace_{i \in \mathbb{N}}$ be a sequence of finite graphs. Then we construct a space similar to a space of graphs in the following manner: Let $Y_{i,j} = X_{i}$ for all $j \in \mathbb{N}$ and consider $Y:= \sqcup_{i,j} Y_{i,j}$. We metrize this space using a box metric - that is with the property that $d(Y_{i,j},Y_{k,l}) \rightarrow \infty$ as $i+j+k+l \rightarrow \infty$. 
+
+Now let $\lbrace X_{i} \rbrace_{i}$ be an expander sequence. As discussed in section \ref{Sect:GO}, we can construct a ghost operator $p= \prod_{i} p_{i}$ on $X$, the space of graphs of $\lbrace X_{i} \rbrace_{i}$. Similarly, we can construct this operator on $Y$. In this situation we get a projection $q:=\prod_{i,j}p_{i} \in C^{*}_{u}Y$, which is a constant operator in the $j$ direction. This was precisely the operator of interest in \cite{MR2363697}, as it can be seen that $q$ is not a ghost operator, as its matrix entries do not vanish in the $j$ direction - a fact proved below in Lemma \ref{Lem:nag}.
+
+Recall that associated to $Y$ we have a short exact sequence of $C^{*}$-algebras:
+\begin{equation*}
+\xymatrix{
+0 \ar[r] & ker(\pi) \ar[r]& C_{r}^{*}(G(Y)) \ar[r]^{\pi} & C_{r}^{*}(G(Y)|_{\partial\beta Y}) \ar[r] & 0.
+}
+\end{equation*}
+
+We remark the kernel, $ker(\pi)$ consists of all the ghost operators in $C^{*}_{u}(Y)$, that is those operators with matrix coefficients that tend to $0$ in all directions on the boundary. 
+
+\begin{lemma}\label{Lem:nag}
+The projection $\pi(q):= \prod_{i,j}p_{i} \not = 0 \in C^{*}_{r}(G(Y)|_{\partial\beta Y})$. That is $q \not\in ker(\pi)$.
+\end{lemma}
+\begin{proof}
+We first observe that every bounded subset $B$ of $Y$ is contained in some rectangle of the form $R_{i_{B},j_{B}}:=\sqcup_{i\leq i_{B},j\leq j_{B}}Y_{i,j}$. So to prove that $q$ is not a ghost operator it suffices to show that there exists an epsilon such that for all rectangles $R_{i,j}$ there is a pair of points $x,y$ in the compliment of the rectangle such that  the norm $\Vert q_{x,y} \Vert \geq \epsilon$. To prove this, recall that the projection $q$ is a product of projections $p_{i}$ on each $X_{i}$ and fixing $j$, these projections form a ghost operator. 
+
+Fix $\epsilon = \frac{1}{2}$. Then there exists an $i_{\epsilon}$ with the property that $\forall i>i_{\epsilon}$ and for every $x,y \in \sqcup_{i}X_{i}$ we know $\Vert p_{i,x,y} \Vert < \epsilon$. We remark that this $i_{\epsilon}$ can be taken to be the smallest such. So for $i \leq i_{\epsilon}-1$, we have that $\Vert p_{i,x,y} \Vert \geq \frac{1}{2}$. Now let $R_{i_{\epsilon}-1,\infty}$ be the vertical rectangle $\sqcup_{i\leq i_{\epsilon}-1,j} Y_{i,j}$. 
+
+To finish the proof, consider an arbitrary finite rectangle $R_{i,j}$. This intersects the infinite rectangle $R_{i_{\epsilon}-1,\infty}$ in a bounded piece. Now pick any pair of points in a fixed box $x,y \in Y_{k,l} \subset R_{i_{\epsilon}-1,\infty} \setminus R_{i,j}$. Then for those points $x,y$ it is clear that $\Vert q_{x,y} \Vert = \Vert p_{k,x,y}\Vert \geq \frac{1}{2}$.
+\end{proof}
+
+We now describe the boundary $\partial\beta Y$. We are aiming at a decomposition into saturated pieces and with that in mind we construct a map to $\beta X$.
+
+Consider the map $\beta Y \twoheadrightarrow \beta X \times \beta \mathbb{N}$ induced by the bijection of $Y$ with $X \times \mathbb{N}$ and the universal property of $\beta Y$. Now define:
+\begin{equation*}
+f: \beta Y \rightarrow \beta X \times \beta \mathbb{N} \rightarrow \beta X
+\end{equation*}
+The map $f$ is continuous, hence the preimage of $X$ under projection onto the first factor is an open subset of $\beta Y$, which intersects the boundary $\partial \beta Y$. In fact, what we can see is that $f^{-1}(X)= \sqcup f^{-1}(X_{i})$, where each $f^{-1}(X_{i})$ are closed, and therefore homeomorphic to $X_{i} \times \beta \mathbb{N}$. We can define $U = f^{-1}(X)\cap \partial\beta Y$.
+
+\section{The boundary groupoid associated to a certain $\Gamma$.}
+
+To continue, we pass from the general case to a specific example; let $\Gamma$ be a finitely generated residually finite discrete group with the Haagerup property, and let $\lbrace N_{i}\rbrace$ be a family of nested finite index subgroups with trivial intersection. Let $X_{i}:=Cay(\frac{\Gamma)}{N_{i}})$. In this context, the boundary groupoid is generated by the action of the group $\Gamma$ extended to the boundary (see Proposition \ref{Prop:Crit}). In this context we can show that $U$ defined above is saturated:
+
+\begin{lemma}
+$U$ is an open, saturated subset of the boundary $\partial\beta Y$. 
+\end{lemma}
+\begin{proof}
+We showed above that $U$ was open. To see it is saturated we prove that $U^{c}$ is saturated, observe that the following diagram commutes:
+\begin{equation*}
+\xymatrix{
+\overline{g}_{Y}:\beta Y\ar[r]\ar[d]^{p} & \beta Y\ar[d]^{p}\\
+\overline{g_{X} \times 1}:  \beta X \times \beta \mathbb{N} \ar[r] & \beta X \times \beta \mathbb{N}
+}
+\end{equation*}
+where these maps extend the group action on $Y=X \times \mathbb{N}$. The projection onto $\beta X$ is also equivariant under this action. Assume for a contradiction that $U^{c}$ is not saturated; there exists $\gamma$ in $U^{c}$ such that $\overline{g}_{Y}(\gamma) \in U$. It follows that $\overline{g_{X} \times 1}(p(\gamma))$ is in $p(U)$, whilst $p(\gamma) \in p(U^{c})$, hence $\overline{g_{X}}(f(\gamma))\in U$ whilst $f(\gamma) \in U^{c}$. This is a contradiction as $f(U^{c}) = \partial\beta X$ is saturated.
+\end{proof}
+
+This gives us two natural complimentary restrictions of $G(Y)|_{\partial\beta Y}$ and a short exact sequence of function algebras as in section \ref{Sect:CE}:
+\begin{equation*}
+\xymatrix{
+0 \ar[r] & C_{c}(G(Y)|_{U}) \ar[r]& C_{c}(G(Y)|_{\partial\beta Y}) \ar[r] & C_{c}(G(Y)|_{U^{c}}) \ar[r] & 0.
+}
+\end{equation*}
+
+We will now show that the corresponding sequence:
+\begin{equation*}
+\xymatrix{
+0 \ar[r] & C^{*}_{r}(G(Y)|_{U}) \ar[r]& C_{r}^{*}(G(Y)|_{\partial\beta Y}) \ar[r]^{h} & C_{r}^{*}(G(Y)|_{U^{c}}) \ar[r] & 0
+}
+\end{equation*}
+fails to be exact in the middle. We proceed as in \cite{explg1,MR1911663} by using the element $\pi(q)$, which certainly vanishes under the quotient map from $C^{*}_{r}(G(Y)|_{\partial\beta Y}) \rightarrow C^{*}_{r}(G(Y)|_{U^{c}})$. To show the failure we will show this sequence fails to be exact in the middle at the level of K-theory and for this we will require a firm understanding of the structure of $G(Y)|_{U}$.
+
+We observe the following facts: 
+\begin{enumerate}
+\item $\Gamma$ acts on the space $Y:=\sqcup_{i,j}Y_{i,j}$ built from $\lbrace X_{i} \rbrace$.
+\item This action becomes free on piece of the boundary that arises as $i \rightarrow \infty$, that is on $U^{c}$.
+\item The group action generates the metric coarse structure on the boundary; The finite sets associated to each $R>0$ in the decomposition are now finite rectangles - because of the metric prescribed on the space $Y$.
+\end{enumerate} 
+
+It follows from Proposition \ref{Prop:Crit} that the groupoid $G(Y)|_{U^{c}}$ is isomorphic to $U^{c}\rtimes \Gamma$ and under the assumption that $\Gamma$ has the Haagerup property we can conclude that the Baum-Connes assembly map for the groupoid $G(Y)|_{U^{c}}$ is an isomorphism (with any coefficients). We now concern ourselves with $G(Y)|_{U}$.
+
+\begin{lemma}\label{Lem:CE3}
+The groupoid $G(Y)|_{U}$ is isomorphic to $\sqcup_{i}(X_{i}\times X_{i})\times G(\mathbb{N})|_{\partial\beta \mathbb{N}}$.
+\end{lemma}
+\begin{proof}
+The reductions to the inclusions of the preimages $f^{-1}(X_{i})$ restricted to the boundary are isomorphic to the closed subgroupoids $G(X_{i}\times \mathbb{N})|_{\partial\beta \mathbb{N}}$ of $G(Y)|_{U}$. These groupoids are disjoint by construction and therefore the inclusion $\sqcup_{i}G(X_{i}\times \mathbb{N})|_{\partial\beta \mathbb{N}}$ is an open subgroupoid of $G(Y)|_{U}$. We now prove that:
+\begin{enumerate}
+\item each $G(X_{i} \times \mathbb{N})|_{\partial\beta \mathbb{N}}$ is isomorphic to $(X_{i}\times X_{i})\times G(\mathbb{N})|_{\partial\beta \mathbb{N}}$;
+\item the union $\sqcup_{i}G(X_{i}\times \mathbb{N})|_{\partial\beta \mathbb{N}}$ is the entire of $G(Y)|_{U}$.
+\end{enumerate}
+To prove (1), observe that the groupoid decomposes as $G(X_{i}\times \mathbb{N}) = \bigcup_{R>0}\overline{\Delta_{R}(X_{i}\times \mathbb{N})}$. For each $R>0$ we can find a $j_{R}$ such that $\Delta_{R}(X_{i}\times \mathbb{N}) = F_{R} \cup \bigcup_{j>j_{R}}\Delta_{R}^{j}(X_{i}\times \mathbb{N})$, hence for the boundary part of this groupoid it is enough to understand what happens in each piece $Y_{i,j}$, which is constant for each $j$. Secondly, observe that in the induced metric on a column, the pieces $Y_{i,j}$ separate as $j\rightarrow \infty$. This, coupled with the fact that for large enough $R$, we know that $ \Delta^{j}_{R}(X_{i}\times \mathbb{N}) = X_{i} \times X_{i}$ allow us to deduce that any behavour at infinity of this groupoid is a product of $X_{i} \times X_{i}$ and the boundary groupoid $G(\mathbb{N})|_{\partial\beta \mathbb{N}$ where $\mathbb{N}$ has the coarsely disconnected metric. This groupoid is isomorphic to $\partial\beta \mathbb{N}$, from which we can deduce that $G(X_{i}\times \mathbb{N})|_{\partial\beta \mathbb{N}} = (X_{i}\times X_{i})\times \partial\beta \mathbb{N}$ for each $i$.
+
+To prove (2) we assume for a contradiciton that there is a partial translation $t$, such that $\overline{t}$ is not an element of the disjoint union. Such an element maps some $(x_{i}, \omega)$ to $(x_{k},\omega)$, where $i\not =k$. Without loss of generality assume also $t$ has translation length at most $R$. Then the domain and range of $t$ are both infinite (as the closure is defined in $G(Y)|_{U}$), and must be contained within a strip of width at most $R>0$. From the definition of the metric, there are only finitely many $Y_{i,j}$ within such a rectangle, hence $t \in F_{R}$ and hence $\overline{t}$ is not defined in $G(Y)|_{U}$, which yields a contradiction.
+\end{proof}
+
+\begin{remark}
+Lemma \ref{Lem:CE3} allows us to conclude that $C^{*}_{r}(G(Y)|_{U}) \cong \bigoplus_{i}M_{\vert X_{i}\vert} \otimes C(\partial\beta Y)$
+\end{remark}
+
+To conclude that $[\pi(q)]$ is not an element of $K_{0}(C^{*}_{r}(G(Y)|_{U}))$ we construct a trace-like map.
+
+\begin{theorem}
+The element $h_{*}[\pi(q)]=0$, but does not belong to $K_{0}( C^{*}_{r}(G(Y)|_{U}))$.
+\end{theorem}
+\begin{proof}
+We begin the proof by remarking that each $U_{i}:=f^{-1}(X_{i}) \cap U$ is a closed saturated subset of $\partial\beta Y$, hence we can consider the reduction to $U_{i}$ for each $i$. We consider the product, and the following map:
+\begin{eqnarray*}
+\phi : C^{*}_{r}(G(Y)|_{\partial\beta Y})& \rightarrow & \prod_{i} C^{*}_{r}(G(Y)|_{U_{i}})= \prod_{i}C^{*}_{r}(G(X_{i} \times \mathbb{N})\\
+ T  &\mapsto & \prod_{i}T|_{U_{i}}
+\end{eqnarray*}
+Under the map $\phi$, the subalgebra $C^{*}_{r}(G(Y)|_{U})= \bigoplus_{i}M_{\vert X_{i}\vert} \otimes C(\partial\beta Y)$ maps to the ideal $\bigoplus_{i}C^{*}_{r}(G(X_{i} \times \mathbb{N}))$. So, we can define a tracelike map, in analogy to \cite[Section 6]{explg1}, by composing with the quotient map $\tau$ onto $\frac{\prod_{i}C^{*}_{r}(G(X_{i} \times \mathbb{N}))}{\bigoplus_{i}C^{*}_{r}(G(X_{i} \times \mathbb{N}))}$. This gives us a map at the level of K-theory:
+\begin{equation*}
+Tr_{*}=\phi \circ \tau : K_{0}(C^{*}_{r}(G(Y)|_{\partial\beta Y})) \rightarrow \frac{\prod_{i}K_{0}(C^{*}_{r}(G(X_{i} \times \mathbb{N})))}{\bigoplus_{i}K_{0}(C^{*}_{r}(G(X_{i} \times \mathbb{N})))}= \frac{\prod_{i}K_{0}(C(\partial\beta \mathbb{N}))}{\bigoplus_{i}K_{0}(C(\partial\beta \mathbb{N}))}
+\end{equation*}
+
+We now consider $[\pi(q)]$ under $Tr_{*}$. Recall that $q=\prod_{i,j}p_{i}$. We define $q_{i}=\prod_{j}p_{i}$ and observe that the operation of reducing to $G(Y)|_{U_{i}}$ can be performed in two commuting ways: restricting to $U$ then $f^{-1}(X_{i})$ or by restricting to $f^{-1}(X_{i})$ then $U$. The second tells us that $q_{i}=p_{i} \otimes 1_{\beta\mathbb{N}$ is constant in the $j$ direction and when restricted to the boundary is $\pi(q_{i})=p_{i}\otimes 1_{\partial\beta \mathbb{N}}$. Hence, $Tr_{*}([\pi(q)])=[1_{\partial\beta \mathbb{N}},1_{\partial\beta\mathbb{N}},...] \not = 0$ and so $[\pi(q)] \not \in K_{0}(C^{*}_{r}(G(Y)|_{U})$.
+\end{proof}
+
+So in this case we have the following diagram:
+\begin{equation*}
+\xymatrix@=0.7em{
+ K_{1}(C(U^{c})\rtimes \Gamma) \ar[r] & K_{0}(\ker (\pi)) \ar[r]& K_{0}(C^{*}_{r}(G(Y)|_{\partial\beta Y})) \ar[r]& K_{0}(C(U^{c})\rtimes \Gamma)\ar[r] & K_{1}(\ker (\pi))  \\
+ K_{1}^{top}(U^{c}\rtimes \Gamma) \ar[r] \ar[u]^{\ucong}& K_{0}^{top}(Y \times Y) \ar[r]\ar@{^{(}->}[u]\ar@{^{(}->}[ru]& K_{0}^{top}(G(Y)|_{\partial\beta Y} \ar[r]\ar[u]^{\mu_{bdry}}& K_{0}^{top}(U^{c}\rtimes \Gamma) \ar[r]\ar[u]^{\ucong}& K_{1}^{top}(X \times X)\ar[u]
+}
+\end{equation*}
+
+\begin{remark}
+We justify the diagonal inclusion of $K_{0}^{top}(Y \times Y)$ into $K_{0}(C^{*}_{r}(G(Y)|_{\partial\beta Y}$. This follows as the groupoid $G(Y)_{U}$ is nuclear, and hence the assembly map is an isomorphism.   The algebra $C^{*}_{r}(G(Y)_{U})= \bigoplus_{i}M_{\vert X_{i}\vert} \otimes C(\partial\beta Y)$ injects into the product $\prod_{i} M_{\vert X_{i}\vert} \otimes C(\partial\beta Y)$ at the level of K-theory and this inclusion factors through in the inclusion into the kernel of $\pi$ and into $C^{*}_{r}(G(Y)|_{\partial\beta Y}$. These maps provide enough information to conclude injectivity of the assembly map $\mu_{bdry}$.
+\end{remark}
+
+A diagram chase under the assumption that the map $\mu_{bdry}$ is surjective quickly yields a contradiction, whence we have:
+
+\begin{corollary}
+The assembly map $\mu_{bdry}$ associated to $Y=\sqcup_{i,j}Cay(\frac{\Gamma}{N_{i}})$ is not surjective but is injective.\qed
+\end{corollary}
+
+\chapter{An application to the Exactness of Gromov Monster groups.}
+
+It is well known \cite{MR1911663,explg1} that any group that contains a coarsely embedded expander does not have Yu's property A and admits coefficients for which the Baum-Connes conjecture fails to be a surjection, but is an injection:
+
+\begin{theorem}\label{Thm:IT1}
+Let $G$ be a Gromov monster group. Then there exists a (commutative) $G$-$C^{*}$-algebra $A$ such that the Baum-Connes assembly map:
+\begin{equation*}
+\mu_{r,A,*}: KK^{G}_{*}(\underline{E}G, A) \rightarrow K_{*}(A\rtimes_{r}G)
+\end{equation*}
+is not surjective, but is injective.
+\end{theorem}
+
+We explore this result from the point of view of the geometry that can be associated to the expander graph that it inherits from the group.
+
+From the point of view of \cite{MR1905840}, the coarse conjecture for any uniformly discrete bounded geometry space $X$ can be phrased as a conjecture with coefficients in a certain groupoid $G(X)$ associated to $X$. This groupoid admits a transformation groupoid decomposition \cite[Lemma 3.3b)]{MR1905840}, giving an easy description of $G(X)$ when it is possible to get a handle on the generators of the metric coarse structure on $X$. When $X$ is coarsely embedded into a group, this is certainly the case; the concept of a partial translation structure \cite{MR2363428} gives any space coarsely embedded into a group a nice collection of generators, as well as a locally compact, Hausdorff, second countable \etale groupoid that impliments the transformation decomposition.
+
+On the other hand, the question of when a groupoid admits a transformation groupoid decompostion, up to Morita equivalence, has been well studied for the class of groupoids that are constructed from suitable inverse semigroups \cite{MR1900993,Milan-Steinberg}. This is related to the problem of globalisation of a partial action of $\Gamma$ on a space $X$. The result would be a space $Y$, with a true action of $\Gamma$ such that $X \hookrightarrow Y$ is a topological embedding and the enlargement of the $\Gamma$ action by restricting the maps to $X$ induces the original partial action.
+
+The problem of globalisation of partial actions of groups has been considered in a variety of settings \cite{MR0160848, MR1798993, MR2041539, MR2419858, MR1900993, Milan-Steinberg}, each using the same central theme.
+
+\begin{definition}
+Let $X$ be a topological space and let $G$ be a group acting partially on $X$. Then we denote by $\Omega$ the \textit{Morita evelope} of the action of $G$ on $X$, which is constructed as follows:
+
+Consider the space $X\times \Gamma$, equipped with the product topology. Then define $\sim$ on $X\times \Gamma$ by $(x,g)\sim (y,h)$ if there exists $\gamma \in \G$ with $x(h^{-1}g)=y$. We define $\Omega$ as the quotient of $X\times \Gamma$ by $\sim$ with the quotient topology. 
+\end{definition}
+
+The main idea that was presented first by Khoskham and Skandalis \cite{MR1900993} was the concept of a \textit{group valued cocycle}, which we outline below. Milan and Steinberg then developed this idea much further, giving an almost full answer to the problem of which groupoids are Morita equivalent to a transformation groupoid \cite{Milan-Steinberg}.
+
+\section{Groupoid Valued Cocycles and a Theorem of Milan and Steinberg.}
+
+In this section we consider the question of when a groupoid admits a transformation groupoid decompostion up to Morita equivalence. This has been well studied for the class of groupoids that are constructed from suitable inverse semigroups \cite{MR1900993,Milan-Steinberg} that admit a certain type of map onto an inverse semigroup:
+
+\begin{definition}
+Let $G$ be a locally compact groupoid. Then we call a continuous homomorphism from $G$ to a locally compact group $\Gamma$ a group valued cocycle (or just cocycle).
+\end{definition}
+
+\begin{definition}
+Let $\rho: G \rightarrow \Gamma$ be a cocycle. We say it is:
+\begin{enumerate}
+\item \textit{transverse} if the map $\Gamma \times G \rightarrow \Gamma \times X$, $(g, \gamma) \mapsto (g\rho(\gamma),s(\gamma))$ is open.
+\item \textit{closed} if the map $\gamma \mapsto ((r(\gamma),\rho(\gamma),s(\gamma))$ is closed.
+\item \textit{faithful} if the map $\gamma \mapsto ((r(\gamma),\rho(\gamma),s(\gamma))$ is injective.
+\end{enumerate}
+We call a cocycle $\rho$ with all these properties a \textit{(T,C,F)-cocycle}.
+\end{definition}
+
+Below is the main result of \cite{Milan-Steinberg}, a generalisation of the main results of \cite{MR1900993}:
+
+\begin{theorem}\label{Thm:IT2}
+Let $\rho: \G \rightarrow S$ be a continuous, faithful closed transverse cocycle where $\G$ is a locally compact groupoid and $S$ is a countable inverse semigroup. Then there is a locally compact Hausdorff space $X$ equipped with an action of $S$ so that $\G$ is Morita equivalent to the groupoid of germs $X \rtimes S$. Consequently $C^{*}_{max}\G$ is strongly Morita equivalent to $C_{0}(X)\rtimes S$. If $S$ is a group, then the analogous result holds for reduced $C^{*}$-algebras.
+\end{theorem}
+
+From an F-inverse monoid $S$ it is possible to construct a (T,C,F)-cocycle onto the maximal group homomorphic image of $G$ \cite{MR1900993}. To prove Theorem \ref{Thm:IT2} in the case that the monoid is $F$-inverse then makes use of the Morita envelope of the partial action that the maximal group homomorphic image $G$ has on the unit space of the universal groupoid $\G_{\E}$. In this case the space is a quotient of  $\G^{(0)}\times \Gamma$ equipped with the product topology.  The closed condition on the cocycle makes this space Hausdorff.
+
+What follows from here can be found as a corollary to Theorem \ref{Thm:IT2} from \cite{Milan-Steinberg}. We provide a direct proof of a special case using the original methods of \cite{MR1900993}. This is possible by considering the construction of the groupoid $G(S)$ for a strongly 0-E-unitary inverse monoid $S$. It is clear that the only danger is mapping elements to $0$ in $\Gamma^{0}$; this is overcome by the observation that the element $[0,f]$ would be defined if and only if $f \in D_{0}$. However, $f \in D_{0}$ implies that $f(0)=1$ and hence $f \not\in \E$, so the $0$ element of $S$ contributes nothing to the groupoid $G(S)$, either in objects or arrows.
+
+We are interested in proving that if $S$ is a strongly $0$-F-inverse monoid that it is possible to apply Theorem \ref{Thm:IT2}. This is Corollary 6.17 from a \cite{Milan-Steinberg}, however we give a direct proof here for completeness just in the special case in which we are interested, by adapting the original techniques of \cite{MR1900993}. The main idea relies on carefully considering the universal groupoid, making sure that the cocycle does not interact with the zero element in the semigroup in the wrong way.
+
+\begin{theorem}\label{Thm:IT2-a}
+Let $S$ be an inverse monoid. If $S$ is strongly 0-E-unitary with universal group $U(S)=\Gamma$ such that the prehomomorphism has the finite cover property. Then the groupoid $G(S)$ admits a transverse and faithful cocycle to a group.
+\end{theorem}
+\begin{proof}
+Let $\Phi$ be the 0-restricted, idempotent pure prehomomorphism onto $\Gamma^{0}$. We build an induced map on the groupoid $G(S)$ by considering a new map $\Psi:$
+\begin{equation*}
+\Psi([s,x])=\Phi(s)
+\end{equation*}
+This map is well-defined as any non-zero idempotent in $S$ is mapped to the identity in $\Gamma$, and so for any pair $(s,f) \sim (t,f)$ there is an $e \in E \cap D_{f}$, in particular not $0$, such that $es=et$ and hence $\Phi(s)=\Phi(es)=\Phi(et)=\Phi(t)$. This is clearly a groupoid homomorphism to $\Gamma$. To check it is continuous observe that as $\Gamma$ is a discrete group so all subsets are open. The preimage of a singleton is given by the union:
+\begin{equation*}
+\Psi^{-1}(\lbrace g \rbrace)=\bigcup_{\Phi(u)=g}[u,D_{u^{*}u}] 
+\end{equation*}
+which is certainly open in $G(S)$. The map is proper, because the preimage of any finite set in $\Gamma$ is given by a finite union of $[u,D_{u^{*}u}]$ that are compact by construction.
+
+It remains to check it is a (T,C,F)-cocycle, and from the remarks prior to the Theorem the proof of this follows exactly from the proof \cite[Proposition 3.6]{MR1900993} modified suitably. We provide this proof below:
+
+To prove this is transverse, it is enough to prove that $\lbrace (\Psi(\gamma),s(\gamma)):\gamma \in G(S)\rbrace$ is open in $\Gamma \times G(S)^{(0)}$, and this in turn reduces to studying this problem for all $g \in G$, that is if $\lbrace s(\gamma) :\Psi(\gamma)=g \rbrace$. is open in $G(S)^{(0)}$. This set is equal to $\bigcup_{\Psi(\gamma)=g}D_{s(\gamma)}$, which is certainly open in $G(S)^{(0)}$ as each piece is.
+
+To see that this is faithful, let $[u,f], [v,f^{'}] \in G(S)$ such that $(f,\Phi(u),\theta_{u}(f))=(f^{'},\Phi(v),\theta_{v}(f^{'}))$. Then it is clear that $f=s([u,f])=s([v,f^{'}])=f^{'}$, so it is enough to prove now that $\Phi(v)=\Phi(u)$ implies $[u,f]=[v,f]$. Observe that $\Phi(u)\Phi(v)^{-1}=1$ in $\Gamma$ and $\Phi(v)^{-1}=\Phi(v^{*})$, so $\Phi(uv^{*})=1$. This map is idempotent pure, so $uv^{*} \in E(S)$. So $[u,f][v,f]^{-1}=[uv^{*},\theta_{v}(f)]$ is a unit in $G(S)$. From here it is clear that $[u,f]$ is an inverse to $[v^{*},\theta_{v}(f)]$ and so $[u,f]=[v,f]$.\end{proof}
+
+This gets us a little closer to applying Theorem \ref{thm:1.8}. We still need to check the fact that the cocycles are closed. We proceed as in \cite{MR1900993}.
+
+\begin{definition}
+We say that S satisfies the finite cover property with respect to $\phi$,, if for every $p,q \in S$, $p,q\not = 0$ there exists a finite set $U \subset S_{g}$ such that:
+\begin{equation*}
+pS_{g}q=\lbrace s \in S | \exists u \in U | s \leq u \rbrace.
+\end{equation*}
+Where $S_{g}$ is the preimage $\phi^{-1}(g)$.
+\end{definition}
+
+Again, this follows from the work of \cite{Milan-Steinberg} or \cite{MR1900993}, but we give the proof in this setting:
+
+\begin{lemma}
+If $S$ is an inverse monoid and has the finite cover property with respect to $\phi$, then the induced cocycle $\rho$ is closed.
+\end{lemma}
+\begin{proof}
+As $\Gamma$ is discrete, it is enough to prove that the graph $Gr(g)$ over $g$ in $G(S)^{(0)}\times G(S)^{(0)}$ is closed. We remark also that this product space is covered by the set of $D_{e} \times D_{f}$, where $e,f$ run though the idempotents $E(S)$, and is compact; thus only finitely many pairs $D_{e}\times D_{f}$ are necessary. The intersection $Gr(g) \cap D_{e}\times D_{f}$ is covered by $\bigcup_{u \in eS_{g}f} [u,D_{u^{*}u}]$ and so are compact if and only if:
+\begin{equation*}
+Gr(g) \cap D_{e}\times D_{f} = \bigcup_{u \in U}[u,D_{u^{*}u}]
+\end{equation*}
+for some finite $U \subset S_{g}$. However, this is precisely implied by the finite cover property.
+\end{proof}
+
+\begin{corollary}\label{Thm:Trick}
+If $S$ is a 0-E-unitary monoid with the finite cover property then the groupoid $G(S)$ is Morita equivalent a transformation groupoid $Y \rtimes G$.\qed
+\end{corollary}
+\begin{proof}
+This follows from Theorem 1.8 from \cite{MR1900993}.
+\end{proof}
+
+\begin{remark}
+If, in addition the inverse monoid $S$ is 0-F-inverse, then it satisfies the finite cover property with $\vert U \vert=1$ as each $S_{g}$ will contain a unique maximal element.
+\end{remark}
+
+\subsection{Some remarks about the coarse groupoid.}
+
+From earlier work in Chapter \ref{} any space that coarsely embeds into a group admits a grouplike partial translation structure. We equip the expander sequence coarsely embedded in our Gromov monster group with this translation structure. The results of Chapter \ref{} then tell us that there is a groupoid $\G(\mathcal{T})$, such that the translation algebra is isomorphic to the reduced groupoid  $C^{*}$-algebra $C^{*}_{r}(\G(\mathcal{T})$. 
+
+Using Claim \ref{} the translations of $\mathcal{T}$ are the only elements we need to be understand when working with $\G(\mathcal{T})$. From the definition of $\mathcal{T}$ we can think of a translation structure as providing us an excellent generating set for the metric coarse structure on the space $X$; the groupoid $\G(\mathcal{T})$ acts freely on $\beta X$, and we can generate now the coarse groupoid using this data:
+
+\begin{lemma}\label{Lem:CG}
+The coarse groupoid $G(X) \cong \beta X \rtimes \G(\mathcal{T}).$
+\end{lemma}
+\begin{proof}(Short)
+We observe that the set of $[t_{g},\widehat{D}_{t_{g}^{*}t_{g}}]$ covers $G(X)$; hence the collection $\mathcal{T}$ forms an admissible psuedogroup in the terminology of \cite{MR1905840}. The groupoid it generates is $\G(\mathcal{T})$. Then the result follows from \cite[Lemma 3.3b)]{MR1905840}.
+\end{proof}
+
+
+\begin{proposition}\label{Prop:Cocycle}
+Let $X$ be a metric space and $G$ be a group such that $X$ is coarsely embedded into $G$. Then the translation groupoid $\G(\mathcal{T})$ admits a (T,C,F)-cocycle onto $G$.
+\end{proposition}
+\begin{proof}
+This follows immediately from Proposition \ref{Thm:Trick} and Corollary \ref{Cor:Trick}.
+\end{proof}
+
+\section{Non-exactness of a Gromov Monster.}
+We begin with a definition:
+\begin{definition}
+A finitely generated discrete group $\Gamma$ is a \textit{Gromov monster group} if there exists a large girth expander with vertex degree uniformly bounded above $X$ and a coarse embedding $f: X \hookrightarrow \Gamma$. 
+\end{definition}
+
+These groups were shown to exist by Gromov \cite{MR1978492}, with a detailed proof by Arzhantseva, Delzant \cite{exrangrps}. The construction is technical and we require no details beyond those presented in the definition.
+
+The rest of this chapter is deadicated to proving the following theorem:
+
+\begin{thm}\label{Thm:GM1}
+Let $G$ be a Gromov monster group. Then there are locally compact Hausdorff topological $G$-spaces $Y_{i}$, $i \in \lbrace 1,2,3 \rbrace$ and a short exact sequence:
+\begin{equation*}
+0 \rightarrow C_{0}(Y_{1}) \rightarrow C_{0}(Y_{2}) \rightarrow C_{0}(Y_{3}) \rightarrow 0
+\end{equation*}
+such that
+\begin{equation*}
+0 \rightarrow C_{0}(Y_{1})\rtimes_{r} G \rightarrow C_{0}(Y_{2})\rtimes_{r} G \rightarrow C_{0}(Y_{3})\rtimes_{r} G \rightarrow 0
+\end{equation*}
+fails to be exact in the middle.
+\end{thm}
+
+We proceed first by anaylzing the situation from \cite[Section 8]{explg1}. The authors produce a commutative coefficient algebra for any Gromov monster group $G$ for which Baum-Connes conjecture $BC(G,A)$ fails to be surjective but is injective. 
+
+We make precise the definition of a Gromov monster group that we will use for the remainder of the paper.
+
+\begin{definition}
+A finitely generated discrete group $\Gamma$ is a \textit{Gromov monster group} if there exists a large girth expander with vertex degree uniformly bounded above $X$ and a coarse embedding $f: X \hookrightarrow \Gamma$. 
+\end{definition}
+
+These groups were shown to exist by Gromov \cite{MR1978492}, with a detailed proof by Arzhantseva, Delzant \cite{exrangrps}. The construction is technical and we require no details beyond those presented in the definition.
+
+In this section we connect the globalisation of the coarse groupoid with the ideas of Higson, Willett and Yu from \cite{higsonpreprint},explg1} concerning the $C^{*}$-algebraic construction of the coefficients for which a Gromov monster group fails to have the Baum-Connes assembly map an isomorphism.
+
+We proceed first by anaylzing the situation from \cite[Section 8]{explg1}. The primary idea is to globalise  $C^{*}X$ in $C^{*}G$. Fix a left invariant proper metric on $G$.
+
+Let $X_{n}:=N_{n}(X)\subset G$. Then we can form the $C^{*}$-algebras $\ell^{\infty}(X_{n}) \subseteq \ell^{\infty}(G)$. Being commutative algebras in this case, we could consider the dual picture by taking spectra, getting $C_{0}(\widehat{X_{n}}) \subset C(\beta G)$. It is clear that $X_{n} \subset X_{n+1}$, so the algebras $\ell^{\infty}(X_{n}) \subset \ell^{\infty}(X_{n+1})$. The remark here is that the inclusion of $X_{n} \subset G$ is not $G$-equivariant, but the system is $G$-equivariant; the action of $G$ on $X_{n}$ on the right by translations will send points in $X_{n}$ into a most $X_{n+l(g)}$ for each $g \in G$. Hence, the limit of the $\ell^{\infty}(X_{n})$ over $n$ is a $G$-algebra, and so we can form the semidirect product algebra $(\lim_{n}\ell^{\infty}(X_{n}))\rtimes_{r} G$. Lemma 8.4 from \cite{explg1} provides us the following isomorphisms:
+
+\begin{lemma}\label{lem:GMG}
+Let $X_{n}$ as above. Then $(\lim_{n}\ell^{\infty}(X_{n}))\rtimes G \cong \lim_{n} C^{*}_{u}(X_{n})$ and $(\lim_{n}\ell^{\infty}(X_{n},\mathcal{K}))\rtimes G \cong \lim_{n} C^{*}(X_{n})$.\qed
+\end{lemma}
+
+Let the coefficients $\lim_{n}\ell^{\infty}(X_{n},\mathcal{K})$ be denoted by $A$. We appeal to the fact that each $X_{n}$ is coarsely equivalent to $X$. As these limits are functorial in coarse maps, we conclude:
+
+\begin{proposition}
+Let $G$ be a Gromov monster group and $X$ the coarsely embedded large girth expander. Then we have $A\rtimes_{r} G \cong C^{*}X$.\qed
+\end{proposition}
+
+The procedure we will follow will be a geometric analogue of this argument using translation structures and Theorem \ref{Thm:IT2} of Milan and Steinberg, which relies on the information about the coarse groupoid given above as well as the fact the the inverse semigroups associated to the coarse groupoid are strongly 0-F-inverse.
+
+The approach is via Theorem \ref{thm:PV2}:
+
+\begin{theorem}
+Let $G$ be a Gromov monster group. Then there are locally compact Hausdorff topological $G$-spaces $Y_{i}$, $i \in \lbrace 1,2,3 \rbrace$ and a short exact sequence:
+\begin{equation*}
+0 \rightarrow C_{0}(Y_{1}) \rightarrow C_{0}(Y_{2}) \rightarrow C_{0}(Y_{3}) \rightarrow 0
+\end{equation*}
+such that
+\begin{equation*}
+0 \rightarrow C_{0}(Y_{1})\rtimes_{r} G \rightarrow C_{0}(Y_{2})\rtimes_{r} G \rightarrow C_{0}(Y_{3})\rtimes_{r} G \rightarrow 0
+\end{equation*}
+fails to be exact in the middle.
+\end{theorem}
+\begin{proof}
+To construct the complete sequence we use Lemma \ref{Lem:Cut} to get $Y_{1}:= (X \times G)/\sim$ and $Y_{3}:= (\partial\beta X \times G)/\sim$. We then get the short exact sequence of $G$-algebras:
+\begin{equation*}
+0 \rightarrow C_{0}(Y_{1}) \rightarrow C_{0}(Y_{2}) \rightarrow C_{0}(Y_{3}) \rightarrow 0.
+\end{equation*}
+
+Now we consider the crossed product algebras $C_{0}(Y_{i})\rtimes G$. Then the sequence above gives us some terms on K-theory: 
+\begin{equation*}
+\xymatrix@=1em{...\ar[r] & K_{0}(C_{0}(U)\rtimes G) \ar[r]& K_{0}(C_{0}(Z)\rtimes G) \ar[r]& K_{0}(C_{0}(Y)\rtimes G)\ar[r] & ...\\
+...\ar[r] & K_{0}(\mathcal{K}) \ar[r]\ar[u]^{\ucong}& K_{0}(C^{*}_{r}(G(X))) \ar[r]\ar[u]^{\ucong}& K_{0}(C^{*}_{r}(G(X)|_{\partial\beta X})) \ar[r]\ar[u]^{\ucong}& ...}
+\end{equation*}
+And the bottom line is not exact on K-theory by either \cite{MR1911663}, \cite{explg1} or \cite{mypub1}. It follows therefore that the sequence:
+\begin{equation*}
+0 \rightarrow C_{0}(Y_{1})\rtimes_{r} G \rightarrow C_{0}(Y_{2})\rtimes_{r} G \rightarrow C_{0}(Y_{3})\rtimes_{r} G \rightarrow 0
+\end{equation*}
+is not exact in the middle term.
+\end{proof}
+
+This idea can be extended to connect this proof of failure to be exact to the geometric one that is outlined above from \cite{higsonpreprint,explg1}. 
+
+We connect this geometric approach using groupoids to the analytic approach outlined in the previous section. 
+
+\begin{proposition}\label{prop:GMG}
+Let $X=X_{0}$ and $X_{n}$ as above. Then the globalisations of $G(X_{n})$ given by $B_{n}\rtimes G$ that come from the translation groupoid action of Lemma \ref{Lem:CG} are all Morita equivalent.
+\end{proposition}
+\begin{proof}
+As $X_{0}$ is coarsely equivalent to $X_{n}$ for all $n$, it follows that $G(X)$ is Morita equivalent to $G(X_{n})$ for all $n$. Using Lemma \ref{Lem:CG} we can see that each of the groupoids $G(X_{n})$ is isomorphic to a transformation groupoid $\beta(X_{n}) \rtimes \G_{\X_{n})$ and therefore admits a (T,C,F)-cocycle onto the monster group $G$. Using Theorem \ref{Thm:IT2-a} (or Theorem \ref{Thm:IT2}) we can conclude that each $G(X_{n})$ is also Morita equivalent to $B_{n}\rtimes G$. Subsequently $B_{n}\rtimes G$ are Morita equivalent for each $n$, induced by the natural inclusions that extend $B_{n} \rightarrow B_{n+1}$.  
+\end{proof}
+
+Lemma \ref{lem:GMG} is naturally a corollary to Proposition \ref{prop:GMG}.
+
+\subsection{Boundary Coefficients for a Gromov Monster.}
+
+We extend the ideas in the previous section using the results from Chapter 4. In that chapter we proved that the boundary groupoid $G(X)|_{\partial\beta X}$ of a large girth sequence with uniformly bounded vertex degree decomposes as $\partial\beta X \rtimes \G_{\widehat{X}}$, where $\G_{\widehat{X}}$ has the Haagerup property. We extend these ideas by considering the impact this has on a Gromov monster group that contains such a large girth expander. To this end we prove:
+
+\begin{theorem}\label{Thm:GM2}
+There exists a locally compact Hausdorff space $Z$ such that the groupoid $Y_{3}\rtimes G$ is Morita equivalent to $Z \rtimes F_{k}$.
+\end{theorem}
+
+We recall the information from Chapter 4 that is required to prove this Theorem: (List of results, probably via bullet points)
+
+
+\begin{lemma}\label{Lem:MEFree}
+The boundary groupoid $G(X)|_{\partial\beta X}$ admits a (T,C,F)-cocycle onto $F_{k}$. 
+\end{lemma}
+\begin{proof}
+We remark that this follows directly from the fact that the coarse boundary groupoid $G(X)|_{\partial\beta X}$ has a decompostion as $\partial\beta X \rtimes \G_{\widehat{X}}$, and that $S_{inf}$ is strongly $0$-F-inverse.
+\end{proof}
+
+\begin{proof}(Of Theorem \ref{Thm:MT2}).
+Recall from the proof of Theorem \ref{Thm:MT1} that the groupoid $G(X)|_{\partial\beta X}$ is Morita equivalent to $Y_{3}\rtimes G$. Using Lemma \ref{Lem:MEFree} we know also that $Z:=(\partial\beta X \times F_{k} )/\sim$ is a locally compact Hausdorff space, arising from a (T,C,F)-cocycle onto $F_{k}$. This enables us to again appeal to either \cite[Theorem 6.14]{Milan-Steinberg} (Theorem \ref{Thm:IT2}) or \cite[Theorem 1.8]{MR1900993} (Theorem \ref{Thm:1.8}) to conclude that $G(X)|_{\partial\beta X}$ is Morita equivalent to $Z\rtimes F_{k}$. The Theorem then follows from transitivity of Morita equivalence.
+\end{proof}
+
+Theorem \ref{Thm:GM2} has an important corollary, as the Baum-Connes conjecture with coefficients is a Morita invariant:
+
+\begin{corollary}
+The Baum-Connes conjecture for $G$ with coefficients in any $(Y_{3}\rtimes G)$-$C^{*}$-algebra is an isomorphism.\qed
+\end{corollary}
