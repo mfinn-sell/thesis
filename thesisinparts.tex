@@ -1,6 +1,11 @@
-\documentclass[11pt,]{book}
-%\usepackage{libertine}
-%\usepackage[T1]{fontenc}
+\documentclass[11pt,]{amsbook}
+
+%Fonts
+
+\usepackage{libertine}
+\usepackage{euler}
+\usepackage[T1]{fontenc}
+
 %Packages.
 
 \usepackage[parfill]{parskip}
@@ -20,13 +25,6 @@
 %\usepackage{showkeys}
 \usepackage{setspace}
 %\usepackage{fancyhdr}
-%\input{classicthesis.sty}
-\usepackage{euler}
-
-%%%%%%%%%%%%%%
-
-
-%%%%%%%%%%%%%%%
 
 %Theorem styles.
 
@@ -49,7 +47,12 @@
 \theoremstyle{remark}%[section]
 \newtheorem{remark}[theorem]{Remark}%[section]
 
+%Numbering and contents
+
 %\numberwithin{theorem}{section}
+\setcounter{tocdepth}{5}
+
+%Shorthand for hats.
 
 \newcommand{\G}{\mathcal{G}}
 \newcommand{\E}{\widehat{E}}
@@ -60,7 +63,7 @@
 
 \newcommand{\ucong}{\rotatebox{90}{$\cong$}}
 \title{Inverse Semigroups in Coarse Geometry.} 
-\date{July 2012}
+\date{March 2013}
 \author{Martin Finn-Sell}
 
 \begin{document}
