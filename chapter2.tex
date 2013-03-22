@@ -395,10 +395,22 @@ If you put $A= \mathbb{C}$ then the above definition reduces to that of a Hilber
 \subsection{Constructions of Groupoid \texorpdfstring{$C^{*}$}{C*}-algebras.} The standard technique for a locally compact group $G$ involves considering norm completions associated to representations of the ring of compactly supported functions on the group. We can associate a very natural representation on the $L^{2}(G,\mu)$, where $\mu$ is the Haar measure on $G$. To extend these ideas to a locally compact groupoid we will need an analogue of this measure in a suitably fibred manner.
 
 \begin{definition}
-A Haar system.
+A \textit{left Haar system} for a locally compact groupoid $\G$ is a family $\lbrace \lambda^{u} \rbrace$, where each $\lambda^{u}$ is a positive regular Borel measure on the locally compact Hausdorff $\G^{u}$, such that the following hold:
+\begin{enumerate}
+\item the support of each $\lambda^{u}$ is the whole of $\G^{u}$;
+\item for any $g \in C_{c}(\G)$, the function $g^{0}$, where:
+\begin{equation*}
+g^{0}(u)=\int_{\G^{u}}g d\lambda^{u}
+\end{equation*}
+belongs to $C_{c}(\G^{(0)})$.
+\item for any $x \in \G$ and $f \in C_{c}(\G)$,
+\begin{equation*}
+\int_{\G^{d(x)}}f(xz)d\lambda^{d(x)}(z) = \int_{\G^{r(x)}}f(y)d\lambda^{r(x)}(y)
+\end{equation*}
+\end{enumerate}
 \end{definition}
 
-We now observe that when the groupoid is \'etale it is possible to take as a Haar system the counting measure (this fact is Proposition ...  in \cite{}). This eases the passage through calculations significantly and so we make the assumption that $G$ is locally compact and \'etale from now on. We now give explicit formulae for the convolution product and adjoint on $C_{c}(G)$. This is taken from \cite{MR2419901}. For every $f,g \in C_{c}(\G)$:
+We now observe that when the groupoid is \'etale it is possible to take as a Haar system the counting measure (this fact is a consequence of Proposition 2.2.5  in \cite{MR1724106}). This eases the passage through calculations significantly and so we make the assumption that $G$ is locally compact and \'etale from now on. We now give explicit formulae for the convolution product and adjoint on $C_{c}(G)$. This is taken from \cite{MR2419901}. For every $f,g \in C_{c}(\G)$:
 \begin{eqnarray*}
 (f \ast g)(\gamma) & = & \sum_{\substack{(\sigma,\tau) \in \G^{(2)}\\ \sigma\tau=\gamma}}f(\sigma)g(\tau)\\
 f^{*}(\gamma) & = & \overline{f(\gamma^{-1})} 
@@ -563,3 +575,135 @@ If, in addition the inverse monoid $S$ is 0-F-inverse, then it satisfies the fin
 
 
 \section{K-theory of \texorpdfstring{$C^{*}$}{C*}-algebras}
+In this section we give the basic definitions of operator K-theory, following the exposition of \cite{MR1222415}. There are many alternative texts that could be followed instead, such as: \cite{MR2340673,MR1656031} but the explicit calculations make \cite{MR1222415} exceptionally clear. In this section, we will consider only unital $C^{*}$-algebras. It is possible to perform the calculations required for the proofs of these facts via the unitisation; this is similar to working with locally compact spaces in topological K-theory.
+
+\begin{definition}
+A projection in a $C^{*}$-algebra is a self-adjoint idempotent operator. That is $p=p^{*}=p^{2}$ (i.e $p^{*}p=p$). A pair of projections $p$ and $q$ are orthogonal if $pq=0$. 
+\end{definition}
+
+\begin{lemma}
+The sum $p+q$ of two projections $p$ and $q$ is a projection if and only if $p$ and $q$ are orthogonal.\qed
+\end{lemma}
+
+\begin{definition}
+Let $p,q \in A$ be projections. 
+\begin{enumerate}
+\item $p$ is said to be \textit{equivalent} to $q$, $p \sim q$, if there exists a partial isometry $v \in A$ such that $p=v^{*}v$ and $q=vv^{*}$.
+\item $p$ is said to be \textit{unitarily equivalent} to $q$, $p \sim_{u} q$, if there exists a unitary $u \in A$ such that $p=u^{*}qu$.
+\item $p$ is said to be \textit{homotopic} to $q$, $p \sim_{h} q$, is there exists a norm continous path of projections $p_{t}$ such that $p_{0}=p$ and $p_{1}=q$.
+\end{enumerate}
+\end{definition}
+
+\begin{proposition}
+If $p$ and $q$ are projections in $A$, then: $p \sim_{h} q \Rightarrow p \sim_{u} q \Rightarrow p \sim q$.\qed
+\end{proposition}
+
+These relations are not in general reversible; If one is willing to work with matrix algebras $M_{n}(A)$ over $A$, then they are however.
+
+\begin{lemma}
+Let $p,q$ be projections in $A$. Then $p \sim q \Rightarrow diag(p,0) \sim_{u} diag(q,0)$ and $p \sim_{u} q \rightarrow diag(p,0) \sim_{h} diag(q,0)$.
+\end{lemma}
+
+In defining K-theory, similar to both topological K-theory and algebraic K-theory, we will actually be considering a \textit{stabilisation} of $A$. In this setting this is equivalent to working with $M_{\infty}(A)$. Lastly, need a result that allows a "sum" of projections to be well defined up to equivalence. The trick, again, is to rely on passing to a matrix algebra; given $p,q \in A$ projections, we observe that $diag(0,p)$ is unitarily equivalent to $diag(p,0)$, and orthogonal to $diag(q,0)$. We define: $[p] + [q] = [diag(p,q)]$. 
+
+\begin{definition}
+Let $A$ be a $C^{*}$-algebra. We denote by $Proj(A)$ to be the set of equivalence classes of projections in $M_{\infty}(A)$. With the sum, $+$ defined above, this is a commutative monoid. We denote by $K_{0}(A)$ the Grothendieck group of $Proj(A)$.
+\end{definition}
+
+A morphism $A \rightarrow B$ naturally extends entrywise to $M_{\infty}(A) \rightarrow M_{\infty}(B)$; These morphisms induce maps $Proj(A) \rightarrow Proj(B)$ which then pass to the Grothendieck group $K_{0}(A) \rightarrow K_{0}(B)$
+
+\begin{lemma}\label{lem:ses}
+To any short exact sequence $0 \rightarrow C \rightarrow B \rightarrow \frac{C} \rightarrow 0$ we get an induced half-exact sequence, using the entrywise induced maps discussed above:
+\begin{equation*}
+K_{0}(A) \rightarrow K_{0}(B) \rightarrow K_{0}(C)
+\end{equation*}
+\end{lemma}
+
+The definition of $K_{1}$ is more technical and is constructed from unitaries instead of projections. We present it tersely here.
+
+\begin{definition}
+$K_{1}(A):= \frac{GL(A)}{GL(A)_{0}}$.
+\end{definition}
+
+In particular, for a finite invertible matrix $u \in GL_{n}(A)$, the class $[u] \in K_{1}(A)$ is the connected component containing $diag(u,1_{\infty}) \in GL(A)$. Similar to Lemma \ref{lem:ses}:
+
+\begin{lemma}\label{lem:ses2}
+To any short exact sequence $0 \rightarrow C \rightarrow B \rightarrow \frac{C} \rightarrow 0$ we get an induced half-exact sequence:
+\begin{equation*}
+K_{1}(A) \rightarrow K_{1}(B) \rightarrow K_{1}(C)
+\end{equation*}
+\end{lemma}
+
+\begin{definition}(Boundary map)\cite[Def. 8.1.1]{MR1222415}
+Let $J \triangleleft A$ and let $x \in K_{1}(\frac{A}{J})$. Then we can find a $u \in \mathcal{U}_{n}^{+}(\frac{A}{J})$ such that $x=[u]$ and $v \in \mathcal{U}_{k}^{+}(\frac{A}{J})$ such that $diag(u,v)$ is homotopic to $1_{n+k}$ in $\mathcal{U}_{n+k}^{+}(\frac{A}{J})$. Let $w zin \mathcal{U}_{n+k}^{+}(A)$ be a lift of $diag(u,v)$. Then the \textit{boundary map} $\delta: K_{1}(\frac{A}{J}) \rightarrow K_{0}(J)$ is defined by:
+\begin{equation*}
+\delta(x):= [wp_{n}w^{*}]-[p_{n}]
+\end{equation*}
+is a well-defined group homomorphism.
+\end{definition}
+
+\begin{lemma}
+This gives us a long exact sequence:
+\begin{equation*}
+K_{1}(J) \rightarrow K_{1}(A) \rightarrow K_{1}(\frac{A}{J})\rightarrow^{\delta} K_{0}(J) \rightarrow K_{0}(A) \rightarrow K_{0}(\frac{A}{J})
+\end{equation*}
+\end{lemma}
+
+\begin{definition}
+Suspension, alternative $K_{n}$.
+\end{definition}
+
+\begin{theorem}(Bott Periodicity)
+There is an isomorphism $K_{0}(A)\cong K_{0}(S^{2}A)$.
+\end{theorem}
+
+Ideas from this theme give us that our long exact sequence is infact a \textit{cyclic} exact sequence of length $6$:
+
+\begin{theorem}
+Given a short exact sequence $0 \rightarrow J \rightarrow A \rightarrow \frac{A}{J} \rightarrow 0$ there is a cyclic long exact sequence:
+\begin{equation*}
+\xymatrix@=1em{
+K_{0}(J) \ar[r] & K_{0}(A) \ar[r]& K_{0}(\frac{A}{J})\ar[d] & \\
+K_{1}(\frac{A}{J})\ar[u]^{\mu}& K_{1}(A) \ar[l]& K_{1}(J)\ar[l] &
+}
+\end{equation*}
+\end{theorem}
+
+This six term sequence is a key tool in computations concerning K-theory of $C^{*}$-algebras related in an extension.
+
+The last ideas that are outlined in this section are those of Pimsner and Voiculescu on actions of groups on $C^{*}$-algebras via automorphisms.
+
+\begin{definition}
+Let $A$ be a $C^{*}$-algebra and let $\rho: G \rightarrow Aut(A)$ be a representation of a group $G$. Then we can naturally form the $C^{*}$-algebra $A\rtimes_{r}G$; it is the completion of...
+\end{definition}
+
+The following is original result of Pimsner-Voiculescu concerning the structure of infinite cyclic group actions \cite{MR670181}:
+
+\begin{theorem}\cite[Theorem 10.2.1]{MR1222415}
+Let $A$ be a $C^{*}$-algebra and let $\alpha \in Aut(A)$. Then there is a cyclic $6$-term exact sequence:
+\begin{equation*}
+\xymatrix@=1em{
+K_{0}(A) \ar[r]^{1-\alpha_{*}} & K_{0}(A) \ar[r]^{i_{*}}& K_{0}(A\rtimes \mathbb{Z})\ar[d] & \\
+K_{1}(A \rtimes \mathbb{Z})\ar[u]& K_{1}(A) \ar[l]^{i_{*}}& K_{1}(A)\ar[l]^{1-\alpha_{*}} &
+}
+\end{equation*}
+\end{theorem}
+
+The main idea of this result is that it gives an understanding of a crossed product structure by looking at only the induced action on the K-theory groups of the coefficient algebra. The main issue is that in general these can be as bad as one wants, so computations of the action could be particularly bad.
+
+These ideas naturally extend to free group actions by automorphisms \cite{MR670181}:
+
+\begin{theorem}\cite[Theorem 10.8.1]{MR1222415}\label{thm:BPV2}
+Let $\alpha_{i}$, $i \in \lbrace 1,...,k \rbrace$ be elements of $Aut(A)$ that give a representation of $F_{k}$. Then there is a cyclic $6$-term sequence:
+\begin{equation*}
+\xymatrix@=1em{
+\bigoplus_{i=1}^{k}K_{0}(A) \ar[r]^{\rho} & K_{0}(A) \ar[r]^{i_{*}}& K_{0}(A\rtimes_{r} F_{k})\ar[d] & \\
+K_{1}(A \rtimes_{r} F_{k})\ar[u]& K_{1}(A) \ar[l]^{i_{*}}& \bigoplus_{i=1}^{k} K_{1}(A)\ar[l]^{\rho} &
+}
+\end{equation*}
+with $\rho:= \sum_{i=1}^{k}(1-\alpha_{i,*})$.
+\end{theorem}
+
+The major Corollary of this result gives a computation of the K-theory of a Free group $C^{*}$-algebra inductively by considering the action on $\mathbb{C}$.
+
+Generalisations of this situation to F-inverse monoids play the main role in the next chapter.

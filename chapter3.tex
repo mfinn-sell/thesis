@@ -1,7 +1,7 @@
 \setstretch{1.6}
 \chapter{Partial Translations and Inverse Semigroups.}
 
-In this chapter we outline the construction of a short exact sequence of $C^{*}$-algebras associated to an F-inverse monoid $S$ that relates the reduced $C^{*}$-algebra of $S$ to the reduced group $C^{*}$-algebra of its maximal group homomorphic image. We then make use of this result in a metric context; to any subspace $X$ of a given finitely generated discrete group $G$ we associate an object called a \textit{partial translation structure} to $X$. This has a naturally associated inverse monoid and we investigate precisely when this inverse monoid is F-inverse. In this case, we construct an analogue of the short exact sequence for the inverse monoid. This has applications within K-theory, which we discuss at the end of the chapter.
+In this chapter we outline the construction of a short exact sequence of $C^{*}$-algebras associated to an F-inverse monoid $S$ that relates the reduced $C^{*}$-algebra of $S$ to the reduced group $C^{*}$-algebra of its maximal group homomorphic image; this sequence generalises some of the ideas present in the proof of Theorem \ref{thm:BPV2}. We then make use of this result in a metric context; to any subspace $X$ of a given finitely generated discrete group $G$ we associate an object called a \textit{partial translation structure} to $X$. This has a naturally associated inverse monoid and we investigate precisely when this inverse monoid is F-inverse. In this case, we construct an analogue of the short exact sequence for the inverse monoid. This has applications within K-theory, which we discuss at the beginning of the Chapter 5.
 
 \section{A Pimsner-Voiculescu short exact sequence for an F-inverse monoid.}\label{sect:S1}
 In this section we construct a short exact sequence that can naturally be associated to an F-inverse monoid. The process of doing this requires careful analysis of the representation theory of the universal groupoid of a 0-F-inverse monoid in general. Later in Section \ref{sect:S1-a} we utilise this machinery to prove the following theorem, which is Theorem \ref{thm:PV1} in the text.
@@ -229,7 +229,7 @@ Where $a^{n}_{t}$ is the constant function on $D_{tt^{*}}$ with value $f_{t}^{n}
 Let $U_{n}=(T_{n}-S_{n})$. Then $U_{n} \in A$ and $U_{n}=(T_{n}-S_{n}) \rightarrow (T-0)=T$, so T can be approximated by elements in $A$, hence $A$ is dense in $ker(q)$.
 \end{proof} 
 \section{A similar sequence for 0-F-inverse monoids}\label{sect:S2}
-In this section we consider a generalisation of Theorem \ref{thm:PV1} to strongly 0-F-inverse monoids with K-exact universal group. First we need some terminology of \cite{}.
+In this section we consider a generalisation of Theorem \ref{thm:PV1} to strongly 0-F-inverse monoids with K-exact universal group. First we need some terminology of \cite{MR1911663}.
 
 \begin{definition}
 Let $\G$ be an locally compact \'etale groupoid and let $F$ be a subset of the unit space $\G^{(0)}$. We say that $F$ is \textit{saturated} if for all $\gamma \in \G$ with $s(\gamma) \in F$ we also have $r(\gamma)\in F$. 
@@ -245,7 +245,7 @@ Let $U$ be a saturated subset of $\G^{(0)}$ and let $x \in U$, $y \in U^{c}$. As
 \end{proof}
 
 \begin{theorem}\label{thm:PV2}
-Let $S$ be a strongly $0$-F-inverse monoid with universal group $G:=U(S)$. If $G$ is $K$-exact then the sequence:
+Let $S$ be a strongly $0$-F-inverse monoid with universal group $G:=U(S)$. If $G$ is infinite and $K$-exact then the sequence:
 \begin{equation*}
 0 \rightarrow C^{*}_{r}(\G_{\U}) \rightarrow C^{*}_{r}(\G_{\E}) \rightarrow C^{*}_{r}(\G_{\E_{tight}}) \rightarrow 0
 \end{equation*}
@@ -270,7 +270,7 @@ where the isomorphisms are induced by the Morita equivalences given by Theorems 
 
 
 \section{Translation Structures to Inverse Monoids}
-In this section we outline the definition of a partial translation structure and describe some of the main results concerning them. Focusing on a special case, what we call \textit{grouplike partial translation structures}, we characterise uniform embeddability into a groups for metric spaces.  We then outline an inverse monoid approach to understanding the translation algebra that can be naturally associated to a partial translation structure.
+In this section we outline the definition of a partial translation structure and describe some of the main results concerning them. Focusing on a special case, what we call \textit{grouplike partial translation structures}, we connect to uniform embeddability into groups for metric spaces to translation structures.  We then outline an inverse monoid approach to understanding the translation algebra that can be naturally associated to a partial translation structure.
 
 The concept of a partial translation structure was given in \cite{MR2363428} to study uniform embeddability into groups. By associating to a metric space this additional information, namely a collection of partial bijections that form entourages in the metric coarse structure, you gain control over the local symmetries of the space that preserve metric information. 
 
@@ -292,11 +292,8 @@ A partial translation structure on X is said to be \textit{globally controlled} 
 \begin{lemma}\label{lem:L10}
 Let $G$ be a group. $G$ acts on itself on the right by translations. Let $X \subseteq G$ then the restriction of the action of $G$ on itself to the subspace $X$ is a translation structure on $X$ that is free and globally controlled.
 \end{lemma}
-\begin{proof}
 
-\end{proof}
-
-The intuition for the definition \ref{PT2} is a metric version of a group ``action" for the space, with freeness and global control making the ``action" more like that of a group. (Group actions have these properties, by lemma \ref{lem:L10})
+The intuition for the Definition \ref{PT2} is a metric version of a group ``action" for the space, with freeness and global control making the ``action" more like that of a group. (Group actions have these properties, by Lemma \ref{lem:L10})
 
 \begin{definition}\label{def:ZD1}
 Let $\mathcal{T}$ be a partial translation structure. Then we say $\mathcal{T}$ has \textit{zero divisors} if there exists a product of disjoint translations $t_{1},t_{2},...,t_{n} \in \mathcal{T}$ such that $t_{1}t_{2}t_{3}...t_{n}$ is empty (i.e has empty domain). We say $\mathcal{T}$ has no zero divisors if no such product is empty.
@@ -386,7 +383,7 @@ The compliment of $\sigma (T_{x_{0}})$ is not coarsely dense in $G$.
 The proof is a direct consequence of theorem \ref{thm:T2}. The translation structure $\mathcal{T}_{G}|_{X}$ has no zero divisors; and using proposition \ref{prop:TFAE} iii) $\Rightarrow$ i) we reach the desired conclusion.
 \end{proof}
 
-In summary, Theorem (\ref{thm:T2}) provides us a wealth of examples of F-inverse monoids with the added information of a concrete representation on an interesting metric space. It turns out that this provides a simplification to Theorem (\ref{thm:T1}) when dealing with such representations.
+In summary, Theorem \ref{thm:T2} provides us a wealth of examples of F-inverse monoids with the added information of a concrete representation on an interesting metric space. It turns out that this provides a simplification to Theorem \ref{thm:PV1} when dealing with such representations.
 
 \subsection{Translation Algebras}
 Let $X$ be a uniformly discrete bounded geometry metric space.
@@ -395,17 +392,13 @@ Let $X$ be a uniformly discrete bounded geometry metric space.
 The translation algebra associated with a partial translation structure $\mathcal{T}$ on $X$, denoted by $C^{*}\mathcal{T}$, is the completion as a *-subalgebra of $\mathcal{T}$ viewed as bounded operators on $\ell^{2}(X)$
 \end{definition}
 
-The aim of this section is to give a description of the partial translation algebra associated to a grouplike $\mathcal{T}$ with no zero divisors as the $C^{*}$-algebra of a groupoid, where the groupoid is related to the inverse monoid generated by the partial translations. We then recast a result of Brodzki, Niblo, Putwain and Wright \cite[Theorem 8.3]{Rosiesthesis} outlining a short exact sequence of $C^{*}$-algebras arising from such translation structures and compute some examples in certain cases.
+The aim of this section is to give a description of the partial translation algebra associated to a grouplike $\mathcal{T}$ with no zero divisors as the $C^{*}$-algebra of a groupoid, where the groupoid is related to the inverse monoid generated by the partial translations. We then recast a result of Brodzki, Niblo, Putwain and Wright \cite[Theorem 8.3]{rosiesthesis} outlining a short exact sequence of $C^{*}$-algebras arising from such translation structures and compute some examples in certain cases.
 
-The results in \cite[Theorem 1, Theorem 2]{MR2457037} allow us to draw the conclusion that the left regular representation of $S$ does not generate the correct covariant groupoid representation in general, however appears to match in the case of the Toeplitz algebra. This suggests that we are missing some information, but depending on the structure of the space this may not be necessary information. The information carried over from the partial translation structure that has not been used in this instance is the representation on $I(X)$, which determines a representation on $\ell^{2}(X)$ in the standard way. This representation will be the focus of this section. The following is \cite[Prop 10.6]{MR2419901}
+Theorem 1 and 2 in \cite{MR2457037} allow us to draw the conclusion that the left regular representation of $S$ does not generate the correct covariant groupoid representation in general, however appears to match in the case of the Toeplitz algebra. This suggests that we are missing some information, but depending on the structure of the space this may not be necessary information. The information carried over from the partial translation structure that has not been used in this instance is the representation on $I(X)$, which determines a representation on $\ell^{2}(X)$ in the standard way. This representation will be the focus of this section. The following is Proposition 10.6 \cite{MR2419901}
 
 \begin{proposition}\label{prop:P7} 
 Let $\mu$ be a representation of $S$ on a Hilbert Space $H$. Then there exists a unique *-representation $\pi_{\mu}$ of $C_{0}(\E)$ on $H$ such that $\pi_{\mu}(1_{e})=\mu(e)$ for every $e \in E$ In addition $(\pi_{\mu} \times \mu)$ is a covariant representation for $\G_{\E}$. 
 \end{proposition}
-\begin{proof}
-%Give a proof of this.
-\end{proof}
-
 
 The proof of the above result relies on the spectrum of the commutative $C^{*}$-subalgebra $A=C^{*}(E)$ of $C^{*}_{r}(S)$. We denote the spectrum by $\A$.
 
@@ -594,10 +587,10 @@ Let $X \subset G$, $\mathcal{T}=\mathcal{T}_{G}|_{X}$ be a grouplike partial tra
 Where the middle term is the translation algebra associated to $X$ arising from $\mathcal{T}$
 \end{theorem}
 \begin{proof}
-The proof follows the same lines as the proof of theorem \ref{thm:T1}.
+The proof follows the same lines as the proof of Theorem \ref{thm:PV1}.
 \begin{enumerate}
 \item The map defined on finite sums still has the desired properties, i.e a finite sum is in the kernel if and only if all its components are 0.
-\item We still have the same pullbacks of constant functions to the entire space; This enables the same construction of approximating elements; who each have the same norm control property provided by corollary \ref{cor:C1}.
+\item We still have the same pullbacks of constant functions to the entire space; This enables the same construction of approximating elements; who each have the same norm control property provided by Corollary \ref{cor:C1}.
 \item We can then conclude that the kernel is the desired algebra (by density).
 \end{enumerate}
 \end{proof}

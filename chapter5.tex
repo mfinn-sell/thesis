@@ -63,7 +63,7 @@ We remark that Theorem \ref{Thm:Norling} of Norling now gives a direct computati
 \end{example}
 
 \begin{example}(Bridget-Rhodes expansion of a group)
-In this instance there is much more interesting K-theory arising from Theorem \ref{Thm:Norling}. The Bridget-Rhodes expansion of a group \cite{MR745358,MR2221438} was first outlined in Section \ref{sect:BRE} as an example. We recall the construction again for clarity.
+In this instance there is much more interesting K-theory arising from Theorem \ref{Thm:Norling}. The Bridget-Rhodes expansion of a group \cite{MR745358,MR2221438} was first outlined in Section \ref{Sect:S3} as an example. We recall the construction again for clarity.
 
 In the context of a group $G$ we define an a set $S(G)$, the elements are given by pairs: $(X,g)$ for $\lbrace 1,g\rbrace \subset X$, where $X$ is a finite subset of $G$. The set of such $(X,g)$ is then equipped with a product and inverse:
 \begin{equation*}
@@ -109,7 +109,7 @@ Let $X$ be the subset of the free group $F_{n}=\langle a_{1},...,a_{n} \rangle$ 
 \begin{equation*}
 0 \rightarrow \mathcal{K}(\ell^{2}(X)) \rightarrow C^{*}\mathcal{T}_{n} \rightarrow C^{*}_{r}F_{n} \rightarrow 0.
 \end{equation*}
-This sequence is the translation algebra sequence that arises from Theorem \ref{thm:T4}. In addition to this sequence the authors of \cite{} gave a computation of the K-theory groups associated to $C^{*}\mathcal{T}_{n}$ as those for $C^{*}_{r}F_{n-1}$, giving an inductive method for computing the K-theory of a free group $C^{*}$-algebra. We give a new proof using the generalised short exact sequence from Theorem \ref{thm:PV1} and Theorem \ref{Thm:Norling}.
+This sequence is the translation algebra sequence that arises from Theorem \ref{thm:T4}. In addition to this sequence the authors of \cite{MR670181} gave a computation of the K-theory groups associated to $C^{*}\mathcal{T}_{n}$ as those for $C^{*}_{r}F_{n-1}$, giving an inductive method for computing the K-theory of a free group $C^{*}$-algebra. We give a new proof using the generalised short exact sequence from Theorem \ref{thm:PV1} and Theorem \ref{Thm:Norling}.
 
 For this subspace the behavour is exceptionally like the Toeplitz shift in Example \ref{Ex:Toe}, however it is decidedly more complex than in that instance.
 
@@ -131,10 +131,10 @@ $$
 }
 $$
 
-This indicates that whilst the translation algebra $C^{*}\mathcal{T}_{n}$ does not have the same K-theory as $C^{*}_{r}(S)$, the K-theory sequence is split (this relies on the results of Pimsner-Voiculescu \cite{}: $K_{*}(C^{*}\mathcal{T}_{n}))\cong K_{*}(C^{*}_{r}(F_{n-1}))$), so we are picking out the correct K-theory group as well as much more complex information that comes from the product structure on the idempotents. This is connected to regularisation of the generating set for the basis of $\E$, and will be discussed later in the section.
+This indicates that whilst the translation algebra $C^{*}\mathcal{T}_{n}$ does not have the same K-theory as $C^{*}_{r}(S)$, the K-theory sequence is split (this relies on the results of Pimsner-Voiculescu \cite{MR670181}: $K_{*}(C^{*}\mathcal{T}_{n}))\cong K_{*}(C^{*}_{r}(F_{n-1}))$), so we are picking out the correct K-theory group as well as much more complex information that comes from the product structure on the idempotents. This is connected to regularisation of the generating set for the basis of $\E$, and will be discussed later in the section.
 
 \begin{example}(Polycyclic monoids, Strong orthogonal completions and the Cuntz extension)
-Let $X$ be the set of all the positive words within the free group $F_{n}$. We consider the inverse monoid that arises from the induced translation structure. In this case the inverse monoid has a zero element and satisfies the relations: $t_{a_{i}}^{*}t_{a_{j}}=\delta_{ij}$, $t_{a_{i}}t_{a_{i}}^{*} \leq 1$. The inverse monoid satisfying this relation is called the \textit{polycyclic monoid} \cite{}, which is a generalisation of the Bicyclic monoid. We denote this inverse monoid by $P_{n}$.
+Let $X$ be the set of all the positive words within the free group $F_{n}$. We consider the inverse monoid that arises from the induced translation structure. In this case the inverse monoid has a zero element and satisfies the relations: $t_{a_{i}}^{*}t_{a_{j}}=\delta_{ij}$, $t_{a_{i}}t_{a_{i}}^{*} \leq 1$. The inverse monoid satisfying this relation is called the \textit{polycyclic monoid} \cite{MR2372319}, which is a generalisation of the Bicyclic monoid. We denote this inverse monoid by $P_{n}$.
 
 
 In this case, we again have that $E(P_{n})$ is in bijection with $X$, which is a rooted binary tree. Hence $\E(P_{n}) \cong \X$. However, many of the domains of translation are infinite with infinite compliment and so we have nontrivial ultrafilters to consider. In general we should consider tight filters, as the closure of the ultrafilters, but by work of Lawson \cite{lawson-2011-1} $P_{n}$ is compactible for each $n$, that is the ultrafilters are closed in the subspace topology on $\E$. As a free group is exact, we can appeal to Theorem \ref{thm:PV2} to get a short exact sequence:
@@ -159,7 +159,7 @@ It follows, from von Neumann equivalence of projections, that each $t_{a_{i}}t_{
 
 \subsection{What happens for the partial translation structure reduction in general?}
 
-In Example \ref{ex:PV} we observed that the inverse monoid generated by the translation structure had K-theory groups that were relatively easy to calculate but much too large. This phenomenon is not uncommon; the same computation using the subspaces present in the work of Lance \cite{} also provide too rich a structure. This additional structure arises as the basis for topology on $\E$ that we are using to apply results of Norling and Cuntz-Echerhoff-Li rely on the \textit{regular} basis property. We also observe that the natural elements that contribute to the correct K-theory groups in these instances are precisely the idempotents $t_{w}^{*}t_{w}$ that arise from words $w \in F_{n}$, as opposed to their products. This essentially says that considering the generating set over the regular basis it generates appears to give the correct answer.
+In Example \ref{ex:PV} we observed that the inverse monoid generated by the translation structure had K-theory groups that were relatively easy to calculate but much too large. This phenomenon is not uncommon; the same computation using the subspaces present in the work of Lance \cite{MR723010} also provide too rich a structure. This additional structure arises as the basis for topology on $\E$ that we are using to apply results of Norling and Cuntz-Echerhoff-Li rely on the \textit{regular} basis property. We also observe that the natural elements that contribute to the correct K-theory groups in these instances are precisely the idempotents $t_{w}^{*}t_{w}$ that arise from words $w \in F_{n}$, as opposed to their products. This essentially says that considering the generating set over the regular basis it generates appears to give the correct answer.
 
 We also remark that the large diagram constructed in Example \ref{ex:PV} can be constructed for \textit{any} translation structure. To apply Theorem \ref{Thm:Norling} however we restrict to discrete groups with the Haagerup property. So we have the following diagram:
 
@@ -181,7 +181,7 @@ Is $K_{*}(C^{*}\mathcal{T}) \cong \bigoplus_{w \in G} K_{0}(C^{*}_{r}(G_{t_{w}^{
 \end{question}
 
 \section{A counterexample to the Boundary Conjecture.}
-In this section we develop the ideas of Higson, Lafforgue and Skandalis concerning the counterexamples to the coarse Baum-Connes conjecture further, to construct a metric space that has the properties constructed in \cite{} at infinity. The main idea is to decompose the boundary groupoid further, giving a new short exact sequence at infinity similar to the sequences considered in Chapter 4. From this, we then construct an operator that is not a ghost operator, but is ghostly on certain parts of the boundary. A tracelike argument, similar to those of \cite{higsonpreprint, explg1, }, then completes the proof.
+In this section we develop the ideas of Higson, Lafforgue and Skandalis concerning the counterexamples to the coarse Baum-Connes conjecture further, to construct a metric space that has exceptionally bad properties at infinity. The main idea is to decompose the boundary groupoid further, giving a new short exact sequence at infinity similar to the sequences considered in Chapter 4. From this, we then construct an operator that is not a ghost operator, but is ghostly on certain parts of the boundary. A tracelike argument, similar to those of \cite{higsonpreprint, explg1}, then completes the proof.
 
 \subsection{The space and its non-ghosts.}
 
@@ -189,7 +189,7 @@ The space we are going to consider first appeared in \cite{MR2363697}.
 
 Let $\lbrace X_{i} \rbrace_{i \in \mathbb{N}}$ be a sequence of finite graphs. Then we construct a space similar to a space of graphs in the following manner: Let $Y_{i,j} = X_{i}$ for all $j \in \mathbb{N}$ and consider $Y:= \sqcup_{i,j} Y_{i,j}$. We metrize this space using a box metric - that is with the property that $d(Y_{i,j},Y_{k,l}) \rightarrow \infty$ as $i+j+k+l \rightarrow \infty$. 
 
-Now let $\lbrace X_{i} \rbrace_{i}$ be an expander sequence. As discussed in section \ref{Sect:GO}, we can construct a ghost operator $p= \prod_{i} p_{i}$ on $X$, the space of graphs of $\lbrace X_{i} \rbrace_{i}$. Similarly, we can construct this operator on $Y$. In this situation we get a projection $q:=\prod_{i,j}p_{i} \in C^{*}_{u}Y$, which is a constant operator in the $j$ direction. This was precisely the operator of interest in \cite{MR2363697}, as it can be seen that $q$ is not a ghost operator, as its matrix entries do not vanish in the $j$ direction - a fact proved below in Lemma \ref{Lem:nag}.
+Now let $\lbrace X_{i} \rbrace_{i}$ be an expander sequence. As discussed in Section \ref{Sect:GO}, we can construct a ghost operator $p= \prod_{i} p_{i}$ on $X$, the space of graphs of $\lbrace X_{i} \rbrace_{i}$. Similarly, we can construct this operator on $Y$. In this situation we get a projection $q:=\prod_{i,j}p_{i} \in C^{*}_{u}Y$, which is a constant operator in the $j$ direction. This was precisely the operator of interest in \cite{MR2363697}, as it can be seen that $q$ is not a ghost operator, as its matrix entries do not vanish in the $j$ direction - a fact proved below in Lemma \ref{Lem:nag}.
 
 Recall that associated to $Y$ we have a short exact sequence of $C^{*}$-algebras:
 \begin{equation*}
@@ -334,36 +334,40 @@ From the point of view of \cite{MR1905840}, the coarse conjecture for any unifor
 
 On the other hand, the question of when a groupoid admits a transformation groupoid decompostion, up to Morita equivalence, has been well studied for the class of groupoids that are constructed from suitable inverse semigroups \cite{MR1900993,Milan-Steinberg}. This is related to the problem of globalisation of a partial action of $\Gamma$ on a space $X$. The result would be a space $Y$, with a true action of $\Gamma$ such that $X \hookrightarrow Y$ is a topological embedding and the enlargement of the $\Gamma$ action by restricting the maps to $X$ induces the original partial action.
 
-The problem of globalisation of partial actions of groups has been considered in a variety of settings \cite{MR0160848, MR1798993, MR2041539, MR2419858, MR1900993, Milan-Steinberg}, each using the same central theme.
-
+The problem of globalisation of partial actions of groups was discussed in Section \ref{Sect:S3}. We recall the central idea:
 \begin{definition}
 Let $X$ be a topological space and let $G$ be a group acting partially on $X$. Then we denote by $\Omega$ the \textit{Morita evelope} of the action of $G$ on $X$, which is constructed as follows:
 
 Consider the space $X\times \Gamma$, equipped with the product topology. Then define $\sim$ on $X\times \Gamma$ by $(x,g)\sim (y,h)$ if there exists $\gamma \in \G$ with $x(h^{-1}g)=y$. We define $\Omega$ as the quotient of $X\times \Gamma$ by $\sim$ with the quotient topology. 
 \end{definition}
 
-The main idea that was presented first by Khoskham and Skandalis \cite{MR1900993} was the concept of a \textit{group valued cocycle}, which we outline below. Milan and Steinberg then developed this idea much further, giving an almost full answer to the problem of which groupoids are Morita equivalent to a transformation groupoid \cite{Milan-Steinberg}.
-
-
 \subsection{Some remarks about the coarse groupoid.}
 
-From earlier work in Chapter \ref{} any space that coarsely embeds into a group admits a grouplike partial translation structure. We equip the expander sequence coarsely embedded in our Gromov monster group with this translation structure. The results of Chapter \ref{} then tell us that there is a groupoid $\G(\mathcal{T})$, such that the translation algebra is isomorphic to the reduced groupoid  $C^{*}$-algebra $C^{*}_{r}(\G(\mathcal{T})$. 
+From earlier work in Chapter 3 any space that coarsely embeds into a group admits a grouplike partial translation structure. We equip the expander sequence coarsely embedded in our Gromov monster group with this translation structure. The results of Chapter 3 then tell us that there is a groupoid $\G(\mathcal{T})$, such that the translation algebra is isomorphic to the reduced groupoid  $C^{*}$-algebra $C^{*}_{r}(\G(\mathcal{T})$. 
 
-Using Claim \ref{} the translations of $\mathcal{T}$ are the only elements we need to be understand when working with $\G(\mathcal{T})$. From the definition of $\mathcal{T}$ we can think of a translation structure as providing us an excellent generating set for the metric coarse structure on the space $X$; the groupoid $\G(\mathcal{T})$ acts freely on $\beta X$, and we can generate now the coarse groupoid using this data:
+Using Claim \ref{MainClaim:C1} the translations of $\mathcal{T}$ are the only elements we need to be understand when working with $\G(\mathcal{T})$. From the definition of $\mathcal{T}$ we can think of a translation structure as providing us an excellent generating set for the metric coarse structure on the space $X$; the groupoid $\G(\mathcal{T})$ acts freely on $\beta X$, and we can generate now the coarse groupoid using this data:
 
 \begin{lemma}\label{Lem:CG}
 The coarse groupoid $G(X) \cong \beta X \rtimes \G(\mathcal{T}).$
 \end{lemma}
-\begin{proof}(Short)
-We observe that the set of $[t_{g},\widehat{D}_{t_{g}^{*}t_{g}}]$ covers $G(X)$; hence the collection $\mathcal{T}$ forms an admissible psuedogroup in the terminology of \cite{MR1905840}. The groupoid it generates is $\G(\mathcal{T})$. Then the result follows from \cite[Lemma 3.3b)]{MR1905840}.
+\begin{proof}
+We observe that the set of $[t_{g},\widehat{D}_{t_{g}^{*}t_{g}}]$ covers $G(X)$; hence the collection $\mathcal{T}$ forms an admissible psuedogroup in the terminology of \cite{MR1905840}. The groupoid it generates is $\G(\mathcal{T})$. Then the result follows from Lemma 3.3b) \cite{MR1905840}.
 \end{proof}
 
+Now, we prove the following interesting Lemma:
+
+\begin{lemma}\label{Lem:Strongly}
+Let $X$ be a metric space with a grouplike partial translation structure $\mathcal{T}$. Then the inverse submonoid $S=\langle \mathcal{T} \rangle \subset I_{b}(X)$ is strongly $0$-F-inverse.
+\end{lemma}
+\begin{proof}
+It was proved that the monoid was $0$-F-inverse earlier in Lemma \ref{Lem:PTS}. It follows that it is strongly $0$-F-inverse as the conditions of Proposition \ref{Prop:Strongly} are satisfied for $S$.
+\end{proof}
 
 \begin{proposition}\label{Prop:Cocycle}
 Let $X$ be a metric space and $G$ be a group such that $X$ is coarsely embedded into $G$. Then the translation groupoid $\G(\mathcal{T})$ admits a (T,C,F)-cocycle onto $G$.
 \end{proposition}
 \begin{proof}
-This follows immediately from Proposition \ref{Thm:Trick} and Corollary \ref{Cor:Trick}.
+This follows immediately from Lemma \ref{Lem:Strongly} and Corollary \ref{Thm:Trick}.
 \end{proof}
 
 \subsection{Non-exactness of a Gromov Monster.}
@@ -376,7 +380,7 @@ These groups were shown to exist by Gromov \cite{MR1978492}, with a detailed pro
 
 The rest of this chapter is deadicated to proving the following theorem:
 
-\begin{thm}\label{Thm:GM1}
+\begin{thm}
 Let $G$ be a Gromov monster group. Then there are locally compact Hausdorff topological $G$-spaces $Y_{i}$, $i \in \lbrace 1,2,3 \rbrace$ and a short exact sequence:
 \begin{equation*}
 0 \rightarrow C_{0}(Y_{1}) \rightarrow C_{0}(Y_{2}) \rightarrow C_{0}(Y_{3}) \rightarrow 0
@@ -418,7 +422,7 @@ The procedure we will follow will be a geometric analogue of this argument using
 
 The approach is via Theorem \ref{thm:PV2}:
 
-\begin{theorem}
+\begin{theorem}\label{Thm:GM1}
 Let $G$ be a Gromov monster group. Then there are locally compact Hausdorff topological $G$-spaces $Y_{i}$, $i \in \lbrace 1,2,3 \rbrace$ and a short exact sequence:
 \begin{equation*}
 0 \rightarrow C_{0}(Y_{1}) \rightarrow C_{0}(Y_{2}) \rightarrow C_{0}(Y_{3}) \rightarrow 0
@@ -478,8 +482,8 @@ The boundary groupoid $G(X)|_{\partial\beta X}$ admits a (T,C,F)-cocycle onto $F
 We remark that this follows directly from the fact that the coarse boundary groupoid $G(X)|_{\partial\beta X}$ has a decompostion as $\partial\beta X \rtimes \G_{\widehat{X}}$, and that $S_{inf}$ is strongly $0$-F-inverse.
 \end{proof}
 
-\begin{proof}(Of Theorem \ref{Thm:MT2}).
-Recall from the proof of Theorem \ref{Thm:MT1} that the groupoid $G(X)|_{\partial\beta X}$ is Morita equivalent to $Y_{3}\rtimes G$. Using Lemma \ref{Lem:MEFree} we know also that $Z:=(\partial\beta X \times F_{k} )/\sim$ is a locally compact Hausdorff space, arising from a (T,C,F)-cocycle onto $F_{k}$. This enables us to again appeal to either \cite[Theorem 6.14]{Milan-Steinberg} (Theorem \ref{Thm:IT2}) or \cite[Theorem 1.8]{MR1900993} (Theorem \ref{Thm:1.8}) to conclude that $G(X)|_{\partial\beta X}$ is Morita equivalent to $Z\rtimes F_{k}$. The Theorem then follows from transitivity of Morita equivalence.
+\begin{proof}(Of Theorem \ref{Thm:GM2}).
+Recall from the proof of Theorem \ref{Thm:GM1} that the groupoid $G(X)|_{\partial\beta X}$ is Morita equivalent to $Y_{3}\rtimes G$. Using Lemma \ref{Lem:MEFree} we know also that $Z:=(\partial\beta X \times F_{k} )/\sim$ is a locally compact Hausdorff space, arising from a (T,C,F)-cocycle onto $F_{k}$. This enables us to again appeal to either \cite[Theorem 6.14]{Milan-Steinberg} (Theorem \ref{Thm:IT2}) or \cite[Theorem 1.8]{MR1900993} (Theorem \ref{Thm:Trick}) to conclude that $G(X)|_{\partial\beta X}$ is Morita equivalent to $Z\rtimes F_{k}$. The Theorem then follows from transitivity of Morita equivalence.
 \end{proof}
 
 Theorem \ref{Thm:GM2} has an important corollary, as the Baum-Connes conjecture with coefficients is a Morita invariant:

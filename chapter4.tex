@@ -2,10 +2,10 @@
 \chapter{Counterexamples to Baum-Connes and Large Girth expanders.}
 In this chapter we develop the basic concepts of coarse geometry for metric spaces, and outline some coarse properties that can be associated to a metric space. We then outline certain analytic group and groupoid properties, and connect these to their coarse counterparts. Secondly, we introduce the coarse Baum-Connes conjecture for proper metric spaces and outline machinery to construct counterexamples to this conjecture by converting the coarse assembly map into a groupoid assembly map.
 
-We then present a unifying approach to all known counterexamples, by developing the groupoid centric viewpoint of \cite{} further, introducing a new conjecture known as the \textit{boundary coarse Baum-Connes conjecture}. First however we outline the construction of the algebras involved in defining the coarse assembly map, then make some connections to groupoid equivariant KK-theory. These ideas then allow us to formulate the boundary coarse Baum-Connes conjecture and apply homological algebra techniques to connect it to the coarse Baum-Connes conjecture.
+We then present a unifying approach to all known counterexamples, by developing the groupoid centric viewpoint of \cite{MR1911663} further, introducing a new conjecture known as the \textit{boundary coarse Baum-Connes conjecture}. First however we outline the construction of the algebras involved in defining the coarse assembly map, then make some connections to groupoid equivariant KK-theory. These ideas then allow us to formulate the boundary coarse Baum-Connes conjecture and apply homological algebra techniques to connect it to the coarse Baum-Connes conjecture.
 
 \section{Coarse geometry, Groupoids and Assembly.}
-In this section we outline the coarse geometry and group theoretic properties that are going to be considered throughout this document. The overall scheme of this section is first to consider some general coarse ideas associated to metric spaces and then move onto discussions of certain analytic properties held by discrete groups. In Chapter 4, we will develop these coarse ideas further by introducing abstract coarse structures and their relationship to metric spaces.
+In this section we outline the coarse geometry and group theoretic properties that are going to be considered throughout this document. The overall scheme of this section is first to consider some general coarse ideas associated to metric spaces and then move onto discussions of certain analytic properties held by discrete groups. We will develop these coarse ideas further by introducing abstract coarse structures and their relationship to metric spaces.
 
 \subsection{Coarse geometry.}
 The notions of coarse geometry a similar in spirit to those of topology; the focus of coarse geometry is on the large as opposed to the small. Recall that a function $f$ between topological spaces $X$ and $Y$ is continous if the preimage of every open set in $Y$ is open in $X$. Suppose additionally that $X$ and $Y$ are metric spaces equipped with the metric topology. Then this definition of continuous function really asks that the open neighbourhoods of a point in $Y$ are open in $X$ and these are in particular going to be sets of very small diameter. 
@@ -46,7 +46,7 @@ A metric space $X$ is said to admit a coarse embedding into Hilbert space $\math
 
 This connects to the notion of an effectively proper, bornologous map by observing that our controls (i.e the $S$'s that appear within the definitions) will pop out as the value of the control functions $\rho_{\pm}$ at $R$.
 
-This property is exceptionally flexible; many constructions of metric spaces preserve coarse embeddability \cite{}. This property will be important in Chapter 4 where it plays an important role in results concerning groupoids and the coarse Baum-Connes conjecture.
+This property is exceptionally flexible; many constructions of metric spaces preserve coarse embeddability \cite{EG-permanence}. This property will be important in Chapter 4 where it plays an important role in results concerning groupoids and the coarse Baum-Connes conjecture.
 
 \subsection{Properties of finitely generated discrete groups and \'etale groupoids.}
 Via the construction of a Cayley graph, it is possible to introduce to a finitely generated group a metric that is compatable with the group structure. The majority of ideas in geometric group theory centralise in computing coarse properties, such as coarse embeddings, for finitely generated groups. Analytically, these properties often connect to analytic properties of groups that are equivariant. In the global context of understanding certain assembly conjectures, such as the Baum-Connes conjecture, for groups and groupoids, the following property plays an important role. As we primarily consider transformation groupoids, we focus the definition on them.
@@ -60,7 +60,7 @@ Let $H$ be a continous field of Hilbert spaces over $X$. we say that a transform
 \end{enumerate}
 \end{definition}
 
-This definition can be connected to cohomology \cite{} and analysis via positive and negative type kernels \cite{}. The role of positive and conditionally negative type kernels within group theory is well known and plays an important role in studying both anayltic and representation theoretic properties of groups \cite{MR2415834,MR1487204}. These ideas were extended to groupoids by Tu \cite{MR1703305}, and we define and consider them in that generality. Let $\G$ be a locally compact, Hausdorff groupoid.
+This definition can be connected to cohomology and analysis via positive and negative type kernels \cite{MR2415834,MR2158394}. The role of positive and conditionally negative type kernels within group theory is well known and plays an important role in studying both anayltic and representation theoretic properties of groups \cite{MR2415834,MR1487204}. These ideas were extended to groupoids by Tu \cite{MR1703305}, and we define and consider them in that generality. Let $\G$ be a locally compact, Hausdorff groupoid.
 
 \begin{definition}
 A continuous function $F: \G \rightarrow \mathbb{R}$ is said to be of \textit{negative type} if 
@@ -79,7 +79,7 @@ The important feature of functions of this type is their connection to affine ac
 \end{enumerate}
 \end{theorem}
 
-This property has many connections to the Baum-Connes conjecture for locally compact groupoids, via the work of Tu \cite{}, which we will discuss in detail later in the chapter. Here however we give a connection with coarse embeddings that highlights why we are directly interested in this property.
+This property has many connections to the Baum-Connes conjecture for locally compact groupoids, via the work of Tu \cite{MR1703305,MR1798599,cbcag2}, which we will discuss in detail later in the chapter. Here however we give a connection with coarse embeddings that highlights why we are directly interested in this property.
 
 \begin{proposition}
 Let $\Gamma$ be a discrete finitely generated group. If $\Gamma$ has the Haagerup property then $\Gamma$ coarsely embeds into Hilbert space.\qed
@@ -87,17 +87,17 @@ Let $\Gamma$ be a discrete finitely generated group. If $\Gamma$ has the Haageru
 
 \section{The coarse Baum-Connes conjecture.}
 
-In this section we outline the construction of the coarse assembly map, using only elementary K-theoretic methods. We then connect this, via a groupoid, to a KK-theoretic formulation of the conjecture introduced by Tu in \cite{}.
+In this section we outline the construction of the coarse assembly map, using only elementary K-theoretic methods. The exposition for this follows Chapters 5 and 8 from \cite{MR1399087}. We could equally have developed this using the latter half of \cite{MR1817560,MR1388312}. We then connect this, via a groupoid, to a KK-theoretic formulation of the conjecture introduced by Tu in \cite{MR1703305,MR1798599}.
 
 \subsection{The algebras of locally compact and psuedolocal operators.}
 Let $X$ be a locally compact Hausdorff topological space and let $\mathcal{H}$ be a Hilbert space. We say that $\mathcal{H}$ is an $X$-module if it admits a representation, by bounded linear operators, of $C_{0}(X)$. 
 
 \begin{definition}
-We say that an $X$-module is \textit{adequate} if $\overline{C_{0}(X)\mathcal{H}}=\mathcal{H}$ and $C_{0}(X)\cap \mathcal{K(\mathcal{H}}= \lbrace 0 \rbrace$.
+We say that an $X$-module is \textit{adequate} if $\overline{C_{0}(X)\mathcal{H}}=\mathcal{H}$ and $C_{0}(X)\cap \mathcal{K(\mathcal{H}})= \lbrace 0 \rbrace$.
 \end{definition}
 
 \begin{remark}
-Such an $X$-module is a suitably faithful representation of $X$ into Hilbert space; it leaves the Hilbert space invariant and acts essentially non-trivially from the perspective of index theory. By results of Voiculescu \cite{} and Brown-Douglas-Fillmore \cite{} it is actually sufficient to consider only adequate $X$-modules from the perspective of defining K-homology. In fact, it can be shown that the choice of adequate $X$-module is irrelevant for this task.
+Such an $X$-module is a suitably faithful representation of $X$ into Hilbert space; it leaves the Hilbert space invariant and acts essentially non-trivially from the perspective of index theory. By results of Voiculescu \cite{MR0415338} and Brown-Douglas-Fillmore \cite{MR0458196} it is actually sufficient to consider only adequate $X$-modules from the perspective of defining K-homology. In fact, it can be shown that the choice of adequate $X$-module is irrelevant for this task.
 \end{remark}
 
 Fix an adequate $X$-module $\mathcal{H}_{X}$.
@@ -116,7 +116,7 @@ These operators are important from the perspective of K-homology; The set of psu
 We define the (analytic) K-homology $K_{*}(X)$ to be the topological K-theory group $K_{*+1}(\frac{\mathcal{D}^{*}(X)}{\mathcal{C}^{*}(X)})$.
 \end{definition}
 
-Using the properties of K-theory it is possible to prove that the functor $X \mapsto K_{*}(X)$ is covariant functor to abelian groups that satisfies the properties of a generalised homology theory that is dual to K-theory. For a detailed proof of this we refer the reader to \cite{,}.
+Using the properties of K-theory it is possible to prove that the functor $X \mapsto K_{*}(X)$ is covariant functor to abelian groups that satisfies the properties of a generalised homology theory that is dual to K-theory. For a detailed proof of this we refer the reader to \cite{MR1399087,MR1817560}.
 
 \subsection{The Roe algebra and the assembly map.}
 
@@ -141,7 +141,7 @@ The algebraic Roe algebra, denoted $\mathbb{C}[X]$, is the $*$-subalgebra of $\m
 \end{definition}
 
 \begin{remark}
-The Hilbert space $\ell^{2}(Z,\mathcal{H_{0}})$ is an adequate $X$-module \cite{}.
+The Hilbert space $\ell^{2}(Z,\mathcal{H_{0}})$ is an adequate $X$-module \cite{explg1}.
 \end{remark}
 
 We now consider a finite propagation version of the K-homology defined in the previous section:
@@ -153,7 +153,7 @@ Similarly, the finite propagation operators we defined above in $C^{*}(X)$ are n
 \begin{equation*}
 0 \rightarrow C^{*}(X) \rightarrow D^{*}(X) \rightarrow \frac{D^{*}(X)}{C^{*}(X)}\rightarrow 0
 \end{equation*} 
-Remarkably, this short exact sequence connects to K-homology \cite{,}:
+Remarkably, this short exact sequence connects to K-homology \cite{MR1399087,MR1817560}:
 \begin{theorem}\label{Thm:Khom}
 K-homology is equally well defined with finite propagation operators. That is $K_{*}(X)\cong K_{*+1}( \frac{D^{*}(X)}{C^{*}(X)})$.\qed
 \end{theorem}
@@ -176,7 +176,7 @@ So we have constructed a map, using only the K-theory long exact sequence, that 
 \begin{conjecture}\label{conj:CBC1}(Coarse Baum-Connes conjecture I)
 Let $X$ be a proper metric space and let $\mu: K_{*}(X) \rightarrow K_{*}^{C^{*}(X)}$ be boundary map defined above. Then $\mu$ is an isomorphism.
 \end{conjecture}
-This conjecture is slightly naive, as it is not in fact functorial under coarse maps. The left hand side, $K_{*}(X)$ is a topological homology theory, functorial under proper continous maps \cite{}, whilst the right hand side is a coarse invariant. However, there are still positive results:
+This conjecture is slightly naive, as it is not in fact functorial under coarse maps. The left hand side, $K_{*}(X)$ is a topological homology theory, functorial under proper continous maps (see Chapter 5 of \cite{MR1399087}), whilst the right hand side is a coarse invariant. However, there are still positive results:
 
 \begin{theorem}
 Let $X$ be a uniformly contractible simplicial complex. Then the coarse Baum-Connes conjecture I is true for $X$.
@@ -191,7 +191,7 @@ A \textit{coarsening} of $X$ is uniformly contractible space $\underline{E}X$ th
 A coarsening should be thought of a classifying space associated to $X$. The following examples show how to construct coarsenings, each of which are adaptable to different coarse properties.
 
 \begin{example}
-(Rips complex) Fix $R>0$. Then the \textit{Rips complex on scale $R$} is a simplicial complex $P_{R}(X)$, where a set of points $\lbrace x_{1},...,x_{n} \rbrace$ spans a simplex if and only if $d(x_{i},x_{j}) \leq R$ for every $i,j$. If $S>R$, then every $R$ simplex will certainly be an $S$ simplex - so we have inclusions $P_{R}(X)\hookrightarrow P_{S}(X)$. Additionally these inclusions are proper. As the inclusion of $X \hookrightarrow P_{R}(X)$ induces a coarse equivalence \cite{} for each $R>0$, the direct limit: $\bigcup_{R>0}P_{R}(X)$, the simplex on $X$, is a coarsening of $X$.
+(Rips complex) Fix $R>0$. Then the \textit{Rips complex on scale $R$} is a simplicial complex $P_{R}(X)$, where a set of points $\lbrace x_{1},...,x_{n} \rbrace$ spans a simplex if and only if $d(x_{i},x_{j}) \leq R$ for every $i,j$. If $S>R$, then every $R$ simplex will certainly be an $S$ simplex - so we have inclusions $P_{R}(X)\hookrightarrow P_{S}(X)$. Additionally these inclusions are proper. As the inclusion of $X \hookrightarrow P_{R}(X)$ induces a coarse equivalence for each $R>0$, the direct limit: $\bigcup_{R>0}P_{R}(X)$, the simplex on $X$, is a coarsening of $X$.
 \end{example}
 
 \begin{definition}
@@ -240,7 +240,7 @@ After coarsening and taking a direct limit this gives us the Baum-Connes conject
 Let $\Gamma$ be a finitely generated discrete group and let $\underline{E}\Gamma$ be its classifying space for proper actions. Then the map by taking direct limtis of the maps defined above: $\mu: K_{*}^{\Gamma}(\underline{E}\Gamma) \rightarrow K_{*}(C^{*}_{r}(\Gamma))$ is an isomorphism.
 \end{conjecture}
 
-There are also positive results in this setting \cite{}:
+There are also positive results in this setting \cite{MR1487204}:
 
 \begin{theorem}
 Let $\Gamma$ be a discrete group. If $\Gamma$ has the Haagerup property then the Baum-Connes conjecture defined above holds for $\Gamma$.
@@ -287,9 +287,9 @@ Let $X$ be a coarse space with a coarse structure $\mathcal{E}$ and consider $\m
 
 In the situation that $X$ admits a transitive $G$-action by translations, the group action coarse structure generates the metric coarse structure. 
 
-To build a groupoid from the metric coarse structure on $X$ we consider extensions of the pair product on $X \times X$. The most natural way to do this is by making use of the entourages arising from the metric. The approach to this problem is through the following Lemma:
+To build a groupoid from the metric coarse structure on $X$ we consider extensions of the pair product on $X \times X$. The most natural way to do this is by making use of the entourages arising from the metric. The approach to this problem is through Corollary 10.18 of \cite{MR2007488}, which we record as the following Lemma:
 
-\begin{lemma}\label{Lem:CorRoe}\cite[Corollary 10.18]{MR2007488}
+\begin{lemma}\label{Lem:CorRoe}
 Let $X$ be a uniformly discrete bounded geometry metric space and let $E$ be any entourage. Then the inclusion $E \rightarrow X \times X$ extends to an injective homeomorphism $\overline{E} \rightarrow \beta X \times \beta X$, where $\overline{E}$ denotes the closure of $E$ in $\beta(X \times X)$.
 \end{lemma}
 Now we can make the definition of the coarse groupoid $G(X)$:
@@ -400,7 +400,7 @@ This coarsening process agrees with the coarsening outlined in the previous sect
 \item The limit through the directed set of entourages $E \in \mathcal{E}$ of the $P_{E}(X)$ is a coarsening of $X$ \cite{MR1399087}. Similarly the limit of the $P_{E}(G(X))$ is a model of $\underline{E}G(X)$.
 \item Lemma 4.7 in \cite{MR1905840} proves that the inclusion of a point $\lbrace x \rbrace$ viewed as a subgroupoid of $G(X)$ gives rise to a restriction map in KK-theory and this map induces an isomorphism:
 \begin{equation*}
-KK_{G(X)}(C_{0}(P_{E}(G(X)),\ell^{\infty}(X,\mathcal{K})) \cong KK(C_{0}(P_{E}(X)),\mathcal{C}).
+KK_{G(X)}(C_{0}(P_{E}(G(X)),\ell^{\infty}(X,\mathcal{K})) \cong KK(C_{0}(P_{E}(X)),\mathbb{C}).
 \end{equation*}
 Taking limits, gives us:
 \begin{equation*}
@@ -488,7 +488,7 @@ It is also clear that the image of $\alpha$ is contained in the kernel of $q$, w
 where the rows here are exact. 
 As in \cite{MR1911663} we would now choose suitable groupoids $G$ and subsets $F$ of the unit space $G^{(0)}$ that allow us to use the above sequence to analyse the Baum-Connes conjecture for the groupoid $G$. We have in mind the suitation that $G=G(X)$, the coarse groupoid associated to some uniformly discrete bounded geometry metric space $X$.
 
-\subsection{Expanders, Asymptotic Coverings and Ghost operators}
+\subsection{Expanders, Asymptotic Coverings and Ghost operators}\label{Sect:GO}
 
 \begin{definition}
 Let $\lbrace X_{i} \rbrace$ be a sequence of finite graphs. Then $X=\sqcup_{i\in\mathbb{N}}X_{i}$ equipped with the metric such that $d_{X}(X_{i},X_{j})\rightarrow \infty$ as $i+j\rightarrow \infty$ and $d_{X}|_{X_{i}}=d_{X_{i}}$ is called the \textit{space of graphs} associated with the sequence $\lbrace X_{i} \rbrace$. 
@@ -770,18 +770,18 @@ This includes property (T) groups such as $SL_{3}(\mathbb{Z})$, and hence tells 
 
 \subsection{Some Remarks on the Max Conjecture.}
 
-\begin{definition}
-Max norm completion of the alg. Roe algbera.
-\end{definition}
-
-\begin{conjecture}
-Statement of the max CBC.
-\end{conjecture}
-
-\begin{remark}
-About functoriality of maximal completions and the ladder diagram.
-\end{remark}
-
+In addition to the coarse assembly map defined in Section \ref{sect:cbc} it is possible to define a \textit{maximal} variant, very much in analogy with the maximal Baum-Connes conjecture for groups. The primary difference between the maximal and reduced cases is that the maximal algebra has much nicer functorial properties. In particular the sequence:
+\begin{equation*}
+0 \rightarrow \mathcal{K}(\ell^{2}(X,\mathcal{K})) \rightarrow \ell^{\infty}(X,\mathcal{K})\rtimes_{max}G(X) \rightarrow (\frac{\ell^{\infty}(X,\mathcal{K})}{C_{0}(X,\mathcal{K})})\rtimes_{max}G(X) \rightarrow 0
+\end{equation*}
+is exact. So we get the following ladder diagram at the level of the K-theory groups (as usual omitting coefficients):
+\begin{equation*}
+\xymatrix@=1em{
+\ar[r] & K_{1}(C^{*}_{max}(G(X)|_{\partial\beta X}) \ar[r] & K_{0}(\mathcal{K}) \ar[r]& K_{0}(C^{*}_{max}(G(X))) \ar[r]& K_{0}(C^{*}_{max}(G(X)|_{\partial\beta X})\ar[r] & K_{1}(\mathcal{K})\ar[r] &  \\
+\ar[r] & K_{1}^{top}(G(X)|_{\partial\beta X}) \ar[r] \ar[u]& K_{0}^{top}(X \times X) \ar[r]\ar[u]& K_{0}^{top}(G(X)) \ar[r]\ar[u]& K_{0}^{top}(G(X)|_{\partial\beta X}) \ar[r]\ar[u]^{\mu_{bdry,max}}& K_{1}^{top}(X \times X)\ar[u]\ar[r] &
+}
+\end{equation*}
+We use this functoriality to prove:
 \begin{proposition}\label{Prop:Max}
 Let $X$ be the space of graphs arising from a sequence of finite graphs $\lbrace X_{i} \rbrace$. Then
 \begin{enumerate}
