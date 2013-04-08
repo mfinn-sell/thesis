@@ -1,6 +1,6 @@
 \setstretch{1.6}
 \chapter{The Basics.}
-As outlined in the introduction inverse semigroups and groupoids play a large role in the development of many aspects of combinatorics, graph theory and analysis. In this section we provide some basics concerning these objects and the connections between them, developing the notion of Paterson and Exel of a \textit{universal groupoid} associated to an inverse semigroup. We then give a brief introduction to coarse geometry and operator algebras, focusing on the situation that arises naturally from both inverse semigroups and groupoids. Lastly, we consider topological K-theory of $C^{*}$-algebras.
+As outlined in the introduction inverse semigroups and groupoids play a large role in the development of many aspects of combinatorics, graph theory and analysis. In this section we provide some basics concerning these objects and the connections between them, developing the notion of Paterson and Exel of a \textit{universal groupoid} associated to an inverse semigroup. We then give a brief introduction to coarse geometry and operator algebras, focusing on the situation that arises naturally from both inverse semigroups and groupoids. Lastly, we consider topological K-theory of $C^{*}$-algebras; we outline all the tools we need for the later chapters.
 
 \section{Semigroup and Groupoid Theory.}
 
@@ -68,22 +68,22 @@ f_{2}\circ f_{1}: f_{1}^{-1}(im(f_{1})\cap dom(f_{2})) \rightarrow f_{2}(im(f_{1
 A key observation that makes connects the combinatorial aspects of inverse semigroup theory to the geometry of partial bijections is the following result of Wagner and Preston \cite{MR1455373}:
 
 \begin{theorem}\label{Thm:WP}
-Let $S$ be an inverse semigroup. Then there exists a set $X$ such that $S \hookrightarrow I(X)$.
+Let $S$ be an inverse semigroup. Then there exists a set $X$ such that $S \hookrightarrow I(X)$.\qed
 \end{theorem}
 
-When $X$ is a metric space we will be considering a inverse submonoid of $I(X)$ in which every partial bijection that maps elements only a finite distance, that is a generalised (or partial) translation. We denote this by $I_{b}(X)$.
+When $X$ is a metric space we can consider a inverse submonoid of $I(X)$ in which every partial bijection that maps elements only a finite distance, that is a generalised or partial translation. We denote this by $I_{b}(X)$.
 
 \begin{definition}
 Let $S$ be an inverse monoid. We denote by $E(S)$ the semilattice of idempotents (just by $E$ if the context is clear). This is a meet semilattice, where the meet is given by the product of $S$ restricted to $E$. In this situation, we can use the following partial order:
 \begin{equation*}
 e \leq f \Leftrightarrow ef=e
 \end{equation*}
-we make use of this order later.
+In the situation that $E$ consists of subsets of some set $X$, the meet is intersection and this order corresponds to subset inclusion.
 \end{definition}
 
 We remark that for a metric space $X$ every idempotent element in $I(X)$ moves elements no distance, and hence $E(I(X))=E(I_{b}(X))$. An inverse submonoid with this property is often called \textit{full}.
 
-We want to consider quotient structures of an inverse monoid, and unlike in group theory where we have the concept of a \textit{normal} subgroup our subsemigroups will not in general possess enough information. One possible choice is to consider \textit{ideals} in $S$. 
+We want to consider quotient structures of an inverse monoid, and unlike in group theory where we have the concept of a \textit{normal} subgroup our subsemigroups will not in general contain enough structure. One possible choice is to consider \textit{ideals} in $S$. 
 
 \begin{definition}
 Let $I$ be a subset of $S$. $I$ is an ideal of $S$ if $SI \cup IS \subset I$.
@@ -109,10 +109,11 @@ We consider a specific congruence on $S$ called the minimum group congruence.  T
 \begin{equation*}
 s \sigma t \Leftrightarrow (\exists e \in E) es = et
 \end{equation*}
-A congruence is \textit{idempotent pure} when $e \sim s$ if and only $s \in E$. This collects all idempotents into classes when we quotient out. The minimum group congruence, on the class of E-unitary inverse monoids, is an example of an idempotent pure congruence. Additionally it is the smallest group congruence on $S$ \cite{MR1694900}.
+A congruence is \textit{idempotent pure} when $e \sim s$ if and only $s \in E$. This collects all idempotents into classes when we quotient out. Additionally it is the smallest group congruence on $S$ \cite{MR1694900}.
 \begin{definition}
 An inverse monoid $S$ is called E-unitary if for all $e \in E$ and $s \in S$ if $e \leq s$ then $s \in E$. $S$ is F-inverse if the preimage of each $g \in \frac{S}{\sigma}$ has a maximum element in the order on $S$.
 \end{definition}
+The minimum group congruence, on the class of E-unitary inverse monoids, is an example of an idempotent pure congruence.
 
 We denote these maximal elements by $Max(S)$, and we remark that this is equivalent to asking that for every element $s \in S$ there exists a \textit{unique} maximal element $t \in S$ such that $s \leq t$.
 
@@ -121,13 +122,13 @@ For an F-inverse monoid it is possible to study the minimum group congruence by 
 (\forall s,t \in Max(S)) s \Xst t = u \mbox{ for } !u \in Max(S) \mbox{ with } st \leq u.
 \end{equation*}
 
-In general the inverse monoids we are considering in this paper will not be as nice as this: they will have a zero element. However we can still make similar generalisations of the above definitions:
+In general the inverse monoids we will construct will not have this property as they will have a zero element. However we can make similar but more general versions of the above definitions:
 
 \begin{definition}
 We say $S$ is 0-E-unitary if $\forall e \in E\setminus 0, s \in S$ $e \leq s$ implies $s \in E$. We say it is 0-F-inverse if there exists a subset $T \subset S$ such that for every $s \in S$ there exists a unique $t \in T$ such that $s \leq t$ and if $s \leq u$ then $u \leq t$.
 \end{definition}
 
-As mentioned before, the minimum group congruence on such monoids will return the trivial group. However by working in a category with a more relaxed type of morphism we can still build useful maps to groups. We develop this in section \ref{Sect:S3}.
+As mentioned before, the minimum group congruence on such monoids will return the trivial group. However by working in a category with a more relaxed type of morphism we can still build useful maps to groups. We develop this in Section \ref{Sect:S3}.
 
 \section{Groupoids.}
 
@@ -180,13 +181,13 @@ Let $X$ be a topological $\Gamma$-space. Then the \textit{transformation groupoi
 The construction in the example above can be generalized to actions of \'etale groupoids. We are concerned with the topology here: Given an \'etale groupoid $\G$ and a $\G$-space $X$ as well as a with a basis $\lbrace U_{i} \rbrace$ for $\G^{(0)}$. We can pull this basis back to a basis for $X \rtimes \G$ given by $[r_{z}^{-1}(U_{i}),\gamma]$, where $U_{i} \subseteq s(\gamma)$.
 \end{example}
 
-\subsection{Groupoids from inverse monoids}
-We take an inverse monoid $S$ and produce a universal groupoid $\G_{\E}$. One way to do this involves studying the actions of $S$ on its semilattice $E$. Working with semilattices, being generalisations of Boolean algebras, we still have access to a version of Stone duality; there exists many compactifications of $E$, built from its order structure, that extends the natural conjugation action of $S$. To any representation of $S$  by partial bijections on a space $X$ we get a corresponding representation on Hilbert space of the groupoid $\G_{\E}$. We can then use this to build a compactification of $X$ that will allow us to reduce $\G_{\E}$, capturing the representation theory on $X$.
+\subsection{Groupoids from inverse monoids}\label{sect:semitogrpoid}
+In this section we outline the machine of \cite{MR1724106,MR2419901} for producing a groupoid $\G_{\E}$ from an inverse semigroup $S$. One way to do this involves studying the actions of $S$ on its semilattice $E$. Working with semilattices, being generalisations of Boolean algebras, we still have access to a version of Stone duality; there exists many compactifications of $E$, built from its order structure, that extends the natural conjugation action of $S$. To any representation of $S$  by partial bijections on a space $X$ we get a corresponding representation on Hilbert space of the groupoid $\G_{\E}$. We can then use this to build a compactification of $X$ that will allow us to reduce $\G_{\E}$, capturing the representation theory on $X$.
 
 We outline the steps in the construction.
 \begin{enumerate}
 \item Build an action of $S$ on $E$.
-\item Build a dual space to $E$, which is compact and Hausdorff. This is a \textit{Stone dual} to $E$. Show this admits an action of $S$.
+\item Build a dual space $\E$ to $E$, which is locally compact and Hausdorff. Construct an action of $S$ on $\E$.
 \item Build the groupoid $\G_{\E}$ from this data.
 \end{enumerate}
 
@@ -195,7 +196,7 @@ We outline the steps in the construction.
 \begin{enumerate}
 \item Let $D_{e}=\lbrace f \in E | f \leq e \rbrace$. For $ss^{*} \in E$, we can define a map $\rho_{s}(ss^{*})=s^{*}s$, extending to $D_{ss^{*}}$ by $\rho_{s}(e) = s^{*}es$. This defines a partial bijection on $E$ from $D_{ss^{*}}$ to $D_{s^{*}s}$. 
 
-\item We consider a subspace of $\textbf{2}^{E}$ given by the functions $\phi$ such that $\phi(0)=0$ and $\phi(ef)=\phi(e)\phi(f)$. This step is a generalisation of Stone duality \cite{Lawson-2010}. We can topologise this as a subspace of $\textbf{2}^{E}$, where it is closed. This makes it compact Hausdorff, with a base of topology given by $\widehat{D}_{e}= \lbrace \phi \in \E | \phi(e)=1 \rbrace$. This admits a dual action induced from the action of $S$ on $E$. This is given by the pointwise equation for every $\phi \in \widehat{D}_{s^{*}s}$:
+\item We consider a subspace of $\textbf{2}^{E}$ given by the functions $\phi$ such that $\phi(0)=0$ and $\phi(ef)=\phi(e)\phi(f)$. We can topologise this as a subspace of $\textbf{2}^{E}$, where it is closed. This makes it compact Hausdorff, with a base of topology given by $\widehat{D}_{e}= \lbrace \phi \in \E | \phi(e)=1 \rbrace$. This admits a dual action induced from the action of $S$ on $E$. This is given by the pointwise equation for every $\phi \in \widehat{D}_{s^{*}s}$:
 \begin{equation*}
 \widehat{\rho}_{s}(\phi)(e)=\phi(\rho_{s}(e))=\phi(s^{*}es)
 \end{equation*}
@@ -247,7 +248,7 @@ Let $S$ be a countable 0-E-unitary inverse monoid, $E$ its semilattice of idempo
 \begin{proof}
 The first point is a consequence of the fact that $E$ is countable, in this situation we know precisely that $\textbf{2}^{E}$ is metrizable, hence as a closed subset we know that $\E$ is second countable. It is compact and Hausdorff as it is a closed subset of a compact, Hausdorff space.
 
-The second point follows from \cite[Corollary 10.9]{MR2419901}, the third point is \cite[Corollary 10.16]{MR2419901} and the fourth point follows from \cite[Theorem ...]{MR1724106}, but a more elementary proof is given in \cite{MR1900993}.
+The second point follows from \cite[Corollary 10.9]{MR2419901}, the third point is \cite[Corollary 10.16]{MR2419901} and the fourth point follows from \cite{MR1724106}, but a more elementary proof is given in \cite{MR1900993}.
 \end{proof}
 
 We will make use of the following technical property that arises from the presence of maximal elements:
@@ -262,7 +263,7 @@ s = t_{s}s^{*}s \mbox{ and } s^{*}s \leq t_{s}^{*}t_{s}
 \end{equation*} 
 The second equation tells us that $t_{s}^{*}t_{s} \in F_{\phi}$ as filters are upwardly closed, thus $(t_{s},\phi)$ is a valid element. Now to see $[t_{s},\phi]=[s,\phi]$ we need to find an $e \in E$ such that $e \in F_{\phi}$ and $se=t_{s}e$. Take $e=s^{*}s$ and then use the first equation to see that $s(s^{*}s)=t_{s}(s^{*}s)$.
 \end{proof}
-Using Claim \ref{MainClaim:C1} we can forget the non-maximal elements in the monoid $S$ when working with $\G_{\E}$. This trick will be prevalent throughout this document as it allows many natural geometric considerations to enter into the purely combinatorial world of semigroup theory.
+Using Claim \ref{MainClaim:C1} we can forget the non-maximal elements in the monoid $S$ when working with $\G_{\E}$. This trick will be prevalent throughout this document as it allows many natural geometric considerations to enter into what would otherwise be purely combinatorial calculations.
 
 \section{Prehomomorphisms of inverse monoids and general partial actions of discrete groups.}\label{Sect:S3} 
 In this section we outline some basic properties of partial actions of discrete groups on topological spaces, paying particular attention to the type of inverse monoid these generate. We then use analytic information associated to the group together with properties of inverse monoid to understand analytic properties of the universal \'etale groupoid that is built from the inverse monoid. We begin with a definition.
@@ -280,7 +281,7 @@ Let $S$ be a 0-E-unitary inverse monoid. We say $S$ is \textit{strongly 0-E-unit
 This class of inverse monoids is particularly important; the idempotent pure, 0-restricted prehomomorphism onto a group (with 0) can be thought of as a generalisation of the minimum group congruence in the larger category of inverse monoids with prehomomorphisms. We will utilise this technology later to regain some of the information from a group when we cannot quotient out in any meaningful way due to the presence of a zero element.
 
 \begin{example}
-In \cite{MR745358,MR2221438} the authors introduce an inverse monoid that is universal for dual prehomomorphisms from a general inverse semigroup. In the context of a group $G$ This is called the \textit{prefix expansion}; its elements are given by pairs: $(X,g)$ for $\lbrace 1,g\rbrace \subset X$, where $X$ is a finite subset of $G$. The set of such $(X,g)$ is then equipped with a product and inverse:
+In \cite{MR745358,MR2221438} the authors introduce an inverse monoid that is universal for dual prehomomorphisms from a general inverse semigroup. In the context of a group $G$ this is called the \textit{prefix expansion}; its elements are given by pairs: $(X,g)$ for $\lbrace 1,g\rbrace \subset X$, where $X$ is a finite subset of $G$. The set of such $(X,g)$ is then equipped with a product and inverse:
 \begin{equation*}
 (X,g)(Y,h) = (X\cup gY,gh)\mbox{ , } (X,g)^{-1}=(g^{-1}X,g^{-1})
 \end{equation*}
@@ -310,10 +311,10 @@ Let $X$ be a topological space and let $G$ be a group acting partially on $X$. T
 Consider the space $X\times \Gamma$, equipped with the product topology. Then define $\sim$ on $X\times \Gamma$ by $(x,g)\sim (y,h)$ if there exists $\gamma \in \G$ with $x(h^{-1}g)=y$. We define $\Omega$ as the quotient of $X\times \Gamma$ by $\sim$ with the quotient topology. 
 \end{definition}
 
-
+This notion will be developed further in Section \ref{Sect:GVC} and will also play an important role in certain examples in Chapter 5.
 
 \section{\texorpdfstring{$C^{*}$}{C*}-algebras of groupoids and inverse semigroups.}
-Now we change directions slightly by introducing the analytic counterparts to topological spaces; $C^{*}$-algebras play an important role in generalising the notions of topology into a noncommutative setting. The work we initially outline below is the duality theorem of Geifand, Neimark and Segal that connects topology with analysis. Then we develop some purely noncommutative ideas by outlining the construction of a natural $C^{*}$-algebras associated to a group. We then generalize these algebras to the groupoid and inverse semigroup cases.
+Now we change directions slightly by introducing the analytic counterparts to topological spaces; $C^{*}$-algebras play an important role in generalising the notions of topology into a noncommutative setting. The work we initially outline below is the duality theorem of Geifand, Neimark and Segal that connects topology with analysis. Then we develop some purely noncommutative ideas by outlining the construction of a natural $C^{*}$-algebras associated to a group. We then extend these constructions to both the groupoid and inverse semigroup settings.
 
 \subsection{Topological Spaces and Commutative $C^{*}$-algebras}
 
@@ -367,10 +368,10 @@ This example in fact lets us classify \textit{all} commutative $C^{*}$-algebras:
 The category of all commutative $C^{*}$-algebras and *-homomorphisms is equivalent to the opposite of the category of locally compact, Hausdorff topological spaces.
 \end{theorem}
 
-So the study of commutative algebras (via analysis) lets us study locally compact Hausdorff topological spaces. The benefit of dealing with the $C^{*}$-algebras is that we can consider \textit{noncommutative} algebras - doing some form of noncommutative topology.
+So the study of commutative algebras (via analysis) lets us study locally compact Hausdorff topological spaces. The benefit of dealing with the $C^{*}$-algebras is that we can consider \textit{noncommutative} algebras. This concept forms the central backbone of the noncommutative geometry program of Connes \cite{MR1826266}.
 
 \subsection{Hilbert $C^{*}$-modules}
-To talk about groupoid $C^{*}$-algebras we want to consider representations that fiber of the unit space; in particular we need to consider \textit{fields of Hilbert Spaces} - Hilbert Modules.
+To talk about groupoid $C^{*}$-algebras we want to consider representations that fiber of the unit space; in particular we need to consider \textit{fields of Hilbert Spaces} - Hilbert Modules \cite{MR1325694}.
 
 \begin{definition}
 Let $A$ be a $C^{*}$-algebra. A \textit{Hilbert A-module} \mathscr{E} is a right $A$-module equipped with an $A$-valued form $\langle , \rangle: \mathscr{E} \times \mathscr{E} \rightarrow A$ which satisfies the following axioms:
@@ -392,7 +393,7 @@ The axioms above imply a generalization of the Cauchy-Schwarz inequality; so als
 If you put $A= \mathbb{C}$ then the above definition reduces to that of a Hilbert space. A $C^{*}$-algebra $A$ can be thought of as a Hilbert $A$-module over itself using the inner product: $\langle a, a^{'} \rangle = a^{*}a^{'}$. Also we remark that not all the basic facts that apply to Hilbert spaces apply to Hilbert modules - in general the Reisz Representation Theorem fails for Hilbert Modules.
 \end{remark}
 
-\subsection{Constructions of Groupoid \texorpdfstring{$C^{*}$}{C*}-algebras.} The standard technique for a locally compact group $G$ involves considering norm completions associated to representations of the ring of compactly supported functions on the group. We can associate a very natural representation on the $L^{2}(G,\mu)$, where $\mu$ is the Haar measure on $G$. To extend these ideas to a locally compact groupoid we will need an analogue of this measure in a suitably fibred manner.
+\subsection{Constructions of Groupoid \texorpdfstring{$C^{*}$}{C*}-algebras.}\label{Sect:GVC} The standard technique for a locally compact group $G$ involves considering norm completions associated to representations of the ring of compactly supported functions on the group. We can associate a very natural representation on the $L^{2}(G,\mu)$, where $\mu$ is the Haar measure on $G$. To extend these ideas to a locally compact groupoid we will need an analogue of this measure in a suitably fibred manner.
 
 \begin{definition}
 A \textit{left Haar system} for a locally compact groupoid $\G$ is a family $\lbrace \lambda^{u} \rbrace$, where each $\lambda^{u}$ is a positive regular Borel measure on the locally compact Hausdorff $\G^{u}$, such that the following hold:
@@ -487,7 +488,7 @@ It is well known that any Hilbert $C_{0}(\G^{(0)})$-module $\mathcal{M}$ is the 
 \end{equation*}
 This defines an inner product on $C_{c}(\G_{x})$, which we can use to complete. We denote this completion by $L^{2}(\G_{x})$. This gives us the natural field of Hilbert spaces we were looking for, namely: $\lbrace L^{2}(\G_{x}) \rbrace_{x \in \G^{(0)}}$. It also gives us a natural representation of $C_{c}(\G)$ given by $\lambda_{x}(f)\eta = (f \ast \eta)(x)$. Hence we can conclude that $\Vert f \Vert = \sup_{x \in \G^{(0)}} \Vert \lambda(f) \Vert = \Vert \lambda(f) \Vert$. From this we can complete $C_{c}(\G)$ in either the norm on $L^{2}(\G)$ or the family of norms $\lbrace L^{2}(\G_{x}) \rbrace_{x \in \G^{(0)}}$, getting the same completion, denoted by $C^{*}_{r}(\G)$. 
 
-These ideas clearly agree with the more formal construction given at the beginning of this section as the $K_{v}$ are isomeetrically isomorphic to $L^{2}(\G|_{v})$, so the norms are equivalent, but allows us in particular to get a handle on what is going on be imagining that $L^{2}(\G)$ is infact a Hilbert space, not a Hilbert module.
+These ideas clearly agree with the more formal construction given at the beginning of this section as the $K_{v}$ are isometrically isomorphic to $L^{2}(\G|_{v})$, so the norms are equivalent, but allows us in particular to get a handle on what is going on be imagining that $L^{2}(\G)$ is infact a Hilbert space, not a Hilbert module.
 
 \section{Groupoid Valued Cocycles and a Theorem of Milan and Steinberg.}
 
@@ -539,7 +540,7 @@ To prove this is transverse, it is enough to prove that $\lbrace (\Psi(\gamma),s
 
 To see that this is faithful, let $[u,f], [v,f^{'}] \in G(S)$ such that $(f,\Phi(u),\theta_{u}(f))=(f^{'},\Phi(v),\theta_{v}(f^{'}))$. Then it is clear that $f=s([u,f])=s([v,f^{'}])=f^{'}$, so it is enough to prove now that $\Phi(v)=\Phi(u)$ implies $[u,f]=[v,f]$. Observe that $\Phi(u)\Phi(v)^{-1}=1$ in $\Gamma$ and $\Phi(v)^{-1}=\Phi(v^{*})$, so $\Phi(uv^{*})=1$. This map is idempotent pure, so $uv^{*} \in E(S)$. So $[u,f][v,f]^{-1}=[uv^{*},\theta_{v}(f)]$ is a unit in $G(S)$. From here it is clear that $[u,f]$ is an inverse to $[v^{*},\theta_{v}(f)]$ and so $[u,f]=[v,f]$.\end{proof}
 
-This gets us a little closer to applying Theorem \ref{thm:1.8}. We still need to check the fact that the cocycles are closed. We proceed as in \cite{MR1900993}.
+We still need to check the fact that the cocycles are closed. We proceed as in \cite{MR1900993}.
 
 \begin{definition}
 We say that S satisfies the finite cover property with respect to $\phi$,, if for every $p,q \in S$, $p,q\not = 0$ there exists a finite set $U \subset S_{g}$ such that:
@@ -570,7 +571,7 @@ This follows from Theorem 1.8 from \cite{MR1900993}.
 \end{proof}
 
 \begin{remark}
-If, in addition the inverse monoid $S$ is 0-F-inverse, then it satisfies the finite cover property with $\vert U \vert=1$ as each $S_{g}$ will contain a unique maximal element.
+If, in addition the inverse monoid $S$ is 0-F-inverse, then it satisfies the finite cover property with $\vert U \vert=1$ as each non-empty $S_{g}$ will contain a unique maximal element.
 \end{remark}
 
 
@@ -601,7 +602,7 @@ If $p$ and $q$ are projections in $A$, then: $p \sim_{h} q \Rightarrow p \sim_{u
 These relations are not in general reversible; If one is willing to work with matrix algebras $M_{n}(A)$ over $A$, then they are however.
 
 \begin{lemma}
-Let $p,q$ be projections in $A$. Then $p \sim q \Rightarrow diag(p,0) \sim_{u} diag(q,0)$ and $p \sim_{u} q \rightarrow diag(p,0) \sim_{h} diag(q,0)$.
+Let $p,q$ be projections in $A$. Then $p \sim q \Rightarrow diag(p,0) \sim_{u} diag(q,0)$ and $p \sim_{u} q \Rightarrow diag(p,0) \sim_{h} diag(q,0)$.
 \end{lemma}
 
 In defining K-theory, similar to both topological K-theory and algebraic K-theory, we will actually be considering a \textit{stabilisation} of $A$. In this setting this is equivalent to working with $M_{\infty}(A)$. Lastly, need a result that allows a "sum" of projections to be well defined up to equivalence. The trick, again, is to rely on passing to a matrix algebra; given $p,q \in A$ projections, we observe that $diag(0,p)$ is unitarily equivalent to $diag(p,0)$, and orthogonal to $diag(q,0)$. We define: $[p] + [q] = [diag(p,q)]$. 
@@ -649,15 +650,19 @@ K_{1}(J) \rightarrow K_{1}(A) \rightarrow K_{1}(\frac{A}{J})\rightarrow^{\delta}
 \end{equation*}
 \end{lemma}
 
+Alternatively, we could have proceeded as we would have in topological K-theory, that is via \textit{cones} and \textit{suspensions}.
+
 \begin{definition}
-Suspension, alternative $K_{n}$.
+Let $A$ be a $C^{*}$-algebra. The Cone of $A$, denoted $CA$, is the set of functions: $\lbrace f \in C([0,1],A) | f(0)=0 \rbrace$. The suspension of $A$, denoted $SA$, is a subalgebra of the cone given by functions: $\lbrace f \in CA | f(1)=0 \rbrace$. We define the higher K-groups via suspensions: $K_{n}(A):=K_{0}(S^{n}A)$.
 \end{definition}
+
+We remark that these definitions are equivalent for $K_{1}$.
 
 \begin{theorem}(Bott Periodicity)
 There is an isomorphism $K_{0}(A)\cong K_{0}(S^{2}A)$.
 \end{theorem}
 
-Ideas from this theme give us that our long exact sequence is infact a \textit{cyclic} exact sequence of length $6$:
+The proof of this result relies on constructing the \textit{Bott map} $\beta$, which converts the long exact sequence into a \textit{cyclic} exact sequence of length $6$:
 
 \begin{theorem}
 Given a short exact sequence $0 \rightarrow J \rightarrow A \rightarrow \frac{A}{J} \rightarrow 0$ there is a cyclic long exact sequence:
@@ -674,7 +679,7 @@ This six term sequence is a key tool in computations concerning K-theory of $C^{
 The last ideas that are outlined in this section are those of Pimsner and Voiculescu on actions of groups on $C^{*}$-algebras via automorphisms.
 
 \begin{definition}
-Let $A$ be a $C^{*}$-algebra and let $\rho: G \rightarrow Aut(A)$ be a representation of a group $G$. Then we can naturally form the $C^{*}$-algebra $A\rtimes_{r}G$; it is the completion of...
+Let $A$ be a $C^{*}$-algebra represented on a Hilbert space $\mathcal{H}$ and let $\rho: G \rightarrow Aut(A)$ be a representation of a group $G$. Then we can naturally form the $C^{*}$-algebra $A\rtimes_{r}G$; it is the completion of $C_{c}(G,A)$ equipped with a twisted convolution and completed in the norm that arises from the represention in $\mathcal{B}(\mathcal{H}\oplus \ell^{2}(G))$.
 \end{definition}
 
 The following is original result of Pimsner-Voiculescu concerning the structure of infinite cyclic group actions \cite{MR670181}:
@@ -689,7 +694,7 @@ K_{1}(A \rtimes \mathbb{Z})\ar[u]& K_{1}(A) \ar[l]^{i_{*}}& K_{1}(A)\ar[l]^{1-\a
 \end{equation*}
 \end{theorem}
 
-The main idea of this result is that it gives an understanding of a crossed product structure by looking at only the induced action on the K-theory groups of the coefficient algebra. The main issue is that in general these can be as bad as one wants, so computations of the action could be particularly bad.
+The main idea of this result is that it gives an understanding of a crossed product structure by looking at only the induced action on the K-theory groups of the coefficient algebra. The main issue is that in general these can be as bad as one wants, so computations of the action could be particularly difficult.
 
 These ideas naturally extend to free group actions by automorphisms \cite{MR670181}:
 

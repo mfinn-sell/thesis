@@ -987,7 +987,8 @@ Let $S = \langle \theta_{g} | g \in G \rangle$ and let $I_{fin}= \lbrace \theta_
 To be an ideal, it is enough to show that $I_{fin}S \subset I_{fin}, SI_{fin}\subset I_{fin}$. Using the description of the multiplication of partial bijections from section \ref{Sect:SemiToGpoid}, it is clear that either combination $si$ or $is$ yields an element of finite support. Now we can form the Rees quotient, getting an inverse monoid with a zero - the zero element being the equivalence class of elements with finite support.
 \end{proof}
 
-We want to utilise a partial action to construct a groupoid, so we apply the general construction outlined in section \ref{Sect:SemiToGpoid} to get an improved version of Proposition \ref{Prop:Crit}.
+We want to utilise a partial action to construct a groupoid, so we apply the general construction outlined in Section \ref{sect:semitogrpoid} of Chapter 2 to get an improved version of Proposition \ref{Prop:Crit}.
+
 As we are interested in specialising to a partial action that will somehow generate the boundary coarse groupoid we would like to know that we can get information about the metric coarse structure from the partial action when $X$ is a metric space. However in general it is too much to expect that our partial action generates the metric coarse structure completely. To understand this we need to define the length of a partial bijection:
 
 \begin{definition}
@@ -1135,16 +1136,6 @@ For $g=a_{l}^{e_{l}}...a_{m}^{e_{m}}$ we define $\theta^{i}_{g}$ as the product 
 If we consider the proof of the above Lemma then it would seem that for every $\theta_{g},\theta_{h}$ we have that $\theta_{g}\theta_{h} = \theta_{gh}$. However this might not be the case because of cancellation that occurs in the group but not in the partial bijections. 
 \end{remark}
 
-\begin{comment}
-\begin{figure}[h]
-
-\includegraphics[scale=0.6]{Diagrams/Diagram4.png}
-
-\caption{The composition of the partial action with respect to reduced words $g,h$.}
-\label{Fig:F4}
-\end{figure}
-\end{comment}
-
 We would want to show that the partial action generates the metric coarse structure, we recall the length of a partial bijection:
 
 \begin{definition}
@@ -1195,13 +1186,46 @@ We complete the proof by observing that for each $\theta_{g} \in A_{fin}$ the se
 
 As in the case of uniform regularity we also need to see that the action is free. Ideally we would argue as if we were in the group case; for each $g \in F_{k}$ choose a point in each $X_{i}$ and consider its orbits as was implemented in Lemma \ref{Lem:MT3}. However, this argument does not work as we are faced with the problem that for a partial action the concept of orbit is not well-defined, or in particular it may not always be possible to apply an element $\theta_{i}(g)$ twice to things within its domain. 
 
-\begin{lemma}\label{Lem:ParFree}
-The bounded partial action extends to $\beta X$ and is a free partial action on the boundary $\partial \beta X$. 
+The following is a concept of orbit:
+\begin{definition}
+We say a subset $\mathcal{A}_{g} \subset X$ is a \textit{stable core} for the element $\theta_{g}$ if $\theta_{g}(\mathcal{A}_{g})=\mathcal{A}_{g}$. 
+\end{definition}
+Recall that for each subset $A$ of $X$, $\widehat{D}_{A}:=\lbrace \omega \in \partial \beta X | A \in \omega \rbrace$.
+
+\begin{lemma}\label{Lem:StabCore}
+Let $\theta: F_{k} \rightarrow I_{b}(X)$ be the partial action defined above. If $\mathcal{A}_{g}$ is a stable core then for any $\omega \in \widehat{D}_{\mathcal{A}_{g}}$ $\omega \not = \theta_{g}(\omega)$.
 \end{lemma}
 \begin{proof}
-The partial action is by continuous maps on each element of the sequence. By the universal property of the Stone-Cech compactification we can then extend. So as with the case with a genuine action the technicality lies in proving the action is free on the boundary.
+Take $x_{i}\in \mathcal{A}^{i}_{g}$. Then let $n_{i}$ the the smallest integer such that $\theta_{g}(x_{i})=x_{i}$. We observe also that there are two cases as for any $\omega \in D_{\mathcal{A}_{g}}$ as we know that the pieces: 
+\begin{eqnarray*}
+\mathcal{A}_{even}=\bigsqcup_{n_{i}\equiv 0 mod 2} \mathcal{A}_{g}^{i}\\
+\mathcal{A}_{odd}=\bigsqcup_{n_{i} \equiv 1 mod 2} \mathcal{A}_{g}^{i}
+\end{eqnarray*}
+are mutually complimentary and union to the entire of $\mathcal{A}_{g}^{i}$, hence $\omega$ picks either $\mathcal{A}_{even}$ or $\mathcal{A}_{odd}$.
 
-The proof breaks into 3 cases relying as always on the ``ultra'' property. We break our domain $D_{\theta_{g}^{*}\theta_{g}}:=\sqcup_{i \in \mathbb{N}} D_{g^{*}g}^{i}$ up into three (possibly infinite) pieces, based on how the action by $g$ behaves. The first piece, index denoted $I_{0}$, consists of all the $D_{g^{*}g}^{i}$ such that $D_{g^{*}g}^{i} \cap D_{gg^{*}}^{i}$ is empty; the second, indexed by $I_{1}$, consists of all the $D_{g^{*}g}^{i}$ such that $D_{g^{*}g}^{i}\cap D_{gg^{*}}^{i}$ is not empty but $D_{g^{*}g}^{i}$ is not contained in $D_{gg^{*}}^{i}$; and the third, denoted by $I_{2}$ is all the $D^{i}_{g^{*}g}$ such that $D_{g^{*}g}^{i}=D_{gg^{*}}^{i}$. These are illustrated in the figure:
+For the even case break each $\mathcal{A}_{g}$ into two complimentary pieces in the following way:
+\begin{eqnarray*}
+A_{i,0}:= \lbrace \theta_{g}^{n}(x_{i}) |n \equiv 0 \mbox{ mod } 2 \rbrace \\
+A_{i,1}:= \lbrace \theta_{g}^{n}(x_{i}) |n \equiv 1 \mbox{ mod } 2 \rbrace
+\end{eqnarray*}
+and let $A_{j}=\sqcup_{i|n_{i} \in \lbrace even \rbrace}A_{i,j}$. We assume for a contradiction that $\omega=\theta_{g}(\omega)$ and then observe that $g$ permutes $A_{0}$ to $A_{1}$, so if, without loss of generality, $A_{0} \in \omega$ we can deduce that $\theta_{g}(A_{0})=A_{1}=A_{0}^{c}\in \omega$, which is a contradiction. 
+
+The odd case is similar only we break each $\mathcal{A}_{g}^{i}$ represented into three pieces:
+\begin{eqnarray*}
+B_{i,0} & := & \lbrace \theta_{g}^{n}(x_{i}) |n \equiv 0 \mbox{ mod } 2 \mbox{ and } n\not = n_{i}-1 \rbrace \\
+B_{i,1}& := & \lbrace \theta_{g}^{n}(x_{i}) |n \equiv 1 \mbox{ mod } 2 \rbrace \\
+B_{i,2}& := & \lbrace \theta_{g}^{n_{i}-1}(x_{i}) \rbrace
+\end{eqnarray*}
+$B_{i,2}$ is necessary here as the action of $\theta_{g}$ sends that point to $B_{i,0}$, which would otherwise have been a map from $B_{i,0}$ to itself. We build the corresponding $B_{j}=\sqcup_{\lbrace i | n_{i} \in \lbrace odd \rbrace \rbrace} B_{i,j}$. Again let $\theta_{g}(\omega)=\omega$ and observe that $B_{j} \in \omega$ for some $j$. Acting by $\theta_{g}$ gives: $\theta_{g}(B_{j})\in \theta_{g}(\omega)$, hence $\theta_{g}(B_{j})\in \omega$. Considering $j$ mod $3$: $B_{j}.g\subset B_{j+1}\sqcup B_{j+2}= B_{j}^{c}$ which again gives a contradiction.
+\end{proof}
+
+
+\begin{lemma}\label{Lem:ParFree}
+The partial action of $F_{k}$ defined above extends to $\beta X$ and is free on the boundary $\partial \beta X$.
+\end{lemma}
+\begin{proof}
+For each $g \in F_{k}$ the domain of $\theta_{g}$ breaks into three pieces. The first piece, index denoted $I_{0}$, consists of all the $D_{g^{*}g}^{i}$ such that $D_{\theta_{g}^{*}\theta_{g}}^{i} \cap D_{\theta_{g}\theta_{g}^{*}}^{i}$ is empty; the second, indexed by $I_{1}$, consists of all the $D_{\theta_{g}^{*}\theta_{g}}^{i}$ such that $D_{\theta_{g}^{*}\theta_{g}}^{i}\cap D_{\theta_{g}\theta_{g}^{*}}^{i}$ is not empty but $D_{\theta_{g}^{*}\theta_{g}}^{i}$ is not contained in $D_{\theta_{g}\theta_{g}^{*}}^{i}$; and the third, denoted by $I_{2}$ is all the $D^{i}_{\theta_{g}^{*}\theta_{g}}$ such that $D_{\theta_{g}^{*}\theta_{g}}^{i}=D_{\theta_{g}\theta_{g}^{*}}^{i}$.
+
 \begin{figure}[h]\label{Fig:ParFree}
 %Def of Circles needed
 \def\firstcircle{(-8.5,0) circle (1cm)}
@@ -1210,70 +1234,56 @@ The proof breaks into 3 cases relying as always on the ``ultra'' property. We br
 \def\forthcircle{(-0.75,0) circle (1cm)}
 \def\fifthcircle{(3.2,0) circle (1cm)}
 \def\sixthcircle{(3.2,0) circle (1cm)}
-\tikzset{filled/.style={fill=circle area, draw=circle edge, thick},
-    outline/.style={draw=circle edge, thick}}
-   \setlength{\parskip}{5mm}
+%\tikzset{filled/.style={fill=circle area, draw=circle edge, thick},
+%    outline/.style={draw=circle edge, thick}}
+ %  \setlength{\parskip}{5mm}
 \begin{tikzpicture}
     \begin{scope}[fill opacity=0.5]
          \clip \forthcircle
                \fifthcircle;
-     \fill[filled] \thirdcircle  
+     \fill \thirdcircle  
                    \fifthcircle;
     \end{scope}
                
     \draw (-10,0) node {$i):$};  
-    \draw[outline] \firstcircle node {$D^{i}_{g^{*}g}$};
-    \draw[outline] \secondcircle node {$D^{i}_{gg^{*}}$};
+    \draw \firstcircle node {$D^{i}_{\theta_{g}^{*}\theta_{g}}$};
+    \draw \secondcircle node {$D^{i}_{\theta_{g}\theta_{g}^{*}}$};
     \draw[>=stealth,->,thick] (-7.65,0.65) -- node [above] {$\theta_{i}(g)$} (-6.6,0.65);
      \draw[>=stealth,->,thick] (-6.6,-0.65) -- node [below] {$\theta_{i}(g)^{*}$} (-7.65,-0.65);
        
     \draw (-3.6,0) node {$ii):$};  
-    \draw[outline] \forthcircle ;
-    \draw[outline] \thirdcircle ;%node  {$D_{g^{*}g$};
+    \draw \forthcircle ;
+    \draw \thirdcircle ;%node  {$D_{g^{*}g$};
     \draw[>=stealth,->,thick] (-2.2,0.6) -- node [above=8pt] {$\theta_{i}(g)$} (-0.6,0.6);
     \draw[>=stealth,->,thick] (-0.6,-0.6) -- node [below=8pt] {$\theta_{i}(g)^{*}$} (-2.2,-0.6);
-    \draw (-2.3,0)  node  {$D^{i}_{g^{*}g}$};
-    \draw (-0.3,0)  node  {$D^{i}_{gg^{*}$};
+    \draw (-2.3,0)  node  {$D^{i}_{\theta_{g}^{*}\theta_{g}}$};
+    \draw (-0.3,0)  node  {$D^{i}_{\theta_{g}\theta_{g}^{*}}$};
     
     \draw (1.45,0) node {$iii):$};
-    \draw[outline] \sixthcircle ;
-    \draw[outline] \fifthcircle;
+    \draw \sixthcircle ;
+    \draw \fifthcircle;
     \draw[>=stealth,->,thick] (2.9,0.6) --  node [above=9pt] {$\theta_{i}(g)$} (3.5,0.6);
     \draw[>=stealth,->,thick] (3.5,-0.6) --  node [below=9pt] {$\theta_{i}(g)$} (2.9,-0.6);    
     
 \end{tikzpicture}
 \caption{The three cases for Lemma \ref{Lem:ParFree}}
 \end{figure}
-\\
-We have that $D_{g^{*}g}$ is:
-\begin{equation*}
-D_{g^{*}g} = (\bigsqcup_{i \in I_{0}} D^{i}_{g^{*}g}) \sqcup (\bigsqcup_{i \in I_{1}} D^{i}_{g^{*}g}) \sqcup (\bigsqcup_{i \in I_{2}} D^{i}_{g^{*}g})
-\end{equation*}
-So any non-principal ultrafilter $\omega \in \partial \beta X$ will pick between one of the three pieces, so it is enough to show that the action must be free given any choice. 
 
-In case $i)$ we have that $\omega$ picks $\bigsqcup_{i \in I_{0}}D^{i}_{g^{*}g}}$, hence $\theta(g)(\omega)$ picks $\bigsqcup_{i \in I_{0}}D^{i}_{gg^{*}}$, which is contained in the compliment of $\bigsqcup_{i \in I_{0}}D^{i}_{g^{*}g}}$ by construction. Whence $\theta(g)(\omega) \not= \omega$ in this case.
+Case i) is clear. In Case iii) we observe that $A_{3}:= \sqcup_{i \in I_{3}} D_{\theta_{g}^{*}\theta_{g}}^{i}$ is a stable core. By Lemma \ref{Lem:StabCore}, $\omega\not = \omega_{g}(\omega)$ if $A_{3} \in \omega$. This leaves case ii).
 
-In case $iii)$ every element of the domain $\bigsqcup_{i \in I_{2}}D^{i}_{g^{*}g}}$ is also in the image $\bigsqcup_{i \in I_{2}}D^{i}_{gg^{*}}}$, whence we can conclude that it is possible to apply any power of $\theta(g)$ to this set. This allows us now to run the argument present in the proof of Lemma \ref{Lem:MT3}.
-
-\begin{comment}
-\begin{figure}[h]\label{Fig:ParFree}
-\includegraphics[scale=0.5]{Diagrams/Diagram1.png}
-\caption{Case $ii)$ for Lemma \ref{Lem:ParFree}}
-\end{figure}
-\end{comment}
-
-This leaves case $ii)$. Let $A_{0,i}:= D_{g^{*}g}^{i}\setminus D_{g^{*}g}^{i}\cap D_{gg^{*}}^{i} $ and $A_{1}=D_{g^{*}g}^{i}\cap D_{gg^{*}}^{i}$. Then set $A_{j}=\bigsqcup_{i \in I_{2}}A_{j,i}$ and let $\omega \in \partial \beta X$. If $A_{0} \in \omega$ then $\theta(g)(A_{0})  \subset A_{0}^{c}$, which implies that $\theta(g)(A_{0}) \not \in \theta(g)(\omega)$. 
+Let $A_{0,i}:= D_{\theta_{g}^{*}\theta_{g}}^{i}\setminus D_{\theta_{g}^{*}\theta_{g}}^{i}\cap D_{\theta_{g}\theta_{g}^{*}}^{i} $ and $A_{1}=D_{\theta_{g}^{*}\theta_{g}}^{i}\cap D_{\theta_{g}\theta_{g}^{*}}^{i}$. Then set $A_{j}=\bigsqcup_{i \in I_{2}}A_{j,i}$ and let $\omega \in \partial \beta X$. If $A_{0} \in \omega$ then $\theta(g)(A_{0})  \subset A_{0}^{c}$, which implies that $\theta(g)(A_{0}) \not \in \theta(g)(\omega)$. 
 
 It remains to deal with $A_{1} \in \omega$. Assume for a contradiction that $\theta(g)(\omega) = \omega$. Then $\theta(g)(A_{1})\cap A_{1} \in \omega$, and we can apply $\theta(g)$ again - denote by $A_{1}^{m}=A_{1} \cap \theta(g)(A_{1}) \cap ... \cap \theta(g)^{m}(A_{1})$. For each $i \in I_{2}$ there exists a power $m_{i}$ of $\theta(g)$ such that this intersection stabilises in $X_{i}$, that is $A_{1,i}^{m_{i}}=A_{1,i}^{m_{i}+1}$. 
 
-Let $\mathcal{A} = \bigcap_{m\in \mathbb{N}} A_{1}^{m}$. This set has the property that $\theta_{g}(\mathcal{A})=\mathcal{A}$, and we call this the \textit{stable core} of the partial action. In this set the concept of orbit is well defined, and hence the argument from Lemma \ref{Lem:MT3} will work without change, replacing the entire space by $\mathcal{A}$. The technicality here is that $\mathcal{A}$ may not be an element of $\omega$. It has an infinite compliment $\mathcal{A}^{c}$, so ultrafilters may fight over this. In particular we can remark that by the assumption that $\omega$ is fixed by $g$ every finite intersection $\bigcap_{m=0}^{k} A_{1}^{m}=A_{1}^{k}$ is an element of $\omega$. 
+Let $\mathcal{A} = \bigcap_{m\in \mathbb{N}} A_{1}^{m}$. This is a stable core. If $\mathcal{A} \in \omega$ then Lemma \ref{Lem:StabCore} gives $\omega \not = \theta_{g}(\omega)$.
 
 So the last case to consider is that $\mathcal{A}^{c}\in \omega$. It suffices to work in $A_{1}$, so let $B_{1}=\mathcal{A}^{c}\cup A_{1}$ and then define $B_{i} = \theta_{g}(B_{i-1})\cap B_{1}$. It follows from the construction of $\mathcal{A}$ that every element $x \in B_{1}$ has an associated smallest natural number $n_{x}$ such that $\theta_{g}^{n_{x}}(x) \not \in B_{n_{x}}$. It is clear from the definition that $B_{i+1} \subset B_{i}$ for every $i$. Lastly, define $B^{-1}_{i+1}:=\theta_{g}^{-1}(B_{i+1}) \subset B_{i}$.  From this we consider the decomposition of $B_{i}$ into two disjoint infinite pieces:
 \begin{eqnarray*}
 B^{\pm 1}_{i,even}:= \lbrace x \in B_{i}^{\pm 1} | n_{x} \equiv 0 \mbox{ mod } 2 \rbrace \\
 B^{\pm 1}_{i,odd}:= \lbrace x \in B_{i}^{\pm 1} | n_{x} \equiv 1 \mbox{ mod } 2 \rbrace.
 \end{eqnarray*} 
-$\omega$ must choose precisely one of these two pieces for each $i$. Assume without loss that $B_{1,even} \in \omega$. It is clear that $B^{-1}_{2} \cap B_{1,even} = B_{2,even}^{-1} \in \omega$ is sent, by $\theta_{g}$, to $B_{2,odd}$ and so $B_{2,odd} \in \theta_{g}(\omega)$. From the assumption that $\theta_{g}(\omega)=\omega$, we can conclude that $B_{2,odd} \in  \omega$. As ultrafilters are upwardly closed, we know also that $B_{1,odd} \in \omega$, which is a contradiction. \end{proof}
+$\omega$ must choose precisely one of these two pieces for each $i$. Assume without loss that $B_{1,even} \in \omega$. It is clear that $B^{-1}_{2} \cap B_{1,even} = B_{2,even}^{-1} \in \omega$ is sent, by $\theta_{g}$, to $B_{2,odd}$ and so $B_{2,odd} \in \theta_{g}(\omega)$. From the assumption that $\theta_{g}(\omega)=\omega$, we can conclude that $B_{2,odd} \in  \omega$. As ultrafilters are upwardly closed, we know also that $B_{1,odd} \in \omega$, which is a contradiction. 
+\end{proof}
 
 This freeness gives us a tool to understand the structure of $S_{\inf}$.
 

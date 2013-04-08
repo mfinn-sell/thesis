@@ -4,7 +4,7 @@
 In this chapter we outline the construction of a short exact sequence of $C^{*}$-algebras associated to an F-inverse monoid $S$ that relates the reduced $C^{*}$-algebra of $S$ to the reduced group $C^{*}$-algebra of its maximal group homomorphic image; this sequence generalises some of the ideas present in the proof of Theorem \ref{thm:BPV2}. We then make use of this result in a metric context; to any subspace $X$ of a given finitely generated discrete group $G$ we associate an object called a \textit{partial translation structure} to $X$. This has a naturally associated inverse monoid and we investigate precisely when this inverse monoid is F-inverse. In this case, we construct an analogue of the short exact sequence for the inverse monoid. This has applications within K-theory, which we discuss at the beginning of the Chapter 5.
 
 \section{A Pimsner-Voiculescu short exact sequence for an F-inverse monoid.}\label{sect:S1}
-In this section we construct a short exact sequence that can naturally be associated to an F-inverse monoid. The process of doing this requires careful analysis of the representation theory of the universal groupoid of a 0-F-inverse monoid in general. Later in Section \ref{sect:S1-a} we utilise this machinery to prove the following theorem, which is Theorem \ref{thm:PV1} in the text.
+In this section we construct a sequence of $C^{*}$-algebras that can naturally be associated to an F-inverse monoid and prove that it is exact. The process of doing this requires careful analysis of the representation theory of the universal groupoid associated to the inverse monoid in question. Later in Section \ref{sect:S1-a} we utilise this machinery to prove the following theorem, which is Theorem \ref{thm:PV1} in the text.
 
 \begin{thm}
 Let $S$ be an F-inverse monoid and let $\G_{\E}$ be its universal groupoid and let $A=C_{c}(\G_{U})$. Then we have the following (intrinsic) short exact sequence of $C^{*}$-algebras:
@@ -61,7 +61,7 @@ where $v^{'}= \sum_{u \in L_{y}} a_{u}\delta_{[u,y]} \in L^{2}(\mathcal{G}_{y})$
 \end{eqnarray*}
 \end{proof}
 
-This allow us to develop some control in $L^{2}(\mathcal{G}_{x})$ in terms of the maximal group homomorphic image of $S$ for each $x \in U$ in the F-inverse case:
+We specialise this result to the case that $S$ is F-inverse.
 \begin{corollary}\label{cor:C1}
 Let $S$ be an F-inverse monoid and let $\mathcal{G}=\mathcal{G}_{\widehat{E}}$ be its universal groupoid and let $\lbrace L^{2}(\mathcal{G}_{x}) \rbrace_{x \in \widehat{E}}$ be the field of Hilbert spaces associated with $\mathcal{G}$. Then for each $x \in \E \setminus \lbrace 1_{E} \rbrace$ there exists a projection map $Q_{x}: L^{2}(\mathcal{G}_{\infty}) \rightarrow L^{2}(\mathcal{G}_{x})$ such that $\lambda_{x}(1_{tt^{*}}\delta_{t}) = Q_{x}\lambda_{\infty}(1_{tt^{*}}\delta_{t})Q_{x}^{*}$.
 \end{lemma}
@@ -82,7 +82,7 @@ Let $S$ be a 0-F-Inverse monoid with no primitive idempotents, $\G$ be its unive
 \begin{equation*}
 L^{2}(\G) = \bigoplus_{x \in \E}L^{2}(\G)= \bigoplus_{x \in U}L^{2}(\G_{x}) \oplus \bigoplus_{y \in \E_{tight}}L^{2}(\G_{y})}= L^{2}(\G_{U})\oplus L^{2}(\G_{tight})
 \end{equation*}
-Where because $E$ has no primitive idempotents, $\overline{E} \subset U \subset \E$, and $\overline{E}$ is dense, hence so is $U$. It then follows from prop (\ref{prop:P3})that the norms defined by representing $C_{c}(\G)$ on $L^{2}(\G)$ and $L^{2}(\G_{U})$ respectively agree.
+Where because $E$ has no primitive idempotents, $\overline{E} \subset U \subset \E$, and $\overline{E}$ is dense, hence so is $U$. It then follows from Proposition \ref{prop:P3} that the norms defined by representing $C_{c}(\G)$ on $L^{2}(\G)$ and $L^{2}(\G_{U})$ agree.
 \end{remark}
 
 We can define the following map:
@@ -95,7 +95,7 @@ Now we can observe that both $L^{2}(\G_{U})$ and $L^{2}(\G_{\E})$ are invariant 
 \lambda(f)=\bigoplus_{x \in \E}\lambda_{x}(f)=\bigoplus_{x \in U}\lambda_{x}(f) \oplus \bigoplus_{y \in \E_{tight}} \lambda_{y}(f) := \lambda_{U}(f)\oplus \lambda_{tight}(f)
 \end{equation*}
 so we can use the map $p$ on elements of the groupoid algebra.
-We can use this truncation to build a quotient from $C^{*}_{r}(\G)$ onto $C^{*}_{r}(\G_{tight})$
+We can use this truncation to build a quotient from $C^{*}_{r}(\G)$ onto $C^{*}_{r}(\G_{tight})$.
 
 \begin{proposition}\label{prop:P4}
 Let $S$ be an $0-F-inverse$ monoid with no primitive idempotents and let $\G=\G_{\E_{0}}$ be the reduction to the character space of its universal groupoid. Then we have a surjective *-homomorphism from $C^{*}_{r}(\G)$ onto $C^{*}_{r}(\G_{tight})$.
@@ -111,7 +111,7 @@ We need to show that
 \item The map $q$ is contractive
 \item The map $q$ is a *-homomorphism.
 \end{enumerate}
-To tackle (1) we consider the regular representations of $f = \sum_{t \in \Max(S)} f_{t} \delta_{t}$ and $qf$ respectively. Using remark (\ref{rem:Rep}) and the following (commuting) diagram
+To tackle (1) we consider the regular representations of $f = \sum_{t \in \Max(S)} f_{t} \delta_{t}$ and $qf$ respectively. Using Remark \ref{rem:Rep} and the following (commuting) diagram
 
 \begin{center}
 \begin{tikzpicture}
@@ -162,7 +162,7 @@ For all $[st,\phi] \in \G_{\E_{tight}}$. Then compute the right hand side:
 \end{eqnarray*}
 Which matches for each $[st,\phi] \in \G_{\E_{tight}}$. 
 
-To prove (II) we need to compute on a single element, where $(f_{s}\delta_{s})^{*}=\Xlpha_{s^{*}}(\overline{f_{s}})\delta_{s^{*}}$:
+To prove (II) we need to compute on a single element, where $(f_{s}\delta_{s})^{*}=\alpha_{s^{*}}(\overline{f_{s}})\delta_{s^{*}}$:
 
 \begin{eqnarray*}
 q((f_{s}\delta_{s})^{*})([s^{*},x])& = &\Xlpha_{s^{*}}(\overline{f_{s}})_{\E_{tight}}(x)\\
@@ -174,7 +174,7 @@ As $q$ is a continuous *-homomorphism, it extends to the completions.
 \end{proof}
 
 \subsection{Applying the machinery}\label{sect:S1-a}
-The following lemma is key in the proof of theorem \ref{thm:PV1}.
+We encode the norm estimations required for the proof of Theorem \ref{thm:PV1} in the following Lemma:
 \begin{lemma}\label{lem:L3}
 Let $S$ be F-inverse and let $K \subset \Max(S)$ such that $K$ is finite and $T=\sum_{t \in K} a_{t}\lambda(1_{tt^{*}}\delta_{t})$ such that $a_{t}$ is the constant function that has value $a_{t}$ on $D_{tt^{*}}$. Then $\Vert T \Vert = \Vert qT \Vert$
 \end{lemma}
@@ -186,8 +186,6 @@ It is immediate that $\Vert T \Vert \geq \Vert qT \Vert$ as $q$ is contractive. 
 \end{eqnarray*}
 This holds for every $x \in E$ and so by  $\Vert T \Vert = \Vert \lambda(T) \Vert = \sup \lbrace \Vert \lambda_{x}(T) \Vert : x \in E \rbrace \leq \Vert qT \Vert$. This gives the desired equality.  
 \end{proof}
-
-We can now state and prove the main result of this section:
 
 \begin{theorem}\label{thm:PV1}
 Let $S$ be an F-inverse monoid and let $\G_{\E}$ be its universal groupoid and let $A=C_{c}(\G_{U})$. Then we have the following (intrinsic) short exact sequence of $C^{*}$-algebras:
@@ -210,13 +208,13 @@ With only finitely many non-zero terms. This can be viewed concretely on $L^{2}(
 \begin{equation*}
 \lambda(f)=\sum_{s \in S} f_{s}\lambda(1_{ss^{*}}\delta_{s})
 \end{equation*}
-$S$ F-inverse allows us to reduce this sum using the following observation that for each $s \in S$ we can write the term $f_{s}\delta_{s}$ as $f_{s}\chi_{s}\delta_{t_{s}}$ where $t_{s}$ is the maximal element above $s$. So for each $t \in \Max(S)$ we can define $f^{'}_{t}=\sum_{s \leq t}f(s)\chi_{s}$ and then
+As $S$ is F-inverse we can reduce this sum using the observation that for each $s \in S$ we can write the term $f_{s}\delta_{s}$ as $f_{s}\chi_{s}\delta_{t_{s}}$ where $t_{s}$ is the maximal element above $s$. So for each $t \in \Max(S)$ we can define $f^{'}_{t}=\sum_{s \leq t}f(s)\chi_{s}$ and then
 \begin{equation}\label{Eq1}
 \lambda(f)=\sum_{t \in \Max(S)} f^{'}_{t}\lambda(1_{tt^{*}}\delta_{t})
 \end{equation}
 (\ref{Eq1}) is in the kernel of $q$ if and only if each $f^{'}_{t}(\infty)=0$ for every $t \in \Max(S)$ that is if and only if $\lambda(f) \in A$.\\
 \\
-Now let $T$ be an element of $C^{*}_{r}(\G})$ such that $T$ is in the kernel of $q$ ($qT=0$). Then we need to show $T$ can be approximated by finite sums that lie in $A$. Let $T_{n}$ be finite sums in $C_{c}(\mathcal{G})$ with $T_{n} \rightarrow T$. Without loss of generality, these $T_{n}$ have the following form for some finite $K_{n} \subset \Max(S)$:
+Now let $T$ be an element of $C^{*}_{r}(\G})$ such that $qT=0$. Then we need to show $T$ can be approximated by finite sums that lie in $A$. Let $T_{n}$ be finite sums in $C_{c}(\mathcal{G})$ with $T_{n} \rightarrow T$. Without loss of generality, these $T_{n}$ have the following form for some finite $K_{n} \subset \Max(S)$:
 \begin{equation*}
 T_{n}=\sum_{t \in K_{n}} f^{n}_{t}\lambda(1_{tt^{*}}\delta_{t})
 \end{equation*}
@@ -224,12 +222,12 @@ then $qT_{n} = \sum_{t \in K_{n}} f^{n}_{t}(\infty)\lambda_{\infty}(1_{tt*}\delt
 \begin{equation}
 S_{n} = \sum_{t \in K_{n}} a^{n}_{t}\lambda(1_{tt*}\delta_{t}) \in C_{c}(\mathcal{G})
 \end{equation}
-Where $a^{n}_{t}$ is the constant function on $D_{tt^{*}}$ with value $f_{t}^{n}(\infty)$. It is clear that $qS_{n}=qT_{n}$ and using lemma \ref{lem:L3} we have that $\Vert S_{n} \Vert = \Vert qS_{n} \Vert = \Vert qT_{n} \Vert$ so $\Vert S_{n} \Vert \rightarrow 0$\\
+Where $a^{n}_{t}$ is the constant function on $D_{tt^{*}}$ with value $f_{t}^{n}(\infty)$. It is clear that $qS_{n}=qT_{n}$ and using Lemma \ref{lem:L3} we have that $\Vert S_{n} \Vert = \Vert qS_{n} \Vert = \Vert qT_{n} \Vert$ so $\Vert S_{n} \Vert \rightarrow 0$\\
 \\
-Let $U_{n}=(T_{n}-S_{n})$. Then $U_{n} \in A$ and $U_{n}=(T_{n}-S_{n}) \rightarrow (T-0)=T$, so T can be approximated by elements in $A$, hence $A$ is dense in $ker(q)$.
+Let $U_{n}=(T_{n}-S_{n})$. Then $U_{n} \in A$ and $U_{n}=(T_{n}-S_{n}) \rightarrow (T-0)=T$, whence $A$ is dense in $ker(q)$.
 \end{proof} 
 \section{A similar sequence for 0-F-inverse monoids}\label{sect:S2}
-In this section we consider a generalisation of Theorem \ref{thm:PV1} to strongly 0-F-inverse monoids with K-exact universal group. First we need some terminology of \cite{MR1911663}.
+In this section we consider a generalisation of Theorem \ref{thm:PV1} to strongly 0-F-inverse monoids with non-trivial K-exact universal group. First we need some terminology of \cite{MR1911663}.
 
 \begin{definition}
 Let $\G$ be an locally compact \'etale groupoid and let $F$ be a subset of the unit space $\G^{(0)}$. We say that $F$ is \textit{saturated} if for all $\gamma \in \G$ with $s(\gamma) \in F$ we also have $r(\gamma)\in F$. 
@@ -252,7 +250,7 @@ Let $S$ be a strongly $0$-F-inverse monoid with universal group $G:=U(S)$. If $G
 is exact at the level of K-theory.  
 \end{theorem}
 \begin{proof}
-We begin by using either Theorem \ref{Thm:IT2-a} or \ref{Thm:IT2} to construct a transformation groupoid $Y_{\E}\rtimes G$ and a Morita equivalence between $\G_{\E}$ and $\Y_{\E}\rtimes G$. We can repeat this process for both $\E_{tight}$ and $U:=\E_{tight}^{c}$, and by Lemma \ref{Lem:Cut} and the fact that quotient maps are open we can conclude that we have a natural sequence of commutative $C^{*}$-algebras:
+We begin by using either Theorem \ref{Thm:IT2-a} or \ref{Thm:IT2} to construct a transformation groupoid $Y_{\E}\rtimes G$ and a Morita equivalence between $\G_{\E}$ and $Y_{\E}\rtimes G$. We can repeat this process for both $\E_{tight}$ and $U:=\E_{tight}^{c}$, and by Lemma \ref{Lem:Cut} and the fact that quotient maps are open we can conclude that we have a natural sequence of commutative $C^{*}$-algebras:
 \begin{equation*}
 0 \rightarrow C_{0}(Y_{U}) \rightarrow C_{0}(Y_{\E}) \rightarrow C_{0}(Y_{\E_{tight}}) \rightarrow 0
 \end{equation*}
@@ -272,7 +270,7 @@ where the isomorphisms are induced by the Morita equivalences given by Theorems 
 \section{Translation Structures to Inverse Monoids}
 In this section we outline the definition of a partial translation structure and describe some of the main results concerning them. Focusing on a special case, what we call \textit{grouplike partial translation structures}, we connect to uniform embeddability into groups for metric spaces to translation structures.  We then outline an inverse monoid approach to understanding the translation algebra that can be naturally associated to a partial translation structure.
 
-The concept of a partial translation structure was given in \cite{MR2363428} to study uniform embeddability into groups. By associating to a metric space this additional information, namely a collection of partial bijections that form entourages in the metric coarse structure, you gain control over the local symmetries of the space that preserve metric information. 
+The concept of a partial translation structure was first introduced in \cite{MR2363428}. By associating to a metric space this additional information, namely a collection of partial bijections that form entourages in the metric coarse structure, it is possible to control the local symmetries of the space that preserve metric information. 
 
 
 \begin{definition}\label{PT2}
@@ -285,7 +283,7 @@ A partial translation structure on $X$ is a collection $\mathcal{T}$ of partial 
 \end{definition}
 
 \begin{definition}(Freeness, Global control)
-A partial translation structure on X is said to be \textit{free} if in definition \ref{PT2} ii) $k=1$; i.e there is a unique cotranslation such that for each pair $(x,y)\in X \times X$ we have $\sigma x = y$.\\
+A partial translation structure on X is said to be \textit{free} if in Definition \ref{PT2} ii) $k=1$; i.e there is a unique cotranslation such that for each pair $(x,y)\in X \times X$ we have $\sigma x = y$.\\
 A partial translation structure on X is said to be \textit{globally controlled} if the partial cotranslation orbits are partial translations. 
 \end{definition}
 
@@ -340,6 +338,8 @@ Now we prove that $S$ is $0$-E-unitary. Let $e\in E(S)\setminus \lbrace 0 \rbrac
 \subsection{An embeddability theorem for metric spaces with grouplike partial translation structures}
 
 The precise nature of the relationship between partial translation structures in the sense of Definition \ref{Def:PTS} and uniform embeddings is understood. It follows from Theorem 19 of \cite{MR2363428} that given any space that admits a uniform embedding into a group, we can equip it with a translation structure given by the Definition \ref{Def:PTS}. The inverse monoid generated by this translation structure is also understood from Lemma \ref{Lem:PTS}.
+
+In this section we provide a partial converse to Theorem 19 of \cite{MR2363428}:
 %Now we want to prove a more general version of the result below.
 
 \begin{theorem}\label{thm:T2}
@@ -380,7 +380,7 @@ Hence for each map in $\mathcal{T}$ we have a corresponding map in $\mathcal{T}_
 The compliment of $\sigma (T_{x_{0}})$ is not coarsely dense in $G$.
 \end{corollary}
 \begin{proof} 
-The proof is a direct consequence of theorem \ref{thm:T2}. The translation structure $\mathcal{T}_{G}|_{X}$ has no zero divisors; and using proposition \ref{prop:TFAE} iii) $\Rightarrow$ i) we reach the desired conclusion.
+The proof is a direct consequence of Theorem \ref{thm:T2}. The translation structure $\mathcal{T}_{G}|_{X}$ has no zero divisors; and using Proposition \ref{prop:TFAE} iii) $\Rightarrow$ i) we reach the desired conclusion.
 \end{proof}
 
 In summary, Theorem \ref{thm:T2} provides us a wealth of examples of F-inverse monoids with the added information of a concrete representation on an interesting metric space. It turns out that this provides a simplification to Theorem \ref{thm:PV1} when dealing with such representations.
@@ -394,7 +394,7 @@ The translation algebra associated with a partial translation structure $\mathca
 
 The aim of this section is to give a description of the partial translation algebra associated to a grouplike $\mathcal{T}$ with no zero divisors as the $C^{*}$-algebra of a groupoid, where the groupoid is related to the inverse monoid generated by the partial translations. We then recast a result of Brodzki, Niblo, Putwain and Wright \cite[Theorem 8.3]{rosiesthesis} outlining a short exact sequence of $C^{*}$-algebras arising from such translation structures and compute some examples in certain cases.
 
-Theorem 1 and 2 in \cite{MR2457037} allow us to draw the conclusion that the left regular representation of $S$ does not generate the correct covariant groupoid representation in general, however appears to match in the case of the Toeplitz algebra. This suggests that we are missing some information, but depending on the structure of the space this may not be necessary information. The information carried over from the partial translation structure that has not been used in this instance is the representation on $I(X)$, which determines a representation on $\ell^{2}(X)$ in the standard way. This representation will be the focus of this section. The following is Proposition 10.6 \cite{MR2419901}
+Given the information of Lemma \ref{Lem:PTS} we have a inverse monoid that we can associate to a grouplike translation structure. This has a natural $C^{*}$-algebra, as outlined in Chapter 2. However, we have not used the geometric representation on $I(X)$ of this inverse monoid, which determines a representation on $\ell^{2}(X)$ in the standard way. This representation will be the focus of this section. The following is Proposition 10.6 \cite{MR2419901}
 
 \begin{proposition}\label{prop:P7} 
 Let $\mu$ be a representation of $S$ on a Hilbert Space $H$. Then there exists a unique *-representation $\pi_{\mu}$ of $C_{0}(\E)$ on $H$ such that $\pi_{\mu}(1_{e})=\mu(e)$ for every $e \in E$ In addition $(\pi_{\mu} \times \mu)$ is a covariant representation for $\G_{\E}$. 
