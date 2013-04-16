@@ -1,31 +1,90 @@
 \setstretch{1.6}
 \chapter{Introduction.}
 
-General fluff about inverse semigroups and groupoids being important, particular examples include the partial action of a discrete group in both cases. Connect in the work on partial symmetries, remark that this connects work on tilings as well as work of Macbeth on decidablity problems for certain groups.
+Groups have played a role in geometry, topology and analysis throughout the last century, following the inception of the erlanger program around [date]. The scheme is that to recognise objects one must focus on their symmetries; the set of structure preserving automorphisms of an object form a group that describes the ways to permute the object whilst preserving what makes it interesting \textit{globally}. This idea works well within both geometry and topology; the fundamental group of a manifold plays an important role in both areas, as well as entering the realms of physics through representation theory. This makes groups a natural candidates for study.
 
-Outline the general approach we're going to use in the thesis. Move to some specific examples.
+Another example that models similar behavour is that of a \textit{groupoid} such as the fundamental groupoid, the basepoint free fundamental group in some sense, that is constructed in algebraic topology similar to the path groupoid of a graph. These objects arise much more generally than groups and are able to play much more subtle roles in classifying structures such as equivalence relations, dealing with non-Hausdorff topological quotient spaces \cite{} via group actions and encoding coarse information about metric and topological spaces \cite{}.
 
-\subsection{The work of Pimsner and Voiculescu.}
+A natural question one could ask is ``What happens with the local structure?" This is where\textit{semigroups} enter the picture; local symmetries can be captured by \textit{partial bijections}, which form an \textit{inverse semigroup} under composition. This point of view is less publicised, but work on these ideas enters into both geometry and topology in many places \cite{, , }, even breaking into physical questions \cite{, ,}. Such semigroups also admit a groupoidification: there exists for each inverse semigroup $S$ a universal groupoid with the same linear representation theory. These connections make inverse semigroups and groupoids very useful to study from the point of view of answering questions that require some analysis or topology. Each object has natural advantages, the combinatorial theory of semigroups is much more developed than that of groupoids, but the topological aspects of groupoids often play an important role.
 
-This leads to certain generalisations associated to F-inverse monoids...
+For the time being, we will consider the following very simple but general example:
+\begin{example}\label{Ex:Int1}
+Let $\Gamma$ be a finitely generated discrete group and let $X$ be a subset of the Cayley graph of $\Gamma$. Fix a left invariant metric on $\Gamma$ and then the right action of $\Gamma$ on itself given by multiplcation by inverses gives us a set of translations:
+\begin{equation*}
+t_{g}: \Gamma \rightarrow \Gamma , x \mapsto xg^{-1}
+\end{equation*}
+We can now restrict these maps to $X$, where they may not be defined everywhere. Denote the set of points in $X$ with image in $X$ by $D_{g}$. Then we have:
+\begin{equation*}
+t_{g}^{X}: D_{g} \rightarrow D_{g^{-1}} , x \mapsto xg^{-1}
+\end{equation*}
+These are partial bijections that move elements a bounded amounts. We can then generate an inverse submonoid of all the partial bijections on $X$ using this collection. This inverse monoid captures both the metric data (as the group action determines the metric on $\Gamma$) and the local structure of $X$ (as the $D_{g}$ need not be all of $X$, or even connected for example). This is an example of a \textit{Partial} action of $\Gamma$ and the inverse monoid it generates belongs to a very nice combinatorial class known as \textit{strongly 0-F-inverse} monoids that have been well-studied in the literature \cite{}.
+\end{example}
 
-State the main results on this, and outline certain K-theory discussions. This is part 1; Using partial actions of a group to understand the group.
+The work presented in this document is developing this connection between group theory and inverse semigroup theory on the one hand and topology and geometry on the other by considering the universal groupoid assoicated to the partial action defined above. By passing to this groupoid we get access to the much more well developed analytic tools of noncommutative geometry; groupoid $C^{*}$-algebras are much more well studied in comparison to those of an inverse monoid. In particular, we will be interested in constructing a $C^{*}$-algebraic analogue to Example \ref{Ex:Int1}, an example of which is given below:
 
-\subsection{Counterexamples to the coarse Baum-Connes conjecture.}
+\begin{example}\label{Ex:Int2}
+We consider a special case of Example \ref{Ex:Int1}, but add the operator algebra view. Let $\Gamma=\mathbb{Z}$ and let $X=\mathbb{N}$. The maps defined above turn into:
+\begin{eqnarray*}
+& t_{n}: \mathbb{N} \rightarrow \mathbb{N}, x \mapsto x+n \\
+&t_{-n}: \mathbb{N} \rightarrow \mathbb{N}\setminus \lbrace 0,1,...,n-1 \rbrace , x \mapsto x-n
+\end{eqnarray*} 
+These partial bijections generate an inverse monoid, given by the presentation:
+\begin{equation*}
+S=\langle t_{n},t_{n}^{*}=t_{-n} | t_{n}^{*}t_{n}=1 \rangle
+\end{equation*}
+This is a well-known object in inverse semigroup theory: \textit{the bicyclic monoid}. We can also consider these maps as partial isometry operators inside $\mathcal{B}(\ell^{2}(X))$ in a very natural way and then consider the $C^{*}$-algebra they generate. This algebra is called the translation algebra $C^{*}T$ associated to the set of maps $T$. In this instance it coincides the the inverse semigroup $C^{*}$-algebra $C^{*}_{r}(S)$, which also satisfies the presentation defined above.
 
-This arises from considering certain bad graphs. Explain why this conjecture is relevant, and why on earth understanding the graphs is a good idea. Explain that natural examples come with a group action, and explain that we generalise this idea to get bad sequences with a partial free group action. .
+This is well-known to operator algebraists: $C^{*}(T)\cong C^{*}_{r}(S) \cong \mathcal{T}$: the Toeplitz algebra. This fits into the short exact sequence:
+\begin{equation*}
+0 \rightarrow \mathcal{K}(\ell^{2}(\mathbb{N})) \rightarrow \mathcal{T} \rightarrow C(S^{1}) \rightarrow 0.
+\end{equation*}
+This can be translated into semigroup language:
+\begin{equation*}
+0 \rightarrow \mathcal{K}(\ell^{2}(\mathbb{N})) \rightarrow C^{*}_{r}(S) \rightarrow C^{*}_{r}(\mathbb{Z}) \rightarrow 0.
+\end{equation*}
+The last isomorphism arises from Fourier transform, but is recorded combinatorially by the fact that $\mathbb{Z}$ is the maximal group homomorphic image of $S$, i.e is given by $S$ after quotienting by a congruence. 
+\end{example}
 
-Outline the main theorems.
+As remarked in the construction outlined above there is a inverse semigroup with good combinatorial properties that represents in the translation algebra. One might then wonder how much of this result is true in the general case that we consider an inverse semigroup in that class. This forms one of the main results of Chapter 3.
 
-This is ii), understanding a space by understanding that it admits a partial group action.
+\begin{thm}\label{Ex:Int3}
+Let $S$ be an F-inverse monoid and let $\G_{\E}$ be its universal groupoid and let $A=C_{c}(\G_{U})$. Then we have the following (intrinsic) short exact sequence of $C^{*}$-algebras:
+\begin{equation*}
+0 \rightarrow \overline{A} \rightarrow C^{*}_{r}(\mathcal{G}) \rightarrow C^{*}_{r}(G) \rightarrow 0
+\end{equation*}
+\end{thm}
 
-\subsection{Further connections.}
+The following example of Pimsner and Voiculescu generalises Example \ref{Ex:Int2}, and was a fundamental development in noncommutative geometric techniques in operator K-theory:
 
-Explain that the ideas arising from chapter 3 will connect with those of chapter 4. And outline how this connection runs through a partial translation structure / algebra. This is interplay between i) and ii)
+\begin{example}
+Pimsner-Voiculescu.
+\end{example}
 
-State some results;
+We discuss the computations of the K-theory of the translation inverse monoid in this example from the original point of view \cite{} in Chapter 5, which are simple as there is a large machinery in the literature to compute these K-groups \cite{,}. We see, in this example, that the inverse semigroup $C^{*}$-algebra is not the correct choice to reconstruct these calculations from the Theorem above, and so we prove a similar result about the representation connected to the translation structure:
 
-Explain the outgoing ideas and open problems this thesis leaves behind.
+\begin{thm}
+Let $X \subset G$, $\mathcal{T}=\mathcal{T}_{G}|_{X}$ be a grouplike partial translation structure on $X$ with no zero divisors and $S=\langle \mathcal{T} \rangle \hookrightarrow_{\mu} I(X)$ be the associated F-inverse monoid. Then we have the following (intrinsic) short exact sequence of $C^{*}$-algebras:
+\begin{equation}\label{eqn1}
+0 \rightarrow C^{*}_{r}(\G_{U}|_{\X}) \rightarrow C^{*}_{r}(\G_{\X}) \rightarrow C^{*}_{r}(G) \rightarrow 0
+\end{equation}
+Where the middle term is the translation algebra associated to $X$ arising from $\mathcal{T}$
+\end{thm}
 
-Smile. It's only 6-10 pages!
+This does produce both the short exact sequences from Example \ref{Ex:Int2} and \ref{Ex:Int3}. In general the K-theory is much harder to compute but is connected to the easier computations provided by the work of \cite{,}.
+
+In general the inverse monoid generated by the translation structure by the construction of Example \ref{Ex:Int1} will not be as well behaved and will not satisfy the Theorems above.
+Through machinery generalising work of Khoshkam and Skandalis \cite{} captured by Milan and Steinberg \cite{} and suitably weak hypothesis on the group we prove:
+
+\begin{thm}
+Let $X \subset G$ where $G$ is K-exact and let $\mathcal{T}=\mathcal{T}_{G}|_{X}$ be a grouplike partial translation structure on $X$ and $S=\langle \mathcal{T} \rangle \hookrightarrow_{\mu} I(X)$ be the associated strongly 0-F-inverse monoid. Then we have the following (intrinsic) short exact sequence of $C^{*}$-algebras:
+\begin{equation*}
+0 \rightarrow C^{*}_{r}(\G_{U}|_{\X}) \rightarrow C^{*}_{r}(\G_{\X}) \rightarrow C^{*}_{r}(\G_{\E}|_{\X\cap\E_{tight}}) \rightarrow 0
+\end{equation*}
+\end{thm}
+
+We explore in chapter 5 the K-theory of the Cuntz algebras $\mathcal{O}_{n}$ from this perspective as well as applying this idea to give an alternative proof that Gromovs monster groups are not K-exact.
+
+Another way to generalise Example \ref{Ex:Int1} is to see what can be said about the geometry of a metric space that admits a partial action by a discrete group. We rely on this idea to prove the main results in Chapter 4. 
+
+Connecting paragraph about expanders and why they're cool, and that they're geometrically interesting because they break coarse Baum-Connes, digress into coarse Baum-Connes? Possibly before this paragraph?
 
