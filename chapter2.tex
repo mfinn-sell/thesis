@@ -1,6 +1,6 @@
 %\setstretch{1.6}
 \chapter{The Basics.}
-As outlined in the introduction inverse semigroups and groupoids play a large role in the development of many aspects of combinatorics, graph theory and analysis. In this section we provide some basics concerning these objects and the connections between them, developing the notion of Paterson and Exel of a \textit{universal groupoid} associated to an inverse semigroup. We then give a brief introduction to operator algebras, focusing on the situation that arises naturally from both inverse semigroups and groupoids. Lastly, we consider topological K-theory of $C^{*}$-algebras; we outline all the tools we need for the later chapters.
+As outlined in the introduction inverse semigroups and groupoids play a large role in the development of many aspects of combinatorics, graph theory and analysis. In this section we provide some basics concerning these areas and the connections between them, developing the notion of Paterson and Exel of a \textit{universal groupoid} associated to an inverse semigroup. We then give a brief introduction to operator algebras, focusing on the situation that arises naturally from both inverse semigroups and groupoids. Lastly, we consider topological K-theory of $C^{*}$-algebras and we outline all the tools we need for the later chapters.
 
 \section{Semigroup and Groupoid Theory.}
 
@@ -15,7 +15,7 @@ Let $S$ be a semigroup. We say $S$ is $inverse$ if there exists a unary operatio
 \end{enumerate}
 \end{definition}
 
-A very fundamental example of such an object is the \textit{symmetric inverse monoid} on any set $X$; consider the collection of all partial bijections of $X$ to itself, giving them them the natural composition law associated to functions - that is find the largest possible domain on which the composition makes sense, shown below in Figure \ref{Fig:Comp}.
+A very fundamental example of such an object is the \textit{symmetric inverse monoid} on any set $X$. Consider the collection of all partial bijections of $X$ to itself equipped with the  natural composition law associated to functions, which is to find the largest possible domain for the composition makes sense. This is shown below in Figure \ref{Fig:Comp}.
 
 
 \begin{figure}[h]
@@ -122,7 +122,7 @@ For an F-inverse monoid it is possible to study the minimum group congruence by 
 (\forall s,t \in Max(S)) s \Xst t = u \mbox{ for } !u \in Max(S) \mbox{ with } st \leq u.
 \end{equation*}
 
-In general the inverse monoids we will construct will not have this property because they will have a zero element. However we can make similar but more general versions of the above definitions:
+In general the inverse monoids we will construct will not have this property because they will have a zero element. However we can make similar definitions in this case:
 
 \begin{definition}
 We say $S$ is 0-E-unitary if $\forall e \in E\setminus 0, s \in S$ $e \leq s$ implies $s \in E$. We say it is 0-F-inverse if there exists a subset $T \subset S$ such that for every $s \in S$ there exists a unique $t \in T$ such that $s \leq t$ and if $s \leq u$ then $u \leq t$.
@@ -153,11 +153,11 @@ Moreover we ask the following:
 A groupoid is \textit{principal} if $(r,s): \G \rightarrow \G^{(0)} \times \G^{(0)}$ is injective and \textit{transitive} if $(r,s)$ is surjective. A groupoid $\G$ is a \textit{topological groupoid} if both $\G$ and $\G^{(0)}$ are topological spaces, and the maps $r,s, ^{-1}$ and the composition are all continuous. A Hausdorff, locally compact topological groupoid $\G$ is \textit{proper} if $(r,s)$ is a proper map and \textit{\'etale} or \textit{r-discrete} if the map $r$ is a local homeomorphism. When $\G$ is \'etale, $s$ and the product are also local homeomorphisms, and $\G^{(0)}$ is an open subset of $\G$.
 
 \begin{definition}
-Let $\G$ be a groupoid and let $x,y \in \G^{(0)}$ and $A,B \subset \G^{(0)}$. Set:
+Let $\G$ be a groupoid and let $A,B \subset \G^{(0)}$. Set:
 \begin{enumerate}
-\item $\G_{x}=s^{-1}(x)$
-\item $\G^{y}=r^{-1}(y)$
-\item $\G^{y}_{x}=\G^{y} \cap \G_{x}$
+\item $\G_{A}=s^{-1}(A)$
+\item $\G^{A}=r^{-1}(A)$
+\item $\G^{B}_{A}=\G^{B} \cap \G_{A}$
 \end{enumerate}
 
 \begin{definition}
@@ -238,6 +238,10 @@ and product and inverse:
 [s,\phi].[t,\phi^{'}]= [st,\phi^{'}] \mbox{ if } ([s,\phi],[t,\phi^{'}]) \in \G_{\E}^{(2)}, [s,\phi]^{-1} = [s^{*},\widehat{\rho}_{s}(\phi)] 
 \end{eqnarray*}
 For all the details of the above, we refer to \cite[Section 4]{MR2419901}. This groupoid is the \textit{universal groupoid} associated to $S$. We collect some information about this groupoid from \cite{MR2419901,MR1724106} in Theorem \ref{Thm:Info}.
+\item Lastly we consider certain subspaces of $\E$ that are closed and saturated and we outline their construction and some associated technicalities below. This subspace arises from the question: what are the ultrafilters on $E$?
+
+The answer to this question and the technical obstructions that arise form a large part of the papers \cite{MR2419901,MR2672179} of Lawson and Exel. We denote the subspace of ultrafilters $\E_{\infty}$. The main technical point is that, unlike the Boolean algebra case, $\E_{\infty}$ need not be a closed subset of $\E$ when $E$ is a semilattice. This leads Exel to consider what he calls \textit{tight} filters, which we denote by $\E_{tight}$. In \cite{MR2419901} it is shown that tight filters are the closure of the ultrafilters inside $\E$. 
+
 \end{enumerate}
 \end{definition}
 
@@ -270,24 +274,20 @@ The second equation tells us that $t_{s}^{*}t_{s} \in F_{\phi}$ as filters are u
 \end{proof}
 Using Claim \ref{MainClaim:C1} will be able to forget the non-maximal elements in the monoid $S$ when working with $\G_{\E}$. This technique will be prevalent throughout this document as it allows many natural geometric considerations to enter into what would otherwise be purely combinatorial calculations.
 
-\begin{comment}
-To any representation of $S$  by partial bijections on a space $X$ we get a corresponding representation on Hilbert space of the groupoid $\G_{\E}$. We can then use this to build a compactification of $X$ that will allow us to reduce $\G_{\E}$, capturing the representation theory on $X$.
-\end{comment}
-
 \section{Prehomomorphisms of inverse monoids and general partial actions of discrete groups.}\label{Sect:S3} 
 In this section we outline some basic properties of partial actions of discrete groups on topological spaces, paying particular attention to the types of inverse monoid $S$ these generate. We then use analytic information associated to the group together with properties of inverse monoid to understand analytic properties of the universal \'etale groupoid $\G_{\E}$ that is built from the inverse monoid $S$. We begin with a definition.
 
 \begin{definition}
-Let $\rho: S \rightarrow T$ be a map between inverse semigroups. This map is called a prehomomorphism if for every $s,t \in S$, $\rho(st) \leq \rho(s)\rho(t)$ and a dual prehomomorphism if for every $s,t \in S$ $\rho(s)\rho(t) \leq \rho(st)$.
+Let $\rho: S \rightarrow T$ be a map between inverse semigroups. This map is called a \textit{prehomomorphism} if for every $s,t \in S$, $\rho(st) \leq \rho(s)\rho(t)$ and a \textit{dual prehomomorphism} if for every $s,t \in S$ $\rho(s)\rho(t) \leq \rho(st)$.
 \end{definition}
 
 We recall that a congruence is said to be \textit{idempotent pure} if the preimage of any idempotent is an idempotent. We extend this definition to general maps in the natural way. In addition we call a map $S \rightarrow T$ \textit{0-restricted} if the preimage of $0 \in T$ is $0 \in S$.
 
 \begin{definition}
-Let $S$ be a 0-E-unitary inverse monoid. We say $S$ is \textit{strongly 0-E-unitary} if there exists an idempotent pure, 0-restricted prehomomorphism, $\Phi$ to a group $G$ with a zero element adjoined, that is: $\Phi:S \rightarrow G^{0}$. We say it is \textit{strongly 0-F-inverse} if it is 0-F-inverse and strongly 0-E-unitary. This is equivalent to the fact that the preimage of each group element under $\Phi$ contains a maximum element.
+Let $S$ be a 0-E-unitary inverse monoid. We say $S$ is \textit{strongly 0-E-unitary} if there exists an idempotent pure, 0-restricted prehomomorphism, $\Phi$ to a group $G$ with a zero element adjoined, that is: $\Phi:S \rightarrow G^{0}$. We say it is \textit{strongly 0-F-inverse} if it is 0-F-inverse and strongly 0-E-unitary. This is equivalent to the fact that the preimage of each group element under $\Phi$ that is not $0$ contains a maximum element.
 \end{definition}
 
-This class of inverse monoids is particularly important; the idempotent pure, 0-restricted prehomomorphism onto a group (with 0) can be thought of as a generalisation of the minimum group congruence in the larger category of inverse monoids with prehomomorphisms. We will utilise this technology later to regain some of the information from a group when we cannot quotient out in any meaningful way due to the presence of a zero element.
+This class of inverse monoids is particularly important: the idempotent pure, 0-restricted prehomomorphism onto a group (with 0) can be thought of as a generalisation of the minimum group congruence in the larger category of inverse monoids with prehomomorphisms. We will utilise this technology later to regain some of the information from a group when we cannot quotient out in any meaningful way due to the presence of a zero element.
 
 \begin{example}
 In \cite{MR745358,MR2221438} the authors introduce an inverse monoid that is universal for dual prehomomorphisms from a general inverse semigroup. In the context of a group $G$ this is called the \textit{prefix expansion}; its elements are given by pairs: $(X,g)$ for $\lbrace 1,g\rbrace \subset X$, where $X$ is a finite subset of $G$. The set of such $(X,g)$ is then equipped with a product and inverse:
@@ -314,6 +314,8 @@ We are going to be interested in turning a partial group action into a full grou
 Let $X$ be a topological space and let $G$ be a group acting partially on $X$. Then we denote by $\Omega$ the \textit{Morita evelope} of the action of $G$ on $X$, which is constructed as follows:
 
 Consider the space $X\times G$, equipped with the product topology. Then define $\sim$ on $X\times G$ by $(x,g)\sim (y,h)$ if there exists $\gamma \in \G$ with $x(h^{-1}g)=y$. We define $\Omega$ as the quotient of $X\times G$ by $\sim$ with the quotient topology. 
+
+$G$ acts on $\Omega$ using right multiplication by inverses on the group factor of the equivalence classes.
 \end{definition}
 
 This notion will be developed further in Section \ref{Sect:GVC} and will also play an important role in certain examples in Chapter 5.
@@ -330,7 +332,7 @@ A Banach *-algebra is an algebra $A$, equipped with an involution $^{*}$ and a n
 \end{definition}
 
 \begin{definition}
-An abstract $C^{*}$-algebra is a Banach algebra *-algebra $A$ such that $\Vert a^{*}a \Vert = \Vert a \Vert^{2}$.
+An abstract $C^{*}$-algebra is a Banach *-algebra $A$ such that $\Vert a^{*}a \Vert = \Vert a \Vert^{2}$.
 \end{definition}
 
 The fundamental example of this is bounded operators on Hilbert Space.
@@ -370,13 +372,13 @@ So it is a $C^{*}$-algebra. Observe also has a commutative product.
 This example will allow us classify \textit{all} commutative $C^{*}$-algebras:
 
 \begin{theorem}
-The category of all commutative $C^{*}$-algebras and *-homomorphisms is equivalent to the opposite of the category of locally compact, Hausdorff topological spaces.
+The category of all commutative $C^{*}$-algebras and *-homomorphisms is equivalent to the opposite of the category of locally compact, Hausdorff topological spaces with proper maps.
 \end{theorem}
 
 So the study of commutative algebras is parallel to the study of locally compact Hausdorff topological spaces. The benefit of dealing with the $C^{*}$-algebras is that we can consider \textit{noncommutative} algebras. This concept forms the central backbone of the noncommutative geometry program of Connes \cite{MR1826266}.
 
 \subsection{Hilbert $C^{*}$-modules}
-To consider groupoid $C^{*}$-algebras we want to consider representations that fiber of the unit space; in particular we need to consider \textit{fields of Hilbert Spaces} - Hilbert Modules \cite{MR1325694}.
+To consider groupoid $C^{*}$-algebras we want to consider representations that fiber over the unit space; in particular we need to consider \textit{fields of Hilbert Spaces} - Hilbert Modules \cite{MR1325694}.
 
 \begin{definition}
 Let $A$ be a $C^{*}$-algebra. A \textit{Hilbert A-module} \mathscr{E} is a right $A$-module equipped with an $A$-valued form $\langle , \rangle: \mathscr{E} \times \mathscr{E} \rightarrow A$ which satisfies the following axioms:
@@ -391,11 +393,11 @@ Let $A$ be a $C^{*}$-algebra. A \textit{Hilbert A-module} \mathscr{E} is a right
 \end{definition}
 
 \begin{remark}
-The axioms above imply a generalization of the Cauchy-Schwartz inequality; so also satisfy the triangle inequality.
+The axioms above imply a generalization of the Cauchy-Schwartz inequality and so Hilbert $A$-modules also satisfy the triangle inequality.
 \end{remark}
 
 \begin{remark}
-If you put $A= \mathbb{C}$ then the above definition reduces to that of a Hilbert space. A $C^{*}$-algebra $A$ can be thought of as a Hilbert $A$-module over itself using the inner product: $\langle a, a^{'} \rangle = a^{*}a^{'}$. Also we remark that not all the basic facts that apply to Hilbert spaces apply to Hilbert modules - in general the Riesz Representation Theorem fails for Hilbert Modules \cite{}.
+If you put $A= \mathbb{C}$ then the above definition reduces to that of a Hilbert space. A $C^{*}$-algebra $A$ can be thought of as a Hilbert $A$-module over itself using the inner product: $\langle a, a^{'} \rangle = a^{*}a^{'}$. Also we remark that not all the basic facts that apply to Hilbert spaces apply to Hilbert modules - in general the Riesz Representation Theorem fails for Hilbert Modules \cite{MR1077390}.
 \end{remark}
 
 \subsection{Constructions of Groupoid \texorpdfstring{$C^{*}$}{C*}-algebras.}\label{Sect:GVC} The standard technique for a locally compact group $G$ involves considering norm completions associated to representations of the ring of compactly supported functions on the group. We can associate a very natural representation on the $L^{2}(G,\mu)$, where $\mu$ is the Haar measure on $G$. To extend these ideas to a locally compact groupoid we will need an analogue of this measure in a suitably fibred manner.
@@ -422,7 +424,7 @@ We now observe that when the groupoid is \'etale it is possible to take as a Haa
 f^{*}(\gamma) & = & \overline{f(\gamma^{-1})} 
 \end{eqnarray*}
 
-We outline two methods, generalising standard views from the theory of locally compact groups, first is the technique of inducing a representation of the group from a representation of the functions defined on the identity. The second involves Hilbert modules and is outlined at the end of this section.
+We outline two methods generalising the standard views from the theory of locally compact groups. First is the technique of inducing a representation of the group from a representation of the functions defined on the identity and the second involves Hilbert modules, which is outlined at the end of this section.
 
 What follows is given in full generality and taken from \cite[Appendix D]{MR1724106}
 \begin{definition}
@@ -452,7 +454,7 @@ b\xi = \pi(b)\xi
 \end{equation}
 $A$ is a right Hilbert $B$-module as $B$ acts on $A$ by right multipliers. Now we can form the tensor product $A \otimes_{B} H$, and this becomes a (pre)-Hilbert space using the inner product:
 \begin{equation}
-\langle a\otimes \xi, a^{'}\otimes \eta \rangle = \langle P(a^{'}^{*}a)\xi, \eta \rangle_{H}.
+\langle a\otimes \xi, a^{'}\otimes \eta \rangle = \langle P((a^{'})^{*}a)\xi, \eta \rangle_{H}.
 \end{equation}
 Quotenting by the zero vectors in this gives a Hilbert space, and we denote this by $K$. We can now represent $A$ on $K$ as follows:
 \begin{equation*}
@@ -463,8 +465,8 @@ Then the map $Ind(\pi)$ is called the \textit{induced representation of A} assoc
 So consider the application of this process to the following pre-$C^{*}$-algebras:
 
 \begin{example}
-Let $\mathcal{G}$ be a r-discrete topological groupoid. Let $A:=C_{c}(\mathcal{G})$ and $B:=C_{0}(\mathcal{G}^{(0)})$. $P$ in this case is the projection map. We can represent $B$ on $L(\mathcal{G}^{(0)}, \mu)$ where $\mu$ is a measure on the unit space. So for a given unit $v \in \mathcal{G}^{(0)}$ we can construct a Hilbert space and a representation as follows:\\
-\\
+Let $\mathcal{G}$ be a r-discrete topological groupoid. Let $A:=C_{c}(\mathcal{G})$ and $B:=C_{0}(\mathcal{G}^{(0)})$. $P$ in this case is the projection map. We can represent $B$ on $L(\mathcal{G}^{(0)}, \mu)$ where $\mu$ is a measure on the unit space. So for a given unit $v \in \mathcal{G}^{(0)}$ we can construct a Hilbert space and a representation as follows:
+
 Let $\pi:B \rightarrow B(H)$ given by diagonal multiplication as above. Then we have a map $P_{v}:f \in A \rightarrow P(f)=f(v)$ where $P:A \rightarrow B$ is given as a sum of these maps in the following way:
 
 \begin{equation*}
@@ -485,7 +487,7 @@ Completing $C_{c}(\mathcal{G})$ in this norm on $\mathcal{B}(K)$ gives the reduc
 
 We observe that this completion arises by considering a field of Hilbert spaces over $C_{0}(\G^{(0)})$. We can also come up with an identification between this module structure and the natural field of Hilbert spaces structure outlined above.  We begin by putting a natural pre-Hilbert $C_{0}(\G^{(0)})$-module structure on this function algebra by defining the inner product:
 \begin{equation*}
-\langle \zeta, \eta \rangle = (\zeta^{*}\ast\eta)|_{\G^{(0)}}
+\langle \zeta, \eta \rangle = (\zeta^{*}\ast\eta)|_{\G^{(0)}}.
 \end{equation*}
 We observe that for any function $f \in C_{0}(\G^{(0)})$ we can define a right action on $C_{c}(\G)$ by: $(\eta.f)(\gamma) = \eta(\gamma)f(s(\gamma)) $. We can then complete this as a Hilbert module, and we denote this by $L^{2}(\G)$. The algebra $C_{c}(\G)$ represents naturally on this algebra using the representation: $\lambda(f)(\eta)=f \ast \eta$.
 
@@ -525,7 +527,15 @@ From an F-inverse monoid $S$ it is possible to construct a (T,C,F)-cocycle onto 
 
 What follows from here can be found as a Corollary to Theorem \ref{Thm:IT2} from \cite{Milan-Steinberg}. We provide a direct proof of a special case using the original methods of \cite{MR1900993}. This is possible by considering the construction of the groupoid $\G_{\E}$ for a strongly 0-E-unitary inverse monoid $S$. It is clear that the only danger is mapping elements to $0$ in $\Gamma^{0}$; this is overcome by the observation that the element $[0,f]$ would be defined if and only if $f \in D_{0}$. However, $f \in D_{0}$ implies that $f(0)=1$ and hence $f \not\in \E$, so the $0$ element of $S$ contributes nothing to the groupoid $\G_{\E}$, either in objects or arrows.
 
-We are interested in proving that if $S$ is a strongly $0$-F-inverse monoid that it is possible to apply Theorem \ref{Thm:IT2}. This is Corollary 6.17 from a \cite{Milan-Steinberg}, however we give a direct proof here for completeness just in the special case in which we are interested, by adapting the original techniques of \cite{MR1900993}. 
+We are interested in proving that if $S$ is a strongly $0$-F-inverse monoid  then we can apply some analogue of Theorem \ref{Thm:IT2}. This is Corollary 6.17 from a \cite{Milan-Steinberg}, however we give a direct proof here for completeness just in the special case in which we are interested, by adapting the original techniques of \cite{MR1900993}. 
+
+\begin{definition}
+We say that S satisfies the finite cover property with respect to $\phi$,, if for every $p,q \in S$, $p,q\not = 0$ there exists a finite set $U \subset S_{g}$ such that:
+\begin{equation*}
+pS_{g}q=\lbrace s \in S | \exists u \in U | s \leq u \rbrace.
+\end{equation*}
+Where $S_{g}$ is the preimage $\phi^{-1}(g)$.
+\end{definition}
 
 \begin{theorem}\label{Thm:IT2-a}
 Let $S$ be an inverse monoid. If $S$ is strongly 0-E-unitary with non-trivial universal group $U(S)=\Gamma$ such that the prehomomorphism has the finite cover property. Then the groupoid $\G_{\E}$ admits a transverse and faithful cocycle to a group $\Gamma$.
@@ -539,7 +549,7 @@ This map is well-defined as any non-zero idempotent in $S$ is mapped to the iden
 \begin{equation*}
 \Psi^{-1}(\lbrace g \rbrace)=\bigcup_{\Phi(u)=g}[u,D_{u^{*}u}] 
 \end{equation*}
-which is certainly open in $\G_{\E}$. The map is proper, because the preimage of any finite set in $\Gamma$ is given by a finite union of $[u,D_{u^{*}u}]$ that are compact by construction.
+which is certainly open in $\G_{\E}$. The map is proper, because the preimage of any finite set in $\Gamma$ is equal to a finite union of $[u,D_{u^{*}u}]$ by the finite cover property and these are compact by construction.
 
 It remains to check it is a (T,C,F)-cocycle, and from the remarks prior to the Theorem the proof of this follows exactly from the proof \cite[Proposition 3.6]{MR1900993} modified suitably.
 
@@ -547,17 +557,7 @@ To prove this is transverse, it is enough to prove that $\lbrace (\Psi(\gamma),s
 
 To see that this is faithful, let $[u,f], [v,f^{'}] \in \G_{\E}$ such that $(f,\Phi(u),\theta_{u}(f))=(f^{'},\Phi(v),\theta_{v}(f^{'}))$. Then it is clear that $f=s([u,f])=s([v,f^{'}])=f^{'}$, so it is enough to prove now that $\Phi(v)=\Phi(u)$ implies $[u,f]=[v,f]$. Observe that $\Phi(u)\Phi(v)^{-1}=1$ in $\Gamma$ and $\Phi(v)^{-1}=\Phi(v^{*})$, so $\Phi(uv^{*})=1$. This map is idempotent pure, so $uv^{*} \in E(S)$. So $[u,f][v,f]^{-1}=[uv^{*},\theta_{v}(f)]$ is a unit in $\G_{\E}$. From here it is clear that $[u,f]$ is an inverse to $[v^{*},\theta_{v}(f)]$ and so $[u,f]=[v,f]$.\end{proof}
 
-We still need to check the fact that the cocycles are closed. 
-
-\begin{definition}
-We say that S satisfies the finite cover property with respect to $\phi$,, if for every $p,q \in S$, $p,q\not = 0$ there exists a finite set $U \subset S_{g}$ such that:
-\begin{equation*}
-pS_{g}q=\lbrace s \in S | \exists u \in U | s \leq u \rbrace.
-\end{equation*}
-Where $S_{g}$ is the preimage $\phi^{-1}(g)$.
-\end{definition}
-
-Again, this follows from the work of \cite{Milan-Steinberg} or \cite{MR1900993}, but we give the proof in this setting:
+We still need to check the fact that the cocycles are closed. Again this follows from the work of \cite{Milan-Steinberg} or \cite{MR1900993}, but we give the proof in this setting:
 
 \begin{lemma}
 If $S$ is an inverse monoid and has the finite cover property with respect to $\phi$, then the induced cocycle $\rho$ is closed.
@@ -583,7 +583,7 @@ If, in addition the inverse monoid $S$ is 0-F-inverse, then it satisfies the fin
 
 
 \section{K-theory of \texorpdfstring{$C^{*}$}{C*}-algebras}
-In this section we give the basic definitions of operator K-theory, following the exposition of \cite{MR1222415}. There are many alternative texts that could be followed instead, such as: \cite{MR2340673,MR1656031} but the explicit calculations make \cite{MR1222415} exceptionally clear. In this section we will consider only unital $C^{*}$-algebras. It is possible to perform the calculations required for the proofs of these facts via the unitisation; this is similar to working with locally compact spaces in topological K-theory.
+In this section we give the basic definitions of operator K-theory, following the exposition of \cite{MR1222415}. There are many alternative texts that could be followed instead, such as: \cite{MR2340673,MR1656031} but the explicit calculations make \cite{MR1222415} exceptionally clear. In this section we will consider only unital $C^{*}$-algebras. It is possible to perform the calculations required for the proofs of these facts via the unitisation. This is similar to working with locally compact spaces in topological K-theory.
 
 \begin{definition}
 A projection in a $C^{*}$-algebra is a self-adjoint idempotent operator. That is $p=p^{*}=p^{2}$ (i.e $p^{*}p=p$). A pair of projections $p$ and $q$ are orthogonal if $pq=0$. 
@@ -606,13 +606,13 @@ Let $p,q \in A$ be projections.
 If $p$ and $q$ are projections in $A$, then: $p \sim_{h} q \Rightarrow p \sim_{u} q \Rightarrow p \sim q$.\qed
 \end{proposition}
 
-These relations are not in general reversible; If one is willing to work with matrix algebras $M_{n}(A)$ over $A$, then they are however.
+These relations are not in general reversible. If one is willing to work with matrix algebras $M_{n}(A)$ over $A$, then they are however.
 
 \begin{lemma}
 Let $p,q$ be projections in $A$. Then $p \sim q \Rightarrow diag(p,0) \sim_{u} diag(q,0)$ and $p \sim_{u} q \Rightarrow diag(p,0) \sim_{h} diag(q,0)$.
 \end{lemma}
 
-In defining K-theory, similar to both topological K-theory and algebraic K-theory, we will actually be considering a \textit{stabilisation} of $A$, i.e working with $M_{\infty}(A)$. Lastly, need a result that allows a "sum" of projections to be well defined up to equivalence. The trick, again, is to rely on passing to a matrix algebra; given $p,q \in A$ projections, we observe that $diag(0,p)$ is unitarily equivalent to $diag(p,0)$, and orthogonal to $diag(q,0)$. We define: $[p] + [q] = [diag(p,q)]$. 
+In defining K-theory, similar to both topological K-theory and algebraic K-theory, we will actually be considering a \textit{stabilisation} of $A$, i.e working with $M_{\infty}(A)$. Lastly, need a result that allows a "sum" of projections to be well defined up to equivalence. The trick, again, is to rely on passing to a matrix algebra: given $p,q \in A$ projections, we observe that $diag(0,p)$ is unitarily equivalent to $diag(p,0)$, and orthogonal to $diag(q,0)$. We define: $[p] + [q] = [diag(p,q)]$. 
 
 \begin{definition}
 Let $A$ be a $C^{*}$-algebra. We denote by $Proj(A)$ to be the set of equivalence classes of projections in $M_{\infty}(A)$. With the sum, $+$ defined above, this is a commutative monoid. We denote by $K_{0}(A)$ the Grothendieck group of $Proj(A)$.
@@ -645,9 +645,9 @@ K_{1}(C) \rightarrow K_{1}(B) \rightarrow K_{1}(\frac{B}{C})
 \begin{definition}(Boundary map)\cite[Def. 8.1.1]{MR1222415}
 Let $J \triangleleft A$ and let $x \in K_{1}(\frac{A}{J})$. Then we can find a $u \in \mathcal{U}_{n}^{+}(\frac{A}{J})$ such that $x=[u]$ and $v \in \mathcal{U}_{k}^{+}(\frac{A}{J})$ such that $diag(u,v)$ is homotopic to $1_{n+k}$ in $\mathcal{U}_{n+k}^{+}(\frac{A}{J})$. Let $w zin \mathcal{U}_{n+k}^{+}(A)$ be a lift of $diag(u,v)$. Then the \textit{boundary map} $\delta: K_{1}(\frac{A}{J}) \rightarrow K_{0}(J)$ is defined by:
 \begin{equation*}
-\delta(x):= [wp_{n}w^{*}]-[p_{n}]
+\delta(x):= [wp_{n}w^{*}]-[p_{n}].
 \end{equation*}
-is a well-defined group homomorphism.
+This is a well-defined group homomorphism.
 \end{definition}
 
 \begin{lemma}

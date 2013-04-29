@@ -1,11 +1,13 @@
 %\setstretch{1.6}
 \chapter{Introduction.}
 
-Groups have played a role in geometry, topology and analysis throughout the last century. The scheme is that to recognise objects one must focus on their symmetries; the set of structure preserving automorphisms of an object form a group that describes the ways to permute the object whilst preserving what makes it interesting \textit{globally}. This idea works well within both geometry and topology; the fundamental group of a manifold plays an important role in both areas, as well as entering the realms of physics through representation theory. This makes groups a natural candidates for study.
+Groups have played a role in geometry, topology and analysis throughout the last century. The overall theme is that to recognise objects one must focus on their symmetries; the set of structure preserving automorphisms of an object form a group that describes the ways to permute the object whilst preserving what makes it interesting \textit{globally}. This idea works well within both geometry and topology; the fundamental group of a manifold plays an important role in both areas, as well as entering the realms of physics through representation theory. This makes groups a natural candidates for study.
 
 Another possible model with similar behavour is that of a \textit{groupoid}. An example is the fundamental groupoid that is constructed in algebraic topology similar to the path groupoid of a graph. These objects arise much more generally than groups and are able to play much more subtle roles in classifying structures such as equivalence relations (dealing with non-Hausdorff topological quotient spaces \cite{MR1826266}), group actions and encoding coarse information about metric and topological spaces \cite{MR1905840}. In each instance these groupoids capture local transformational data about the underlying object space.
 
-A natural question one could ask is ``What happens with the local structure?" This is where \textit{semigroups} enter the picture; local symmetries can be captured by \textit{partial bijections}, which form an \textit{inverse semigroup} under composition. This point of view is less publicised than the corresponding groupoid theory, but work on these ideas enters into both geometry and topology in many places \cite{MR0160848,MR1694900,MR1798993}, even breaking into physical questions concerning aperiodic tilings \cite{MR1798993,MR2041539}. Such semigroups also admit a groupoidification \cite{MR1724106,MR2419901}: there exists for each inverse semigroup $S$ a universal groupoid with the same linear representation theory. These connections make inverse semigroups and groupoids very useful to study from the point of view of answering questions that require some analysis or topology. Each object has natural advantages, the combinatorial theory of semigroups is much more developed than that of groupoids, but the topological aspects of groupoids often play an important role within applications.
+A natural question one could ask is ``What happens with the local structure?" This is where \textit{semigroups} enter the picture; local symmetries can be captured by \textit{partial bijections}, which form an \textit{inverse semigroup} under composition. This point of view is less publicised than the corresponding groupoid theory, but work on these ideas enters into both geometry and topology in many places \cite{MR0160848,MR1694900,MR1798993}, even breaking into physical questions concerning aperiodic tilings \cite{MR1798993,MR2041539}.
+
+We have a dictionary between these two views; inverse semigroups admit a groupoidification \cite{MR1724106,MR2419901}. There exists for each inverse semigroup $S$ a universal groupoid with the same linear representation theory. These connections make inverse semigroups and groupoids very useful to study from the point of view of answering questions that require some analysis or topology. Each object has natural advantages, the combinatorial theory of semigroups is much more developed than that of groupoids, but the topological aspects of groupoids often play an important role within applications.
 
 To illustrate this view we will consider the following very simple but general example:
 \begin{example}\label{Ex:Int1}
@@ -17,7 +19,7 @@ We can now restrict these maps to $X$, where they may not be defined everywhere.
 \begin{equation*}
 t_{g}^{X}: D_{g} \rightarrow D_{g^{-1}} , x \mapsto xg^{-1}
 \end{equation*}
-These are partial bijections that move points of $X$ bounded distances. We can then generate an inverse submonoid of all the partial bijections on $X$ using this collection. This inverse monoid captures both the metric data (as the group action determines the metric on $\Gamma$) and the local structure of $X$ (as the $D_{g}$ need not be all of $X$, or even connected for example). This is an example of a \textit{partial} action of $\Gamma$ and the inverse monoid it generates belongs to a very nice combinatorial class known as \textit{strongly 0-F-inverse} monoids that have been well-studied in the literature \cite{MR1721768,MR1798993,Nor-2012}.
+These are partial bijections that move points of $X$ bounded distances. We can then generate an inverse submonoid of all the partial bijections on $X$ using this collection. This inverse monoid captures both the metric data (as the group action determines the metric on $\Gamma$) and the local structure of $X$ (as the $D_{g}$ need not be all of $X$, or even connected, however the collection of partial translations does provide a partition of $X\times X$). This is an example of a \textit{partial} action of $\Gamma$ and the inverse monoid it generates belongs to a very nice combinatorial class known as \textit{strongly 0-F-inverse} monoids that have been well-studied in the literature \cite{MR1721768,MR1798993,Nor-2012}.
 \end{example}
 
 The work presented in this document is developing this connection between group theory and inverse semigroup theory on the one hand and topology and geometry on the other by considering the universal groupoid associated to the partial action defined above. Via this groupoid we get access to the much more well developed analytic tools of noncommutative geometry; groupoid $C^{*}$-algebras are much more well studied in comparison to those of an inverse monoid. In particular, we will be interested in constructing a $C^{*}$-algebraic analogue to Example \ref{Ex:Int1}. With that in mind we consider a special case of Example \ref{Ex:Int1}, but add the operator algebra view.
@@ -45,7 +47,7 @@ This can be translated into semigroup language:
 The last isomorphism arises from Fourier transform, but is recorded combinatorially by the fact that $\mathbb{Z}$ is the maximal group homomorphic image of $S$, i.e is given by $S$ after quotienting by a congruence. 
 \end{example}
 
-As we saw in the construction outlined above there is a inverse semigroup with good combinatorial properties capturing the partial action that represents in the translation algebra. Studying representations of inverse monoids within this class one might then wonder how much of this result is true in general. A study of this is performed in Chapter 3 and this is one of the main results:
+As we saw in the construction above there is a inverse semigroup with good combinatorial properties capturing the partial action that underlies the translation algebra. Studying representations of inverse monoids within this class one might then wonder how much of this result is true in general. A study of this is performed in Chapter 3 and this is one of the main results:
 
 \begin{thm}\label{Ex:Int3}
 Let $S$ be an F-inverse monoid and let $\G_{\E}$ be its universal groupoid and let $A=C_{c}(\G_{U})$. Then we have the following  short exact sequence of $C^{*}$-algebras:
@@ -54,19 +56,19 @@ Let $S$ be an F-inverse monoid and let $\G_{\E}$ be its universal groupoid and l
 \end{equation*}
 \end{thm}
 
-The above theorem also captures the work of Pimsner and Voiculescu \cite{MR670181}, which was a fundamental development in noncommutative geometric techniques in operator K-theory.
+The above theorem also captures the work of Pimsner and Voiculescu \cite{MR670181} concerning the action of free groups on $C^{*}$-algebras, which was a fundamental development in noncommutative geometric techniques in operator K-theory.
 
-We discuss the computations of the K-theory of the translation inverse monoid in Chapter 5, which are simple as there is a large machinery in the literature to compute these K-groups \cite{Nor-2012,CEL-2}. We see, unlike in the example above, that the inverse semigroup reduced $C^{*}$-algebra is not the correct choice to reconstruct the calculations of \cite{MR670181} completely from the Theorem above., and so we prove a similar result about the representation connected to the translation structure:
+We discuss the computations of the K-theory of the translation inverse monoid in Chapter 5, which are simple as there is a large machinery in the literature to compute these K-groups \cite{Nor-2012,CEL-2}. We see, unlike in the example above, that the inverse semigroup reduced $C^{*}$-algebra is not the correct choice to reconstruct the calculations of \cite{MR670181} completely from the Theorem above; We prove a similar result about the representation connected to the translation structure:
 
 \begin{thm}
-Let $X \subset G$, $\mathcal{T}=\mathcal{T}_{G}|_{X}$ be a grouplike partial translation structure on $X$ with no zero divisors and $S=\langle \mathcal{T} \rangle \hookrightarrow_{\mu} I(X)$ be the associated F-inverse monoid. Then we have the following (intrinsic) short exact sequence of $C^{*}$-algebras:
+Let $X \subset G$, $\mathcal{T}=\mathcal{T}_{G}|_{X}$ be a grouplike partial translation structure on $X$ with no zero divisors and $S=\langle \mathcal{T} \rangle \hookrightarrow_{\mu} I(X)$ be the associated F-inverse monoid. Then we have the following short exact sequence of $C^{*}$-algebras:
 \begin{equation}\label{eqn1}
 0 \rightarrow C^{*}_{r}(\G_{U}|_{\X}) \rightarrow C^{*}_{r}(\G_{\X}) \rightarrow C^{*}_{r}(G) \rightarrow 0
 \end{equation}
 Where the middle term is the translation algebra associated to $X$ arising from $\mathcal{T}$
 \end{thm}
 
-This does produce the correct short exact sequences from Example \ref{Ex:Int1} and \ref{Ex:Int2}. In general the K-theory is much harder to compute but is connected to the easier computations for the inverse semigroup $C^{*}$-algebra provided by the work of \cite{Nor-2012,CEL-2}, which can be connected by a complex of short exact sequences.
+This does produce the correct short exact sequences for the algebras that arise from Example \ref{Ex:Int1} and \ref{Ex:Int2}. In general the K-theory is much harder to compute but is connected to the easier computations for the inverse semigroup $C^{*}$-algebra provided by the work of \cite{Nor-2012,CEL-2} via a complex of short exact sequences.
 
 In general the inverse monoid generated by the translation structure by the construction of Example \ref{Ex:Int1} will not be as well behaved as in these examples and will not satisfy the Theorems above.
 Through machinery generalising work of Khoshkam and Skandalis \cite{MR1900993} captured by Milan and Steinberg \cite{Milan-Steinberg} and suitably weak hypothesis on the group we prove:
@@ -102,9 +104,9 @@ Let $X$ be a uniformly discrete bounded geometry metric space and let $G(X)$ be 
 \end{equation*}
 is an isomorphism.
 \end{conjecture}
-This conjecture, if true, connects to the coarse Baum-Connes conjecture via homological methods. We outline these in Chapter 4.
+This conjecture, if true, provides information about the coarse Baum-Connes conjecture via homological methods. We outline these methods in Chapter 4.
 
-The class of expander graphs \cite{MR2247919} play a large role in these counterexample arguments. In particular the main result of the Chapter, generalising work of Willett and Yu \cite{explg1}, is the following:
+The class of spaces this conjecture is designed to study are expander graphs \cite{MR2247919}; these play a large role in the counterexample arguments in the literature. In particular the main result of the Chapter, generalising work of Willett and Yu \cite{explg1}, is the following:
 \begin{thm}
 The boundary coarse Baum-Connes conjecture is true for sequences of finite graphs with large girth and uniformly bounded vertex degree.
 \end{thm}
