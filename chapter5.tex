@@ -1,6 +1,6 @@
 %\setstretch{1.6}
 \chapter{Applications and Connections.}
-The focus of this chapter is developing ideas that appeared in Chapters 3 and 4 further. Firstly, we consider some examples that arise from the short exact sequence of Chapter 3. Secondly, we outline a construction of a counterexample to the boundary conjecture; this space and its construction were first introduced in \cite{MR2363697} and its properties are developed further in this Chapter. Lastly, we connect the ideas of Chapter 3 and 4 together by outlining how the concept of a partial translation structure and associated groupoid can be used to describe why a Gromov monster group, a group that coarsely contains an expander, fails to be $C^{*}$-exact. This material forms a basis for the final part of the chapter.
+The focus of this chapter is developing ideas that appeared in Chapters 3 and 4 further as well as connecting these ideas together. Firstly, we consider some examples that arise from the short exact sequence of Chapter 3. Secondly, we outline a construction of a counterexample to the boundary conjecture; this space and its construction were first introduced in \cite{MR2363697} and its properties are developed further in this Chapter. Lastly, we connect the ideas of Chapter 3 and 4 together by outlining how the concept of a partial translation structure and associated groupoid can be used to describe why a Gromov monster group, a group that coarsely contains an expander, fails to be $C^{*}$-exact. 
 
 \section{K-theory examples.}\label{sect:K-theory}
 
@@ -15,7 +15,7 @@ Let $X$ be a totally disconnected space. A set $\mathcal{V}$ is said to be a \te
 \end{enumerate}
 \end{definition}
 
-In \cite{CEL-2} the authors compute the K-theory for transformation groupoid $C^{*}$-algebras associated to actions of discrete groups $G$ on totally disconnected spaces $\Omega$ that carry a regular $G$-invariant basis. They rely on the Baum-Connes conjecture to deal with certain coefficient algebras via KK-theory. Furthermore, Norling \cite{Nor-2012} gave a proof that the basis $\lbrace \widehat{D}_{e} | e \in E \rbrace$ associated to a strongly $0$-F-inverse monoid $S$ is a regular basis of $\E$, and that the induced basis of $Y_{\E}$ is also regular and $G$-invariant. His proof outlined that to compute the K-theory requires an understanding of the following equivalence relation:
+In \cite{CEL-2} the authors compute the K-theory for transformation groupoid $C^{*}$-algebras associated to actions of discrete groups $G$ on totally disconnected spaces $\Omega$ that carry a regular $G$-invariant basis. They rely on the Baum-Connes conjecture with coefficients for the group $G$ to deal with certain coefficient algebras via KK-theory. Furthermore, Norling \cite{Nor-2012} gave a proof that the basis $\lbrace \widehat{D}_{e} | e \in E \rbrace$ associated to a strongly $0$-F-inverse monoid $S$ is a regular basis of $\E$, and that the induced basis of $Y_{\E}$ is also regular and $G$-invariant. His proof requires an understanding of the following equivalence relation:
 
 \begin{definition}
 Let $e,f \in E(S)$. $e \approx f$ if $\exists s \in S$ such that $e \leq s^{*}s$ and $ses^{*}=f$.
@@ -83,7 +83,7 @@ In the light of Theorem \ref{thm:PV1} this suggests it should be possible, using
 
 If $G$ is finite then it appears as an element in $FSG(G) \subset Fin(G)_{1}$ and so the sequence provided by Theorem \ref{thm:PV1} will split at the level of K-theory. Additionally, if we assume $G \cong C_{p}$, the cyclic group of order $p$ for some prime $p$ it is possible to compute the size of the index sets that occur. For each $n$, the number of elements of $Fin(C_{p})_{1}$ of cardinality $n$ is ${p-1 \choose n}$ and so the cardinality of $E(S)$ will be $\sum_{n\geq 1} {p-1 \choose n-1} = F_{p-1}$ the $p-1$ term in the Fibonacci sequence. 
 
-To compute the index we need to know how many of these are related via the partial action of $C_{p}$ and each subset of cardinality $n$ can be related to $n$ other elements: hence the number of orbits of subsets of size $n$ is precisely $\frac{1}{n} {p-1 \choose n-1}$. Let $k_{p}:= 1+ \sum_{n>0}\frac{1}{n} {p-1 \choose n-1}$ Hence we get:
+To compute the index we need to know how many of these are related via the partial action of $C_{p}$ and each subset of cardinality $n$ can be related to $n$ other elements: hence the number of orbits of subsets of size $n$ is precisely $\frac{1}{n} {p-1 \choose n-1}$. Let $k_{p}:= 1+ \sum_{n>0}\frac{1}{n} {p-1 \choose n-1}$ whence we get:
 
 \begin{equation*}
 K_{*}(C^{*}_{r}(S(C_{p})) \cong \bigoplus_{k_{p}}\mathbb{Z} \oplus K_{*}(C^{*}_{r}(C_{p}))
@@ -120,7 +120,7 @@ Let $w \in F_{n}$. Then $t_{w}^{*}t_{w}\approx 1$.
 We will prove this by induction on the length of $w$. This clearly holds for the case when the length of $w$ is $1$. So now, assume this holds for length equal to $n$ and let $w$ have length $n+1$. Consider $t_{w}^{*}t_{w}$; this will be a word of length $2n+2$ containing a relation of the form in the centre $t_{a_{i}^{\pm 1}}^{*}t_{a_{i}^{\pm 1}}$ for some $i$. If $i$ is not 1, and this word is not $t_{a_{1}}t_{a_{1}}^{*}$ then we can reduce the idempotent in length to $2n$, represented by the word $w_{1}$ with left end removed. So, we can suppose that the centre of $t_{w}^{*}t_{w}$ is $t_{a_{1}}t_{a_{1}}^{*}$. Now, if the outer translation is a $t_{a_{i}^{\pm 1}}$ for $i$ not $1$, then it is a bijection, and we can apply this bijections inverse without disrupting the equivalence relation $\approx$. This again reduces the length of the word by $1$. Finally, suppose that $w$ starts and ends with $a_{1}^{-1}$. Then $t_{w}^{*}t_{w}$ is certainly less than $t_{a_{1}}t_{a_{1}}^{*}$, at which point we can conjugate by $t_{a}$, preserving the relation $\approx$ and reducing our idempotent in length by $2$. 
 \end{proof}
 
-This however doesn't let us compute for a general $e$, which will be a product of conjugates of the $t_{w}^{*}t_{w}$.
+This however does not let us compute for a general $e$, which will be a product of conjugates of the $t_{w}^{*}t_{w}$.
 
 Putting this together with the long exact sequence in K-theory connecting the short exact sequences from Theorem \ref{thm:PV1} and Theorem \ref{thm:T4} gives us the following diagram of K-theory groups:
 
@@ -131,7 +131,7 @@ $$
 }
 $$
 
-This indicates that whilst the translation algebra $C^{*}\mathcal{T}_{n}$ does not have the same K-theory as $C^{*}_{r}(S)$, the K-theory sequence is split (this relies on the results of Pimsner-Voiculescu \cite{MR670181}: $K_{*}(C^{*}\mathcal{T}_{n}))\cong K_{*}(C^{*}_{r}(F_{n-1}))$), so we are picking out the correct K-theory group as well as much more complex information that comes from the product structure on the idempotents. This is connected to regularisation of the generating set for the basis of $\E$, and will be discussed later in the section.
+This indicates that whilst the translation algebra $C^{*}\mathcal{T}_{n}$ does not have the same K-theory as $C^{*}_{r}(S)$, the K-theory sequence is split (this relies on the results of Pimsner-Voiculescu \cite{MR670181}: $K_{*}(C^{*}\mathcal{T}_{n}))\cong K_{*}(C^{*}_{r}(F_{n-1}))$), so we are picking out the correct K-theory group as well as much more complex information that comes from the product structure on the idempotents. This is connected to regularisation of the generating set for the basis of $\E$ \cite{CEL-2}, and will be discussed later in the section.
 
 \begin{example}(Polycyclic monoids, Strong orthogonal completions and the Cuntz extension)
 Let $X$ be the set of all the positive words within the free group $F_{n}$. We consider the inverse monoid that arises from the induced translation structure. In this case the inverse monoid has a zero element and satisfies the relations: $t_{a_{i}}^{*}t_{a_{j}}=\delta_{ij}$, $t_{a_{i}}t_{a_{i}}^{*} \leq 1$. The inverse monoid satisfying this relation is called the \textit{polycyclic monoid} \cite{MR2372319}, which is a generalisation of the Bicyclic monoid. We denote this inverse monoid by $P_{n}$.
@@ -143,7 +143,7 @@ In this case we again have that $E(P_{n})$ is in bijection with $X$, which is a 
 \end{equation*}
 We would like to understand the algebras that appear within this sequence. Let us begin with the first term; as the left stabiliser of this subspace is trivial we can deduce from Proposition \ref{cor:C4} that $\G_{U}$ is a pair groupoid, hence $C^{*}_{r}(\G_{U})$ is the compact operators on $\ell^{2}(X)$. The middle term satisfies the relation $\sum_{i=1}^{n}t_{a_{i}}t_{a_{i}}^{*} \leq 1$, whence $C^{*}_{r}(\G_{\E}) \cong C^{*}_{r}(S)$ admits a map to $E_{n}$, the generalised Cuntz algebra. It is well known that this map is an isomorphism \cite{MR1724106,MR584266}. It now follows that $C^{*}_{r}(\G_{\E_{\infty}})$ is isomorphic to the Cuntz algebra $\mathcal{O}_{n}$.
 
-We again appeal to Theorem \ref{Thm:Norling} to compute the K-theory. By Proposition \ref{prop:P10} we know that the action on $E(P_{n})$ translates, via the bijection onto $X$, to the translation action of $F_{n}$ on $X$. It follows that there is only a single orbit under this action as partial translation actions are transitive. The stabiliser is obvious trivial in this case, hence by Theorem \ref{Thm:Norling} we arrive at the computation $K_{*}(C^{*}_{r}(P_{n})) \cong K_{*}(\mathbb{C})\cong \mathbb{Z}$. All that remains is to compute the maps in the sequence, which are also well known..
+We again appeal to Theorem \ref{Thm:Norling} to compute the K-theory. By Proposition \ref{prop:P10} we know that the action on $E(P_{n})$ translates, via the bijection onto $X$, to the translation action of $F_{n}$ on $X$. It follows that there is only a single orbit under this action as partial translation actions are transitive. The stabiliser is obviously trivial in this case, hence by Theorem \ref{Thm:Norling} we arrive at the computation $K_{*}(C^{*}_{r}(P_{n})) \cong K_{*}(\mathbb{C})\cong \mathbb{Z}$. All that remains is to compute the maps in the sequence, which are also well known..
 
 We give a direct computation of the K-theory of the final term here, by considering Lawsons \textit{orthogonal completions} of $P_{n}$ \cite{lawson-2011-1}, denoted by $D(P_{n})$ and $C(P_{n})$ respectively.
 
@@ -181,7 +181,7 @@ Is $K_{*}(C^{*}\mathcal{T}) \cong \bigoplus_{w \in G} K_{0}(C^{*}_{r}(G_{t_{w}^{
 \end{question}
 
 \section{A counterexample to the Boundary Conjecture.}
-In this section we develop the ideas of Higson, Lafforgue and Skandalis concerning the counterexamples to the coarse Baum-Connes conjecture further, to construct a metric space that has exceptional properties at infinity. The main idea is to decompose the boundary groupoid further, giving a new short exact sequence at infinity similar to the sequences considered in Chapter 4. From this, we then construct an operator that is not a ghost operator, but is ghostly on certain parts of the boundary. A tracelike argument, similar to those of \cite{higsonpreprint, explg1}, then completes the proof.
+In this section we develop the ideas of Higson, Lafforgue and Skandalis concerning the counterexamples to the coarse Baum-Connes conjecture further, to construct a metric space $Y$ that has exceptional properties at infinity. The main idea is to decompose the boundary groupoid further, giving a new short exact sequence at infinity similar to the sequences considered in Chapter 4. From this, we then construct an operator that is not a ghost operator, but is ghostly on certain parts of the boundary. A tracelike argument, similar to those of \cite{higsonpreprint, explg1} then allows us to conclude that the boundary coarse Baum-Connes conjecture fails to be surjective for the space $Y$.
 
 \subsection{The space and its non-ghosts.}
 
@@ -256,7 +256,7 @@ We observe the following facts:
 \begin{enumerate}
 \item $\Gamma$ acts on the space $Y:=\sqcup_{i,j}Y_{i,j}$ built from $\lbrace X_{i} \rbrace$.
 \item This action becomes free on piece of the boundary that arises as $i \rightarrow \infty$, that is $\Gamma$ acts freely on $U^{c}$.
-\item The group action generates the metric coarse structure on the boundary; The finite sets associated to each $R>0$ in the decomposition are now finite rectangles - because of the metric prescribed on the space $Y$.
+\item The group action generates the metric coarse structure on the boundary; the finite sets associated to each $R>0$ in the decomposition are now finite rectangles. This follows from considerations of the metric on $Y$.
 \end{enumerate} 
 
 It follows from the proof of Proposition \ref{Prop:Crit} that the groupoid $G(Y)|_{U^{c}}$ is isomorphic to $U^{c}\rtimes \Gamma$ and under the assumption that $\Gamma$ has the Haagerup property we can conclude that the Baum-Connes assembly map for the groupoid $G(Y)|_{U^{c}}$ is an isomorphism (with any coefficients). We now concern ourselves with $G(Y)|_{U}$.
@@ -307,7 +307,7 @@ So in this case we have the following diagram:
 \end{equation*}
 
 \begin{remark}
-We justify the diagonal inclusion of $K_{0}^{top}(G(Y)|_{U})$ into $K_{0}(C^{*}_{r}(G(Y)|_{\partial\beta Y}$. This follows as the groupoid $G(Y)|_{U}$ is nuclear, and hence the assembly map is an isomorphism.   The algebra $C^{*}_{r}(G(Y)_{U})= \bigoplus_{i}M_{\vert X_{i}\vert} \otimes C(\partial\beta Y)$ injects into the product $\prod_{i} M_{\vert X_{i}\vert} \otimes C(\partial\beta Y)$ at the level of K-theory and this inclusion factors through in the inclusion into the kernel of $\pi$ and into $C^{*}_{r}(G(Y)|_{\partial\beta Y})$. These maps provide enough information to conclude injectivity of the assembly map $\mu_{bdry}$.
+We justify the diagonal inclusion of $K_{0}^{top}(G(Y)|_{U})$ into $K_{0}(C^{*}_{r}(G(Y)|_{\partial\beta Y})$. This follows as the groupoid $G(Y)|_{U}$ is nuclear, and hence the assembly map is an isomorphism.   The algebra $C^{*}_{r}(G(Y)_{U})= \bigoplus_{i}M_{\vert X_{i}\vert} \otimes C(\partial\beta Y)$ injects into the product $\prod_{i} M_{\vert X_{i}\vert} \otimes C(\partial\beta Y)$ at the level of K-theory and this inclusion factors through in the inclusion into the kernel of $\pi$ and into $C^{*}_{r}(G(Y)|_{\partial\beta Y})$. These maps provide enough information to conclude injectivity of the assembly map $\mu_{bdry}$.
 \end{remark}
 
 A diagram chase under the assumption that the map $\mu_{bdry}$ is surjective quickly yields a contradiction, whence we have:
@@ -330,7 +330,7 @@ is not surjective, but is injective.
 
 We explore this result from the point of view of the geometry that can be associated to the expander graph that it inherits from the group.
 
-The coarse conjecture for any uniformly discrete bounded geometry space $X$ can be phrased as a conjecture with coefficients in a certain groupoid $G(X)$ associated to $X$ \cite{MR1905840}. This groupoid admits a transformation groupoid decomposition \cite[Lemma 3.3b)]{MR1905840}, giving an easy description of $G(X)$ when it is possible to get a handle on the generators of the metric coarse structure on $X$. When $X$ is coarsely embedded into a group, this is certainly the case; the concept of a partial translation structure \cite{MR2363428} gives any space coarsely embedded into a group a nice collection of generators, as well as a locally compact, Hausdorff, second countable \etale groupoid that impliments the transformation decomposition.
+Recall the coarse Baum-Connes conjecture for any uniformly discrete bounded geometry space $X$ can be phrased as a conjecture with coefficients in a certain groupoid $G(X)$ associated to $X$ \cite{MR1905840}. This groupoid admits a transformation groupoid decomposition \cite[Lemma 3.3b)]{MR1905840}, giving an easy description of $G(X)$ when it is possible to get a handle on the generators of the metric coarse structure on $X$. When $X$ is coarsely embedded into a group, this is certainly the case; the concept of a partial translation structure \cite{MR2363428} gives any space coarsely embedded into a group a nice collection of generators, as well as a locally compact, Hausdorff, second countable \etale groupoid that impliments the transformation decomposition.
 
 On the other hand, the question of when a groupoid admits a transformation groupoid decompostion, up to Morita equivalence, has been well studied for the class of groupoids that are constructed from suitable inverse semigroups \cite{MR1900993,Milan-Steinberg}. This is related to the problem of globalisation of a partial action of $\Gamma$ on a space $X$. The result would be a space $Y$, with a true action of $\Gamma$ such that $X \hookrightarrow Y$ is a topological embedding and the enlargement of the $\Gamma$ action by restricting the maps to $X$ induces the original partial action.
 
@@ -343,7 +343,7 @@ Consider the space $X\times \Gamma$, equipped with the product topology. Then de
 
 \subsection{Some remarks about the coarse groupoid.}
 
-From earlier work in Chapter 3 any space that coarsely embeds into a group admits a grouplike partial translation structure. We equip the expander sequence coarsely embedded in our Gromov monster group with this translation structure. The results of Chapter 3 then tell us that there is a groupoid $\G(\mathcal{T})$, such that the translation algebra is isomorphic to the reduced groupoid  $C^{*}$-algebra $C^{*}_{r}(\G(\mathcal{T})$. 
+From earlier work in Chapter 3 any space that coarsely embeds into a group admits a grouplike partial translation structure. We equip the expander sequence coarsely embedded in our Gromov monster group with this translation structure. The results of Chapter 3 then tell us that there is a groupoid $\G(\mathcal{T})$, such that the translation algebra is isomorphic to the reduced groupoid  $C^{*}$-algebra $C^{*}_{r}(\G(\mathcal{T}))$. 
 
 Using Claim \ref{MainClaim:C1} the translations of $\mathcal{T}$ are the only elements we need to be understand when working with $\G(\mathcal{T})$. From the definition of $\mathcal{T}$ we can think of a translation structure as providing us an excellent generating set for the metric coarse structure on the space $X$; the groupoid $\G(\mathcal{T})$ acts freely on $\beta X$, and we can generate now the coarse groupoid using this data:
 

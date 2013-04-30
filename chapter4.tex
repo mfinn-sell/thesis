@@ -4,10 +4,10 @@ In this chapter we develop the basic concepts of coarse geometry for metric spac
 
 We then present a unifying approach to all known counterexamples to this conjecture by developing the groupoid centric viewpoint of \cite{MR1911663} further, introducing a new conjecture known as the \textit{boundary coarse Baum-Connes conjecture}. First however we outline the construction of the algebras involved in defining the coarse assembly map $\mu$, then make some connections to groupoid equivariant KK-theory. These ideas then allow us to formulate the boundary coarse Baum-Connes conjecture and apply homological algebra techniques to connect it to the coarse Baum-Connes conjecture.
 
-As an example of the flexibility of this new conjecture we give a proof for certain large classes of expander graph, generalising work of Willett and Yu \cite{explg1}.
+As an example of the flexibility of this new conjecture we show that it holds for certain large classes of expander graph, generalising work of Willett and Yu \cite{explg1}.
 
 \section{Coarse geometry, Groupoids and Assembly.}
-In this section we outline the coarse geometry and group theoretic properties that are going to be considered throughout this document. The overall scheme of this section is first to consider some general coarse ideas associated to metric spaces and then move onto discussions of certain analytic properties held by discrete groups. We will develop these coarse ideas further by introducing abstract coarse structures and their relationship to metric spaces.
+In this section we outline the coarse geometry and group theoretic properties that are going to be considered throughout this chapter. The overall scheme of this section is first to consider some general coarse ideas associated to metric spaces and then move onto discussions of certain analytic properties held by discrete groups. We will develop these coarse ideas further by introducing abstract coarse structures and their relationship to metric spaces.
 
 \subsection{Coarse geometry.}
 The notions of coarse geometry a similar in spirit to those of topology, however the focus is on the large as opposed to the small. Recall that a function $f$ between topological spaces $X$ and $Y$ is continous if the preimage of every open set in $Y$ is open in $X$. Suppose additionally that $X$ and $Y$ are metric spaces equipped with the metric topology. Then this definition of continuous function really asks that the open neighbourhoods of a point in $Y$ have open preimage in $X$ and these are in particular going to be sets of very small diameter. 
@@ -55,7 +55,7 @@ This connects to the notion of an effectively proper, bornologous map by observi
 This property is exceptionally flexible; many constructions of metric spaces preserve coarse embeddability \cite{EG-permanence}. This property will be important in Chapter 4 where it plays an important role in results concerning groupoids and the coarse Baum-Connes conjecture.
 
 \subsection{Properties of finitely generated discrete groups and \'etale groupoids.}
-Via the construction of a Cayley graph, it is possible to introduce a metric to a finitely generated group that is compatable with the group structure. Many of the ideas in geometric group theory rely on computing coarse properties, such as coarse embeddings, for this metric. Additionally, coarse properties of this metric often connect to analytic properties of groups that are equivariant with respect to the group action. In the global context of understanding the Baum-Connes conjectures, for groups and groupoids, the following property plays an important role. As we primarily consider transformation groupoids, we focus the definition on them.
+Via the construction of a Cayley graph, it is possible to introduce a metric to a finitely generated group that is compatable with the group structure. Many of the ideas in geometric group theory rely on computing coarse properties, such as coarse embeddings, for this metric. Additionally, coarse properties of this metric often connect to analytic properties of groups that are equivariant with respect to the group action. In the global context of the Baum-Connes conjecture for groups and groupoids the following property plays an important role. As we primarily consider transformation groupoids we focus the definition on them.
 
 \begin{definition}
 Let $H$ be a continous field of Hilbert spaces over $X$. we say that a transformation groupoid $G:=X\rtimes \Gamma$ acts on $H$ by affine isometries if for every $(x,g) \in G$ there exists an affine isometry $A_{(x,g)}:H_{xg}\rightarrow H_{x}$ such that:
@@ -77,7 +77,7 @@ A continuous function $F: \G \rightarrow \mathbb{R}$ is said to be of \textit{ne
 \end{enumerate}
 \end{definition}
 
-The important feature of functions of this type is their connection to affine actions of locally compact, $\sigma$-compact groupoids, in fact:
+The important feature of functions of this type is their connection to affine actions of locally compact, $\sigma$-compact groupoids.
 \begin{theorem}Let $\G$ be a locally compact, Hausdorff groupoid. Then the following are equivalent \cite{MR1703305}:
 \begin{enumerate}
 \item There exists a proper negative type function on $\G$
@@ -85,7 +85,7 @@ The important feature of functions of this type is their connection to affine ac
 \end{enumerate}
 \end{theorem}
 
-This property has many connections to the Baum-Connes conjecture for locally compact groupoids, via the work of Tu \cite{MR1703305,MR1798599,cbcag2}, which we will discuss in detail later in the chapter. Here however we would like to remark on a connection with coarse embeddings that directly highlights why we are interested in this property.
+This property has many connections to the Baum-Connes conjecture for locally compact groupoids, via the work of Tu \cite{MR1703305,MR1798599,cbcag2}, that we will discuss in detail later in the chapter. Here however we would like to remark on a connection with coarse embeddings that directly highlights why we are interested in this property \cite{MR1852148}.
 
 \begin{proposition}
 Let $\Gamma$ be a discrete finitely generated group. If $\Gamma$ has the Haagerup property then $\Gamma$ coarsely embeds into Hilbert space.\qed
@@ -122,7 +122,7 @@ These operators are important from the perspective of defining K-homology; the s
 We define the analytic K-homology $K_{*}(X)$ to be the topological K-theory group $K_{*+1}(\frac{\mathcal{D}^{*}(X)}{\mathcal{C}^{*}(X)})$.
 \end{definition}
 
-Using the properties of K-theory it is possible to prove that the functor $X \mapsto K_{*}(X)$ is covariant functor to abelian groups that satisfies the properties of a generalised homology theory that is dual to K-theory. For a detailed proof of this we refer the reader to \cite{MR1399087,MR1817560}.
+Using the properties of K-theory it is possible to prove that the functor $X \mapsto K_{*}(X)$ is covariant functor to abelian groups that satisfies the properties of a generalised homology theory that is dual to K-theory. For a detailed proof of these facts we refer the reader to \cite{MR1399087,MR1817560}.
 
 \subsection{The Roe algebra and the assembly map.}
 
@@ -143,17 +143,17 @@ prop(T):= \inf \lbrace S>0 | T_{xy}=0 \mbox{ for all } x,y \in Z \mbox{ such tha
 This preamble leads us to:
 
 \begin{definition}
-The algebraic Roe algebra, denoted $\mathbb{C}[X]$, is the $*$-subalgebra of $\mathcal{B}(\mathcal{H}_{0})$ consisting of all finite propagation operators $T$ that are also locally compact. The Roe algebra, denoted $C^{*}X$, is the norm closure of the algebraic Roe algebra in the operator norm associated to the Hilbert space $\ell^{2}(Z,\mathcal{H}_{0})$.
+The algebraic Roe algebra, denoted $\mathbb{C}[X]$, is the $*$-subalgebra of $\mathcal{B}(\mathcal{H}_{0})$ consisting of all finite propagation operators $T$ that are also locally compact. The Roe algebra, denoted $C^{*}X$, is the norm closure of $\mathbb{C}[X]$ in the operator norm associated to the Hilbert space $\ell^{2}(Z,\mathcal{H}_{0})$.
 \end{definition}
 
 \begin{remark}
-The Hilbert space $\ell^{2}(Z,\mathcal{H_{0}})$ is an adequate $X$-module \cite{explg1} and $C^{*}X = \mathcal{C}^{*}X \cap \lbrace$finite propagation operators$\rbrace$.
+The Hilbert space $\ell^{2}(Z,\mathcal{H}_{0}))$ is an adequate $X$-module \cite{explg1} and $C^{*}X = \mathcal{C}^{*}X \cap \lbrace$finite propagation operators$\rbrace$.
 \end{remark}
 
 We now consider a finite propagation version of the K-homology defined in the previous section:
 
 \begin{definition}
-Define $D^{*}(X)$ to be the intersection of the finite propagation operators on $\ell^{2}(Z,\mathcal{H_{0}})$ with $\mathcal{D}^{*}(X)$. 
+Define $D^{*}(X)$ to be the intersection of the finite propagation operators on $\ell^{2}(Z,\mathcal{H}_{0})$ with $\mathcal{D}^{*}(X)$. 
 \end{definition}
 Similarly the finite propagation operators we defined above in $C^{*}(X)$  form an ideal in $D^{*}(X)$. So again we get a long exact sequence:
 \begin{equation*}
@@ -196,7 +196,7 @@ In order to improve the conjecture we rely on making the left hand side term $K_
 A \textit{coarsening} of $X$ is uniformly contractible space $\underline{E}X$ that is equipped with a coarse equivalence $X \rightarrow \underline{E}X$. 
 \end{definition}
 
-A coarsening should be thought of a classifying space associated to $X$. Below we construct the coarsening we will rely on for the rest of the document.
+A coarsening should be thought of a classifying space associated to $X$. Below we construct the coarsening we will rely on for the rest of the chapter.
 
 \begin{example}
 (Rips complex) Fix $R>0$. Then the \textit{Rips complex on scale $R$} is a simplicial complex $P_{R}(X)$, where a set of points $\lbrace x_{1},...,x_{n} \rbrace$ spans a simplex if and only if $d(x_{i},x_{j}) \leq R$ for every $i,j$. If $S>R$, then every $R$ simplex will certainly be an $S$ simplex - so we have inclusions $P_{R}(X)\hookrightarrow P_{S}(X)$. Additionally these inclusions are proper. As the inclusion of $X \hookrightarrow P_{R}(X)$ induces a coarse equivalence for each $R>0$, the direct limit: $\bigcup_{R>0}P_{R}(X)$, the simplex on $X$, is a coarsening of $X$.
@@ -243,7 +243,7 @@ This gives us, using the boundary maps, assembly maps $K_{*}^{\Gamma}(P_{R}(X)) 
 After coarsening and taking a direct limit this gives us the Baum-Connes conjecture for the discrete group $\Gamma$:
 
 \begin{conjecture}(Baum-Connes conjecture)
-Let $\Gamma$ be a finitely generated discrete group and let $\underline{E}\Gamma$ be its classifying space for proper actions. Then the map by taking direct limits of the maps defined above: $\mu: K_{*}^{\Gamma}(\underline{E}\Gamma) \rightarrow K_{*}(C^{*}_{r}(\Gamma))$ is an isomorphism.
+Let $\Gamma$ be a finitely generated discrete group and let $\underline{E}\Gamma$ be its classifying space for proper actions. Then the map $\mu$ obtained by taking direct limits of the maps defined above: $\mu: K_{*}^{\Gamma}(\underline{E}\Gamma) \rightarrow K_{*}(C^{*}_{r}(\Gamma))$ is an isomorphism.
 \end{conjecture}
 
 There are also positive results in this setting \cite{MR1487204}:
@@ -256,7 +256,7 @@ This provides the connection between analysis on groups and coarse geometry.
 
 \section{The Coarse Groupoid of a Metric Space}\label{Sect:CG}
 
-Let $X$ be a uniformly discrete bounded geometry (sometimes denoted uniformly locally finite) metric space. We want to define a groupoid with property that it captures the coarse information associated to $X$: that will allow us to prove results about the coarse Baum-Connes conjecture.
+Let $X$ be a uniformly discrete bounded geometry (sometimes denoted uniformly locally finite) metric space. In this section we construct a groupoid $G(X)$ associated to $X$ that captures coarse properties of $X$. Namely, for each coarse property of $X$ that we are interested in there is a corresponding analytic property of $G(X)$. This includes being able to encode the coarse Baum-Connes conjecture as a groupoid Baum-Connes conjecture.
 
 To do this effectively we need to define the what we mean by a ``coarse structure" associated to a metric. The details of this can be found in \cite{MR2007488}.
 
@@ -271,7 +271,7 @@ Let $X$ be a set and let $\mathcal{E}$ be a collection of subsets of $X \times X
 Then we say $\mathcal{E}$ is a \textit{coarse structure} on $X$ and we call the elements of $\mathcal{E}$ \textit{entourages}. If in addition $\mathcal{E}$ contains all finite subsets then we say that $\mathcal{E}$ is \textit{weakly connected}.
 \end{definition}
 
-For a given family of subsets $\mathcal{S}$ of $X \times X$ be can consider the smallest coarse structure that contains $\mathcal{S}$. This is the coarse structure generated by $\mathcal{S}$. We can use this to give some examples of coarse structures.
+For a given family of subsets $\mathcal{S}$ of $X \times X$ we can consider the smallest coarse structure that contains $\mathcal{S}$. This is the coarse structure generated by $\mathcal{S}$. We can use this to give some examples of coarse structures.
 
 \begin{example}\label{ex:MCS}
 Let $X$ be a metric space. Then consider the collection $\mathcal{S}$ given by the $R$-neighbourhoods of the diagonal in $X\times X$; that is, for every $R>0$ the set:
@@ -334,7 +334,7 @@ We are going to be concerned with \textit{proper} $G$-algebras. Let $Z$ be a $G$
 In this context we can also extend the action of the groupoid $G$ from a $G$-algebra $A$ to any Hilbert module $E$ over $A$. See \cite{MR1798599} for more details.
 
 \begin{definition}($KK_{G}$-cycles) \cite{MR1686846,MR1703305,MR1798599}.
-Let $A$ and $B$ be $G$-algebras. Then a Kasparov $(A,B)$ $G$ equivariant bimodule consists of a triple $(E,\phi, F)$ where $E$ is a $G$-$C^{*}$-equivariant, $\mathbb{Z}/2\mathbb{Z}$-graded $B$-module, $\phi: A \rightarrow \mathcal{L}(E)$ is a $G$-equivariant $*$-homomorphism and $F\in \mathcal{L}(E)$ is of degree 1 and satisfies, for all $a \in A$ and $a_{1} \in r^{*}A$:
+Let $A$ and $B$ be $G$-algebras. Then a Kasparov $(A,B)$ $G$-equivariant bimodule consists of a triple $(E,\phi, F)$ where $E$ is a $G$-equivariant, $\mathbb{Z}/2\mathbb{Z}$-graded Hilbert $B$-module, $\phi: A \rightarrow \mathcal{L}(E)$ is a $G$-equivariant $*$-homomorphism and $F\in \mathcal{L}(E)$ is of degree 1 and satisfies, for all $a \in A$ and $a_{1} \in r^{*}A$:
 \begin{enumerate}
 \item $a(F - F^{*}) \in \mathcal{K}(E)$
 \item $a(F^{2}- 1) \in \mathcal{K}(E)$
@@ -390,11 +390,11 @@ This is the Baum-Connes assembly map for $G$ with coefficients in $B$. The Baum-
 We now return to the coarse groupoid $G(X)$ of a uniformly discrete bounded geometry metric space $X$. We recall that this groupoid is \'etale, locally compact, $\sigma$-compact. Hence we can define $KK_{G(X)}(A,B)$ for any pair of $G(X)$-algebras $A,B$. 
 
 \begin{definition}
-Let $X$ be a coarse space with a uniformly locally finite coarse structure $\mathcal{E}$ and $G(\mathcal{E})$ the coarse groupoid. For each $E \in \mathcal{E}$ we define $P_{E}(X)$ to be the simplical complex in which each finite subset $F \subset E$ spans a simplex. We denote by $P_{E}(G(\mathcal{E})$ the closure of $P_{E}(X)\times X$ in the weak $*$-topology in the dual of $C_{c}(G(\mathcal{E})$ (viewing each element of $P_{E}(X)$ as a positive measure in the obvious way).
+Let $X$ be a coarse space with a uniformly locally finite coarse structure $\mathcal{E}$ and $G(\mathcal{E})$ the coarse groupoid. For each $E \in \mathcal{E}$ we define $P_{E}(X)$ to be the simplical complex in which each finite subset $F \subset E$ spans a simplex. We denote by $P_{E}(G(\mathcal{E}))$ the closure of $P_{E}(X)\times X$ in the weak $*$-topology in the dual of $C_{c}(G(\mathcal{E}))$ (viewing each element of $P_{E}(X)$ as a positive measure in the obvious way).
 \end{definition}
 
 \begin{definition}
-Let $X$ be a coarse space. The coarse K-homology of $X$, denoted $KX_{*}(X)$ is defined to be the directed limit: $\lim_{E \in \mathcal{E}}KK(C_{0}(P_{E}(X)),\mathcal{C})$
+Let $X$ be a coarse space. The coarse K-homology of $X$, denoted $KX_{*}(X)$ is defined to be the directed limit: $\lim_{E \in \mathcal{E}}KK(C_{0}(P_{E}(X)),\mathbb{C})$
 \end{definition}
 
 \begin{remark}
@@ -436,9 +436,7 @@ Choosing $Z$ to be a model of $\underline{E}G$, gives us a long exact sequence i
 
 \section{Counterexamples to the coarse Baum-Connes conjecture and Boundary Groupoids}\label{Sect:CE}
 
-Throughout this section let $G$ be an \'etale, Hausdorff locally compact topological groupoid. These are essentially unnecessary assumptions but we will only require groupoids in this class to fit with the coarse picture we are interested in. We follow \cite{MR1911663}. Let $F$ be a closed saturated subset of $G^{(0)}$.
-
-We remark also that the compliment $F^{c}$ is an open saturated set. This gives rise to the algebraic decomposition:
+Throughout this section let $G$ be an \'etale, Hausdorff locally compact topological groupoid. Let $F$ be a closed saturated subset of $G^{(0)}$. We remark also that the compliment $F^{c}$ is an open saturated set. This gives rise to the algebraic decomposition:
 \begin{equation*}
 G = G_{F^{c}}\sqcup G_{F}
 \end{equation*}
@@ -511,7 +509,7 @@ We depart from assembly maps to outline the type of metric space that give rise 
 Let $\lbrace X_{i} \rbrace$ be a sequence of finite graphs. Then $X=\sqcup_{i\in\mathbb{N}}X_{i}$ equipped with the metric such that $d_{X}(X_{i},X_{j})\rightarrow \infty$ as $i+j\rightarrow \infty$ and $d_{X}|_{X_{i}}=d_{X_{i}}$ is called the \textit{space of graphs} associated with the sequence $\lbrace X_{i} \rbrace$. 
 \end{definition}
 
-In this paper we will be considering only sequences that grow in size, that is $\vert X_{i} \vert \rightarrow \infty$ as $i \rightarrow \infty$. 
+We will be considering only sequences that grow in size, that is $\vert X_{i} \vert \rightarrow \infty$ as $i \rightarrow \infty$. 
 
 We denote the girth of a finite graph $X$ by $girth(X)$, by which we mean the length of the shortest simple cycle of the graph. We say a sequence of graphs has \textit{large girth} if $girth(X_{i})\rightarrow \infty$ as $i\rightarrow \infty$. Another way to think of large girth sequences is that they are the only sequences for which the universal covering sequence $\lbrace \tilde{X}_{i}, p_{i} \rbrace$ is \textit{asymptotically faithful}, that is that for any $R>0$ there exists an $n \in \mathbb{N}$ such that for all $i > n$ we have $x_{i} \in \tilde{X}_{i}$ such that $B_{R}(x_{i}) \cong B_{R}(p_{i}(x_{i}))$.
 
@@ -553,12 +551,12 @@ The following notion is due to Guoliang Yu:
 An operator $T \in C^{*}X$ is a \textit{ghost operator} if $\forall \epsilon >0$ there exists a bounded subset $B \subset X\times X$ such that the norm: $\Vert T_{xy} \Vert \leq \epsilon$ for all $(x,y) \in (X\times X) \setminus B$.
 \end{definition}
 
-The built $p$ from the Laplacians is a ghost in $C^{*}X$. It has a very definite global presence as it is a non-compact projection but locally it is invisible by the ghost property. For more details of this can be found in \cite[Section 5]{explg1}.
+$p$, built from the Laplacian $\Delta$, is a ghost in $C^{*}X$. It has a very definite global presence as it is a non-compact projection but locally it is invisible by the ghost property. For more details of this can be found in \cite[Section 5]{explg1}.
 \end{remark}
 
 \section{Homological Connections between Coarse Assembly and the Boundary Conjecture.}
 
-The intuitive view of the boundary conjecture in the context of an expander is supposed to be ``quotient by the ghost ideal and consider the K-theory". We confirm the technical approach meets the intuitive one; the kernel $I$ is precisely the ghost ideal $I_{G}$. In order to prove this we need the technology of Lemma 9 from \cite{MR1911663}:
+The intuitive view of the boundary conjecture in the context of an expander is supposed to be ``quotient by the ghost ideal and consider the K-theory". We confirm the technical approach meets the intuitive one by proving that the kernel $I$ is precisely the ghost ideal $I_{G}$. In order to prove this we need the technology of Lemma 9 from \cite{MR1911663}:
 
 \begin{lemma}\label{Lem:Lemma9}
 If an \'etale topological groupoid $\G$ acts on a $C^{*}$-algebra A, then the map $C_{c}(\G,A) \rightarrow C_{0}(\G,A)$ extends to an injection (functorial in A) from $A\rtimes_{r} \G$ to $C_{0}(\G,A)$. \qed
@@ -702,7 +700,7 @@ $$
 $$
 We prove (1) by considering an element $x \in K_{0}^{top}(G(X))$ such that $\mu(x)=0$. Then $x$ maps to $0\in K_{0}^{top}(G(X)|_{\partial\beta X)$ and so comes from an element $y \in \mathbb{Z}$. The each square commutes, hence $y$ maps to $0 \in K_{0}(C^{*}_{r}(G(X))$. As the composition up and left (as indicated in the diagram) is injective by Proposition \ref{Prop:subCool}, we know that $y \in \mathbb{Z}$  is in fact $0 \in \mathbb{Z}$. Hence $x=0$.
 
-To see (2) we use Lemma \ref{Lem:Lemma1} part 1 or directly: Take any non-compact ghost projection $p \in K_{0}(I_{G})$, which does not lie in the image of $\mathbb{Z}$. Push this element to $q \in K_{0}(C^{*}_{r}(G(X))$. Assume for a contradiction that $\mu$ is surjective. Then there is an element $x \in \mathbb{Z}$ that maps to $q$, and so $d_{*}(q)=0$, as the image of compact operators lies in the kernel of the map $d_{*}$. However, we know that $d_{*}(q)=d_{*}(p)$ is certainly non-zero.
+To see (2) we use Lemma \ref{Lem:Lemma1} part 1 or directly: Take any non-compact ghost projection $p \in K_{0}(I_{G})$. This does not lie in the image of $\mathbb{Z}$ as it has non-zero image under $d_{*}$. Push this element to $q \in K_{0}(C^{*}_{r}(G(X))$. Assume for a contradiction that $\mu$ is surjective. Then there is an element $x \in \mathbb{Z}$ that maps to $q$, and so $d_{*}(q)=0$, as the image of compact operators lies in the kernel of the map $d_{*}$. However, we know that $d_{*}(q)=d_{*}(p)$ is certainly non-zero.
 \end{proof}
 
 \subsection{Tools to Prove the Boundary Conjecture.}
