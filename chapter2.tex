@@ -109,7 +109,7 @@ We will be considering a specific congruence on $S$ called the \textit{minimum g
 \begin{equation*}
 s \sigma t \Leftrightarrow (\exists e \in E) es = et
 \end{equation*}
-A congruence is \textit{idempotent pure} when $e \sim s$ if and only $s \in E$. This collects all idempotents into classes when quotienting out. 
+A congruence is \textit{idempotent pure} if $e\in E$ and $e \sim s$ then $s \in E$. This collects all idempotents into classes when quotienting out. 
 \begin{definition}
 An inverse monoid $S$ is called E-unitary if for all $e \in E$ and $s \in S$ if $e \leq s$ then $s \in E$. $S$ is F-inverse if the preimage of each $g \in \frac{S}{\sigma}$ has a maximum element in the order on $S$.
 \end{definition}
@@ -195,15 +195,16 @@ We outline the steps in the construction.
 \item Build a dual space $\E$ to $E$, which is locally compact and Hausdorff. Construct an action of $S$ on $\E$.
 \item Build the groupoid $\G_{\E}$ from this data.
 \end{enumerate}
+After the construction, we make some remarks about more general groupoids of germs built from representations of $S$.
 
 \begin{definition}
 
 \begin{enumerate}
 \item Let $D_{e}=\lbrace f \in E | f \leq e \rbrace$. For $ss^{*} \in E$, we can define a map $\rho_{s}(ss^{*})=s^{*}s$, extending to $D_{ss^{*}}$ by $\rho_{s}(e) = s^{*}es$. This defines a partial bijection on $E$ from $D_{ss^{*}}$ to $D_{s^{*}s}$. 
 
-\item We consider a subspace of $\textbf{2}^{E}$ given by the functions $\phi$ such that $\phi(0)=0$ and $\phi(ef)=\phi(e)\phi(f)$. We can topologise this as a subspace of $\textbf{2}^{E}$, where it is closed. This makes it compact Hausdorff, with a base of topology given by $\widehat{D}_{e}= \lbrace \phi \in \E | \phi(e)=1 \rbrace$. This admits a dual action induced from the action of $S$ on $E$. This is given by the pointwise equation for every $\phi \in \widehat{D}_{s^{*}s}$:
+\item We consider a subspace of $\textbf{2}^{E}$ given by the functions $\phi$ such that $\phi(0)=0$ if $S$ has a zero and $\phi(ef)=\phi(e)\phi(f)$. We can topologise this as a subspace of $\textbf{2}^{E}$, where it is closed. This makes it compact Hausdorff, with a base of topology given by $\widehat{D}_{e}= \lbrace \phi \in \E | \phi(e)=1 \rbrace$. This admits a dual action induced from the action of $S$ on $E$. This is given by the pointwise equation for every $\phi \in \widehat{D}_{s^{*}s}$:
 \begin{equation*}
-\widehat{\rho}_{s}(\phi)(e)=\phi(\rho_{s}(e))=\phi(s^{*}es)
+\widehat{\rho}_{s}(\phi)(e)=\phi(s^{*}es)
 \end{equation*}
 The use of $\widehat{D}_{e}$ to denote these sets is not a coincidence, as we have the following map $D_{e} \rightarrow \widehat{D}_{e}$:
 \begin{equation*}
@@ -214,7 +215,7 @@ These character maps $\phi: E \rightarrow \lbrace 0,1 \rbrace$ have an alternati
 \begin{itemize}
 \item for all $e,f \in F$ we have that $e\wedgef=ef \in F$
 \item for $e\in F$ with $e \leq f$ we have that $f \in F$ and
-\item $0 \not\in F$
+\item $0 \not\in F$ if $E$ has a zero.
 \end{itemize}
 the relationship between characters and filters can be summarised as: To each character $\psi$ there is a filter:
 \begin{equation*}
@@ -225,7 +226,7 @@ And every filter $F$ provides a character by considering $\chi_{F}$, its charact
 
 \item We take the set $S \times \E$, topologise it as a product and consider subset $\Omega:= \lbrace (s, \phi) | \phi \in D_{s^{*}s} \rbrace$ in the subspace topology. We then quotient this space by the relation:
 \begin{equation*}
-(s, \phi) \sim (t, \phi^{'}) \Leftrightarrow \phi=\phi^{'} \mbox{ and } (\exists e \in E) \mbox{ with } \phi \in D_{e} \mbox{ such that } es=et
+(s, \phi) \sim (t, \phi^{'}) \Leftrightarrow \phi=\phi^{'} \mbox{ and } (\exists e \in E) \mbox{ with } \phi \in \widehat{D}_{e} \mbox{ such that } es=et
 \end{equation*}
 We can give the quotient $\G_{\E}$ a groupoid structure with the product set, unit space and range and source maps:
 \begin{eqnarray*}
@@ -240,25 +241,10 @@ and product and inverse:
 For all the details of the above, we refer to \cite[Section 4]{MR2419901}. This groupoid is the \textit{universal groupoid} associated to $S$. We collect some information about this groupoid from \cite{MR2419901,MR1724106} in Theorem \ref{Thm:Info}.
 \item Lastly we consider certain subspaces of $\E$ that are closed and saturated and we outline their construction and some associated technicalities below. This subspace arises from the question: what are the ultrafilters on $E$?
 
-The answer to this question and the technical obstructions that arise form a large part of the papers \cite{MR2419901,MR2672179} of Lawson and Exel. We denote the subspace of ultrafilters $\E_{\infty}$. The main technical point is that, unlike the Boolean algebra case, $\E_{\infty}$ need not be a closed subset of $\E$ when $E$ is a semilattice. This leads Exel to consider what he calls \textit{tight} filters, which we denote by $\E_{tight}$. In \cite{MR2419901} it is shown that tight filters are the closure of the ultrafilters inside $\E$. 
+The answer to this question and the technical obstructions that arise form a large part of the papers \cite{MR2419901,MR2672179} of Exel and Lawson. We denote the subspace of ultrafilters $\E_{\infty}$. The main technical point is that, unlike the Boolean algebra case, $\E_{\infty}$ need not be a closed subset of $\E$ when $E$ is a semilattice. This leads Exel to consider what he calls \textit{tight} filters, which we denote by $\E_{tight}$. In \cite{MR2419901} it is shown that tight filters are the closure of the ultrafilters inside $\E$. 
 
 \end{enumerate}
 \end{definition}
-
-\begin{theorem}\label{Thm:Info}
-Let $S$ be a countable 0-E-unitary inverse monoid, $E$ its semilattice of idempotents and $\G_{\E}$ its universal groupoid. Then the following hold for $\G_{\E}$:
-\begin{itemize}
-\item $\E$ is a compact, Hausdorff and second countable space.
-\item $\G_{\E}$ is a Hausdorff groupoid.
-\item Every representation of $S$ on Hilbert space gives rise to a covariant representation of $\G_{\E}$ and vice versa.
-\item We have $C^{*}_{r}(S) \cong C^{*}_{r}(\G_{\E})$.
-\end{itemize}
-\end{theorem}
-\begin{proof}
-The first point is a consequence of the fact that $E$ is countable, in this situation we know precisely that $\textbf{2}^{E}$ is metrizable, hence as a closed subset we know that $\E$ is second countable. It is compact and Hausdorff as it is a closed subset of a compact, Hausdorff space.
-
-The second point follows from Corollary 10.9 \cite{MR2419901}, the third point is Corollary 10.16 \cite{MR2419901} and the fourth point follows from \cite{MR1724106}, but a more elementary proof is given in \cite{MR1900993}.
-\end{proof}
 
 We will regularly make use of the following result that arises from the presence of maximal elements:
 
@@ -274,6 +260,17 @@ The second equation tells us that $t_{s}^{*}t_{s} \in F_{\phi}$ as filters are u
 \end{proof}
 Using Claim \ref{MainClaim:C1} will be able to forget the non-maximal elements in the monoid $S$ when working with $\G_{\E}$. This technique will be prevalent throughout this document as it allows many natural geometric considerations to enter into what would otherwise be purely combinatorial calculations.
 
+Lastly for this section we make remarks about the more general notion associated to a representation of $S \rightarrow I(X)$ called a \textit{groupoid of germs}.
+
+\begin{remark}
+If we define a topological action of $S$ on a locally compact Hausdorff space $X$ to be a representation of $\pi:S \rightarrow I(X)$ such that each $s \in S$ is continuous and has a open domain, where these domains satisfy $\bigcup_{s \in S}D_{s^{*}s} = X$.
+
+From this we can construct a groupoid the recipe of for the universal groupoid. We do this by considering the subset of $S \times X$ given by $K:=\lbrace (s,x) | x \in D_{s^{*}s}\rbrace$. We then quotient by the relation outlined in the construction of the universal groupoid and give it the same product and inverse. This turns the quotient into a groupoid; called the groupoid of germs, denoted by $X \rtimes S$.
+
+Putting $\E$ into this construction provides $\G_{\E}$ and every other suitable representation gives us a restriction of $\G_{\E}$. This follows from the work of \cite{MR2419901}.
+ 
+\end{remark}
+
 \section{Prehomomorphisms of inverse monoids and general partial actions of discrete groups.}\label{Sect:S3} 
 In this section we outline some basic properties of partial actions of discrete groups on topological spaces, paying particular attention to the types of inverse monoid $S$ these generate. We then use analytic information associated to the group together with properties of inverse monoid to understand analytic properties of the universal \'etale groupoid $\G_{\E}$ that is built from the inverse monoid $S$. We begin with a definition.
 
@@ -284,7 +281,9 @@ Let $\rho: S \rightarrow T$ be a map between inverse semigroups. This map is cal
 We recall that a congruence is said to be \textit{idempotent pure} if the preimage of any idempotent is an idempotent. We extend this definition to general maps in the natural way. In addition we call a map $S \rightarrow T$ \textit{0-restricted} if the preimage of $0 \in T$ is $0 \in S$.
 
 \begin{definition}
-Let $S$ be a 0-E-unitary inverse monoid. We say $S$ is \textit{strongly 0-E-unitary} if there exists an idempotent pure, 0-restricted prehomomorphism, $\Phi$ to a group $G$ with a zero element adjoined, that is: $\Phi:S \rightarrow G^{0}$. We say it is \textit{strongly 0-F-inverse} if it is 0-F-inverse and strongly 0-E-unitary. This is equivalent to the fact that the preimage of each group element under $\Phi$ that is not $0$ contains a maximum element.
+Let $S$ be a 0-E-unitary inverse monoid. We say $S$ is \textit{strongly 0-E-unitary} if there exists an idempotent pure, 0-restricted prehomomorphism, $\Phi$ to a group $G$ with a zero element adjoined, that is: $\Phi:S \rightarrow G^{0}$. In this instance the prehomomorphism property translates into: if $s,t \in S$ with $st \not = 0$, we have $\Phi(st)=\Phi(s)\Phi(t)$, as the order structure on $G^{0}$ is simply given by $g \leq h \Leftrightarrow g = 0$ or $g=h$.
+
+We say it is \textit{strongly 0-F-inverse} if it is 0-F-inverse and strongly 0-E-unitary. This is equivalent to the fact that the preimage of each group element under $\Phi$ that is not $0$ contains a maximum element.
 \end{definition}
 
 This class of inverse monoids is particularly important: the idempotent pure, 0-restricted prehomomorphism onto a group (with 0) can be thought of as a generalisation of the minimum group congruence in the larger category of inverse monoids with prehomomorphisms. We will utilise this technology later to regain some of the information from a group when we cannot quotient out in any meaningful way due to the presence of a zero element.
@@ -298,7 +297,7 @@ This has maximal group homomorphic image $G$, and it has the universal property 
 \end{example}
 
 \begin{definition}
-Let $G$ be a finitely generated discrete group and let $X$ be a (locally compact Hausdorff) topological space. A \textit{partial action} of $G$ on $X$ is a dual prehomomorphism $\theta$ of $G$ in the symmetric inverse monoid $I(X)$ that has the following properties:
+Let $G$ be a finitely generated discrete group and let $X$ be a (locally compact Hausdorff) topological space. A \textit{partial action} of $G$ on $X$ is a dual prehomomorphism $\theta$ from $G$ to the symmetric inverse monoid $I(X)$ that has the following properties:
 \begin{enumerate}
 \item The domain $D_{\theta_{g}^{*}\theta_{g}}$ is an open set for every $g$.
 \item $\theta_{g}$ is a continuous map.
@@ -311,11 +310,17 @@ Given this data we can generate an inverse monoid $S$ using the set of $\theta_{
 We are going to be interested in turning a partial group action into a full group action; the process of globalisation has been considered in a variety of settings \cite{MR0160848, MR1798993, MR2041539, MR2419858, MR1900993, Milan-Steinberg}, each using the same central theme.
 
 \begin{definition}
+A \textit{globalisation} of a partial action $\theta: G \rightarrow I(X)$ is a space $Y$ with an injection $X \hookrightarrow Y$ and action $\tilde{\theta}$ of $G$ such that the partial action obtained from restricting the action $\tilde{\theta}$ to $X$ is equal to $\theta$. 
+\end{definition}
+
+A globalisation is minimal if it injects into any other globalisation. In \cite{MR2041539} the authors proved that for any partial action of a group $G$ there is a unique globalisation (up to equivalence of partial actions). This is defined as follows:
+
+\begin{definition}
 Let $X$ be a topological space and let $G$ be a group acting partially on $X$. Then we denote by $\Omega$ the \textit{Morita evelope} of the action of $G$ on $X$, which is constructed as follows:
 
-Consider the space $X\times G$, equipped with the product topology. Then define $\sim$ on $X\times G$ by $(x,g)\sim (y,h)$ if there exists $\gamma \in \G$ with $x(h^{-1}g)=y$. We define $\Omega$ as the quotient of $X\times G$ by $\sim$ with the quotient topology. 
+Consider the space $X\times G$, equipped with the product topology. Then define $\sim$ on $X\times G$ by $(x,g)\sim (y,h)$ if and only if $x(h^{-1}g)=y$. We define $\Omega$ as the quotient of $X\times G$ by $\sim$ with the quotient topology. 
 
-$G$ acts on $\Omega$ using right multiplication by inverses on the group factor of the equivalence classes.
+$G$ acts on $\Omega$ using right multiplication by inverses on the group factor of the equivalence classes. Clearly the map that sends $x \in X$ to $[1,x] \in \Omega$ is a topological injection. The main result of \cite{MR2041539} is that this new topological space is minimal amongst globalisations of $X$.
 \end{definition}
 
 This notion will be developed further in Section \ref{Sect:GVC} and will also play an important role in certain examples in Chapter 5.
@@ -369,7 +374,7 @@ This is complete (Banach) algebra in this norm. Observe it satisfies the followi
 So it is a $C^{*}$-algebra. Observe also has a commutative product.
 \end{example}
 
-This example will allow us classify \textit{all} commutative $C^{*}$-algebras:
+This example will allow us classify \textit{all} commutative $C^{*}$-algebras using the following Theorem of Gelfand:
 
 \begin{theorem}
 The category of all commutative $C^{*}$-algebras and *-homomorphisms is equivalent to the opposite of the category of locally compact, Hausdorff topological spaces with proper maps.
@@ -400,7 +405,7 @@ The axioms above imply a generalization of the Cauchy-Schwartz inequality and so
 If you put $A= \mathbb{C}$ then the above definition reduces to that of a Hilbert space. A $C^{*}$-algebra $A$ can be thought of as a Hilbert $A$-module over itself using the inner product: $\langle a, a^{'} \rangle = a^{*}a^{'}$. Also we remark that not all the basic facts that apply to Hilbert spaces apply to Hilbert modules - in general the Riesz Representation Theorem fails for Hilbert Modules \cite{MR1077390}.
 \end{remark}
 
-\subsection{Constructions of Groupoid \texorpdfstring{$C^{*}$}{C*}-algebras.}\label{Sect:GVC} The standard technique for a locally compact group $G$ involves considering norm completions associated to representations of the ring of compactly supported functions on the group. We can associate a very natural representation on the $L^{2}(G,\mu)$, where $\mu$ is the Haar measure on $G$. To extend these ideas to a locally compact groupoid we will need an analogue of this measure in a suitably fibred manner.
+\subsection{Constructions of Groupoid \texorpdfstring{$C^{*}$}{C*}-algebras.}\label{Sect:GVC} The standard technique for a locally compact group $G$ involves considering norm completions associated to representations of the ring of compactly supported functions on the group. We can associate a very natural representation on the space $L^{2}(G,\mu)$, where $\mu$ is the Haar measure on $G$. To extend these ideas to a locally compact groupoid we will need an analogue of this measure in a suitably fibred manner.
 
 \begin{definition}
 A \textit{left Haar system} for a locally compact groupoid $\G$ is a family $\lbrace \lambda^{u} \rbrace$, where each $\lambda^{u}$ is a positive regular Borel measure on the locally compact Hausdorff $\G^{u}$, such that the following hold:
@@ -465,7 +470,7 @@ Then the map $Ind(\pi)$ is called the \textit{induced representation of A} assoc
 So consider the application of this process to the following pre-$C^{*}$-algebras:
 
 \begin{example}
-Let $\mathcal{G}$ be a r-discrete topological groupoid. Let $A:=C_{c}(\mathcal{G})$ and $B:=C_{0}(\mathcal{G}^{(0)})$. $P$ in this case is the projection map. We can represent $B$ on $L(\mathcal{G}^{(0)}, \mu)$ where $\mu$ is a measure on the unit space. So for a given unit $v \in \mathcal{G}^{(0)}$ we can construct a Hilbert space and a representation as follows:
+Let $\mathcal{G}$ be a r-discrete topological groupoid. Let $A:=C_{c}(\mathcal{G})$ and $B:=C_{0}(\mathcal{G}^{(0)})$. $P$ in this case is the restriction map. We can represent $B$ on $L(\mathcal{G}^{(0)}, \mu)$ where $\mu$ is a measure on the unit space. So for a given unit $v \in \mathcal{G}^{(0)}$ we can construct a Hilbert space and a representation as follows:
 
 Let $\pi:B \rightarrow B(H)$ given by diagonal multiplication as above. Then we have a map $P_{v}:f \in A \rightarrow P(f)=f(v)$ where $P:A \rightarrow B$ is given as a sum of these maps in the following way:
 
@@ -497,20 +502,37 @@ It is well known that any Hilbert $C_{0}(\G^{(0)})$-module $\mathcal{M}$ is the 
 \end{equation*}
 This defines an inner product on $C_{c}(\G_{x})$, which we can use to complete. We denote this completion by $L^{2}(\G_{x})$. This gives us the natural field of Hilbert spaces we were looking for, namely: $\lbrace L^{2}(\G_{x}) \rbrace_{x \in \G^{(0)}}$. It also gives us a natural representation of $C_{c}(\G)$ given by $\lambda_{x}(f)\eta = (f \ast \eta)(x)$. Hence we can conclude that $\Vert f \Vert = \sup_{x \in \G^{(0)}} \Vert \lambda(f) \Vert = \Vert \lambda(f) \Vert$. From this we can complete $C_{c}(\G)$ in either the norm on $L^{2}(\G)$ or the family of norms $\lbrace L^{2}(\G_{x}) \rbrace_{x \in \G^{(0)}}$, getting the same completion, denoted by $C^{*}_{r}(\G)$. 
 
-These ideas clearly agree with the more formal construction given at the beginning of this section as the $K_{v}$ are isometrically isomorphic to $L^{2}(\G|_{v})$, so the norms are equivalent, but allows us  to develop intuition by viewing $L^{2}(\G)$ is a Hilbert space, not a Hilbert module.
+These ideas clearly agree with the more formal construction given at the beginning of this section as the $K_{v}$ are isometrically isomorphic to $L^{2}(\G|_{v})$. 
 
-\section{Groupoid Valued Cocycles and a Theorem of Milan and Steinberg.}
+The last point of this section is to collect some information concerning the universal groupoid $\G_{\E}$ of a inverse monoid $S$.
 
-In this section we consider the question of when a groupoid admits a transformation groupoid decompostion up to Morita equivalence. This question connects to the idea of globalising partial actions discussed in Section \ref{Sect:S3} and this has been well studied for the class of groupoids constructed from suitable inverse semigroups \cite{MR1900993,Milan-Steinberg} that admit a certain type of map onto a group:
+\begin{theorem}\label{Thm:Info}
+Let $S$ be a countable 0-E-unitary inverse monoid, $E$ its semilattice of idempotents and $\G_{\E}$ its universal groupoid. Then the following hold for $\G_{\E}$:
+\begin{itemize}
+\item $\E$ is a compact, Hausdorff and second countable space.
+\item $\G_{\E}$ is a Hausdorff groupoid.
+\item Every representation of $S$ on Hilbert space gives rise to a covariant representation of $\G_{\E}$ and vice versa.
+\item We have $C^{*}_{r}(S) \cong C^{*}_{r}(\G_{\E})$.
+\end{itemize}
+\end{theorem}
+\begin{proof}
+The first point is a consequence of the fact that $E$ is countable, in this situation we know precisely that $\textbf{2}^{E}$ is metrizable, hence as a closed subset we know that $\E$ is second countable. It is compact and Hausdorff as it is a closed subset of a compact, Hausdorff space.
+
+The second point follows from Corollary 10.9 \cite{MR2419901}, the third point is Corollary 10.16 \cite{MR2419901} and the fourth point follows from \cite{MR1724106}, but a more elementary proof is given in \cite{MR1900993}.
+\end{proof}
+
+\section{Semigroup Valued Cocycles and a Theorem of Milan and Steinberg.}
+
+In this section we consider the question of when a groupoid admits a transformation groupoid decompostion up to Morita equivalence. This question connects to the idea of globalising partial actions discussed in Section \ref{Sect:S3} and this has been well studied for the class of groupoids constructed from suitable inverse semigroups \cite{MR1900993,Milan-Steinberg}.
 
 \begin{definition}
-Let $G$ be a locally compact groupoid. Then we call a continuous homomorphism from $G$ to a locally compact group $\Gamma$ a group valued cocycle (or just cocycle).
+Let $\G$ be a locally compact groupoid. Then we call a continuous homomorphism from $\G$ to a inverse semigroup $S$ an inverse semigroup valued cocycle (or just cocycle).
 \end{definition}
 
 \begin{definition}
-Let $\rho: G \rightarrow \Gamma$ be a cocycle. We say it is:
+Let $\rho: \G \rightarrow S$ be a cocycle. We say it is:
 \begin{enumerate}
-\item \textit{transverse} if the map $\Gamma \times G \rightarrow \Gamma \times X$, $(g, \gamma) \mapsto (g\rho(\gamma),s(\gamma))$ is open.
+\item \textit{transverse} if the map $S \times \G \rightarrow S \times X$, $(s, \gamma) \mapsto (s\rho(\gamma),s(\gamma))$ is open.
 \item \textit{closed} if the map $\gamma \mapsto ((r(\gamma),\rho(\gamma),s(\gamma))$ is closed.
 \item \textit{faithful} if the map $\gamma \mapsto ((r(\gamma),\rho(\gamma),s(\gamma))$ is injective.
 \end{enumerate}
@@ -523,7 +545,7 @@ Below is the main result of \cite{Milan-Steinberg}, a generalisation of the main
 Let $\rho: \G \rightarrow S$ be a continuous, faithful closed transverse cocycle where $\G$ is a locally compact groupoid and $S$ is a countable inverse semigroup. Then there is a locally compact Hausdorff space $X$ equipped with an action of $S$ so that $\G$ is Morita equivalent to the groupoid of germs $X \rtimes S$. Consequently $C^{*}_{max}\G$ is strongly Morita equivalent to $C_{0}(X)\rtimes S$. If $S$ is a group, then the analogous result holds for reduced $C^{*}$-algebras.
 \end{theorem}
 
-From an F-inverse monoid $S$ it is possible to construct a (T,C,F)-cocycle onto the maximal group homomorphic image of $G$ \cite{MR1900993}. To prove Theorem \ref{Thm:IT2} in the case that the monoid is $F$-inverse then makes use of the Morita envelope of the partial action that the maximal group homomorphic image $G$ has on the unit space of the universal groupoid $\G_{\E}$. In this case the space is a quotient of  $\G^{(0)}\times \Gamma$ equipped with the product topology.  The closed condition on the cocycle makes this space Hausdorff.
+From an F-inverse monoid $S$ it is possible to construct a (T,C,F)-cocycle onto the maximal group homomorphic image of $G$ \cite{MR1900993}. To prove Theorem \ref{Thm:IT2} in the case that the monoid is $F$-inverse then makes use of the Morita envelope of the partial action that the maximal group homomorphic image $G$ has on the unit space of the universal groupoid $\G_{\E}$. IThe closed condition on the cocycle makes this space Hausdorff.
 
 What follows from here can be found as a Corollary to Theorem \ref{Thm:IT2} from \cite{Milan-Steinberg}. We provide a direct proof of a special case using the original methods of \cite{MR1900993}. This is possible by considering the construction of the groupoid $\G_{\E}$ for a strongly 0-E-unitary inverse monoid $S$. It is clear that the only danger is mapping elements to $0$ in $\Gamma^{0}$; this is overcome by the observation that the element $[0,f]$ would be defined if and only if $f \in D_{0}$. However, $f \in D_{0}$ implies that $f(0)=1$ and hence $f \not\in \E$, so the $0$ element of $S$ contributes nothing to the groupoid $\G_{\E}$, either in objects or arrows.
 
