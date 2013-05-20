@@ -1,10 +1,10 @@
 %\setstretch{1.6}
-\chapter{Counterexamples to Baum-Connes and Large Girth expanders.}
+\chapter{Counterexamples to Baum-Connes and Large Girth Expanders.}
 In this chapter we develop the basic concepts of coarse geometry for metric spaces and outline some coarse properties that can be associated to a metric space. We then outline certain analytic group and groupoid properties and connect these to their coarse counterparts. Secondly, we introduce the coarse Baum-Connes conjecture for proper metric spaces and outline machinery to construct counterexamples to this conjecture by converting the coarse assembly map into a groupoid assembly map.
 
 We then present a unifying approach to all known counterexamples to this conjecture by developing the groupoid centric viewpoint of \cite{MR1911663} further, introducing a new conjecture known as the \textit{boundary coarse Baum-Connes conjecture}. First however we outline the construction of the algebras involved in defining the coarse assembly map $\mu$, then make some connections to groupoid equivariant KK-theory. These ideas then allow us to formulate the boundary coarse Baum-Connes conjecture and apply homological algebra techniques to connect it to the coarse Baum-Connes conjecture.
 
-As an example of the flexibility of this new conjecture we show that it holds for certain large classes of expander graph, generalising work of Willett and Yu \cite{explg1}.
+As an example of the flexibility of this new conjecture we verify it for certain large classes of expander graph, generalising work of Willett and Yu \cite{explg1}.
 
 \section{Coarse geometry, Groupoids and Assembly.}
 In this section we outline the coarse geometry and group theoretic properties that are going to be considered throughout this chapter. The overall scheme of this section is first to consider some general coarse ideas associated to metric spaces and then move onto discussions of certain analytic properties held by discrete groups. We will develop these coarse ideas further by introducing abstract coarse structures and their relationship to metric spaces.
@@ -18,17 +18,17 @@ The key idea in coarse geometry is somehow to supplant this notion of continous 
 Let $f:X \rightarrow Y$ be a map of metric spaces. $f$ is \textit{coarse} if it is both metrically proper and bornologous.
 \end{definition}
 
-A coarse map, intuitively, preserves the structure of a metric space on large scales. We call a pair of maps $f:X\rightarrow Y$, $g:Y\rightarrow X$ \textit{close} if there is a uniform bound $R$ such that $d(g(f(x),x)<R$ and $d(y,f(g(y))<R$. Two metric spaces $X$ and $Y$ are \textit{coarsely equivalent} if we can find maps $f:X\rightarrow Y$, $g:Y\rightarrow X$ that are both coarse such that the pair are close.  Classifying spaces by their coarse type is one of the basic goals of coarse geometry. An example where such coarse equivalences turn out to be useful is in analysing the topology of manifolds via their fundamental group; this idea also motivates the more technical coarse geometric ideas that permeate throughout Chapter 4.
+A coarse map, intuitively, preserves the structure of a metric space on large scales. We call a pair of maps $f:X\rightarrow Y$, $g:Y\rightarrow X$ \textit{close} if there is a uniform bound $R$ such that $d(g(f(x),x)<R$ and $d(y,f(g(y))<R$. Two metric spaces $X$ and $Y$ are \textit{coarsely equivalent} if we can find maps $f:X\rightarrow Y$, $g:Y\rightarrow X$ that are both coarse such that the pair are close.  Classifying spaces by their coarse type is one of the basic goals of coarse geometry. An example where such coarse equivalences turn out to be useful is in analysing the topology of manifolds via their fundamental group; this idea also motivates the more technical coarse geometric ideas that permeate throughout this chapter.
 
 \begin{lemma}(\u{S}varc - Milnor)
-Let $\Gamma$ be a discrete group and let $X$ be a proper, free, cocompact $\Gamma$-space where the $\Gamma$ action is isometric. Then $X$ is coarsely equivalent to $\Gamma$.\qed
+Let $\Gamma$ be a discrete group and let $X$ be an proper, free, cocompact $\Gamma$-metric space. Additionally suppose that the action is isometric. Then $X$ is coarsely equivalent to $\Gamma$.\qed
 \end{lemma}
 
 \begin{example}
 Let $M$ be a closed compact manifold and let $\pi_{1}(M)=\Gamma$ be its fundamental group. Then $\Gamma$ is coarsely equivalent to $\tilde{M}$, the universal cover of $M$ by the Lemma above.
 \end{example}
 
-We introduce now another concept, similar in vein to the previous, that allows us to talk about uniformly controlled embeddings:
+We introduce now another concept, similar to the previous notion of coarse map, that allows us to talk about uniformly controlled embeddings:
 
 \begin{definition}
 A map is called \textit{effectively proper} if additionally, for each $R>0$ there exists an $S>0$ such that the preimage of each ball of radius $R$ in $Y$ is contained in a ball of radius $S$ in $X$.
@@ -50,9 +50,9 @@ A metric space $X$ is said to admit a coarse embedding into Hilbert space $\math
 \end{enumerate}
 \end{definition}
 
-This connects to the notion of an effectively proper, bornologous map by observing that our controls (i.e the $S$'s that appear within the definitions) will pop out as the value of the control functions $\rho_{\pm}$ at $R$.
+This connects to the notion of an effectively proper, bornologous map by observing that our controls (i.e the $S$'s that appear within the definitions) will arise as the value of the control functions $\rho_{\pm}$ at $R$.
 
-This property is exceptionally flexible; many constructions of metric spaces preserve coarse embeddability \cite{EG-permanence}. This property will be important in Chapter 4 where it plays an important role in results concerning groupoids and the coarse Baum-Connes conjecture.
+This property is exceptionally flexible; many constructions of metric spaces preserve coarse embeddability \cite{EG-permanence}. This property will be important in later in the chapter where it plays an important role in results concerning groupoids and the coarse Baum-Connes conjecture.
 
 \subsection{Properties of finitely generated discrete groups and \'etale groupoids.}
 Via the construction of a Cayley graph, it is possible to introduce a metric to a finitely generated group that is compatable with the group structure. Many of the ideas in geometric group theory rely on computing coarse properties, such as coarse embeddings, for this metric. Additionally, coarse properties of this metric often connect to analytic properties of groups that are equivariant with respect to the group action. In the global context of the Baum-Connes conjecture for groups and groupoids the following property plays an important role. As we primarily consider transformation groupoids we focus the definition on them.
@@ -96,10 +96,10 @@ Let $\Gamma$ be a discrete finitely generated group. If $\Gamma$ has the Haageru
 In this section we outline the construction of the coarse assembly map using only elementary K-theoretic methods. The exposition for this follows Chapters 5 and 8 from \cite{MR1399087}, however we could equally have developed this using the latter half of \cite{MR1817560,MR1388312}. We then connect this, via a groupoid, to a KK-theoretic formulation of the conjecture introduced by Tu \cite{MR1703305,MR1798599}.
 
 \subsection{The algebras of locally compact and psuedolocal operators.}
-Let $X$ be a locally compact Hausdorff topological space and let $\mathcal{H}$ be a Hilbert space. We say that $\mathcal{H}$ is an $X$-module if it admits a representation, by bounded linear operators, of $C_{0}(X)$. 
+Let $X$ be a locally compact Hausdorff topological space and let $\mathcal{H}$ be a Hilbert space. We say that $\mathcal{H}$ is an $X$-module if it admits a representation, by bounded linear operators, of $C_{0}(X)$. Where appropriate we denote this representation by $\phi$.
 
 \begin{definition}
-An $X$-module is \textit{adequate} if $\overline{C_{0}(X)\mathcal{H}}=\mathcal{H}$ and $C_{0}(X)\cap \mathcal{K(\mathcal{H}})= \lbrace 0 \rbrace$.
+An $X$-module is \textit{adequate} if $\overline{\phi(C_{0}(X))\mathcal{H}}=\mathcal{H}$ and $\phi(C_{0}(X))\cap \mathcal{K(\mathcal{H}})= \lbrace 0 \rbrace$.
 \end{definition}
 
 \begin{remark}
@@ -147,7 +147,7 @@ The algebraic Roe algebra, denoted $\mathbb{C}[X]$, is the $*$-subalgebra of $\m
 \end{definition}
 
 \begin{remark}
-The Hilbert space $\ell^{2}(Z,\mathcal{H}_{0}))$ is an adequate $X$-module \cite{explg1} and $C^{*}X = \mathcal{C}^{*}X \cap \lbrace$finite propagation operators$\rbrace$.
+The Hilbert space $\ell^{2}(Z,\mathcal{H}_{0}))$ is an adequate $X$-module \cite{explg1} and $C^{*}X = \mathcal{C}^{*}X \cap \lbrace$finite propagation operators on $\ell^{2}(Z,\mathcal{H}_{0}))\rbrace$.
 \end{remark}
 
 We now consider a finite propagation version of the K-homology defined in the previous section:
@@ -190,6 +190,8 @@ This conjecture is slightly naive, as it is not in fact functorial under coarse 
 Let $X$ be a uniformly contractible simplicial complex of bounded geometry. Then the coarse Baum-Connes conjecture I is true for $X$.
 \end{theorem}
 
+The proof of this result relies on showing that $K_{*}(D^{*}X)$, the analytic structure set of $X$, is trivial, then the result follows from the long exact sequence above.
+
 In order to improve the conjecture we rely on making the left hand side term $K_{*}(X)$ functorial under coarse maps. To do this we \textit{coarsen} $X$.
 
 \begin{definition}
@@ -222,10 +224,10 @@ Let $X$ be a proper metric space that admits a coarse embedding into Hilbert spa
 Later in the Chapter we will explore counterexamples to this conjecture by rephrasing it using groupoids. Lastly, consider a discrete group $\Gamma$ acting on a space $X$ properly, freely and cocompactly. Then we can consider the following algebras:
 
 \begin{definition}
-Let $T$ be an operator on $\ell^{2}(X,\mathcal{H}_{0})$. Then $T$ is $\Gamma$-invariant if for all $g \in \Gamma$ the matrix entries $T_{x,y}$ and $T_{gx,gy}$ are equal. Denote by $\mathbb{C}[X]^{\Gamma}$ the collections of operators that are finite propagation, locally compact and $\Gamma$-invariant. Similarly, denote $\mathbb{D}(X)^{\Gamma}$ the operators that are finite propagation, psuedolocal and $\Gamma$-invariant. Lastly, denote their completions by $C^{*}X^{\Gamma}$ and $D^{*}(X)^{\Gamma}$.
+Let $T$ be an operator on $\ell^{2}(X,\mathcal{H}_{0})$. Then $T$ is $\Gamma$-invariant if for all $g \in \Gamma$ the matrix entries $T_{x,y}$ and $T_{gx,gy}$ are equal. Denote by $\mathbb{C}[X]^{\Gamma}$ the collections of operators that are finite propagation, locally compact and $\Gamma$-invariant. Similarly, denote $\mathbb{D}(X)^{\Gamma}$ the operators that are finite propagation, psuedolocal and $\Gamma$-invariant. Lastly, denote their completions by $C^{*}(X)^{\Gamma}$ and $D^{*}(X)^{\Gamma}$.
 \end{definition}
 
-These algebras also fit into the same short exact sequence, as $C^{*}X^{\Gamma}$ is an ideal in $D^{*}(X)^{\Gamma}$, just as above. This allows us to compute the K-theory long exact sequence:
+These algebras also fit into the same short exact sequence, as $C^{*}(X)^{\Gamma}$ is an ideal in $D^{*}(X)^{\Gamma}$, just as above. This allows us to compute the K-theory long exact sequence:
 \begin{equation*}
 \xymatrix@=1em{
 K_{0}(C^{*}(X)^{\Gamma}) \ar[r] & K_{0}(D^{*}(X)^{\Gamma}) \ar[r]& K_{1}^{\Gamma}(X)\ar[d]^{\mu} & \\
@@ -252,11 +254,11 @@ There are also positive results in this setting \cite{MR1487204}:
 Let $\Gamma$ be a discrete group. If $\Gamma$ has the Haagerup property then the Baum-Connes conjecture defined above holds for $\Gamma$.
 \end{theorem}
 
-This provides the connection between analysis on groups and coarse geometry.
+This provides some evidence of the connection between analysis on groups and coarse geometry.
 
 \section{The Coarse Groupoid of a Metric Space}\label{Sect:CG}
 
-Let $X$ be a uniformly discrete bounded geometry (sometimes denoted uniformly locally finite) metric space. In this section we construct a groupoid $G(X)$ associated to $X$ that captures coarse properties of $X$. Namely, for each coarse property of $X$ that we are interested in there is a corresponding analytic property of $G(X)$. This includes being able to encode the coarse Baum-Connes conjecture as a groupoid Baum-Connes conjecture.
+Let $X$ be a uniformly discrete bounded geometry (sometimes denoted uniformly locally finite) metric space. In this section we construct a groupoid $G(X)$ associated to $X$ that captures coarse properties of $X$. Explicitly, for each coarse property of $X$ that we are interested in there is a corresponding analytic property of $G(X)$, this includes an encoding the coarse Baum-Connes conjecture as a groupoid Baum-Connes conjecture.
 
 To do this effectively we need to define the what we mean by a ``coarse structure" associated to a metric. The details of this can be found in \cite{MR2007488}.
 
@@ -346,7 +348,7 @@ Then we denote by $KK_{G}(A,B)$ the group of homotopy classes of Kasparov $(A,B)
 
 This theory has many of the same features as the more traditional non-equivariant $KK$ groups, namely:
 \begin{itemize}
-\item $KK_{G}(A,B)$ is covariant in second variable and contravariant in the second;
+\item $KK_{G}(A,B)$ is covariant in second variable and contravariant in the first;
 \item Bott peroidicity holds for this theory; define: $KK_{G}^{n}(A,B)=KK_{G}(A,B\otimes C_{0}(\mathbb{R}^{n}))$, then $KK_{G}^{n}(A,B)=KK_{G}^{n+2}(A,B)$;
 \item For any $G$-algebra $D$ there is a natural transformation:
 \begin{equation*}
@@ -1007,7 +1009,7 @@ We show this groupoid acts on $\beta X$; we make use of the assumption that $\th
 \begin{equation*}
 r_{\beta X}: \beta X \twoheadrightarrow \widehat{X}
 \end{equation*}
-which is continuous. In particular as both $\beta X$ and $\widehat{X}$ are compact Hausdorff spaces; this map is closed (and open) and hence a quotient. We make use of this to define an action on $\beta X$. By Claim \ref{Claim:C1} we have that each element of our groupoid $\G_{\widehat{X}}$ can be represented by a pair $[\theta_{g}, \phi]$, for some $\phi \in \widehat{X}$. Observe also that as $X$ is discrete so are all of it subspaces, hence the maps $\theta_{g}$ are continuous (open) for each $g \in G$. These then extend to $\beta X$, and so coupled with the map $r_{\beta X}$ we can act by:
+which is continuous. In particular as both $\beta X$ and $\widehat{X}$ are compact Hausdorff spaces; this map is closed (and open) and hence a quotient. We make use of this to define an action on $\beta X$. By Claim \ref{MainClaim:C1} we have that each element of our groupoid $\G_{\widehat{X}}$ can be represented by a pair $[\theta_{g}, \phi]$, for some $\phi \in \widehat{X}$. Observe also that as $X$ is discrete so are all of it subspaces, hence the maps $\theta_{g}$ are continuous (open) for each $g \in G$. These then extend to $\beta X$, and so coupled with the map $r_{\beta X}$ we can act by:
 \begin{equation*}
 [\theta_{g},\phi].\omega = \theta_{g}(\omega)
 \end{equation*}
@@ -1039,10 +1041,10 @@ From both (1) and (2) we can further deduce that the covering map is a bijection
 We are interested in understanding those analytic properties the groupoid $\G_{\widehat{X}}$ has, in particular we are interested in showing that the groupoid has the Haagerup property, that is admits a proper affine isometric action on a field of Hilbert spaces. From results of Tu in \cite{MR1703305} this enough to conclude the Baum-Connes assembly map is an isomorphism for all coefficients for this groupoid. To do this we study the inverse monoid $S$ associated to the partial action $\theta$.
 
 \begin{proposition}\label{Prop:Strongly}
-Let $S = \langle \theta_{g} | g \in G \rangle$, where $\theta: G \rightarrow S$ is a dual prehomomorphism. If $S$ is 0-F-inverse with $Max(S) = \lbrace \theta_{g} | g \in G \rbrace$ and if  ($\theta_{g} \not = 0$ and $\theta_{g} \not \in E(S)$) for $g\not = e$ then $S$ is strongly 0-F-inverse.
+Let $S = \langle \theta_{g} | g \in G \rangle$, where $\theta: G \rightarrow S$ is a dual prehomomorphism. If $S$ is 0-F-inverse with $Max(S) = \lbrace \theta_{g} | g \in G \rbrace$ where each nonzero $\theta_{g}$ is not idempotent when $g \not = e$ then $S$ is strongly 0-F-inverse.
 \end{proposition}
 \begin{proof}
-We build a map $\Phi$ back onto $G^{0}$. Let $m: S \rightarrow Max(S)$ be the map that sends each $s$ to the maximal element $m(s)$ above $s$ and consider the following diagram:
+We build a map $\Phi$ back onto $G^{0}$. Let $m: S\setminus \lbrace 0 \rbrace \rightarrow Max(S)$ be the map that sends each non-zero $s$ to the maximal element $m(s)$ above $s$ and consider the following diagram:
 \begin{equation*}
 \xymatrix{
 G\ar@{->}[r]^{\theta}\ar@{->}[dr]^{}  & S\ar@{->}[dr]^{\Phi}  & \\
@@ -1292,7 +1294,7 @@ Recall that the inverse monoid $S_{inf}$ is represented geometrically by partial
 \begin{lemma}
 Consider the inverse monoid $S_{inf}$ as a submonoid of $I(X)$. Then the following hold:
 \begin{enumerate}
-\item $S_{inf}$ has the property that $g\not = e_{G}$ and $\theta_{g}\not = 0$ implies $theta_{g}$ is not an idempotent; 
+\item $S_{inf}$ has the property that $g\not = e_{G}$ and $\theta_{g}\not = 0$ implies $\theta_{g}$ is not an idempotent; 
 \item $S_{inf}$ is $0$-E-unitary;
 \item $S_{inf}$ has maximal element set $\lbrace \theta_{g} : g \in F_{k} \rbrace$.
 \end{enumerate}
