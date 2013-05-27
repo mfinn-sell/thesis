@@ -139,15 +139,15 @@ Now to consider (2). It is enough to compute the result of products of elements 
 
 To see (I) compute on a single element:
 \begin{eqnarray*}
-(f_{s}\delta_{s} \Xst f_{t}\delta_{t})([st,\phi])=f_{s}(\theta_{t}(\phi))f_{t}(\phi)
+(f_{s}\delta_{s} \Xst f_{t}\delta_{t})([st,\phi])=f_{s}(\widehat{\rho}_{t}(\phi))f_{t}(\phi)
 \end{eqnarray*}
 Apply $q$:
 \begin{eqnarray*}
-q(f_{s}\delta_{s} \Xst f_{t}\delta_{t})([st,\phi])= (f_{s}\delta_{s} \Xst f_{t}\delta_{t})|_{\E_{tight}}([st,\phi]) =f_{s}(\theta_{t}(\phi))f_{t}(\phi)
+q(f_{s}\delta_{s} \Xst f_{t}\delta_{t})([st,\phi])= (f_{s}\delta_{s} \Xst f_{t}\delta_{t})|_{\E_{tight}}([st,\phi]) =f_{s}(\widehat{\rho}_{t}(\phi))f_{t}(\phi)
 \end{eqnarray*}
 For all $[st,\phi] \in \G_{\E_{tight}}$. Then compute the right hand side: 
 \begin{eqnarray*}
-(q(f_{s}\delta_{s}) \Xst q(f_{t}\delta_{t}))([st,\phi])=f_{s}|_{\E_{tight}}(\theta_{t}(\phi))f_{t}|_{\E_{tight}}(\phi)
+(q(f_{s}\delta_{s}) \Xst q(f_{t}\delta_{t}))([st,\phi])=f_{s}|_{\E_{tight}}(\widehat{\rho}_{t}(\phi))f_{t}|_{\E_{tight}}(\phi)
 \end{eqnarray*}
 Which matches for each $[st,\phi] \in \G_{\E_{tight}}$. 
 
@@ -155,9 +155,9 @@ To prove (II) we need to compute on a single element, where $(f_{s}\delta_{s})^{
 
 \begin{eqnarray*}
 q((f_{s}\delta_{s})^{*})([s^{*},x])& = &\alpha_{s^{*}}(\overline{f_{s}})_{\E_{tight}}(x)\\
-& = & \overline{f}(\theta_{s}(x)) \\ & = & \overline{f(\theta_{s}(x))} \\ & = & \overline{q(f)}(\theta_{s}(x)) \\ & = &  \alpha_{s^{*}}(\overline{q(f)})(x)
+& = & \overline{f}(\widehat{\rho}_{s}(x)) \\ & = & \overline{f(\widehat{\rho}_{s}(x))} \\ & = & \overline{q(f)}(\widehat{\rho}_{s}(x)) \\ & = &  \alpha_{s^{*}}(\overline{q(f)})(x)
 \end{eqnarray*}
-Where the above holds for all $x \in \E_{tight}$ where the function $f_{s}$ is defined at $\theta_{s}(x)$ as required.
+Where the above holds for all $x \in \E_{tight}$ where the function $f_{s}$ is defined at $\widehat{\rho}_{s}(x)$ as required.
 
 As $q$ is a continuous *-homomorphism, it extends to the completions.
 \end{proof}
@@ -468,7 +468,7 @@ which is continuous. In particular as both $\beta X$ and $\widehat{X}$ are compa
 Two elements of the image of $X$ in $\X$, say $\psi_{x}$ and $\psi_{y}$, are equal if and only if every idempotent $\mu(e)$ that contains $x$ also contains $y$.
 \end{remark}
 
-It is immediate (using \cite[Prop 10.10]{MR2419901}) that the set $\X$ is invariant under the action of $S$. To compute the groupoid and groupoid $C^{*}$-algebras associated to $\X$ we would like to know a little more about the Hilbert spaces associated to the fibers and general connectness of the set $B:=\lbrace \psi_{x} | x \in X \rbrace$, which is the image of $X$ in $\X$.
+Recall that associated to an inverse monoid there is a universal groupoid $\G_{\E}$ with unit space $\E$. We consider the restriction of $\G_{\E}$ to  the subset $\X$ and denote this by $\G_{\X}$. It is immediate (using \cite[Prop 10.10]{MR2419901}) that the set $\X$ is invariant under the action of $S$. To compute the groupoid and groupoid $C^{*}$-algebras associated to $\X$ explicitly in terms of $X$ we need to know more about the Hilbert spaces fibers associated to $\G_{\X}$ and as well as the action of $\G_{\X}$ on the set $B:=\lbrace \psi_{x} | x \in X \rbrace$, which is the image of $X$ in $\X$.
 
 \begin{proposition}\label{prop:P10}
 Let $t \in \mathcal{T}$. Then $\widehat{\rho}_{t}(\psi_{x})=\psi_{t(x)}$ for all $x \in Dom(t)$.
@@ -476,15 +476,13 @@ Let $t \in \mathcal{T}$. Then $\widehat{\rho}_{t}(\psi_{x})=\psi_{t(x)}$ for all
 \begin{proof}
 First some observations:
 \begin{enumerate}
-\item $\theta_{t}(\psi_{x})$ is defined as $\theta_{t}(\psi_{x}) \in D_{tt^{*}} \Leftrightarrow \psi_{x} \in D_{t^{*}t} \Leftrightarrow t^{*}t \in \psi_{x} \Leftrightarrow x \in t^{*}t = Dom(t)$.
-\item $(\theta_{t}(\psi_{x}))(tet^{*})=\psi_{x}(t^{*}(tet^{*})t)=\psi_{x}(e)$. Hence $e \in \psi_{x} \Leftrightarrow tet^{*}  \in \theta_{t}(\psi_{x})$.
+\item $\widehat{\rho}_{t}(\psi_{x})$ is defined as $\widehat{\rho}_{t}(\psi_{x}) \in D_{tt^{*}} \Leftrightarrow \psi_{x} \in D_{t^{*}t} \Leftrightarrow t^{*}t \in \psi_{x} \Leftrightarrow x \in t^{*}t = Dom(t)$.
+\item $(\widehat{\rho}_{t}(\psi_{x}))(tet^{*})=\psi_{x}(t^{*}(tet^{*})t)=\psi_{x}(e)$. Hence $e \in \psi_{x} \Leftrightarrow tet^{*}  \in \widehat{\rho}_{t}(\psi_{x})$.
 \item $\psi_{x}=\psi_{y} \Leftrightarrow \psi_{t(x)}=\psi_{t(y)}$, in fact more is true as: $\psi_{t(x)}=\psi_{t^{'}(y)} \Leftrightarrow Dom(t^{'})=Dom(t)$.
 \end{enumerate}
-We prove inclusions. First $\theta_{t}(\psi_{x}) \subset \psi_{t(x)}$. Without loss of generality, we can take $tet^{*}$ to be the general form of an element of $\theta_{t}(\psi_{x})$ and then: $tet^{*} \in \psi_{t(x)} \Leftrightarrow t(x) \in tet^{*} \Leftrightarrow tet^{*}(t(x))=t(x)$, which is the case if and only if $e \in \psi_{x}$.
+We prove inclusions. First $\widehat{\rho}_{t}(\psi_{x}) \subset \psi_{t(x)}$. Without loss of generality, we can take $tet^{*}$ to be the general form of an element of $\widehat{\rho}_{t}(\psi_{x})$ and then: $tet^{*} \in \psi_{t(x)} \Leftrightarrow t(x) \in tet^{*} \Leftrightarrow tet^{*}(t(x))=t(x)$, which is the case if and only if $e \in \psi_{x}$.
 
-To see the reverse inclusion let $f \in \psi_{t(x)}$. Then $f \in \theta_{t}(\psi_{x}) \Leftrightarrow t^{*}ft \in \psi_{x} \Leftrightarrow t(x) \in f \Leftrightarrow f \in \psi_{t(x)}$. 
-
-To conclude; (3) controls the behavior of the action when the stabilizer is non-trivial, the first part shows the action behaves with respect to the quotient and the second part shows that given any pair $(x^{'},y^{'})\in X \times X$ such that $x^{'}\in Hx, y^{'}\in Ht(x)$ the unique translation $t_{x^{'}y^{'}} \in \mathcal{T}$ that sends $x^{'}$ to $y^{'}$ defines an arrow between $\psi_{x}$ and $\psi_{t(x)}$. 
+To see the reverse inclusion let $f \in \psi_{t(x)}$. Then $f \in \widehat{\rho}_{t}(\psi_{x}) \Leftrightarrow t^{*}ft \in \psi_{x} \Leftrightarrow t(x) \in f \Leftrightarrow f \in \psi_{t(x)}$. 
 \end{proof}
 
 \begin{proposition}\label{cor:C4}

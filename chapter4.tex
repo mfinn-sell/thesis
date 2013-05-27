@@ -61,12 +61,12 @@ Via the construction of a Cayley graph, it is possible to introduce a metric to 
 Let $H$ be a continous field of Hilbert spaces over $X$. we say that a transformation groupoid $G:=X\rtimes \Gamma$ acts on $H$ by affine isometries if for every $(x,g) \in G$ there exists an affine isometry $A_{(x,g)}:H_{xg}\rightarrow H_{x}$ such that:
 \begin{enumerate}
 \item $A_{(x,e)}$ is the identity map.
-\item Whenever the elements $(x,g)$ and $(y,g^{'})$ belong to $G^{(2)}$ the maps $A_{(x,g)}$ and $A_{(y,g^{'})}$ are composable and the composition $A_{(x,g)}\circ A_{(y,g^{'})}=A_{(x,gg^{'}}$.
-\item For any continous vector field $h(x)$ in $H$ and every $g \in \Gamma$ $A_{(x,g)}(h(xg))$ is a continous vector field in $H$.
+\item Whenever the pair $((x,g),(y,g^{'})) \in G^{(2)}$ the maps $A_{(x,g)}$, $A_{(y,g^{'})}$ and $A_{(x,gg^{'})}$ satisfy the composition law $A_{(x,g)}\circ A_{(y,g^{'})}=A_{(x,gg^{'}}$.
+\item For any continous vector field $h(x)$ in $H$ and every $g \in \Gamma$ we have that $A_{(x,g)}(h(xg))$ is a continous vector field in $H$.
 \end{enumerate}
 \end{definition}
 
-This definition can be connected to cohomology and analysis via positive and negative type kernels \cite{MR2415834,MR2158394}. The role of positive and conditionally negative type kernels within group theory is well known and plays an important role in studying both anayltic and representation theoretic properties of groups \cite{MR2415834,MR1487204}. These ideas were extended to groupoids by Tu \cite{MR1703305}, and we define and consider them in that generality. Let $\G$ be a locally compact, Hausdorff groupoid.
+This definition can be connected to cohomology and analysis via positive and negative type kernels \cite{MR2415834,MR2158394}. The role of positive and conditionally negative type kernels within group theory is well known and plays an important role in studying both analytic and representation theoretic properties of groups \cite{MR2415834,MR1487204}. These ideas were extended to groupoids by Tu \cite{MR1703305}, and we define and consider them in that generality. Let $\G$ be a locally compact, Hausdorff groupoid.
 
 \begin{definition}
 A continuous function $F: \G \rightarrow \mathbb{R}$ is said to be of \textit{negative type} if 
@@ -78,14 +78,20 @@ A continuous function $F: \G \rightarrow \mathbb{R}$ is said to be of \textit{ne
 \end{definition}
 
 The important feature of functions of this type is their connection to affine actions of locally compact, $\sigma$-compact groupoids.
-\begin{theorem}Let $\G$ be a locally compact, Hausdorff groupoid. Then the following are equivalent \cite{MR1703305}:
+\begin{theorem}\label{thm:Haag}Let $\G$ be a locally compact, Hausdorff groupoid. Then the following are equivalent \cite{MR1703305}:
 \begin{enumerate}
 \item There exists a proper negative type function on $\G$
 \item There exists a continuous field of Hilbert spaces over $\G^{(0)}$ with a proper affine action of $\G$.
 \end{enumerate}
 \end{theorem}
 
-This property has many connections to the Baum-Connes conjecture for locally compact groupoids, via the work of Tu \cite{MR1703305,MR1798599,cbcag2}, that we will discuss in detail later in the chapter. Here however we would like to remark on a connection with coarse embeddings that directly highlights why we are interested in this property \cite{MR1852148}.
+This result sparks the following definition:
+
+\begin{definition}
+A locally compact Hausdorff groupoid $\G$ is said to have the \textit{Haagerup property} if it satisfies either condition (1) or (2) of Theorem \ref{thm:Haag}.
+\end{definition}
+
+This property has many connections to the Baum-Connes conjecture for locally compact groupoids via the work of Tu \cite{MR1703305,MR1798599,cbcag2} that we will discuss in detail later in the chapter. Here however we would like to remark on a connection with coarse embeddings that directly highlights why we are interested in this property \cite{MR1852148}.
 
 \begin{proposition}
 Let $\Gamma$ be a discrete finitely generated group. If $\Gamma$ has the Haagerup property then $\Gamma$ coarsely embeds into Hilbert space.\qed
@@ -93,9 +99,9 @@ Let $\Gamma$ be a discrete finitely generated group. If $\Gamma$ has the Haageru
 
 \section{The coarse Baum-Connes conjecture.}
 
-In this section we outline the construction of the coarse assembly map using only elementary K-theoretic methods. The exposition for this follows Chapters 5 and 8 from \cite{MR1399087}, however we could equally have developed this using the latter half of \cite{MR1817560,MR1388312}. We then connect this, via a groupoid, to a KK-theoretic formulation of the conjecture introduced by Tu \cite{MR1703305,MR1798599}.
+In this section we outline the construction of the coarse assembly map using only elementary K-theoretic methods. The exposition for this follows Chapters 5 and 8 from \cite{MR1399087}, however we could equally have developed this using the latter half of \cite{MR1817560,MR1388312}. We then connect this construction to a KK-theoretic formulation of the Baum-Connes conjecture introduced by Tu \cite{MR1703305,MR1798599} via a groupoid constructed by Skandalis, Tu and Yu \cite{MR1905840}.
 
-\subsection{The algebras of locally compact and psuedolocal operators.}
+\subsection{The algebras of locally compact and pseudolocal operators.}
 Let $X$ be a locally compact Hausdorff topological space and let $\mathcal{H}$ be a Hilbert space. We say that $\mathcal{H}$ is an $X$-module if it admits a representation, by bounded linear operators, of $C_{0}(X)$. Where appropriate we denote this representation by $\phi$.
 
 \begin{definition}
@@ -109,10 +115,10 @@ Such an $X$-module is a suitably faithful representation of $X$ into Hilbert spa
 Fix an adequate $X$-module $\mathcal{H}_{X}$.
 
 \begin{definition}
-Let $T \in \mathcal{B}(\mathcal{H}_{X})$. We say that $T$ is \textit{psuedolocal} if $[T,f] \in \mathcal{K}(\mathcal{H}_{X})$ for all $f \in C_{0}(X)$. If $Tf$ and $fT$ are compact for all $f \in C_{0}(X)$ we say that $T$ is \textit{locally compact}.
+Let $T \in \mathcal{B}(\mathcal{H}_{X})$. We say that $T$ is \textit{pseudolocal} if $[T,f] \in \mathcal{K}(\mathcal{H}_{X})$ for all $f \in C_{0}(X)$. If $Tf$ and $fT$ are compact for all $f \in C_{0}(X)$ we say that $T$ is \textit{locally compact}.
 \end{definition}
 
-These operators are important from the perspective of defining K-homology; the set of psuedolocal operators forms a $C^{*}$-algebra which we denote by $\mathcal{D}^{*}(X)$ and the locally compact operators form an ideal in $\mathcal{D}^{*}(X)$ that we denote by $\mathcal{C}^{*}(X)$. This gives us a short exact sequence of $C^{*}$-algebras:
+These operators are important from the perspective of defining K-homology; the set of pseudolocal operators forms a $C^{*}$-algebra which we denote by $\mathcal{D}^{*}(X)$ and the locally compact operators form an ideal in $\mathcal{D}^{*}(X)$ that we denote by $\mathcal{C}^{*}(X)$. This gives us a short exact sequence of $C^{*}$-algebras:
 
 \begin{equation*}
 0 \rightarrow \mathcal{C}^{*}(X) \rightarrow \mathcal{D}^{*}(X) \rightarrow \frac{\mathcal{D}^{*}(X)}{\mathcal{C}^{*}(X)}\rightarrow 0
@@ -159,7 +165,7 @@ Similarly the finite propagation operators we defined above in $C^{*}(X)$  form 
 \begin{equation*}
 0 \rightarrow C^{*}(X) \rightarrow D^{*}(X) \rightarrow \frac{D^{*}(X)}{C^{*}(X)}\rightarrow 0
 \end{equation*} 
-Remarkably, this short exact sequence connects to K-homology \cite{MR1399087,MR1817560}:
+Remarkably, this short exact sequence connects to K-homology \cite[Corollary 5.9]{MR1399087}, \cite[Lemma 12.3.2]{MR1817560}:
 \begin{theorem}\label{Thm:Khom}
 K-homology is equally well defined with finite propagation operators. That is $K_{*}(X)\cong K_{*+1}( \frac{D^{*}(X)}{C^{*}(X)})$.\qed
 \end{theorem}
@@ -184,10 +190,20 @@ So we have constructed a map, using only the K-theory long exact sequence, that 
 \begin{conjecture}\label{conj:CBC1}(Coarse Baum-Connes conjecture I)
 Let $X$ be a proper metric space and let $\mu: K_{*}(X) \rightarrow K_{*}(C^{*}(X))$ be boundary map defined above. Then $\mu$ is an isomorphism.
 \end{conjecture}
-This conjecture is slightly naive, as it is not in fact functorial under coarse maps. The left hand side, $K_{*}(X)$ is a topological homology theory, functorial under proper continous maps (see Chapter 5 of \cite{MR1399087}), whilst the right hand side is a coarse invariant. However, there are still positive results \cite{MR1388312}:
+This conjecture is slightly naive, as it is not in fact functorial under coarse maps. The left hand side, $K_{*}(X)$ is a topological homology theory, functorial under proper continous maps (see Chapter 5 of \cite{MR1399087}), whilst the right hand side is a coarse invariant. Thus, the class of spaces that naturally fit this conjecture are those whose topology is uniformly controlled, that is \textit{uniformly contractible spaces}
+
+\begin{conjecture}
+Let $X$ be a uniformly contractible simplicial complex of bounded geometry. Then the coarse Baum-Connes conjecture I is true for $X$.
+\end{theorem}
+
+There are striking positive results to this conjecture in the case that the space is \textit{scalable} \cite{MR1388312}:
+
+\begin{definition}
+A proper complete metric space $X$ is \textit{scalable} if there is a uniform map $r: X \rightarrow X$ that scales the metric, that is $d(r(x),r(y))\leq \frac{1}{2} d(x,y)$ for all pairs $(x,y)\in X \times X$, and is coarsely homotopic to the identity.
+\end{definition}
 
 \begin{theorem}
-Let $X$ be a uniformly contractible simplicial complex of bounded geometry. Then the coarse Baum-Connes conjecture I is true for $X$.
+Let $X$ be a scalable metric space, such as a nonpositively curved complete Riemannian manifold. Then the coarse Baum-Connes conjecture I is true for $X$.
 \end{theorem}
 
 The proof of this result relies on showing that $K_{*}(D^{*}X)$, the analytic structure set of $X$, is trivial, then the result follows from the long exact sequence above.
@@ -198,24 +214,34 @@ In order to improve the conjecture we rely on making the left hand side term $K_
 A \textit{coarsening} of $X$ is uniformly contractible space $\underline{E}X$ that is equipped with a coarse equivalence $X \rightarrow \underline{E}X$. 
 \end{definition}
 
-A coarsening should be thought of a classifying space associated to $X$. Below we construct the coarsening we will rely on for the rest of the chapter.
+Given a $\underline{E}X$ we could then apply Conjecture \ref{conj:CBC1} directly and use coarse invariance of the right side. The issue is that these spaces need not exist in general and so we must work around this problem by constructing a weaker notion that does always exist. 
 
-\begin{example}
-(Rips complex) Fix $R>0$. Then the \textit{Rips complex on scale $R$} is a simplicial complex $P_{R}(X)$, where a set of points $\lbrace x_{1},...,x_{n} \rbrace$ spans a simplex if and only if $d(x_{i},x_{j}) \leq R$ for every $i,j$. If $S>R$, then every $R$ simplex will certainly be an $S$ simplex - so we have inclusions $P_{R}(X)\hookrightarrow P_{S}(X)$. Additionally these inclusions are proper. As the inclusion of $X \hookrightarrow P_{R}(X)$ induces a coarse equivalence for each $R>0$, the direct limit: $\bigcup_{R>0}P_{R}(X)$, the simplex on $X$, is a coarsening of $X$.
-\end{example}
-
-\begin{definition}
-Define the coarse K-homology of $X$, denoted by $KX_{*}(X)$ to be the K-homology of any coarsening $K_{*}(\underline{E}X)$.
-\end{definition}
-
-Let $X$ be a proper metric space and by considering Rips complexes, we can compute the coarse K-homology as a direct limit:
+The correct weaker notion is a scale dependent sequence of metric simplicial spaces equipped with suitable coarse maps, that is a directed system $\lbrace X_{R} \rbrace_{R>0}$ of metric simplicial complexes and proper maps that have, for every $R>0$, a coarse map $X_{R} \rightarrow X$. such a system constructs a system of assembly maps and natural composites:
 \begin{equation*}
-KX_{*}(X) = \lim_{R>0}K_{*}(P_{R}(X))
+K_{*}(X_{R}) \rightarrow K_{*}(C^{*}(X_{R})) \rightarrow K_{*}(C^{*}(X))
 \end{equation*}
-Additionally, as the K-theory of $C^{*}(X)$ is functorial under coarse maps, we get a natural coarsened version of Conjecture \ref{conj:CBC1} by considering the direct limit of the maps $\mu_{R}: K_{*}(P_{R}(X)) \rightarrow K_{*}(C^{*}(P_{R}(X))=K_{*}(C^{*}(X))$.
+By taking a direct limits we get the following:
+\begin{equation*}
+\lim_{R>0}K_{*}(X_{R}) \rightarrow \lim_{R>0}K_{*}(C^{*}(X_{R})) \rightarrow K_{*}(C^{*}(X))
+\end{equation*}
+
+.We can now consider the natural ``coarsened'' version of Conjecture \ref{conj:CBC1} by considering the direct limit of the maps $\mu_{R}: K_{*}(P_{R}(X)) \rightarrow K_{*}(C^{*}(P_{R}(X)) \rightarrow K_{*}(C^{*}(X))$. (In general, the maps $K_{*}(C^{*}(P_{R}(X)) \rightarrow K_{*}(C^{*}(X))$ need not be isomorphisms however in the direct limit they will be. See for example \cite[Theorem 2.17]{MR2119281} in the case of nerves of covers). We define the coarse K-homology, denoted by $KX_{*}(X)$ to be the direct limit $\lim_{R>0}K_{*}(X_{R})$ for any such $R>0$.
+
 \begin{conjecture}\label{conj:CBC2}(The coarse Baum-Connes conjecture II).
 Let $X$ be a proper metric space. Then the coarse assembly map: $\mu_{\infty}:KX_{*}(X)= \lim_{R}K_{*}(P_{R}(X)) \rightarrow K_{*}(C^{*}(X))$ is an isomorphism. 
 \end{conjecture}
+
+An example of such a sequence of complexes is the family of nerves of uniformly bounded covers of $X$ or the family of Rips complexes on $X$.
+
+\begin{example}\label{ex:rips}
+(Rips complex) Fix $R>0$. Then the \textit{Rips complex on scale $R$} is a simplicial complex $P_{R}(X)$, where a set of points $\lbrace x_{1},...,x_{n} \rbrace$ spans a simplex if and only if $d(x_{i},x_{j}) \leq R$ for every $i,j$. If $S>R$, then every $R$ simplex will certainly be an $S$ simplex - so we have inclusions $P_{R}(X)\hookrightarrow P_{S}(X)$. Additionally these inclusions are proper. For each $R>0$, there is a natural coarse map that sends any point in the Rips complex to the nearest vertex in the complex, which are given by the points in $X$. Additionally, the union $X_{\infty}:=\bigcup_{R>0}P_{R}(X)$ is a uniformly contractible space but will not be coarsely equivalent to $X$ and so is not a coarsening. The K-homology groups $KX_{*}(X)$ in this case are computing only the compactly supported part of the K-homology of this infinite simplex $X_{\infty}$.
+\end{example}
+
+\begin{remark}
+This simplifies in the case of a finitely generated discrete group $\Gamma$. The inclusion, $\Gamma \hookrightarrow P_{R}(\Gamma)$ is a coarse map in this case and coupled with the projection map defined above gives a coarse equivalence between $\Gamma$ and $P_{R}(\Gamma)$ for each $R>0$. This may fail in the case of a general metric space $X$ however.
+\end{remark}
+
+
 
 As before there are broadly positive results to this conjecture. The following is a striking result of Guoliang Yu concerning coarsely embeddable spaces \cite{MR1728880}:
 \begin{theorem}
@@ -224,7 +250,7 @@ Let $X$ be a proper metric space that admits a coarse embedding into Hilbert spa
 Later in the Chapter we will explore counterexamples to this conjecture by rephrasing it using groupoids. Lastly, consider a discrete group $\Gamma$ acting on a space $X$ properly, freely and cocompactly. Then we can consider the following algebras:
 
 \begin{definition}
-Let $T$ be an operator on $\ell^{2}(X,\mathcal{H}_{0})$. Then $T$ is $\Gamma$-invariant if for all $g \in \Gamma$ the matrix entries $T_{x,y}$ and $T_{gx,gy}$ are equal. Denote by $\mathbb{C}[X]^{\Gamma}$ the collections of operators that are finite propagation, locally compact and $\Gamma$-invariant. Similarly, denote $\mathbb{D}(X)^{\Gamma}$ the operators that are finite propagation, psuedolocal and $\Gamma$-invariant. Lastly, denote their completions by $C^{*}(X)^{\Gamma}$ and $D^{*}(X)^{\Gamma}$.
+Let $T$ be an operator on $\ell^{2}(X,\mathcal{H}_{0})$. Then $T$ is $\Gamma$-invariant if for all $g \in \Gamma$ the matrix entries $T_{x,y}$ and $T_{gx,gy}$ are equal. Denote by $\mathbb{C}[X]^{\Gamma}$ the collections of operators that are finite propagation, locally compact and $\Gamma$-invariant. Similarly, denote $\mathbb{D}(X)^{\Gamma}$ the operators that are finite propagation, pseudolocal and $\Gamma$-invariant. Lastly, denote their completions by $C^{*}(X)^{\Gamma}$ and $D^{*}(X)^{\Gamma}$.
 \end{definition}
 
 These algebras also fit into the same short exact sequence, as $C^{*}(X)^{\Gamma}$ is an ideal in $D^{*}(X)^{\Gamma}$, just as above. This allows us to compute the K-theory long exact sequence:
@@ -237,15 +263,15 @@ K_{0}^{\Gamma}(X)\ar[u]^{\mu}& K_{1}(D^{*}(X)^{\Gamma}) \ar[l]& K_{1}(C^{*}(X)^{
 We define the equivariant K-homology of $X$, denoted by $K_{*}^{\Gamma}(X)$ to be the K-theory of $K_{*+1}(\frac{D^{*}(X)^{\Gamma}}{C^{*}(X)^{\Gamma}}).$  Now the boundary maps become the equivariant coarse assembly map for the action of $\Gamma$ on $X$. By virtue of the following lemma (for a proof see \cite{explg1}), we can simplify this further.
 
 \begin{lemma}
-If the action of $\Gamma$ on $X$ is cocompact in addition to being free and proper then there is a Morita Equivalence between $C^{*}X^{\Gamma}$ and $\mathcal{K}(\ell^{2}(X))\otimes C^{*}_{r}(\Gamma)$.
+If the action of $\Gamma$ on $X$ is cocompact in addition to being free and proper then there is a Morita Equivalence between $C^{*}X^{\Gamma}$ and $C^{*}_{r}(\Gamma)$.
 \end{lemma}
 
 This gives us, using the boundary maps, assembly maps $K_{*}^{\Gamma}(P_{R}(X)) \rightarrow K_{*}(C^{*}(P_{R}(X))^{\Gamma}) \cong K_{*}(C^{*}(X)^{\Gamma})$.
 
-After coarsening and taking a direct limit this gives us the Baum-Connes conjecture for the discrete group $\Gamma$:
+By applying the ideas of coarsening introduced above using a Rips complex over $X$ we get the following system: $\lbrace{K_{*}^{\Gamma}(P_{R}(X)) \rightarrow K_{*}(C^{*}(P_{R}(X))^{\Gamma}) \cong K_{*}(C^{*}(X)^{\Gamma}) \rbrace$. By taking direct limits we get an assembly map: $\lim_{R>0}K_{*}^{\Gamma}(P_{R}(X))\rightarrow K_{*}(C^{*}_{r}(\Gamma))$. As remarked in Example \ref{ex:rips}, the left hand side in this instance is compactly supported.
 
 \begin{conjecture}(Baum-Connes conjecture)
-Let $\Gamma$ be a finitely generated discrete group and let $\underline{E}\Gamma$ be its classifying space for proper actions. Then the map $\mu$ obtained by taking direct limits of the maps defined above: $\mu: K_{*}^{\Gamma}(\underline{E}\Gamma) \rightarrow K_{*}(C^{*}_{r}(\Gamma))$ is an isomorphism.
+Let $\Gamma$ be a finitely generated discrete group and let $\underline{E}\Gamma$ be its classifying space for proper actions obtained by taking direct limits over Rips complexes of $\Gamma$. Then the map $\mu$ obtained by taking direct limits of the maps defined above: $\mu: K_{*}^{\Gamma,c}(\underline{E}\Gamma) \rightarrow K_{*}(C^{*}_{r}(\Gamma))$ is an isomorphism.
 \end{conjecture}
 
 There are also positive results in this setting \cite{MR1487204}:
@@ -275,6 +301,10 @@ Then we say $\mathcal{E}$ is a \textit{coarse structure} on $X$ and we call the 
 
 For a given family of subsets $\mathcal{S}$ of $X \times X$ we can consider the smallest coarse structure that contains $\mathcal{S}$. This is the coarse structure generated by $\mathcal{S}$. We can use this to give some examples of coarse structures.
 
+\begin{definition}
+Let $X$ be a coarse space with a coarse structure $\mathcal{E}$ and consider $\mathcal{S}$ a family of subsets of $\mathcal{E}$. We say that $\mathcal{E}$ is generated by $\mathcal{S}$ if every entourage $E \in \mathcal{E}$ is contained in a finite union of subsets of $\mathcal{S}$.
+\end{definition}
+
 \begin{example}\label{ex:MCS}
 Let $X$ be a metric space. Then consider the collection $\mathcal{S}$ given by the $R$-neighbourhoods of the diagonal in $X\times X$; that is, for every $R>0$ the set:
 \begin{equation*}
@@ -283,19 +313,15 @@ Let $X$ be a metric space. Then consider the collection $\mathcal{S}$ given by t
 Then let $\mathcal{E}$ be the coarse structure generated by $\mathcal{S}$. This is called the \textit{metric coarse structure} on $X$. It is a uniformly locally finite proper coarse structure that is weakly connected when $X$ is a uniformly discrete bounded geometry (proper) metric space.
 \end{example}
 
-\begin{definition}
-Let $X$ be a coarse space with a coarse structure $\mathcal{E}$ and consider $\mathcal{S}$ a family of subsets of $\mathcal{E}$. We say that $\mathcal{E}$ is generated by $\mathcal{S}$ if every entourage $E \in \mathcal{E}$ is contained in a finite union of subsets of $\mathcal{S}$.
-\end{definition}
-
 \begin{example}\label{ex:GACS}
 Let $G$ be a group and let $X$ be a right $G$-set. Define:
 \begin{equation*}
 \Delta_{g}=\lbrace (x,x.g) | x \in X \rbrace  
 \end{equation*}
-We call the coarse structure generated by the family $\mathcal{S}:=\lbrace \Delta_{g} | g\in G\rbrace$ the \textit{group action coarse structure} on $X$. If $X$ is not a connected space; consider for example a space of graphs $X=\sqcup X_{i}$, the group action coarse structure need not be weakly connected.
+We call the coarse structure generated by the family $\mathcal{S}:=\lbrace \Delta_{g} | g\in G\rbrace$ the \textit{group action coarse structure} on $X$. If $X$ is not a transitive $\Gamma$-space the group action coarse structure will not be weakly connected.
 \end{example}
 
-In the situation that $X$ admits a transitive $G$-action by translations, the group action coarse structure generates the metric coarse structure. 
+In the situation that $X$ admits a transitive $G$-action by translations, the group action coarse structure generates a substructure of the metric coarse structure. If additionally, each $\Delta_{R}$ is contained in finitely many $\Delta_{g}$, then the group action coarse structure will be the same as the metric coarse structure.
 
 To build a groupoid from the metric coarse structure on $X$ we consider extensions of the pair product on $X \times X$. The most natural way to do this is by making use of the entourages arising from the metric. The approach to this problem is through Corollary 10.18 of \cite{MR2007488}, which we record as the following Lemma:
 
@@ -327,7 +353,7 @@ We recall the definitions of groupoid equivariant KK-theory. For this section le
 \begin{definition}
 A $C^{*}$-algebra $A$ is called a $G$-$C^{*}$-algebra if it is a $C_{0}(G^{(0)})$-algebra and admits a $G$-action, that is:
 \begin{enumerate}
-\item there is a $*$-homomorphism $\theta: C_{0}(G^{(0)}) \rightarrow Z(M(A))$ such that $\theta(C_{0}(G^{(0)}))A = A$
+\item there is a $*$-homomorphism to the centre of the multiplier algebra of $A$, $\theta: C_{0}(G^{(0)}) \rightarrow Z(M(A))$, such that $\overline{\theta(C_{0}(G^{(0)}))A} = A$
 \item there is an isomorphism from $\alpha: s^{*}A \rightarrow r^{*}A$ such that for each $(g,h) \in G^{(2)}$ the morphisms $\alpha(g):A_{s(g)} \rightarrow A_{r(g)}$ satisfy $\alpha(g)\circ \alpha(h) = \alpha(gh)$
 \end{enumerate}
 We are going to be concerned with \textit{proper} $G$-algebras. Let $Z$ be a $G$-space, then under the previous definition a $Z\rtimes G$-algebra is both a $G$-algebra and a $C_{0}(Z)$-algebra, with compatability between the two structures. We then say a $G$-algebra $A$ is proper if there exists a proper $G$-space $Z$ such that $A$ is a $Z\times G$-algebra.
@@ -357,7 +383,7 @@ This theory has many of the same features as the more traditional non-equivarian
 \item There is a natural associative product, which is compatable with $\sigma_{G^{(0)},-}$ in the obvious way.
 \item There are descent morphisms compatible with the product:
 \begin{eqnarray*}
-\item j_{G,(red)}:KK_{G}(A,B) \rightarrow KK_{G}(A\rtimes_{(red)}G,B\rtimes_{(red)}G)
+\item j_{G,(red)}:KK_{G}(A,B) \rightarrow KK(A\rtimes_{(red)}G,B\rtimes_{(red)}G)
 \end{eqnarray*}
 \end{itemize} 
 
@@ -367,20 +393,20 @@ The interest in understanding proper $G$-spaces is motivated by the construction
 A \textit{classifying space for proper actions} of $G$ is a proper $G$-space $\underline{E}G$ such that for any proper $G$-space $Z$ there exists a $G$-equivariant map $Z \rightarrow \underline{E}G$ that is unique up to $G$-homotopy.
 \end{definition}
 
-Such a space always exists \cite[Section 11]{MR1703305} and one example of a model for this is given by a collection of positive measures on $G$ \cite{MR1703305}. This construction can also be given the structure of a $G$-simiplical complex \cite{cbcag2}. 
+Such a space always exists \cite[Section 11]{MR1703305} and one example of a model for this is given by a collection of compactly supported positive measures on $G$ \cite{MR1703305}. This construction can also be given the structure of a $G$-simiplical complex \cite{cbcag2}. 
 
 \begin{definition}($K^{top}$)
 Let $G$ be a locally compact, $\sigma$-compact Hausdorff groupoid with Haar system and let $\underline{E}G$ be its classifying space for proper actions. Then we define:
 \begin{equation*}
-K^{top}(G,B)=\lim_{Y \subseteq \underline{E}G}KK_{G}(C_{0}(Y),B)
+K^{top}(G,B)=\lim_{\substack{\longrightarrow \\ Y \subseteq \underline{E}G}}KK_{G}(C_{0}(Y),B)
 \end{equation*}
 where the limit runs through all possible $G$-compact subspaces $Y$. If one takes $B=C_{0}(G^{(0)})$ then we denote by $K^{top}(G)$ \textit{the topological K-theory of $G$}.
 \end{definition}
 
 \begin{remark}
-For a $G$-compact, proper $G$-space $Y$ we can define an assembly map by composing the descent morphism by a suitable partition associated to a proper $G$-space, that is:
+For a $G$-compact, proper $G$-space $Y$ we can define an assembly map by composing the descent morphism $j_{G,red}$ by a suitable partition associated to a proper $G$-space, that is:
 \begin{equation*}
-KK_{G}(C_{0}(Y),B) \rightarrow_{j_{G,red}} KK(C_{0}(Y)\rtimes_{r}G, B\rtimes_{r} G) \rightarrow K_{*}(B\rtimes_{r}G)
+KK_{G}(C_{0}(Y),B) \rightarrow KK(C_{0}(Y)\rtimes_{r}G, B\rtimes_{r} G) \rightarrow K_{*}(B\rtimes_{r}G)
 \end{equation*}
 By taking limits through $G$-compact subspaces, one arrives at a map:
 \begin{equation*}
@@ -396,13 +422,13 @@ Let $X$ be a coarse space with a uniformly locally finite coarse structure $\mat
 \end{definition}
 
 \begin{definition}
-Let $X$ be a coarse space. The coarse K-homology of $X$, denoted $KX_{*}(X)$ is defined to be the directed limit: $\lim_{E \in \mathcal{E}}KK(C_{0}(P_{E}(X)),\mathbb{C})$
+Let $X$ be a coarse space. The coarse K-homology of $X$ relative to $\mathcal{E}$, denoted $KX_{*}(X,\mathcal{E})$ is defined to be the directed limit: $\lim_{E \in \mathcal{E}}KK(C_{0}(P_{E}(X)),\mathbb{C})$
 \end{definition}
 
 \begin{remark}
 \begin{itemize}
 \item If $X$ is a uniformly discrete bounded geometry metric space and $\mathcal{E}$ is the metric coarse structure, then the $P_{\Delta_{R}}(X)$ are equal to the standard Rips complex $P_{R}(X)$.
-\item The limit through the directed set of entourages $E \in \mathcal{E}$ of the $P_{E}(X)$ is a coarsening of $X$ \cite{MR1399087}. Similarly the limit of the $P_{E}(G(X))$ is a model of $\underline{E}G(X)$.
+\item The limit through the directed set of entourages $E \in \mathcal{E}$ of the $P_{E}(X)$ gives us a directed system we can use to coarsen the K-homology of $X$. The limit of the $P_{E}(G(X))$ is a model of $\underline{E}G(X)$.
 \item Lemma 4.7 in \cite{MR1905840} proves that the inclusion of a point $\lbrace x \rbrace$ viewed as a subgroupoid of $G(X)$ gives rise to a restriction map in KK-theory and this map induces an isomorphism:
 \begin{equation*}
 KK_{G(X)}(C_{0}(P_{E}(G(X)),\ell^{\infty}(X,\mathcal{K})) \cong KK(C_{0}(P_{E}(X)),\mathbb{C}).
@@ -419,13 +445,14 @@ This map is equivalent to the traditional coarse assembly map:
 \begin{equation*}
 \mu_{*}KX_{*}(X)\rightarrow K_{*}(C^{*}X).
 \end{equation*}
+\item These maps are again both considering the compactly supported part of corresponding K-homology group.
 \end{itemize}
 \end{remark}
 
 One flexibility that the groupoid picture provides is the ability to consider natural maps associated to saturated subsets. We outline a technical Lemma of Tu concerning equivariant KK-theory associated to saturated subsets required to build a long exact sequence in the topological K-theory associated to a groupoid decomposition.
 
 \begin{lemma}
-Let $G$ be a locally compact, second countable, proper groupoid with a Haar system and let $Z$ be a second countable $G$-space. If $F$ is a closed saturated subset and $U$ is its open complement then for any $G-C^{*}$-algebra $A$ there is a long exact sequence:
+Let $G$ be a locally compact, second countable, proper groupoid with a Haar system and let $Z$ be a second countable $G$-space. If $F$ is a closed saturated subset and $U$ is its open complement then for any $G$-$C^{*}$-algebra $A$ there is a long exact sequence:
 \begin{equation*}
 \xymatrix@=1em{
 KK_{G}(C_{0}(U),A) \ar[r] & KK_{G}(C_{0}(Z),A) \ar[r]& KK_{G}(C_{0}(F),A)\ar[d] & \\
