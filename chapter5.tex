@@ -7,45 +7,69 @@ The focus of this chapter is developing ideas that appeared in Chapters 3 and 4 
 In this section we construct some examples, some well known in the literature, of inverse monoids associated to subspaces of groups. We then consider applications of the results outlined in the previous sections of the paper combined with a result of Norling \cite{Nor-2012} concerning the K-theory of $C^{*}_{r}(S)$, when $S$ is strongly 0-F-inverse. We first begin with a seemingly disconnected topological notion:
 
 \begin{definition}
-Let $X$ be a totally disconnected space. A set $\mathcal{V}$ is said to be a \textit{regular basis} for the topology of $X$ if:
+Let $X$ be a second countable totally disconnected space. A set $\mathcal{V}$ is said to be a \textit{regular basis} for the topology of $X$ if:
 \begin{enumerate}
 \item $\mathcal{V}\cup \lbrace \emptyset \rbrace$ is closed under finite intersections; 
-\item $\mathcal{V}$ generates the compact open sets of $X$;
+\item $\mathcal{V}$ generates the compact open sets of $X$ under finite unions, finite intersections and compliments.;
 \item $\mathcal{V}$ is independent, that is for every finite family $X,X_{1},...,X_{n} \in \mathcal{V}$ such that $X = \cup_{i=1}^{n} X_{i}$ there exists an $i \in \lbrace 1,..,n \rbrace$ such that $X=X_{i}$.
 \end{enumerate}
 \end{definition}
 
-In \cite{CEL-2} the authors compute the K-theory for transformation groupoid $C^{*}$-algebras associated to actions of discrete groups $G$ on totally disconnected spaces $\Omega$ that carry a regular $G$-invariant basis. They rely on the Baum-Connes conjecture with coefficients for the group $G$ to deal with certain coefficient algebras via KK-theory. Furthermore, Norling \cite{Nor-2012} gave a proof that the basis $\lbrace \widehat{D}_{e} | e \in E \rbrace$ associated to a strongly $0$-F-inverse monoid $S$ is a regular basis of $\E$, and that the induced basis of $Y_{\E}$, the Morita envelope for the action of $S$ on $\E$, is also regular and $G$-invariant. His proof requires an understanding of the following equivalence relation:
+Such a basis is countable by Lemma 2.10 of \cite{CEL-2}. We index the basis by a countable set $I$. If this basis is also $G$-invariant, we get a natural action on the indexing set $I$, given by the representation of each $g \in G$ as the unique element of the symmetric group on $I$ that induces the map: $g(V_{i})=V_{gi}$ for each $i$.
+
+In \cite{CEL-2} Cuntz, Echterhoff and Li compute the K-theory for transformation groupoid $C^{*}$-algebras associated to actions of discrete groups $G$ on totally disconnected spaces $\Omega$ that carry a regular $G$-invariant basis. We state a weaker version of their main result below:
+
+\begin{theorem}\label{Thm:Li}
+Let $G$ be a discrete group. Suppose that $G$ acts on a second countable totally disconnected space $\Omega$ with $G$-invariant regular basis $\mathcal{V}$ and let $I$ be the countable discrete index set for the basis $\mathcal{V}$. Then there is an isomorphism: $K_{*}(C_{0}(I) \rtimes_{r} G) \cong K_{*}(C_{0}(\omega)\rtimes_{r}G)$.
+\end{theorem}
+
+Following Remark 3.13 from \cite{CEL-2} as $I$ is discrete computing the left hand side of the above isomorphism reduces to: 
+\begin{equation*}
+K_{*}(C_{0}(I)\rtimes_{r}G) \cong \bigoplus_{[i] \in G \backslash I} K_{*}(C^{*}_{r}(G_{i})
+\end{equation*}
+
+And so in this situation we can recover the K-theory of the transformation groupoid $\Omega \rtimes G$ using only the K-theory of certain subgroups of $G$.
+
+Furthermore, Norling \cite{Nor-2012} extended these ideas to the class of strongly $0$-F-inverse monoids $S$ using the Morita envelope of the action of $S$ on $\E$ that was outlined in Chapter 2. First, he proved that the basis $\lbrace \widehat{D}_{e} | e \in E \rbrace$ associated to a strongly $0$-F-inverse monoid $S$ is a regular basis of $\E$ and that this extends to a basis of the Morita envelope $Y_{\E}$ that is still regular but also invariant under the universal group action. The final part of his paper deals with how to compute the stabiliser groups that appear within the Cuntz, Echterhoff and Li result outlined above. To do this requires an understanding of the following equivalence relation:
 
 \begin{definition}
-Let $e,f \in E(S)$. $e \approx f$ if $\exists s \in S$ such that $e \leq s^{*}s$ and $ses^{*}=f$.
+Let $e,f \in E(S)\setminus \lbrace 0 \rbrace$. Then $e \approx f$ if $\exists s \in S$ such that $e \leq s^{*}s$ and $ses^{*}=f$.
 \end{definition}
 
-This equivalence relation captures information about the action of $S$ on its idempotents $E$, which is naturally used to construct the basis elements $D_{e}$ and the groupoid $\G_{\E}$, hence is intimately connected to the structure of $C^{*}_{r}(S)$. The main result of \cite{Nor-2012}, which utilises this relation, is stated below:
+Whilst this looks asymmetric, the conditions placed on $e$ in the above definition ensure that $e=s^{*}fs$; which proves the relation is symmetric. The proof of transitivity relies on a similar observation.
+
+Remarks before Theorem 3.5 from \cite{Nor-2012} outlines that the $G_{e}$ whilst the stabiliser group for the element $[1,e]$ in $Y_{\E}$ it is possible to calculate it using only the strongly $0$-F-inverse monoid $S$. We denote by $\Phi$ the $0$-restricted prehomomorphism from $S$ to $G^{0}$.
+\begin{equation*}
+G_{e} = \lbrace \Phi(s) | s \in Max(S), e \leq s^{*}s, ses^{*}=e\rbrace.
+\end{equation*}
+
+It is possible to utilise this relation combined with the fact that the idempotent set $E(S)$ indexes a $G$-invariant basis for $Y_{\E}$ and Theorem \ref{Thm:Li} to prove the main result of \cite{Nor-2012}:
 
 \begin{theorem}\label{Thm:Norling}
 Let $S$ be a strongly 0-F-inverse monoid with universal group $G$, where $G$ has the Haagerup property. Then there is an isomorphism:
 \begin{equation*}
 K_{*}(C^{*}_{r}(S)) \cong \bigoplus_{[e]\in \frac{E^{\times}}{\approx}} K_{*}(C^{*}_{r}(G_{e})
 \end{equation*}
-Where $G_{e}$ is the stabiliser, in the conjugation action of $S$ on $E$, of the idempotent $e$
+Where $G_{e}$ is the stabiliser of the action of $G$ on the globalisation $Y_{\E}$ the class $[1,e]$.
 \end{theorem}
 
 This Theorem gives a method for computing the K-theory for certain reduced semigroup $C^{*}$-algebras, in particular those constructed from partial translation structures arising from groups. We consider some general natural inverse monoids and compute both the K-theory groups and the associated long exact sequence that arises from the corresponding Pimnser-Voiculescu type sequence.
 
 \subsection{The Examples.}
-We consider the examples outlined in the introduction as well as other inverse monoids that we have introduced throughout the document.
+We consider the examples outlined in the introduction as well as other inverse monoids that we have introduced throughout the document. 
 \begin{example}\label{Ex:Toe}(Toeplitz extension)
-Let $X=\mathbb{N} \subset \mathbb{Z}=G$. We arive at a partial translation structure for $X$ by considering the maps:
+We begin by considering the first $C^{*}$-algebraic construction outlined in the introduction. Let $X=\mathbb{N} \subset \mathbb{Z}=G$. We arive at a partial translation structure for $X$ by considering the maps:
 \begin{eqnarray*}
-& t_{n}: \mathbb{N} \rightarrow \mathbb{N}, x \mapsto x+n \\
-&t_{-n}: \mathbb{N} \rightarrow \mathbb{N}\setminus \lbrace 0,1,...,n-1 \rbrace , x \mapsto x-n
+& t_{n}: \mathbb{N} \rightarrow \mathbb{N}\setminus \lbrace 0,1,...,n-1 \rbrace, x \mapsto x+n \\
+&t_{-n}: \mathbb{N}\setminus \lbrace 0,1,...,n-1 \rbrace \rightarrow \mathbb{N} , x \mapsto x-n
 \end{eqnarray*} 
 These partial bijections generate an inverse monoid, given by the presentation:
 \begin{equation*}
-S=\langle t_{n},t_{n}^{*}=t_{-n} | t_{n}^{*}t_{n}=1 \rangle
+S=\langle t_{n},t_{n}^{*}=t_{-n} | (\forall n \in \mathbb{N}) t_{n}^{*}t_{n}=1, t_{n}t_{1}=t_{n+1} \rangle = \langle t_{1},t_{-1} | t_{-1}t_{1}=1 \rangle.
 \end{equation*}
-This is a well known example from semigroup theory called the \textit{Bicyclic Monoid}. It is well known also that the translation algebra is the universal algebra generated by a unilateral shift; the Toeplitz algebra. To understand the translation algebra, it is enough to compute $\X$. We know that $\X$ is the quotient of $\beta \mathbb{N}$ using the family of domains of the maps $t_{n}$ as $n$ runs though $\mathbb{Z}$, which are in particular cofinite.
+This is a well known example from semigroup theory called the \textit{Bicyclic Monoid}. It is well known also that the translation algebra is the $C^{*}$-algebra generated by a unilateral shift; the Toeplitz algebra. Recall that to understand the translation algebra it is enough to study the groupoid $\G_{\X}$, where $\X$ is a quotient of $\beta X$ and a subspace of $\E$, as outlined in Proposition \ref{prop:P9}.
+
+So we know that $\X$ is the quotient of $\beta \mathbb{N}$ using the family of domains of the maps $t_{n}$ as $n$ runs though $\mathbb{Z}$, which are in particular cofinite. This leads to the following small but general fact:
 
 \begin{claim}\label{prop:example}
 If $E(S) \subseteq $ Cofin($X$) then $\X = (H \backslash X)^{+}$   
@@ -53,41 +77,43 @@ If $E(S) \subseteq $ Cofin($X$) then $\X = (H \backslash X)^{+}$
 \begin{proof}
 It is enough to remark that in general we have:
 \begin{equation*}
-\X = H\backslash X \cup {1_{E}} \cup \lbrace \mbox{Filters arising from nonprincipal ultrafilters in } \beta X \rbrace
-\end{equation*} If we assume $E(S) \subseteq $ Cofin($X$) then \textit{all} nonprincipal ultrafilters will agree in the quotient as they only fight over and subsequently differ on infinite subsets with infinite compliments.
+\X = H\backslash X \cup \lbrace \mbox{Filters arising from nonprincipal ultrafilters in } \beta X \rbrace
+\end{equation*} If we assume $E(S) \subseteq $ Cofin($X$) then \textit{all} nonprincipal ultrafilters will agree in the quotient as they only fight over and subsequently differ on infinite subsets with infinite compliments and so are identified in the quotient. Additionally as $E(S)$ has no zero element, the characteristic function of $E(S)$ is a well defined character, which will certainly be maximal. This provides us a complete description of the point at infinity.
 \end{proof}
 
-In this example the stabilizer $H$ is trivial, so $\X = \mathbb{N}^{+} = \E$. So we have that the quotient map $C^{*}_{r}(\G_{\E}) \rightarrow C^{*}_{r}(\G_{\X})$ is the identity and the translation algebra is also the Toeplitz algebra.
+In this example the left stabilizer $H$ is trivial, so $\X = \mathbb{N}^{+} = \E$. So we have that the quotient map $C^{*}_{r}(\G_{\E}) \rightarrow C^{*}_{r}(\G_{\X})$ is the identity and the semigroup algebra is also the Toeplitz algebra.
 
-We remark that Theorem \ref{Thm:Norling} of Norling now gives a direct computation of the K-groups in this instance, as each idempotent is related to $1$ via the translation that sends $1$ to $n$ for each $n$. So it is enough to understand the stabiliser group $G_{1}$, which in this instance is trivial. Hence we get that the K-theory groups are those of a point, which is well-known although computed in a different manner \cite{MR587369,MR2457037}.
+We remark that Theorem \ref{Thm:Norling} of Norling now gives a direct computation of the K-groups in this instance, as each idempotent is of the form $t_{n}t_{n}^{*}$ for $n \in \mathbb{N}$ and these are related to $1$ via the translation $t_{-n}$. So it is enough to understand the stabiliser group $G_{1}$, which in this instance is trivial. Hence we get that the K-theory groups are those of a point, which is well-known although computed in a different manner \cite{MR587369,MR2457037}.
 \end{example}
 
-\begin{example}(Bridget-Rhodes expansion of a group)
+\begin{example}(Birget-Rhodes expansion of a group)
 In this instance there is much more interesting K-theory arising from Theorem \ref{Thm:Norling}. The Bridget-Rhodes expansion of a group \cite{MR745358,MR2221438} was first outlined in Section \ref{Sect:S3} as an example. We recall the construction again for clarity.
 
-In the context of a group $G$ we define an a set $S(G)$, the elements are given by pairs: $(X,g)$ for $\lbrace 1,g\rbrace \subset X$, where $X$ is a finite subset of $G$. The set of such $(X,g)$ is then equipped with a product and inverse:
+In the context of a group $G$ we define a set $S(G)$ with the elements given by pairs: $(X,g)$ for $\lbrace 1,g\rbrace \subset X$, where $X$ is a finite subset of $G$. The set of such $(X,g)$ is then equipped with a product and inverse:
 \begin{equation*}
 (X,g)(Y,h) = (X\cup gY,gh)\mbox{ , } (X,g)^{-1}=(g^{-1}X,g^{-1})
 \end{equation*}
-This turns $S(G)$ into a inverse monoid with maximal group homomorphic image $G$, satisfying a universal covering property for partial $G$-actions. The partial order on $S(G)$ can be described by reverse inclusion, induced from reverse inclusion on finite subsets of $G$. It is F-inverse, with maximal elements: $\lbrace(\lbrace 1,g \rbrace, g):g \in G \rbrace$. 
+This turns $S(G)$ into a inverse monoid with maximal group homomorphic image $G$, satisfying a universal covering property for partial $G$-actions. The partial order on $S(G)$ can be described by reverse inclusion, induced from reverse inclusion on finite subsets of $G$. It is F-inverse, with maximal elements: $\lbrace(\lbrace 1,g \rbrace, g):g \in G \rbrace$ and idempotents given by $(F,1)$ where $F$ is a finite subset of $G$ containing $1$. We denote the set of finite subsets of $G$ containing $1$ by $Fin_{1}(G)$.
 
-Using Theorem \ref{Thm:Norling}, provided the group has the Haagerup property, we can again compute the K-theory, each finite subset $F$ of $G$ containing $1$ admits the partial action by the group elements that arise within the finite subset; any finite subgroup occurs this way and this gives us all the possible stabilisers. Denote the subset of finite subgroups by $FSG(G)\subset Fin(G)_{1}$. 
-
-The main outcome of this is the following calculation:
-
+Using Theorem \ref{Thm:Norling}, provided the group has the Haagerup property, we can again compute the K-theory, each finite subset $F$ of $G$ containing $1$ admits the partial action by the group elements that arise within the finite subset. This action is given by:
 \begin{equation*}
-K_{*}(C^{*}_{r}(S)) \cong \bigoplus_{\substack{[F] \\ F \in Fin(G)_{1}}} K_{*}(C^{*}_{r}(G_{F})) \cong \bigoplus_{\substack{[F] \\F \in FSG(G)^{c}} }\mathbb{Z} \oplus \bigoplus_{\substack{[F] \\F \in FSG(G) }}K_{*}(C^{*}_{r}(F))
+g. (F,1) = (\lbrace 1,g^{-1} \rbrace, g^{-1})(F,1)((\lbrace 1,g \rbrace, g)) = (g^{-1}F,1)
 \end{equation*}
+defined for every $F$ that contains $\lbrace 1,g \rbrace$.
 
+To compute the stabiliser of a given idempotent it is enough to understand the action of a single element of $g$ on $(F,1)$. In particular $g.(F,1) = (F,1)$ if and only if $g^{-1}F=F$ or $F=gF$, from where it follows that $g$ has finite order and the subgroup generated by $g$ also fixes $F$. Thus, for every $F$ there exists $g_{1},...,g_{n} \in G$ and a decomposition of $F$ using the left stabiliser $H_{F}$ of $F$ in $G$:
+\begin{equation*}
+F= H_{F}\cup H_{F}g_{1}\cup ... \cup H_{F}g_{n}
+\end{equation*}
+Denote the subset of finite subgroups by $FSG(G)\subset Fin(G)_{1}$. 
+
+The main outcome of this is the following calculation using Theorem \ref{Thm:Norling}:
+\begin{equation*}
+K_{*}(C^{*}_{r}(S)) \cong  \bigoplus_{H \in FSG(G)} \bigoplus_{\substack{[F] \in G \backslash Fin(G)_{1}\\H_{F}=H}} K_{*}(C^{*}_{r}(G_{F}))
+\end{equation*}
 In the light of Theorem \ref{thm:PV1} this suggests it should be possible, using the long exact sequence, to compute the K-theory of $C^{*}_{r}(G)$ from information about its finite subgroups.
 
-If $G$ is finite then it appears as an element in $FSG(G) \subset Fin(G)_{1}$ and so the sequence provided by Theorem \ref{thm:PV1} will split at the level of K-theory. Additionally, if we assume $G \cong C_{p}$, the cyclic group of order $p$ for some prime $p$ it is possible to compute the size of the index sets that occur. For each $n$, the number of elements of $Fin(C_{p})_{1}$ of cardinality $n$ is ${p-1 \choose n}$ and so the cardinality of $E(S)$ will be $\sum_{n\geq 1} {p-1 \choose n-1} = F_{p-1}$ the $p-1$ term in the Fibonacci sequence. 
-
-To compute the index we need to know how many of these are related via the partial action of $C_{p}$ and each subset of cardinality $n$ can be related to $n$ other elements: hence the number of orbits of subsets of size $n$ is precisely $\frac{1}{n} {p-1 \choose n-1}$. Let $k_{p}:= 1+ \sum_{n>0}\frac{1}{n} {p-1 \choose n-1}$ whence we get:
-
-\begin{equation*}
-K_{*}(C^{*}_{r}(S(C_{p})) \cong \bigoplus_{k_{p}}\mathbb{Z} \oplus K_{*}(C^{*}_{r}(C_{p}))
-\end{equation*}
+If $G$ is finite then it appears as an element in $FSG(G) \subset Fin(G)_{1}$ and so the sequence provided by Theorem \ref{thm:PV1} will split at the level of K-theory. 
 
 We remark that it is possible to arrive at this inverse monoid in a natural way via a subset of a group known as a universal deep set \cite{BNW-KTA}. This subset is universal for partial translation structures, and that it generates this inverse monoid is immediate. However to compute the K-theory of this translation algebra is more complicated than for the reduced $C^{*}$-algebra.
 
@@ -99,7 +125,7 @@ We now shift our considerations to the free group on two generators. In this set
 Let $X \subset F_{2}$ be connected and let $g$ and $h$ be words in $F_{2}$ such that $g$ does not end in $a_{i}^{\pm 1}$ and $h$ does not start with $a_{i}^{\mp 1}$. Then the the translations $\lbrace t_{g} | g \in F_{2} \rbrace$ satisfy $t_{g}t_{h}=t_{gh}$. 
 \end{claim}
 \begin{proof}
-These translations differ only by the fact that the product $t_{g}t_{h}$ may contain a relation that is unreduced, whereas $t_{gh}$ acts by the reduced form of $gh$. As there are no relations other than $a_{i}a_{i}^{-1}$ or $a_{i}^{-1}a_{i}$ in $F_{2}$ whence $t_{g}t_{h}$ and $t_{gh}$ agree everywhere they are defined.
+These translations differ only by the fact that the product $t_{g}t_{h}$ may contain a relation that is unreduced, whereas $t_{gh}$ acts by the reduced form of $gh$. As there are no relations other than $a_{i}a_{i}^{-1}$ or $a_{i}^{-1}a_{i}$ in $F_{2}$ whence $t_{g}t_{h}$ and $t_{gh}$ agree everywhere they are defined. Lastly because $X$ is connected it is not possible for $t_{gh}$ to be defined unless $t_{g}$ is defined; hence $t_{g}t_{h}=t_{gh}$.
 \end{proof}
 
 This property makes working with translation algebras arising from $F_{2}$ easier.
@@ -122,11 +148,17 @@ We will prove this by induction on the length of $w$. This clearly holds for the
 
 This however does not let us compute for a general $e$, which will be a product of conjugates of the $t_{w}^{*}t_{w}$.
 
-Putting this together with the long exact sequence in K-theory and by connecting the short exact sequences from Theorem \ref{thm:PV1} and Theorem \ref{thm:T4} using the obvious maps gives us the following diagram:
-
+It is now possible to put together the short exact sequences constructed in Theorem \ref{thm:PV1} and Theorem \ref{thm:T4} into a single diagram:
+$$
+\xymatrix@=1em{ 0 \ar[r] & C^{*}_{r}(\G_{U\cap \X}) \ar[d]\ar[r]^{\cong} & ker(q)\ar[d] \ar[r] & 0 \ar[d]&  \\
+0 \ar[r] & C^{*}_{r}(\G_{U}) \ar[d] \ar[r] & C^{*}_{r}(\G_{\E}) \ar[d]^{q} \ar[r] & C^{*}_{r}(F_{n}) \ar[d]^{\ucong}\ar[r] & 0\\
+0 \ar[r] & \mathcal{K}(\ell^{2}(X)) \ar[r] & C^{*}_{r}(\G_{\X}) \ar[r] & C^{*}_{r}(F_{n}) \ar[r] & 0
+}
+$$
+Taking K-theory groups and using Theorem \ref{Thm:Norling} we get the following diagram:
 $$
 \xymatrix@=0.7em{\ar[r] & 0 \ar[r]\ar[d] & K_{0}(C^{*}_{r}(\G_{U\cap \widehat{X}^{c}}))\ar[d] \ar[r]^{\cong}& K_{0}(\ker p) \ar[r]\ar[d]& 0 \ar[r]\ar[d] & K_{1}(C^{*}_{r}(\G_{U\cap \widehat{X}^{c}})) \ar[r]\ar[d]^{\ucong} &\\
-\ar[r] & K_{1}(C^{*}_{r}(F_{n})) \ar[r]\ar[d]^{\ucong} & K_{0}(C^{*}_{r}(\G_{U}))\ar[r]\ar[d]& K_{0}(C^{*}_{r}(F_{n-1})) \oplus \bigoplus_{[ef]_{\approx}} K_{*}(\mathbb{C})\ar[r]\ar[d]^{p}& K_{0}(C^{*}_{r}(F_{n}))\ar[r]\ar[d]^{\ucong} & K_{1}(C^{*}_{r}(\G_{U}))\ar[d] \ar[r] & \\
+\ar[r] & K_{1}(C^{*}_{r}(F_{n})) \ar[r]\ar[d]^{\ucong} & K_{0}(C^{*}_{r}(\G_{U}))\ar[r]\ar[d]& K_{0}(C^{*}_{r}(F_{n-1})) \oplus \bigoplus_{\substack{[e]_{\approx}\\ e \not \approx 1}} K_{*}(\mathbb{C})\ar[r]\ar[d]^{p}& K_{0}(C^{*}_{r}(F_{n}))\ar[r]\ar[d]^{\ucong} & K_{1}(C^{*}_{r}(\G_{U}))\ar[d] \ar[r] & \\
 \ar[r] & K_{1}(C^{*}_{r}(F_{n})) \ar[r]& K_{0}(\mathcal{K}(\ell^{2}(X))) \ar[r]& K_{0}(C^{*}\mathcal{T}_{n}) \ar[r]& K_{0}(C^{*}_{r}(F_{n})) \ar[r]& 0 \ar[r] & 
 }
 $$
@@ -134,26 +166,29 @@ $$
 This indicates that whilst the translation algebra $C^{*}\mathcal{T}_{n}$ does not have the same K-theory as $C^{*}_{r}(S)$, the K-theory sequence is split (this relies on the results of Pimsner-Voiculescu \cite{MR670181}: $K_{*}(C^{*}\mathcal{T}_{n}))\cong K_{*}(C^{*}_{r}(F_{n-1}))$), so we are picking out the correct K-theory group as well as much more complex information that comes from the product structure on the idempotents. This is connected to regularisation of the generating set for the basis of $\E$ \cite{CEL-2}, and will be discussed later in the section.
 
 \begin{example}(Polycyclic monoids, Strong orthogonal completions and the Cuntz extension)
-Let $X$ be the set of all the positive words within the free group $F_{n}$. We consider the inverse monoid that arises from the induced translation structure. In this case the inverse monoid has a zero element and satisfies the relations: $t_{a_{i}}^{*}t_{a_{j}}=\delta_{ij}$, $t_{a_{i}}t_{a_{i}}^{*} \leq 1$. The inverse monoid satisfying this relation is called the \textit{polycyclic monoid} \cite{MR2372319}, which is a generalisation of the Bicyclic monoid. We denote this inverse monoid by $P_{n}$.
+Let $X$ be the set of all the positive words within the free group $F_{n}$. We consider the inverse monoid that arises from the induced translation structure. In this case the inverse monoid has a zero element and satisfies the relation: $t_{a_{i}}^{*}t_{a_{j}}=\delta_{ij}$. The inverse monoid satisfying this relation is called the \textit{polycyclic monoid} \cite{MR2372319}, which is a generalisation of the Bicyclic monoid. We denote this inverse monoid by $P_{n}$.
 
-
-In this case we again have that $E(P_{n})$ is in bijection with $X$, which is a rooted binary tree. Hence $\E(P_{n}) \cong \X$. However, many of the domains of translation are infinite with infinite compliment and so we have nontrivial ultrafilters to consider. In general we should consider tight filters, as the closure of the ultrafilters, but by work of Lawson \cite{lawson-2011-1} $P_{n}$ is compactible for each $n$, that is the ultrafilters are closed in the subspace topology on $\E$. As a free group is exact, we can appeal to Theorem \ref{thm:PV2} to get a short exact sequence:
+In this case we again have that $E(P_{n})$ is in bijection with $X$, which is a rooted $n$-ary tree. Hence $\E(P_{n}) \cong \X$. However, many of the domains of translation are infinite with infinite compliment and so we have nontrivial ultrafilters to consider. In general we should consider tight filters, as the closure of the ultrafilters, but by work of Lawson \cite{lawson-2011-1} $P_{n}$ is compactible for each $n$, that is the ultrafilters are closed in the subspace topology on $\E$. As a free group is exact, we can appeal to Theorem \ref{thm:PV2} to get a short exact sequence:
 \begin{equation*}
 0 \rightarrow C^{*}_{r}(\G_{U}) \rightarrow C^{*}_{r}(\G_{\E}) \rightarrow C^{*}_{r}(\G_{\E_{\infty}}) \rightarrow 0.
 \end{equation*}
-We would like to understand the algebras that appear within this sequence. Let us begin with the first term; as the left stabiliser of this subspace is trivial we can deduce from Proposition \ref{cor:C4} that $\G_{U}$ is a pair groupoid, hence $C^{*}_{r}(\G_{U})$ is the compact operators on $\ell^{2}(X)$. The middle term satisfies the relation $\sum_{i=1}^{n}t_{a_{i}}t_{a_{i}}^{*} \leq 1$, whence $C^{*}_{r}(\G_{\E}) \cong C^{*}_{r}(S)$ admits a map to $E_{n}$, the generalised Cuntz algebra. It is well known that this map is an isomorphism \cite{MR1724106,MR584266}. It now follows that $C^{*}_{r}(\G_{\E_{\infty}})$ is isomorphic to the Cuntz algebra $\mathcal{O}_{n}$.
+Where $\E_{\infty}$ is set of ultrafilters on $E$ and $U$ is the compliment of $\E_{\infty}$.
+
+We would like to understand the algebras that appear within this sequence. Let us begin with the first term; as the left stabiliser of this subspace is trivial we can deduce from Proposition \ref{cor:C4} that $\G_{U}$ is a pair groupoid, hence $C^{*}_{r}(\G_{U})$ is the compact operators on $\ell^{2}(X)$. The middle term satisfies the relation $\sum_{i=1}^{n}t_{a_{i}}t_{a_{i}}^{*} \leq 1$, whence $C^{*}_{r}(\G_{\E}) \cong C^{*}_{r}(S)$ admits a map from $E_{n}$, the generalised Cuntz algebra. It is well known that this map is an isomorphism \cite{MR1724106,MR584266}. It now follows that $C^{*}_{r}(\G_{\E_{\infty}})$ is isomorphic to the Cuntz algebra $\mathcal{O}_{n}$.
 
 We again appeal to Theorem \ref{Thm:Norling} to compute the K-theory. By Proposition \ref{prop:P10} we know that the action on $E(P_{n})$ translates, via the bijection onto $X$, to the translation action of $F_{n}$ on $X$. It follows that there is only a single orbit under this action as partial translation actions are transitive. The stabiliser is obviously trivial in this case, hence by Theorem \ref{Thm:Norling} we arrive at the computation $K_{*}(C^{*}_{r}(P_{n})) \cong K_{*}(\mathbb{C})\cong \mathbb{Z}$. All that remains is to compute the maps in the sequence, which are also well known..
 
-We give a direct computation of the K-theory of the final term here, by considering Lawsons \textit{orthogonal completions} of $P_{n}$ \cite{lawson-2011-1}, denoted by $D(P_{n})$ and $C(P_{n})$ respectively.
+We give a direct computation of the K-theory of the final term here, by considering Lawsons \textit{orthogonal completions} of $P_{n}$ \cite{lawson-2011-1}, denoted by $D(P_{n})$ and $C(P_{n})$ respectively. The main idea of the orthogonal completion $D(P_{n}$ is to construct a monoid from $P_{n}$ that has new elements that represent finite sums of orthogonal elements that are compatable with the obvious geometric composition rules. To describe $C(P_{n})$ requires a definition:
 
 \begin{definition}
 Let $E$ be a semilattice and let $e,f \in E$. $e$ is \textit{dense} in $f$ if $e \leq f$ and there does not exist $z \in E$ such that $z \leq f$ and $ze=0$. 
 \end{definition}
 
+The construction of $C(P_{n})$ is similar to that of $D(P_{n})$, except that certain relations involving dense elements are removed via a congruence \cite{lawson-2011-1}.
+
 We remark that any tight representation of a inverse monoid cannot separate dense idempotents \cite{MR2419901}. This is particularly relevent in this example. It is clear that in $P_{n}$ the elements $\lbrace t_{a_{i}}t_{a_{i}}^{*} | i = 1,..,n \rbrace$ are pairwise orthogonal, and in the reduced $C^{*}$-algebra they have sum that is less than $1$. The idea of the orthogonal completion is to capture this $C^{*}$-algebraic behavour in an inverse monoid; in $D(P_{n})$ the sum $\bigvee_{i=1}^{n} t_{a_{i}}t_{a_{i}}^{*}$ is defined and is dense in $1$, and equal to $1$ in $C(P_{n})$, which has an underlying tight representation of $S$. 
 
-It follows, from von Neumann equivalence of projections, that each $t_{a_{i}}t_{a_{i}}^{*}$ viewed as an operator in $C^{*}_{r}(\G_{\E_{\infty}})$ is equivalent to $1$ at the level of K-theory, in paricular using Proposition 5.3.1 and Lemma 5.3.2 from \cite{MR1222415} we observe that $C^{*}_{r}(\G_{\E_{\infty}})$ is stable and that $[1]=\sum_{i=1}^{n}[1]$. From above, we know that the K-theory group $K_{0}(C^{*}_{r}(P_{n}))$ is generated by the class $[1]$, hence we know that $[1]$ generates $K_{0}(C^{*}_{r}(\G_{\E_{\infty}})$ also. It follows that $\sum_{i=1}^{n-1}[1]=[0]$, and this gives the desired isomorphism onto $C_{n-1}$.
+It follows, from von Neumann equivalence of projections, that each $t_{a_{i}}t_{a_{i}}^{*}$ viewed as an operator in $C^{*}_{r}(\G_{\E_{\infty}})$ is equivalent to $1$ at the level of K-theory, in paricular using Proposition 5.3.1 and Lemma 5.3.2 from \cite{MR1222415} we observe that $C^{*}_{r}(\G_{\E_{\infty}})$ is stable and that $[1]=\sum_{i=1}^{n}[1]$. From our calculations above we know that the K-theory group $K_{0}(C^{*}_{r}(P_{n}))$ is generated by the class $[1]$, hence we know that $[1]$ generates $K_{0}(C^{*}_{r}(\G_{\E_{\infty}})$ also. It follows that $\sum_{i=1}^{n-1}[1]=[0]$, and this gives a homomorphism from $C_{n-1}$. That this map induces an isomorphism is well known \cite{MR2457037}. 
 
 \end{example}
 
@@ -161,15 +196,22 @@ It follows, from von Neumann equivalence of projections, that each $t_{a_{i}}t_{
 
 In Example \ref{ex:PV} we observed that the inverse monoid generated by the translation structure had K-theory groups that were relatively easy to calculate but much too large. This phenomenon is not uncommon; the same computation using the subspaces present in the work of Lance \cite{MR723010} also provide too rich a structure. This additional structure arises as the basis for topology on $\E$ that we are using to apply results of Norling and Cuntz-Echerhoff-Li rely on the \textit{regular} basis property. We also observe that the natural elements that contribute to the correct K-theory groups in these instances are precisely the idempotents $t_{w}^{*}t_{w}$ that arise from words $w \in F_{n}$, as opposed to their products. This essentially says that considering the generating set over the regular basis it generates appears to give the correct answer.
 
-We also remark that the large diagram constructed in Example \ref{ex:PV} can be constructed for \textit{any} translation structure. To apply Theorem \ref{Thm:Norling} however we restrict to discrete groups with the Haagerup property. So we have the following diagram:
-
+We also remark that the large diagram constructed in Example \ref{ex:PV} can be constructed for \textit{any} translation structure. That is we get the following diagram by connecting the short exact sequences from Theorem \ref{thm:PV1} and Theorem \ref{thm:T4} into a single diagram:
+$$
+\xymatrix@=1em{ 0 \ar[r] & C^{*}_{r}(\G_{U\cap \X}) \ar[d]\ar[r]^{\cong} & ker(q)\ar[d] \ar[r] & 0 \ar[d]&  \\
+0 \ar[r] & C^{*}_{r}(\G_{U}) \ar[d] \ar[r] & C^{*}_{r}(\G_{\E}) \ar[d]^{q} \ar[r] & C^{*}_{r}(G) \ar[d]^{\ucong}\ar[r] & 0\\
+0 \ar[r] & \mathcal{K}(\ell^{2}(X)) \ar[r] & C^{*}_{r}(\G_{\X}) \ar[r] & C^{*}_{r}(G) \ar[r] & 0
+}
+$$
+To apply Theorem \ref{Thm:Norling} however we restrict to discrete groups with the Haagerup property. In that instance, we have the following diagram on K-theory:
 $$
 \xymatrix@=0.7em{ 0 \ar[r]\ar[d] & K_{0}(C^{*}_{r}(\G_{U\cap \widehat{X}^{c}}))\ar[d] \ar[r]^{\cong}& K_{0}(\ker p) \ar[r]\ar[d]& 0 \ar[r]\ar[d] & \\
-K_{1}(C^{*}_{r}(G)) \ar[r]\ar[d]^{\ucong} & K_{0}(C^{*}_{r}(\G_{U}))\ar[r]\ar[d]&\bigoplus_{w \in G} K_{0}(C^{*}_{r}(G_{t_{w}^{*}t_{w}})) \oplus \bigoplus_{[ef]_{\approx}} K_{*}(C^{*}_{r}(G_{ef}))\ar[r]\ar[d]^{p}& K_{0}(C^{*}_{r}(G))\ar[r]\ar[d]^{\ucong} &  \\
+K_{1}(C^{*}_{r}(G)) \ar[r]\ar[d]^{\ucong} & K_{0}(C^{*}_{r}(\G_{U}))\ar[r]\ar[d]&\bigoplus_{w \in G} K_{0}(C^{*}_{r}(G_{t_{w}^{*}t_{w}})) \oplus \bigoplus_{I} K_{*}(C^{*}_{r}(G_{e}))\ar[r]\ar[d]^{p}& K_{0}(C^{*}_{r}(G))\ar[r]\ar[d]^{\ucong} &  \\
 K_{1}(C^{*}_{r}(G)) \ar[r]& K_{0}(\mathcal{K}(\ell^{2}(X))) \ar[r]& K_{0}(C^{*}\mathcal{T}) \ar[r]& K_{0}(C^{*}_{r}(G)) \ar[r]&  
 }
 $$
-
+Where $I:= \lbrace e \in E(S) | e \not \approx t^{*}_{w}t_{w} \forall t_{w} \in \mathcal{T} \rbrace.$
+ 
 \begin{question}
 Is the middle column split in both dimensions?
 \end{question}
@@ -181,13 +223,13 @@ Is $K_{*}(C^{*}\mathcal{T}) \cong \bigoplus_{w \in G} K_{0}(C^{*}_{r}(G_{t_{w}^{
 \end{question}
 
 \section{A counterexample to the Boundary Conjecture.}
-In this section we develop the ideas of Higson, Lafforgue and Skandalis concerning the counterexamples to the coarse Baum-Connes conjecture further, to construct a metric space $Y$ that has exceptional properties at infinity. The main idea is to decompose the boundary groupoid further, giving a new short exact sequence at infinity similar to the sequences considered in Chapter 4. From this, we then construct an operator that is not a ghost operator, but is ghostly on certain parts of the boundary. A tracelike argument, similar to those of \cite{higsonpreprint, explg1} then allows us to conclude that the boundary coarse Baum-Connes conjecture fails to be surjective for the space $Y$.
+In this section we develop the ideas of Higson, Lafforgue and Skandalis concerning the counterexamples to the coarse Baum-Connes conjecture further, to construct a space of graphs $Y$ that has exceptional properties at infinity. The main idea is to decompose the boundary groupoid further, giving a new short exact sequence at infinity similar to the sequences considered in Chapter 4. From this, we then construct an operator that is not a ghost operator, but is ghostly on certain parts of the boundary. A tracelike argument, similar to those of \cite{higsonpreprint, explg1} then allows us to conclude that the boundary coarse Baum-Connes conjecture fails to be surjective for the space $Y$.
 
 \subsection{The space and its non-ghosts.}
 
 The space we are going to consider first appeared in \cite{MR2363697}.
 
-Let $\lbrace X_{i} \rbrace_{i \in \mathbb{N}}$ be a sequence of finite graphs. Then we construct a space similar to a space of graphs in the following manner: Let $Y_{i,j} = X_{i}$ for all $j \in \mathbb{N}$ and consider $Y:= \sqcup_{i,j} Y_{i,j}$. We metrize this space using a box metric - that is with the property that $d(Y_{i,j},Y_{k,l}) \rightarrow \infty$ as $i+j+k+l \rightarrow \infty$. 
+Let $\lbrace X_{i} \rbrace_{i \in \mathbb{N}}$ be a sequence of finite graphs. Then we construct a space of graphs in the following manner: Let $Y_{i,j} = X_{i}$ for all $j \in \mathbb{N}$ and consider $Y:= \sqcup_{i,j} Y_{i,j}$. We metrize this space using a box metric - that is with the property that $d(Y_{i,j},Y_{k,l}) \rightarrow \infty$ as $i+j+k+l \rightarrow \infty$. 
 
 Now let $\lbrace X_{i} \rbrace_{i}$ be an expander sequence. As discussed in Section \ref{Sect:GO} of Chapter 4, we can construct a ghost operator $p= \prod_{i} p_{i}$ on $X$, the space of graphs of $\lbrace X_{i} \rbrace_{i}$. Similarly, we can construct this operator on $Y$. In this situation we get a projection $q:=\prod_{i,j}p_{i} \in C^{*}_{u}Y$, which is a constant operator in the $j$ direction. This was precisely the operator of interest in \cite{MR2363697}, as it can be seen that $q$ is not a ghost operator, as its matrix entries do not vanish in the $j$ direction - a fact proved below in Lemma \ref{Lem:nag}.
 
@@ -201,7 +243,7 @@ Recall that associated to $Y$ we have a short exact sequence of $C^{*}$-algebras
 We remark the kernel, $ker(\pi)$ consists of all the ghost operators in $C^{*}_{u}(Y)$, that is those operators with matrix coefficients that tend to $0$ in all directions on the boundary. 
 
 \begin{lemma}\label{Lem:nag}
-The projection $\pi(q):= \prod_{i,j}p_{i} \not = 0 \in C^{*}_{r}(G(Y)|_{\partial\beta Y})$. That is $q \not\in ker(\pi)$.
+The projection $\pi(q):= \pi(\prod_{i,j}p_{i}) \not = 0 \in C^{*}_{r}(G(Y)|_{\partial\beta Y})$. That is $q \not\in ker(\pi)$.
 \end{lemma}
 \begin{proof}
 We first observe that every bounded subset $B$ of $Y$ is contained in some rectangle of the form $R_{i_{B},j_{B}}:=\sqcup_{i\leq i_{B},j\leq j_{B}}Y_{i,j}$. So to prove that $q$ is not a ghost operator it suffices to show that there exists an $\epsilon>0$ such that for all rectangles $R_{i,j}$ there is a pair of points $x,y$ in the compliment of the rectangle such that  the norm $\Vert q_{x,y} \Vert \geq \epsilon$. To prove this, recall that the projection $q$ is a product of projections $p_{i}$ on each $X_{i}$ and fixing $j$, these projections form a ghost operator. 
@@ -217,24 +259,24 @@ Consider the map $\beta Y \twoheadrightarrow \beta X \times \beta \mathbb{N}$ in
 \begin{equation*}
 f: \beta Y \rightarrow \beta X \times \beta \mathbb{N} \rightarrow \beta X
 \end{equation*}
-The map $f$ is continuous, hence the preimage of $X$ under projection onto the first factor is an open subset of $\beta Y$, which intersects the boundary $\partial \beta Y$. In fact, what we can see is that $f^{-1}(X)= \sqcup f^{-1}(X_{i})$, where each $f^{-1}(X_{i})$ are closed, and therefore homeomorphic to $X_{i} \times \beta \mathbb{N}$. We can define $U = f^{-1}(X)\cap \partial\beta Y$.
+The map $f$ is continuous, hence the preimage of $X$ under projection onto the first factor is an open subset of $\beta Y$, which intersects the boundary $\partial \beta Y$. In fact, what we can see is that $f^{-1}(X)= \sqcup f^{-1}(X_{i})$, where each $f^{-1}(X_{i})$ is closed, and therefore homeomorphic to $X_{i} \times \beta \mathbb{N}$. We can define $U = f^{-1}(X)\cap \partial\beta Y$.
 
 \subsection{The boundary groupoid associated to the box space of a discrete group with the Haagerup property.}
 
-Let $\Gamma$ be a finitely generated residually finite discrete group with the Haagerup property, and let $\lbrace N_{i}\rbrace$ be a family of nested finite index subgroups with trivial intersection. Let $X_{i}:=Cay(\frac{\Gamma)}{N_{i}})$. In this context, the boundary groupoid is generated by the action of the group $\Gamma$ extended to the boundary (see Proposition \ref{Prop:Crit}). In this context we can show that $U$ defined above is saturated:
+Let $\Gamma$ be a finitely generated residually finite discrete group with the Haagerup property, and let $\lbrace N_{i}\rbrace$ be a family of nested finite index subgroups with trivial intersection. Let $X_{i}:=Cay(\frac{\Gamma}{N_{i}})$. In this context, the boundary groupoid is generated by the action of the group $\Gamma$ extended to the boundary (see Proposition \ref{Prop:Crit}). In this context we can show that $U$ defined above is saturated:
 
 \begin{lemma}
 $U$ is an open, saturated subset of the boundary $\partial\beta Y$. 
 \end{lemma}
 \begin{proof}
-We have already shown above that $U$ is open. To see it is saturated we prove that $U^{c}$ is saturated, observe that the following diagram commutes:
+We have already shown above that $U$ is open. To see it is saturated we prove that $U^{c}$ is saturated. Let $g_{Y}$ and $g_{X}$ be the continous extensions of the map obtained by acting through $g$ on $Y$ and $X$ respectively. We observe that the following diagram commutes:
 \begin{equation*}
 \xymatrix{
 \overline{g}_{Y}:\beta Y\ar[r]\ar[d]^{p} & \beta Y\ar[d]^{p}\\
 \overline{g_{X} \times 1}:  \beta X \times \beta \mathbb{N} \ar[r] & \beta X \times \beta \mathbb{N}
 }
 \end{equation*}
-where these maps extend the group action on $Y=X \times \mathbb{N}$. The projection onto $\beta X$ is also equivariant under this action. Assume for a contradiction that $U^{c}$ is not saturated; there exists $\gamma$ in $U^{c}$ such that $\overline{g}_{Y}(\gamma) \in U$. It follows that $\overline{g_{X} \times 1}(p(\gamma))$ is in $p(U)$, whilst $p(\gamma) \in p(U^{c})$, hence $\overline{g_{X}}(f(\gamma))\in U$ whilst $f(\gamma) \in U^{c}$. This is a contradiction as $f(U^{c}) = \partial\beta X$ is saturated.
+The projection onto $\beta X$ is also equivariant under this action. Assume for a contradiction that $U^{c}$ is not saturated; there exists $\gamma$ in $U^{c}$ such that $\overline{g}_{Y}(\gamma) \in U$. It follows that $\overline{g_{X} \times 1}(p(\gamma))$ is in $p(U)$, whilst $p(\gamma) \in p(U^{c})$, hence $\overline{g_{X}}(f(\gamma))\in U$ whilst $f(\gamma) \in U^{c}$. This is a contradiction as $f(U^{c}) = \partial\beta X$ is saturated.
 \end{proof}
 
 This gives us two natural complimentary restrictions of $G(Y)|_{\partial\beta Y}$ and a short exact sequence of function algebras as in Chapter 4:
@@ -265,14 +307,14 @@ It follows from the proof of Proposition \ref{Prop:Crit} that the groupoid $G(Y)
 The groupoid $G(Y)|_{U}$ is isomorphic to $\sqcup_{i}(X_{i}\times X_{i})\times G(\mathbb{N})|_{\partial\beta \mathbb{N}}$.
 \end{lemma}
 \begin{proof}
-The reductions to the inclusions of the preimages $f^{-1}(X_{i})$ restricted to the boundary are isomorphic to the closed subgroupoids $G(X_{i}\times \mathbb{N})|_{\partial\beta \mathbb{N}}$ of $G(Y)|_{U}$. These groupoids are disjoint by construction and therefore the inclusion $\sqcup_{i}G(X_{i}\times \mathbb{N})|_{\partial\beta \mathbb{N}}$ is an open subgroupoid of $G(Y)|_{U}$. We now prove that:
+We consider the preimages $f^{-1}(X_{i})$. These are clearly invariant subsets of $\beta Y$ that when intersected with the boundary $\partial\beta Y$ are contained within $U$. The restriction of $G(Y)|_{\partial\beta Y}|_{\f^{-1}(X_{i})$ for each $i$ isomorphic to the closed subgroupoid $G(X_{i}\times \mathbb{N})|_{\partial\beta \mathbb{N}}$ of $G(Y)|_{U}$. These groupoids are disjoint by construction and therefore the inclusion $\sqcup_{i}G(X_{i}\times \mathbb{N})|_{\partial\beta \mathbb{N}}$ is an open subgroupoid of $G(Y)|_{U}$. We now prove that:
 \begin{enumerate}
-\item each $G(X_{i} \times \mathbb{N})|_{\partial\beta \mathbb{N}}$ is isomorphic to $(X_{i}\times X_{i})\times G(\mathbb{N})|_{\partial\beta \mathbb{N}}$;
+\item each $G(X_{i} \times \mathbb{N})|_{\partial\beta \mathbb{N}}$ is isomorphic to $(X_{i}\times X_{i})\times G(\mathbb{N})|_{\partial\beta \mathbb{N}}$, where $\mathbb{N}$ has the well-spaced metric;
 \item the union $\sqcup_{i}G(X_{i}\times \mathbb{N})|_{\partial\beta \mathbb{N}}$ is the entire of $G(Y)|_{U}$.
 \end{enumerate}
-To prove (1), observe that the groupoid decomposes as $G(X_{i}\times \mathbb{N}) = \bigcup_{R>0}\overline{\Delta_{R}(X_{i}\times \mathbb{N})}$. For each $R>0$ we can find a $j_{R}$ such that $\Delta_{R}(X_{i}\times \mathbb{N}) = F_{R} \cup \bigcup_{j>j_{R}}\Delta_{R}^{j}(X_{i}\times \mathbb{N})$, hence for the boundary part of this groupoid it is enough to understand what happens in each piece $Y_{i,j}$, which is constant for each $j$. Secondly, observe that in the induced metric on a column, the pieces $Y_{i,j}$ separate as $j\rightarrow \infty$. This, coupled with the fact that for large enough $R$, we know that $ \Delta^{j}_{R}(X_{i}\times \mathbb{N}) = X_{i} \times X_{i}$ allow us to deduce that any behavour at infinity of this groupoid is a product of $X_{i} \times X_{i}$ and the boundary groupoid $G(\mathbb{N})|_{\partial\beta \mathbb{N}$ where $\mathbb{N}$ has the coarsely disconnected metric. This groupoid is isomorphic to $\partial\beta \mathbb{N}$, from which we can deduce that $G(X_{i}\times \mathbb{N})|_{\partial\beta \mathbb{N}} = (X_{i}\times X_{i})\times \partial\beta \mathbb{N}$ for each $i$.
+To prove (1), observe that the groupoid decomposes as $G(X_{i}\times \mathbb{N}) = \bigcup_{R>0}\overline{\Delta_{R}(X_{i}\times \mathbb{N})}$. For each $R>0$ we can find a $j_{R}$ such that $\Delta_{R}(X_{i}\times \mathbb{N}) = F_{R} \cup \bigcup_{j>j_{R}}\Delta_{R}(X_{i}\times \lbrace j \rbrace)$, hence for the boundary part of this groupoid it is enough to understand what happens in each piece $Y_{i,j}$, which is constant for each $j$. Secondly, observe that in the induced metric on a column, the pieces $Y_{i,j}$ separate as $j\rightarrow \infty$. This, coupled with the fact that for large enough $R$, we know that $ \Delta^{j}_{R}(X_{i}\times \mathbb{N}) = X_{i} \times X_{i}$ allow us to deduce that any behavour at infinity of this groupoid is a product of $X_{i} \times X_{i}$ and the boundary groupoid $G(\mathbb{N})|_{\partial\beta \mathbb{N}$ where $\mathbb{N}$ has the coarsely disconnected metric. This groupoid is isomorphic to $\partial\beta \mathbb{N}$, from which we can deduce that $G(X_{i}\times \mathbb{N})|_{\partial\beta \mathbb{N}} = (X_{i}\times X_{i})\times \partial\beta \mathbb{N}$ for each $i$.
 
-To prove (2) we assume for a contradiciton that there is a partial translation $t$, such that $\overline{t}$ is not an element of the disjoint union. Such an element maps some $(x_{i}, \omega)$ to $(x_{k},\omega)$, where $i\not =k$. Without loss of generality assume also $t$ has translation length at most $R$. Then the domain and range of $t$ are both infinite (as the closure is defined in $G(Y)|_{U}$), and must be contained within a strip of width at most $R>0$. From the definition of the metric, there are only finitely many $Y_{i,j}$ within such a rectangle, hence $t \in F_{R}$ and hence $\overline{t}$ is not defined in $G(Y)|_{U}$, which yields a contradiction.
+To prove (2) we assume for a contradiction that there is a partial translation $t$, such that $\overline{t}$ is not an element of the disjoint union. Such an element maps some $(x_{i}, \omega)$ to $(x_{k},\omega)$, where $i\not =k$. Without loss of generality assume also $t$ has translation length at most $R$. Then the domain and range of $t$ are both infinite (as the closure is defined in $G(Y)|_{U}$), and must be contained within a strip of width at most $R>0$. From the definition of the metric, there are only finitely many $Y_{i,j}$ within such a rectangle, hence $t \in F_{R}$ and hence $\overline{t}$ is not defined in $G(Y)|_{U}$, which yields a contradiction.
 \end{proof}
 
 \begin{remark}
@@ -282,20 +324,22 @@ Lemma \ref{Lem:CE3} allows us to conclude that $C^{*}_{r}(G(Y)|_{U}) \cong \bigo
 To conclude that $[\pi(q)]$ is not an element of $K_{0}(C^{*}_{r}(G(Y)|_{U}))$ we construct a trace-like map.
 
 \begin{theorem}
-The element $h_{*}[\pi(q)]=0$, but does not belong to $K_{0}( C^{*}_{r}(G(Y)|_{U}))$.
+The element $\pi(q)$ maps to $0$ in $C^{*}_{r}(G(Y)|_{U^{c}})$, but does not belong to the image of  $K_{0}( C^{*}_{r}(G(Y)|_{U}))$ in $K_{0}(C^{*}_{r}(G(Y)|_{\partial\beta Y}$.
 \end{theorem}
 \begin{proof}
-We begin the proof by remarking that each $U_{i}:=f^{-1}(X_{i}) \cap U$ is a closed saturated subset of $\partial\beta Y$, hence we can consider the reduction to $U_{i}$ for each $i$. We consider the product, and the following map:
+The first part follows from the definition of $\pi(q)$; the quotient map $h$ kills all operators that are ghostly in the direction $i \rightarrow \infty$ and $\pi(q)$ is such an operator.
+
+To prove the second component we remark that each $U_{i}:=f^{-1}(X_{i}) \cap U$ is a closed saturated subset of $\partial\beta Y$, hence we can consider the reduction to $U_{i}$ for each $i$. We consider the product, and the following map:
 \begin{eqnarray*}
 \phi : C^{*}_{r}(G(Y)|_{\partial\beta Y})& \rightarrow & \prod_{i} C^{*}_{r}(G(Y)|_{U_{i}})= \prod_{i}C^{*}_{r}(G(X_{i} \times \mathbb{N})\\
  T  &\mapsto & \prod_{i}T|_{U_{i}}
 \end{eqnarray*}
-Under the map $\phi$, the subalgebra $C^{*}_{r}(G(Y)|_{U})= \bigoplus_{i}M_{\vert X_{i}\vert} \otimes C(\partial\beta Y)$ maps to the ideal $\bigoplus_{i}C^{*}_{r}(G(X_{i} \times \mathbb{N}))$. So, we can define a tracelike map, in analogy to \cite[Section 6]{explg1}, by composing with the quotient map $\tau$ onto $\frac{\prod_{i}C^{*}_{r}(G(X_{i} \times \mathbb{N}))}{\bigoplus_{i}C^{*}_{r}(G(X_{i} \times \mathbb{N}))}$. This gives us a map at the level of K-theory:
+Under the map $\phi$, the ideal $C^{*}_{r}(G(Y)|_{U})= \bigoplus_{i}M_{\vert X_{i}\vert} \otimes C(\partial\beta Y)$ maps to the ideal $\bigoplus_{i}C^{*}_{r}(G(X_{i} \times \mathbb{N}))$. So, we can define a tracelike map, in analogy to \cite[Section 6]{explg1}, by composing with the quotient map $\tau$ onto $\frac{\prod_{i}C^{*}_{r}(G(X_{i} \times \mathbb{N}))}{\bigoplus_{i}C^{*}_{r}(G(X_{i} \times \mathbb{N}))}$. This gives us a map at the level of K-theory:
 \begin{equation*}
 Tr_{*}=\phi \circ \tau : K_{0}(C^{*}_{r}(G(Y)|_{\partial\beta Y})) \rightarrow \frac{\prod_{i}K_{0}(C^{*}_{r}(G(X_{i} \times \mathbb{N})))}{\bigoplus_{i}K_{0}(C^{*}_{r}(G(X_{i} \times \mathbb{N})))}= \frac{\prod_{i}K_{0}(C(\partial\beta \mathbb{N}))}{\bigoplus_{i}K_{0}(C(\partial\beta \mathbb{N}))}
 \end{equation*}
 
-We now consider $[\pi(q)]$ under $Tr_{*}$. Recall that $q=\prod_{i,j}p_{i}$. We define $q_{i}=\prod_{j}p_{i}$ and observe that the operation of reducing to $G(Y)|_{U_{i}}$ can be performed in two commuting ways: restricting to $U$ then $f^{-1}(X_{i})$ or by restricting to $f^{-1}(X_{i})$ then $U$. The second tells us that $q_{i}=p_{i} \otimes 1_{\beta\mathbb{N}$ is constant in the $j$ direction and when restricted to the boundary is $\pi(q_{i})=p_{i}\otimes 1_{\partial\beta \mathbb{N}}$. Hence, $Tr_{*}([\pi(q)])=[1_{\partial\beta \mathbb{N}},1_{\partial\beta\mathbb{N}},...] \not = 0$ and so $[\pi(q)] \not \in K_{0}(C^{*}_{r}(G(Y)|_{U})$.
+By construction, $K_{0}(C^{*}_{r}(G(Y)|_{U}))$ vanishes under $Tr_{*}$. We now consider $[\pi(q)]$ under $Tr_{*}$. Recall that $q=\prod_{i,j}p_{i}$. We define $q_{i}=\prod_{j}p_{i}$ and observe that the operation of reducing to $G(Y)|_{U_{i}}$ can be performed in two commuting ways: restricting to $U$ then $f^{-1}(X_{i})$ or by restricting to $f^{-1}(X_{i})$ then $U$. The second tells us that $q_{i}=p_{i} \otimes 1_{\beta\mathbb{N}$ is constant in the $j$ direction and when restricted to the boundary is $\pi(q_{i})=p_{i}\otimes 1_{\partial\beta \mathbb{N}}$. Hence, $Tr_{*}([\pi(q)])=[1_{\partial\beta \mathbb{N}},1_{\partial\beta\mathbb{N}},...] \not = 0$ and so $[\pi(q)] \not \in K_{0}(C^{*}_{r}(G(Y)|_{U})$.
 \end{proof}
 
 So in this case we have the following diagram:
@@ -307,7 +351,7 @@ So in this case we have the following diagram:
 \end{equation*}
 
 \begin{remark}
-We justify the diagonal inclusion of $K_{0}^{top}(G(Y)|_{U})$ into $K_{0}(C^{*}_{r}(G(Y)|_{\partial\beta Y})$. This follows as the groupoid $G(Y)|_{U}$ is nuclear, and hence the assembly map is an isomorphism.   The algebra $C^{*}_{r}(G(Y)_{U})= \bigoplus_{i}M_{\vert X_{i}\vert} \otimes C(\partial\beta Y)$ injects into the product $\prod_{i} M_{\vert X_{i}\vert} \otimes C(\partial\beta Y)$ at the level of K-theory and this inclusion factors through in the inclusion into the kernel of $\pi$ and into $C^{*}_{r}(G(Y)|_{\partial\beta Y})$. These maps provide enough information to conclude injectivity of the assembly map $\mu_{bdry}$.
+We justify the diagonal inclusion of $K_{0}^{top}(G(Y)|_{U})$ into $K_{0}(C^{*}_{r}(G(Y)|_{\partial\beta Y})$. This follows as the groupoid $G(Y)|_{U}$ is amenable, and hence the assembly map is an isomorphism.   The algebra $C^{*}_{r}(G(Y)_{U})= \bigoplus_{i}M_{\vert X_{i}\vert} \otimes C(\partial\beta Y)$ injects into the product $\prod_{i} M_{\vert X_{i}\vert} \otimes C(\partial\beta Y)$ at the level of K-theory and this inclusion factors through in the inclusion into the kernel of $\pi$ and into $C^{*}_{r}(G(Y)|_{\partial\beta Y})$. These maps provide enough information to conclude injectivity of the assembly map $\mu_{bdry}$.
 \end{remark}
 
 A diagram chase under the assumption that the map $\mu_{bdry}$ is surjective quickly yields a contradiction, whence we have:
@@ -318,7 +362,7 @@ The assembly map $\mu_{bdry}$ associated to $Y=\sqcup_{i,j}Cay(\frac{\Gamma}{N_{
 
 \section{An application to the Exactness of Gromov Monster groups.}
 
-It is well known \cite{MR1911663,explg1} that any group that contains a coarsely embedded expander does not have Yu's property A and admits coefficients for which the Baum-Connes conjecture fails to be a surjection, but is an injection:
+It is well known \cite{MR1911663,explg1} that any group that contains a coarsely embedded large girth expander does not have Yu's property A and admits coefficients for which the Baum-Connes conjecture fails to be a surjection, but is an injection:
 
 \begin{theorem}\label{Thm:IT1}
 Let $G$ be a Gromov monster group. Then there exists a (commutative) $G$-$C^{*}$-algebra $A$ such that the Baum-Connes assembly map:
@@ -330,15 +374,17 @@ is not surjective, but is injective.
 
 We explore this result from the point of view of the geometry that can be associated to the expander graph that it inherits from the group.
 
-Recall the coarse Baum-Connes conjecture for any uniformly discrete bounded geometry space $X$ can be phrased as a conjecture with coefficients in a certain groupoid $G(X)$ associated to $X$ \cite{MR1905840}. This groupoid admits a transformation groupoid decomposition \cite[Lemma 3.3b)]{MR1905840}, giving an easy description of $G(X)$ when it is possible to get a handle on the generators of the metric coarse structure on $X$. When $X$ is coarsely embedded into a group, this is certainly the case; the concept of a partial translation structure \cite{MR2363428} gives any space coarsely embedded into a group a nice collection of generators, as well as a locally compact, Hausdorff, second countable \etale groupoid that impliments the transformation decomposition.
+Recall the coarse Baum-Connes conjecture for any uniformly discrete bounded geometry space $X$ can be phrased as a conjecture with coefficients in a certain groupoid $G(X)$ associated to $X$ \cite{MR1905840}. This groupoid admits a transformation groupoid decomposition \cite[Lemma 3.3b)]{MR1905840}, giving an easy description of $G(X)$ when it is possible to get a handle on the generators of the metric coarse structure on $X$. When $X$ is coarsely embedded into a group, this is certainly the case; the concept of a partial translation structure \cite{MR2363428} gives any space coarsely embedded into a group a nice collection of generators, as well as a locally compact, Hausdorff, second countable \etale groupoid that implements the transformation decomposition.
 
-On the other hand, the question of when a groupoid admits a transformation groupoid decompostion, up to Morita equivalence, has been well studied for the class of groupoids that are constructed from suitable inverse semigroups \cite{MR1900993,Milan-Steinberg}. This is related to the problem of globalisation of a partial action of $\Gamma$ on a space $X$. The result would be a space $Y$, with a true action of $\Gamma$ such that $X \hookrightarrow Y$ is a topological embedding and the enlargement of the $\Gamma$ action by restricting the maps to $X$ induces the original partial action.
+On the other hand, the question of when a groupoid admits a transformation groupoid decompostion, up to Morita equivalence, has been well studied for the class of groupoids that are constructed from suitable inverse semigroups \cite{MR1900993,Milan-Steinberg}. This is related to the problem of globalisation of a partial action of $\Gamma$ on a space $X$. The result would be a space $Y$, with a true action of $\Gamma$ such that $X \hookrightarrow Y$ is a topological embedding and the restriction of the $\Gamma$ action to $X$ induces the original partial action.
 
-The problem of globalisation of partial actions of groups was discussed in Section \ref{Sect:S3}. We recall following definition from Chapter 2:
+The problem of globalisation of partial actions of groups was discussed in Section \ref{Sect:S3} of Chapter 2. We recall following definition from Chapter 2:
 \begin{definition}
-Let $X$ be a topological space and let $\Gamma$ be a group acting partially on $X$. Then we denote by $\Omega$ the \textit{Morita evelope} of the action of $\Gamma$ on $X$, which is constructed as follows:
+Let $X$ be a topological space and let $G$ be a group acting partially on $X$. Then we denote by $\Omega$ the \textit{Morita evelope} of the action of $G$ on $X$, which is constructed as follows:
 
-Consider the space $X\times \Gamma$, equipped with the product topology. Then define $\sim$ on $X\times \Gamma$ by $(x,g)\sim (y,h)$ if there exists $\gamma \in \G$ with $x(h^{-1}g)=y$. We define $\Omega$ as the quotient of $X\times \Gamma$ by $\sim$ with the quotient topology. 
+Consider the space $X\times G$, equipped with the product topology. Then define $\sim$ on $X\times G$ by $(x,g)\sim (y,h)$ if and only if $x(h^{-1}g)=y$. We define $\Omega$ as the quotient of $X\times G$ by $\sim$ with the quotient topology. 
+
+$G$ acts on $\Omega$ using right multiplication by inverses on the group factor of the equivalence classes. Clearly the map that sends $x \in X$ to $[1,x] \in \Omega$ is a topological injection. The main result of \cite{MR2041539} is that this new topological space is minimal amongst globalisations of $X$.
 \end{definition}
 
 \subsection{Some remarks about the coarse groupoid.}
@@ -351,7 +397,7 @@ Using Claim \ref{MainClaim:C1} the translations of $\mathcal{T}$ are the only el
 The coarse groupoid $G(X) \cong \beta X \rtimes \G(\mathcal{T}).$
 \end{lemma}
 \begin{proof}
-We observe that the set of $[t_{g},\widehat{D}_{t_{g}^{*}t_{g}}]$ covers $G(X)$; hence the collection $\mathcal{T}$ forms an admissible psuedogroup in the terminology of \cite{MR1905840}. The groupoid it generates is $\G(\mathcal{T})$. Then the result follows from Lemma 3.3b) \cite{MR1905840}.
+We observe that the set of $[t_{g},\widehat{D}_{t_{g}^{*}t_{g}}]$ covers $G(X)$; hence the collection $\mathcal{T}$ forms an admissible pseudogroup in the terminology of \cite{MR1905840}. The groupoid it generates is $\G(\mathcal{T})$. Then the result follows from Lemma 3.3b) \cite{MR1905840}.
 \end{proof}
 
 Now, we prove the following interesting Lemma:
@@ -392,18 +438,18 @@ such that
 fails to be exact in the middle.
 \end{thm}
 
-We proceed first by anaylzing the situation from \cite[Section 8]{explg1}. The primary idea is to globalise  $C^{*}X$ in $C^{*}G$. Fix a left invariant proper metric on $G$.
+We proceed first by analysing the situation from \cite[Section 8]{explg1}. The primary idea is to globalise  $C^{*}X$ in $C^{*}G$. Fix a left invariant proper metric on $G$.
 
-Let $X_{n}:=N_{n}(X)\subset G$. Then we can form the $C^{*}$-algebras $\ell^{\infty}(X_{n}) \subseteq \ell^{\infty}(G)$. Being commutative algebras in this case, we could consider the dual picture by taking spectra, getting $C_{0}(\widehat{X_{n}}) \subset C(\beta G)$. It is clear that $X_{n} \subset X_{n+1}$, so the algebras $\ell^{\infty}(X_{n}) \subset \ell^{\infty}(X_{n+1})$. The remark here is that the inclusion of $X_{n} \subset G$ is not $G$-equivariant, but the system is $G$-equivariant; the action of $G$ on $X_{n}$ on the right by translations will send points in $X_{n}$ into a most $X_{n+l(g)}$ for each $g \in G$. Hence, the limit of the $\ell^{\infty}(X_{n})$ over $n$ is a $G$-algebra, and so we can form the semidirect product algebra $(\lim_{n}\ell^{\infty}(X_{n}))\rtimes_{r} G$. Lemma 8.4 from \cite{explg1} provides us the following isomorphisms:
+Let $X_{n}$ be the $n$-neighbourhood of $X$ in $G$. Then we can form the $C^{*}$-algebras $\ell^{\infty}(X_{n}) \subseteq \ell^{\infty}(G)$. Being commutative algebras in this case, we could consider the dual picture by taking spectra, getting $C(\beta X_{n}) \subset C(\beta G)$. It is clear that $X_{n} \subset X_{n+1}$, so the algebras $\ell^{\infty}(X_{n}) \subset \ell^{\infty}(X_{n+1})$. The remark here is that the inclusion of $X_{n} \subset G$ is not $G$-equivariant, but the system is $G$-equivariant; the action of $G$ on $X_{n}$ on the right by translations will send points in $X_{n}$ into a most $X_{n+l(g)}$ for each $g \in G$. Hence, the limit of the $\ell^{\infty}(X_{n})$ over $n$ is a $G$-algebra, and so we can form the crossed product algebra $(\varinjlim}\ell^{\infty}(X_{n}))\rtimes_{r} G$. Lemma 8.4 from \cite{explg1} provides us the following isomorphisms:
 
 \begin{lemma}\label{lem:GMG}
-Let $X_{n}$ as above. Then $(\lim_{n}\ell^{\infty}(X_{n}))\rtimes G \cong \lim_{n} C^{*}_{u}(X_{n})$ and $(\lim_{n}\ell^{\infty}(X_{n},\mathcal{K}))\rtimes G \cong \lim_{n} C^{*}(X_{n})$.\qed
+Let $X_{n}$ as above. Then $(\varinjlim\ell^{\infty}(X_{n}))\rtimes G \cong \varinjlim C^{*}_{u}(X_{n})$ and $(\varinjlim\ell^{\infty}(X_{n},\mathcal{K}))\rtimes G \cong \varinjlim C^{*}(X_{n})$.\qed
 \end{lemma}
 
-Let the coefficients $\lim_{n}\ell^{\infty}(X_{n},\mathcal{K})$ be denoted by $A$. We appeal to the fact that each $X_{n}$ is coarsely equivalent to $X$. As these limits are functorial in coarse maps, we conclude:
+Let the coefficients $\varinjlim\ell^{\infty}(X_{n},\mathcal{K})$ be denoted by $A$. We appeal to the fact that each $X_{n}$ is coarsely equivalent to $X$. As these limits are functorial in coarse maps, we conclude:
 
 \begin{proposition}
-Let $G$ be a Gromov monster group and $X$ the coarsely embedded large girth expander. Then we have $A\rtimes_{r} G \cong C^{*}X$.\qed
+Let $G$ be a Gromov monster group and $X$ the coarsely embedded large girth expander. Then we have $K_{*}(A\rtimes_{r} G) \cong K_{*}(C^{*}X)$.\qed
 \end{proposition}
 
 We develop a semigroup theoretic approach; the procedure we will follow will be a geometric analogue of this argument using translation structures and Theorem \ref{Thm:IT2} of Milan and Steinberg, which relies on the information about the coarse groupoid given above as well as the fact the the inverse semigroups associated to the coarse groupoid are strongly 0-F-inverse.
@@ -420,14 +466,14 @@ such that
 fails to be exact in the middle.
 \end{theorem}
 \begin{proof}
-To construct the complete sequence we use Lemma \ref{Lem:Cut} to get $Y_{1}:= (X \times G)/\sim$ and $Y_{3}:= (\partial\beta X \times G)/\sim$. We then get the short exact sequence of $G$-algebras:
+To construct the complete sequence we use Lemma \ref{Lem:Cut} to get $Y_{1}:= (X \times G)/\sim$, $Y_{2}:= (\beta X \times G)/\sim$ and $Y_{3}:= (\partial\beta X \times G)/\sim$. We then get the short exact sequence of $G$-algebras:
 \begin{equation*}
 0 \rightarrow C_{0}(Y_{1}) \rightarrow C_{0}(Y_{2}) \rightarrow C_{0}(Y_{3}) \rightarrow 0.
 \end{equation*}
 
 Now we consider the crossed product algebras $C_{0}(Y_{i})\rtimes G$. Then the sequence above gives us some terms on K-theory: 
 \begin{equation*}
-\xymatrix@=1em{...\ar[r] & K_{0}(C_{0}(U)\rtimes G) \ar[r]& K_{0}(C_{0}(Z)\rtimes G) \ar[r]& K_{0}(C_{0}(Y)\rtimes G)\ar[r] & ...\\
+\xymatrix@=1em{...\ar[r] & K_{0}(C_{0}(Y_{1})\rtimes G) \ar[r]& K_{0}(C_{0}(Y_{2})\rtimes G) \ar[r]& K_{0}(C_{0}(Y_{3})\rtimes G)\ar[r] & ...\\
 ...\ar[r] & K_{0}(\mathcal{K}) \ar[r]\ar[u]^{\ucong}& K_{0}(C^{*}_{r}(G(X))) \ar[r]\ar[u]^{\ucong}& K_{0}(C^{*}_{r}(G(X)|_{\partial\beta X})) \ar[r]\ar[u]^{\ucong}& ...}
 \end{equation*}
 And the bottom line is not exact on K-theory by the work of Chapter 4. It follows therefore that the sequence:
@@ -439,13 +485,13 @@ is not exact in the middle term.
 
 This idea can be extended to connect this proof of failure to be exact to the geometric one that is outlined above from \cite{higsonpreprint,explg1}. 
 
-We connect this geometric approach using groupoids to the analytic approach outlined in the previous section. 
+We connect this geometric approach using groupoids to the analytic approach outlined in the previous section. Let $B_{n}$ be the Morita enveloping action associated to the monster group $G$ partially acting on $X_{n}$ for each $n$.
 
 \begin{proposition}\label{prop:GMG}
 Let $X=X_{0}$ and $X_{n}$ as above. Then the globalisations of $G(X_{n})$ given by $B_{n}\rtimes G$ that come from the translation groupoid action of Lemma \ref{Lem:CG} are all Morita equivalent.
 \end{proposition}
 \begin{proof}
-As $X_{0}$ is coarsely equivalent to $X_{n}$ for all $n$, it follows that $G(X)$ is Morita equivalent to $G(X_{n})$ for all $n$. Using Lemma \ref{Lem:CG} we can see that each of the groupoids $G(X_{n})$ is isomorphic to a transformation groupoid $\beta(X_{n}) \rtimes \G_{\X_{n})$ and therefore admits a (T,C,F)-cocycle onto the monster group $G$. Using Theorem \ref{Thm:IT2-a} (or Theorem \ref{Thm:IT2}) we can conclude that each $G(X_{n})$ is also Morita equivalent to $B_{n}\rtimes G$. Subsequently $B_{n}\rtimes G$ are Morita equivalent for each $n$, induced by the natural inclusions that extend $B_{n} \rightarrow B_{n+1}$.  
+As $X_{0}$ is coarsely equivalent to $X_{n}$ for all $n$, it follows that $G(X)$ is Morita equivalent to $G(X_{n})$ for all $n$. Using Lemma \ref{Lem:CG} we can see that each of the groupoids $G(X_{n})$ is isomorphic to a transformation groupoid $\beta(X_{n}) \rtimes \G_{\X_{n}}$ and therefore admits a (T,C,F)-cocycle onto the monster group $G$. Using Theorem \ref{Thm:IT2-a} (or Theorem \ref{Thm:IT2}) we can conclude that each $G(X_{n})$ is also Morita equivalent to $B_{n}\rtimes G$. Subsequently $B_{n}\rtimes G$ are Morita equivalent for each $n$, induced by the natural inclusions that extend $B_{n} \rightarrow B_{n+1}$.  
 \end{proof}
 
 Lemma \ref{lem:GMG} is naturally a corollary to Proposition \ref{prop:GMG}.

@@ -27,12 +27,12 @@ The work presented in this document is developing this connection between group 
 \begin{example}\label{Ex:Int2}
 Let $\Gamma=\mathbb{Z}$ and let $X=\mathbb{N}$. The maps defined above turn into:
 \begin{eqnarray*}
-& t_{n}: \mathbb{N} \rightarrow \mathbb{N}, x \mapsto x+n \\
-&t_{-n}: \mathbb{N} \rightarrow \mathbb{N}\setminus \lbrace 0,1,...,n-1 \rbrace , x \mapsto x-n
+& t_{n}: \mathbb{N} \rightarrow \mathbb{N}\setminus \lbrace 0,1,...,n-1 \rbrace, x \mapsto x+n \\
+&t_{-n}: \mathbb{N}\setminus \lbrace 0,1,...,n-1 \rbrace \rightarrow \mathbb{N} , x \mapsto x-n
 \end{eqnarray*} 
 These partial bijections generate an inverse monoid, given by the presentation:
 \begin{equation*}
-S=\langle t_{n},t_{n}^{*}=t_{-n} | t_{n}^{*}t_{n}=1 \rangle
+S=\langle t_{1},t_{-1} | t_{-1}t_{1}=1 \rangle.
 \end{equation*}
 This is a well-known object in inverse semigroup theory: \textit{the bicyclic monoid}. We can also consider these maps as partial isometry operators inside $\mathcal{B}(\ell^{2}(X))$ in a very natural way and then consider the $C^{*}$-algebra they generate. This algebra is called the translation algebra $C^{*}T$ associated to the set of maps $T$. In this instance it coincides the the inverse semigroup $C^{*}$-algebra $C^{*}_{r}(S)$, which also satisfies the presentation defined above.
 
@@ -115,3 +115,12 @@ The process to prove this associates to each such sequence a partial action of s
 
 Finally, in Chapter 5 we tie these ideas together. Firstly, certain examples of the short exact sequences of Chapter 3 and their K-theory are considered. Secondly, a counterexample to the boundary coarse Baum-Connes conjecture is constructed and lastly we show that Gromov monster groups, the groups that coarsely contain large girth expanders, fail to satisfy Baum-Connes with coefficients \cite{MR1978492,exrangrps}, and show that there are coefficients where the conjecture holds.
 
+\section{Outline.}
+
+In Chapter 2 we make precise the definitions and properties of inverse semigroups and groupoids that we will use within the document, as well as outlining the connections between them that are present in the literature. Following this we define partial actions of groups, which become the primary objects of study in later chapters. Lastly, we give the definition of a $C^{*}$-algebra and develop ideas concerned with $C^{*}$-algebras of groupoids and inverse semigroups as well as introducing the methods of topological K-theory.
+
+In Chapter 3 the results concerning short exact sequences associated to F-inverse and strongly 0-F-inverse monoids that were outlined above are proved. The connections to coarse geometry are introduced; we introduce the concept of a partial translation structure and then use this to construct a short exact sequence associated to any sufficently good subset of a finitely generated group. 
+
+In Chapter 4 the focus changes to metric spaces and coarse geometry. The coarse Baum-Connes conjecture is defined via two different approaches, one analytic and one via a groupoid construction from the literature. In this instance, we focus on the groupoid version and explain how counterexamples to the conjecture are constructed. We then develop a new conjecture, the boundary coarse Baum-Connes conjecture, and prove it for certain sequences of finite graph.
+
+Lastly, Chapter 5 is devoted to giving examples and connections between the ideas of the previous chapters. We compute some K-theory groups associated to both translation algebras and inverse monoid $C^{*}$-algebras, give a counterexample to the boundary coarse Baum-Connes conjecture and use translation structure ideas and the results of Chapter 4 to prove that Gromov monster groups are not exact.
