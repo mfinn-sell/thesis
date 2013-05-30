@@ -168,7 +168,7 @@ Let $A$ be a saturated set. Denote by $\G|_{A}$ the subgroupoid $\G_{A}^{A}$, ca
 \end{definition}
 
 \begin{definition}
-Let $\G$ be a locally compact groupoid and let $Z$ be a locally compact space. $\G$ acts on $Z$ (or $Z$ is a $\G$-space) if there is a continuous, open map $r_{Z}: Z \rightarrow \G^{(0)}$ and a continous map $(\gamma, z) \mapsto \gamma .z$ from $\G \ast Z:= \lbrace (\gamma, z) \in \G \times Z | s_{\G}(\gamma)=r_{Z}(z)\rbrace$ to $Z$ such that $r_{Z}(z).z=z$ for all $z$ and $(\eta \gamma).z= \eta.(\gamma. z)$ for all $\gamma, \eta \in \G^{(2)}$ with $s_{\G}(\gamma)=r_{Z}(z)$.
+Let $\G$ be a locally compact groupoid and let $Z$ be a locally compact space. $\G$ acts on $Z$ (or $Z$ is a $\G$-space) if there is a continuous, open map $r_{Z}: Z \rightarrow \G^{(0)}$ and a continuous map $(\gamma, z) \mapsto \gamma .z$ from $\G \ast Z:= \lbrace (\gamma, z) \in \G \times Z | s_{\G}(\gamma)=r_{Z}(z)\rbrace$ to $Z$ such that $r_{Z}(z).z=z$ for all $z$ and $(\eta \gamma).z= \eta.(\gamma. z)$ for all $\gamma, \eta \in \G^{(2)}$ with $s_{\G}(\gamma)=r_{Z}(z)$.
 \end{definition}
 
 When it is clear we drop the subscripts on each map. Right actions are dealt with similarly, replacing each incidence of $r_{Z}$ with $s_{Z}$.
@@ -316,7 +316,7 @@ A \textit{globalisation} of a partial action $\theta: G \rightarrow I(X)$ is a s
 A globalisation is minimal if it injects into any other globalisation. In \cite{MR2041539} the authors proved that for any partial action of a group $G$ there is a unique globalisation (up to equivalence of partial actions). This is defined as follows:
 
 \begin{definition}
-Let $X$ be a topological space and let $G$ be a group acting partially on $X$. Then we denote by $\Omega$ the \textit{Morita evelope} of the action of $G$ on $X$, which is constructed as follows:
+Let $X$ be a topological space and let $G$ be a group acting partially on $X$. Then we denote by $\Omega$ the \textit{Morita envelope} of the action of $G$ on $X$, which is constructed as follows:
 
 Consider the space $X\times G$, equipped with the product topology. Then define $\sim$ on $X\times G$ by $(x,g)\sim (y,h)$ if and only if $x(h^{-1}g)=y$. We define $\Omega$ as the quotient of $X\times G$ by $\sim$ with the quotient topology. 
 
@@ -326,7 +326,7 @@ $G$ acts on $\Omega$ using right multiplication by inverses on the group factor 
 This notion will be developed further in Section \ref{Sect:GVC} and will also play an important role in certain examples in Chapter 5.
 
 \section{\texorpdfstring{$C^{*}$}{C*}-algebras of groupoids and inverse semigroups.}
-Now we change directions slightly by introducing the analytic counterparts to topological spaces; $C^{*}$-algebras play an important role in generalising the notions of topology into a noncommutative setting. The work we initially outline below is the duality theorem of Geifand, Neimark and Segal that connects topology with analysis. Then we develop some purely noncommutative ideas by outlining the construction of natural $C^{*}$-algebras associated to both groupoids and inverse semigroups.
+Now we change directions slightly by introducing the analytic counterparts to topological spaces; $C^{*}$-algebras play an important role in generalising the notions of topology into a noncommutative setting. The work we initially outline below is the duality theorem of Gelfand, Naimark and Segal that connects topology with analysis. Then we develop some purely noncommutative ideas by outlining the construction of natural $C^{*}$-algebras associated to both groupoids and inverse semigroups.
 
 \subsection{Topological Spaces and Commutative $C^{*}$-algebras}
 
@@ -545,7 +545,7 @@ Below is the main result of \cite{Milan-Steinberg}, a generalisation of the main
 Let $\rho: \G \rightarrow S$ be a continuous, faithful closed transverse cocycle where $\G$ is a locally compact groupoid and $S$ is a countable inverse semigroup. Then there is a locally compact Hausdorff space $X$ equipped with an action of $S$ so that $\G$ is Morita equivalent to the groupoid of germs $X \rtimes S$. Consequently $C^{*}_{max}\G$ is strongly Morita equivalent to $C_{0}(X)\rtimes S$. If $S$ is a group, then the analogous result holds for reduced $C^{*}$-algebras.
 \end{theorem}
 
-From an F-inverse monoid $S$ it is possible to construct a (T,C,F)-cocycle onto the maximal group homomorphic image of $G$ \cite{MR1900993}. To prove Theorem \ref{Thm:IT2} in the case that the monoid is $F$-inverse then makes use of the Morita envelope of the partial action that the maximal group homomorphic image $G$ has on the unit space of the universal groupoid $\G_{\E}$. IThe closed condition on the cocycle makes this space Hausdorff.
+From an F-inverse monoid $S$ it is possible to construct a (T,C,F)-cocycle onto the maximal group homomorphic image of $G$ \cite{MR1900993}. To prove Theorem \ref{Thm:IT2} in the case that the monoid is $F$-inverse then makes use of the Morita envelope of the partial action that the maximal group homomorphic image $G$ has on the unit space of the universal groupoid $\G_{\E}$. The closed condition on the cocycle makes this space Hausdorff.
 
 What follows from here can be found as a Corollary to Theorem \ref{Thm:IT2} from \cite{Milan-Steinberg}. We provide a direct proof of a special case using the original methods of \cite{MR1900993}. This is possible by considering the construction of the groupoid $\G_{\E}$ for a strongly 0-E-unitary inverse monoid $S$. It is clear that the only danger is mapping elements to $0$ in $\Gamma^{0}$; this is overcome by the observation that the element $[0,f]$ would be defined if and only if $f \in D_{0}$. However, $f \in D_{0}$ implies that $f(0)=1$ and hence $f \not\in \E$, so the $0$ element of $S$ contributes nothing to the groupoid $\G_{\E}$, either in objects or arrows.
 
@@ -620,7 +620,7 @@ Let $p,q \in A$ be projections.
 \begin{enumerate}
 \item $p$ is said to be \textit{equivalent} to $q$, $p \sim q$, if there exists a partial isometry $v \in A$ such that $p=v^{*}v$ and $q=vv^{*}$.
 \item $p$ is said to be \textit{unitarily equivalent} to $q$, $p \sim_{u} q$, if there exists a unitary $u \in A$ such that $p=u^{*}qu$.
-\item $p$ is said to be \textit{homotopic} to $q$, $p \sim_{h} q$, is there exists a norm continous path of projections $p_{t}$ such that $p_{0}=p$ and $p_{1}=q$.
+\item $p$ is said to be \textit{homotopic} to $q$, $p \sim_{h} q$, is there exists a norm continuous path of projections $p_{t}$ such that $p_{0}=p$ and $p_{1}=q$.
 \end{enumerate}
 \end{definition}
 
@@ -708,7 +708,7 @@ This six term sequence is a key tool in computations concerning K-theory of $C^{
 The last ideas that are outlined in this section are those of Pimsner and Voiculescu on actions of groups on $C^{*}$-algebras via automorphisms.
 
 \begin{definition}
-Let $A$ be a $C^{*}$-algebra represented on a Hilbert space $\mathcal{H}$ and let $\rho: G \rightarrow Aut(A)$ be a representation of a group $G$. Then we can naturally form the $C^{*}$-algebra $A\rtimes_{r}G$; it is the completion of $C_{c}(G,A)$ equipped with a twisted convolution and completed in the norm that arises from the represention in $\mathcal{B}(\mathcal{H}\oplus \ell^{2}(G))$.
+Let $A$ be a $C^{*}$-algebra represented on a Hilbert space $\mathcal{H}$ and let $\rho: G \rightarrow Aut(A)$ be a representation of a group $G$. Then we can naturally form the $C^{*}$-algebra $A\rtimes_{r}G$; it is the completion of $C_{c}(G,A)$ equipped with a twisted convolution and completed in the norm that arises from the representation in $\mathcal{B}(\mathcal{H}\oplus \ell^{2}(G))$.
 \end{definition}
 
 The following is original result of Pimsner-Voiculescu concerning the structure of infinite cyclic group actions \cite{MR670181}:

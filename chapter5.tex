@@ -58,7 +58,7 @@ This Theorem gives a method for computing the K-theory for certain reduced semig
 \subsection{The Examples.}
 We consider the examples outlined in the introduction as well as other inverse monoids that we have introduced throughout the document. 
 \begin{example}\label{Ex:Toe}(Toeplitz extension)
-We begin by considering the first $C^{*}$-algebraic construction outlined in the introduction. Let $X=\mathbb{N} \subset \mathbb{Z}=G$. We arive at a partial translation structure for $X$ by considering the maps:
+We begin by considering the first $C^{*}$-algebraic construction outlined in the introduction. Let $X=\mathbb{N} \subset \mathbb{Z}=G$. We arrive at a partial translation structure for $X$ by considering the maps:
 \begin{eqnarray*}
 & t_{n}: \mathbb{N} \rightarrow \mathbb{N}\setminus \lbrace 0,1,...,n-1 \rbrace, x \mapsto x+n \\
 &t_{-n}: \mathbb{N}\setminus \lbrace 0,1,...,n-1 \rbrace \rightarrow \mathbb{N} , x \mapsto x-n
@@ -137,7 +137,7 @@ Let $X$ be the subset of the free group $F_{n}=\langle a_{1},...,a_{n} \rangle$ 
 \end{equation*}
 This sequence is the translation algebra sequence that arises from Theorem \ref{thm:T4}. In addition to this sequence the authors of \cite{MR670181} gave a computation of the K-theory groups associated to $C^{*}\mathcal{T}_{n}$ as those for $C^{*}_{r}F_{n-1}$, giving an inductive method for computing the K-theory of a free group $C^{*}$-algebra. We give a new proof using the generalised short exact sequence from Theorem \ref{thm:PV1} and Theorem \ref{Thm:Norling}.
 
-For this subspace the behavour is exceptionally like the Toeplitz shift in Example \ref{Ex:Toe}, however it is decidedly more complex than in that instance.
+For this subspace the behaviour is exceptionally like the Toeplitz shift in Example \ref{Ex:Toe}, however it is decidedly more complex than in that instance.
 
 \begin{claim}
 Let $w \in F_{n}$. Then $t_{w}^{*}t_{w}\approx 1$.
@@ -178,7 +178,7 @@ We would like to understand the algebras that appear within this sequence. Let u
 
 We again appeal to Theorem \ref{Thm:Norling} to compute the K-theory. By Proposition \ref{prop:P10} we know that the action on $E(P_{n})$ translates, via the bijection onto $X$, to the translation action of $F_{n}$ on $X$. It follows that there is only a single orbit under this action as partial translation actions are transitive. The stabiliser is obviously trivial in this case, hence by Theorem \ref{Thm:Norling} we arrive at the computation $K_{*}(C^{*}_{r}(P_{n})) \cong K_{*}(\mathbb{C})\cong \mathbb{Z}$. All that remains is to compute the maps in the sequence, which are also well known..
 
-We give a direct computation of the K-theory of the final term here, by considering Lawsons \textit{orthogonal completions} of $P_{n}$ \cite{lawson-2011-1}, denoted by $D(P_{n})$ and $C(P_{n})$ respectively. The main idea of the orthogonal completion $D(P_{n}$ is to construct a monoid from $P_{n}$ that has new elements that represent finite sums of orthogonal elements that are compatable with the obvious geometric composition rules. To describe $C(P_{n})$ requires a definition:
+We give a direct computation of the K-theory of the final term here, by considering Lawsons \textit{orthogonal completions} of $P_{n}$ \cite{lawson-2011-1}, denoted by $D(P_{n})$ and $C(P_{n})$ respectively. The main idea of the orthogonal completion $D(P_{n}$ is to construct a monoid from $P_{n}$ that has new elements that represent finite sums of orthogonal elements that are compatible with the obvious geometric composition rules. To describe $C(P_{n})$ requires a definition:
 
 \begin{definition}
 Let $E$ be a semilattice and let $e,f \in E$. $e$ is \textit{dense} in $f$ if $e \leq f$ and there does not exist $z \in E$ such that $z \leq f$ and $ze=0$. 
@@ -186,9 +186,9 @@ Let $E$ be a semilattice and let $e,f \in E$. $e$ is \textit{dense} in $f$ if $e
 
 The construction of $C(P_{n})$ is similar to that of $D(P_{n})$, except that certain relations involving dense elements are removed via a congruence \cite{lawson-2011-1}.
 
-We remark that any tight representation of a inverse monoid cannot separate dense idempotents \cite{MR2419901}. This is particularly relevent in this example. It is clear that in $P_{n}$ the elements $\lbrace t_{a_{i}}t_{a_{i}}^{*} | i = 1,..,n \rbrace$ are pairwise orthogonal, and in the reduced $C^{*}$-algebra they have sum that is less than $1$. The idea of the orthogonal completion is to capture this $C^{*}$-algebraic behavour in an inverse monoid; in $D(P_{n})$ the sum $\bigvee_{i=1}^{n} t_{a_{i}}t_{a_{i}}^{*}$ is defined and is dense in $1$, and equal to $1$ in $C(P_{n})$, which has an underlying tight representation of $S$. 
+We remark that any tight representation of a inverse monoid cannot separate dense idempotents \cite{MR2419901}. This is particularly relevant in this example. It is clear that in $P_{n}$ the elements $\lbrace t_{a_{i}}t_{a_{i}}^{*} | i = 1,..,n \rbrace$ are pairwise orthogonal, and in the reduced $C^{*}$-algebra they have sum that is less than $1$. The idea of the orthogonal completion is to capture this $C^{*}$-algebraic behaviour in an inverse monoid; in $D(P_{n})$ the sum $\bigvee_{i=1}^{n} t_{a_{i}}t_{a_{i}}^{*}$ is defined and is dense in $1$, and equal to $1$ in $C(P_{n})$, which has an underlying tight representation of $S$. 
 
-It follows, from von Neumann equivalence of projections, that each $t_{a_{i}}t_{a_{i}}^{*}$ viewed as an operator in $C^{*}_{r}(\G_{\E_{\infty}})$ is equivalent to $1$ at the level of K-theory, in paricular using Proposition 5.3.1 and Lemma 5.3.2 from \cite{MR1222415} we observe that $C^{*}_{r}(\G_{\E_{\infty}})$ is stable and that $[1]=\sum_{i=1}^{n}[1]$. From our calculations above we know that the K-theory group $K_{0}(C^{*}_{r}(P_{n}))$ is generated by the class $[1]$, hence we know that $[1]$ generates $K_{0}(C^{*}_{r}(\G_{\E_{\infty}})$ also. It follows that $\sum_{i=1}^{n-1}[1]=[0]$, and this gives a homomorphism from $C_{n-1}$. That this map induces an isomorphism is well known \cite{MR2457037}. 
+It follows, from von Neumann equivalence of projections, that each $t_{a_{i}}t_{a_{i}}^{*}$ viewed as an operator in $C^{*}_{r}(\G_{\E_{\infty}})$ is equivalent to $1$ at the level of K-theory, in particular using Proposition 5.3.1 and Lemma 5.3.2 from \cite{MR1222415} we observe that $C^{*}_{r}(\G_{\E_{\infty}})$ is stable and that $[1]=\sum_{i=1}^{n}[1]$. From our calculations above we know that the K-theory group $K_{0}(C^{*}_{r}(P_{n}))$ is generated by the class $[1]$, hence we know that $[1]$ generates $K_{0}(C^{*}_{r}(\G_{\E_{\infty}})$ also. It follows that $\sum_{i=1}^{n-1}[1]=[0]$, and this gives a homomorphism from $C_{n-1}$. That this map induces an isomorphism is well known \cite{MR2457037}. 
 
 \end{example}
 
@@ -269,7 +269,7 @@ Let $\Gamma$ be a finitely generated residually finite discrete group with the H
 $U$ is an open, saturated subset of the boundary $\partial\beta Y$. 
 \end{lemma}
 \begin{proof}
-We have already shown above that $U$ is open. To see it is saturated we prove that $U^{c}$ is saturated. Let $g_{Y}$ and $g_{X}$ be the continous extensions of the map obtained by acting through $g$ on $Y$ and $X$ respectively. We observe that the following diagram commutes:
+We have already shown above that $U$ is open. To see it is saturated we prove that $U^{c}$ is saturated. Let $g_{Y}$ and $g_{X}$ be the continuous extensions of the map obtained by acting through $g$ on $Y$ and $X$ respectively. We observe that the following diagram commutes:
 \begin{equation*}
 \xymatrix{
 \overline{g}_{Y}:\beta Y\ar[r]\ar[d]^{p} & \beta Y\ar[d]^{p}\\
@@ -312,7 +312,7 @@ We consider the preimages $f^{-1}(X_{i})$. These are clearly invariant subsets o
 \item each $G(X_{i} \times \mathbb{N})|_{\partial\beta \mathbb{N}}$ is isomorphic to $(X_{i}\times X_{i})\times G(\mathbb{N})|_{\partial\beta \mathbb{N}}$, where $\mathbb{N}$ has the well-spaced metric;
 \item the union $\sqcup_{i}G(X_{i}\times \mathbb{N})|_{\partial\beta \mathbb{N}}$ is the entire of $G(Y)|_{U}$.
 \end{enumerate}
-To prove (1), observe that the groupoid decomposes as $G(X_{i}\times \mathbb{N}) = \bigcup_{R>0}\overline{\Delta_{R}(X_{i}\times \mathbb{N})}$. For each $R>0$ we can find a $j_{R}$ such that $\Delta_{R}(X_{i}\times \mathbb{N}) = F_{R} \cup \bigcup_{j>j_{R}}\Delta_{R}(X_{i}\times \lbrace j \rbrace)$, hence for the boundary part of this groupoid it is enough to understand what happens in each piece $Y_{i,j}$, which is constant for each $j$. Secondly, observe that in the induced metric on a column, the pieces $Y_{i,j}$ separate as $j\rightarrow \infty$. This, coupled with the fact that for large enough $R$, we know that $ \Delta^{j}_{R}(X_{i}\times \mathbb{N}) = X_{i} \times X_{i}$ allow us to deduce that any behavour at infinity of this groupoid is a product of $X_{i} \times X_{i}$ and the boundary groupoid $G(\mathbb{N})|_{\partial\beta \mathbb{N}$ where $\mathbb{N}$ has the coarsely disconnected metric. This groupoid is isomorphic to $\partial\beta \mathbb{N}$, from which we can deduce that $G(X_{i}\times \mathbb{N})|_{\partial\beta \mathbb{N}} = (X_{i}\times X_{i})\times \partial\beta \mathbb{N}$ for each $i$.
+To prove (1), observe that the groupoid decomposes as $G(X_{i}\times \mathbb{N}) = \bigcup_{R>0}\overline{\Delta_{R}(X_{i}\times \mathbb{N})}$. For each $R>0$ we can find a $j_{R}$ such that $\Delta_{R}(X_{i}\times \mathbb{N}) = F_{R} \cup \bigcup_{j>j_{R}}\Delta_{R}(X_{i}\times \lbrace j \rbrace)$, hence for the boundary part of this groupoid it is enough to understand what happens in each piece $Y_{i,j}$, which is constant for each $j$. Secondly, observe that in the induced metric on a column, the pieces $Y_{i,j}$ separate as $j\rightarrow \infty$. This, coupled with the fact that for large enough $R$, we know that $ \Delta^{j}_{R}(X_{i}\times \mathbb{N}) = X_{i} \times X_{i}$ allow us to deduce that any behaviour at infinity of this groupoid is a product of $X_{i} \times X_{i}$ and the boundary groupoid $G(\mathbb{N})|_{\partial\beta \mathbb{N}$ where $\mathbb{N}$ has the coarsely disconnected metric. This groupoid is isomorphic to $\partial\beta \mathbb{N}$, from which we can deduce that $G(X_{i}\times \mathbb{N})|_{\partial\beta \mathbb{N}} = (X_{i}\times X_{i})\times \partial\beta \mathbb{N}$ for each $i$.
 
 To prove (2) we assume for a contradiction that there is a partial translation $t$, such that $\overline{t}$ is not an element of the disjoint union. Such an element maps some $(x_{i}, \omega)$ to $(x_{k},\omega)$, where $i\not =k$. Without loss of generality assume also $t$ has translation length at most $R$. Then the domain and range of $t$ are both infinite (as the closure is defined in $G(Y)|_{U}$), and must be contained within a strip of width at most $R>0$. From the definition of the metric, there are only finitely many $Y_{i,j}$ within such a rectangle, hence $t \in F_{R}$ and hence $\overline{t}$ is not defined in $G(Y)|_{U}$, which yields a contradiction.
 \end{proof}
@@ -376,7 +376,7 @@ We explore this result from the point of view of the geometry that can be associ
 
 Recall the coarse Baum-Connes conjecture for any uniformly discrete bounded geometry space $X$ can be phrased as a conjecture with coefficients in a certain groupoid $G(X)$ associated to $X$ \cite{MR1905840}. This groupoid admits a transformation groupoid decomposition \cite[Lemma 3.3b)]{MR1905840}, giving an easy description of $G(X)$ when it is possible to get a handle on the generators of the metric coarse structure on $X$. When $X$ is coarsely embedded into a group, this is certainly the case; the concept of a partial translation structure \cite{MR2363428} gives any space coarsely embedded into a group a nice collection of generators, as well as a locally compact, Hausdorff, second countable \etale groupoid that implements the transformation decomposition.
 
-On the other hand, the question of when a groupoid admits a transformation groupoid decompostion, up to Morita equivalence, has been well studied for the class of groupoids that are constructed from suitable inverse semigroups \cite{MR1900993,Milan-Steinberg}. This is related to the problem of globalisation of a partial action of $\Gamma$ on a space $X$. The result would be a space $Y$, with a true action of $\Gamma$ such that $X \hookrightarrow Y$ is a topological embedding and the restriction of the $\Gamma$ action to $X$ induces the original partial action.
+On the other hand, the question of when a groupoid admits a transformation groupoid decomposition, up to Morita equivalence, has been well studied for the class of groupoids that are constructed from suitable inverse semigroups \cite{MR1900993,Milan-Steinberg}. This is related to the problem of globalisation of a partial action of $\Gamma$ on a space $X$. The result would be a space $Y$, with a true action of $\Gamma$ such that $X \hookrightarrow Y$ is a topological embedding and the restriction of the $\Gamma$ action to $X$ induces the original partial action.
 
 The problem of globalisation of partial actions of groups was discussed in Section \ref{Sect:S3} of Chapter 2. We recall following definition from Chapter 2:
 \begin{definition}
@@ -424,7 +424,7 @@ A finitely generated discrete group $\Gamma$ is a \textit{Gromov monster group} 
 
 These groups were shown to exist by Gromov \cite{MR1978492}, with a detailed proof by Arzhantseva, Delzant \cite{exrangrps}. The construction is technical and we require no details beyond those presented in the definition.
 
-The rest of this chapter is deadicated to proving the following theorem:
+The rest of this chapter is dedicated to proving the following theorem:
 
 \begin{thm}
 Let $\Gamma$ be a Gromov monster group. Then there are locally compact Hausdorff topological $\Gamma$-spaces $Y_{i}$, $i \in \lbrace 1,2,3 \rbrace$ and a short exact sequence:
@@ -510,7 +510,7 @@ This result relies on many aspects of Chapter 4.
 The boundary groupoid $G(X)|_{\partial\beta X}$ admits a (T,C,F)-cocycle onto $F_{k}$. 
 \end{lemma}
 \begin{proof}
-We remark that this follows directly from the fact that the coarse boundary groupoid $G(X)|_{\partial\beta X}$ has a decompostion as $\partial\beta X \rtimes \G_{\widehat{X}}$, and that $S_{inf}$ is strongly $0$-F-inverse.
+We remark that this follows directly from the fact that the coarse boundary groupoid $G(X)|_{\partial\beta X}$ has a decomposition as $\partial\beta X \rtimes \G_{\widehat{X}}$, and that $S_{inf}$ is strongly $0$-F-inverse.
 \end{proof}
 
 \begin{proof}(Of Theorem \ref{Thm:GM2}).

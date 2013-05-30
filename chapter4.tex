@@ -10,9 +10,9 @@ As an example of the flexibility of this new conjecture we verify it for certain
 In this section we outline the coarse geometry and group theoretic properties that are going to be considered throughout this chapter. The overall scheme of this section is first to consider some general coarse ideas associated to metric spaces and then move onto discussions of certain analytic properties held by discrete groups. We will develop these coarse ideas further by introducing abstract coarse structures and their relationship to metric spaces.
 
 \subsection{Coarse geometry.}
-The notions of coarse geometry a similar in spirit to those of topology, however the focus is on the large as opposed to the small. Recall that a function $f$ between topological spaces $X$ and $Y$ is continous if the preimage of every open set in $Y$ is open in $X$. Suppose additionally that $X$ and $Y$ are metric spaces equipped with the metric topology. Then this definition of continuous function really asks that the open neighbourhoods of a point in $Y$ have open preimage in $X$ and these are in particular going to be sets of very small diameter. 
+The notions of coarse geometry a similar in spirit to those of topology, however the focus is on the large as opposed to the small. Recall that a function $f$ between topological spaces $X$ and $Y$ is continuous if the preimage of every open set in $Y$ is open in $X$. Suppose additionally that $X$ and $Y$ are metric spaces equipped with the metric topology. Then this definition of continuous function really asks that the open neighbourhoods of a point in $Y$ have open preimage in $X$ and these are in particular going to be sets of very small diameter. 
 
-The key idea in coarse geometry is somehow to supplant this notion of continous by replacing the occurrences of open in the definition with \textit{bounded}. We call such maps \textit{metrically proper}. If additionally suppose that the map $f$ sends sets of diameter $R$ to sets of diameter at most $S$ for some $S>0$. Then we call such a map \textit{bornologous}. Combining these two, we arrive at a definition:
+The key idea in coarse geometry is somehow to supplant this notion of continuous by replacing the occurrences of open in the definition with \textit{bounded}. We call such maps \textit{metrically proper}. If additionally suppose that the map $f$ sends sets of diameter $R$ to sets of diameter at most $S$ for some $S>0$. Then we call such a map \textit{bornologous}. Combining these two, we arrive at a definition:
 
 \begin{definition}
 Let $f:X \rightarrow Y$ be a map of metric spaces. $f$ is \textit{coarse} if it is both metrically proper and bornologous.
@@ -37,7 +37,7 @@ A map is called \textit{effectively proper} if additionally, for each $R>0$ ther
 This notion seems a little less natural than a metrically proper mapping, however it plays an important role in describing an embedding in this category. In particular, focusing on coarse embeddings, it is enough to consider pairs of maps that are effectively proper and bornlogous. The following is proved in \cite{EG-permanence}.
 
 \begin{lemma}
-Let $X$ and $Y$ be coarsely equivalent metric spaces. Then there exists $f$ and $g$ that are effectively proper and bornologous that impliment this coarse equivalence.
+Let $X$ and $Y$ be coarsely equivalent metric spaces. Then there exists $f$ and $g$ that are effectively proper and bornologous that implement this coarse equivalence.
 \end{lemma}
 
 The notion of a coarse embedding is fundamental to the applications of this theory to topology and analysis, so we make it precise here:
@@ -55,14 +55,14 @@ This connects to the notion of an effectively proper, bornologous map by observi
 This property is exceptionally flexible; many constructions of metric spaces preserve coarse embeddability \cite{EG-permanence}. This property will be important in later in the chapter where it plays an important role in results concerning groupoids and the coarse Baum-Connes conjecture.
 
 \subsection{Properties of finitely generated discrete groups and \'etale groupoids.}
-Via the construction of a Cayley graph, it is possible to introduce a metric to a finitely generated group that is compatable with the group structure. Many of the ideas in geometric group theory rely on computing coarse properties, such as coarse embeddings, for this metric. Additionally, coarse properties of this metric often connect to analytic properties of groups that are equivariant with respect to the group action. In the global context of the Baum-Connes conjecture for groups and groupoids the following property plays an important role. As we primarily consider transformation groupoids we focus the definition on them.
+Via the construction of a Cayley graph, it is possible to introduce a metric to a finitely generated group that is compatible with the group structure. Many of the ideas in geometric group theory rely on computing coarse properties, such as coarse embeddings, for this metric. Additionally, coarse properties of this metric often connect to analytic properties of groups that are equivariant with respect to the group action. In the global context of the Baum-Connes conjecture for groups and groupoids the following property plays an important role. As we primarily consider transformation groupoids we focus the definition on them.
 
 \begin{definition}
-Let $H$ be a continous field of Hilbert spaces over $X$. we say that a transformation groupoid $G:=X\rtimes \Gamma$ acts on $H$ by affine isometries if for every $(x,g) \in G$ there exists an affine isometry $A_{(x,g)}:H_{xg}\rightarrow H_{x}$ such that:
+Let $H$ be a continuous field of Hilbert spaces over $X$. we say that a transformation groupoid $G:=X\rtimes \Gamma$ acts on $H$ by affine isometries if for every $(x,g) \in G$ there exists an affine isometry $A_{(x,g)}:H_{xg}\rightarrow H_{x}$ such that:
 \begin{enumerate}
 \item $A_{(x,e)}$ is the identity map.
 \item Whenever the pair $((x,g),(y,g^{'})) \in G^{(2)}$ the maps $A_{(x,g)}$, $A_{(y,g^{'})}$ and $A_{(x,gg^{'})}$ satisfy the composition law $A_{(x,g)}\circ A_{(y,g^{'})}=A_{(x,gg^{'}}$.
-\item For any continous vector field $h(x)$ in $H$ and every $g \in \Gamma$ we have that $A_{(x,g)}(h(xg))$ is a continous vector field in $H$.
+\item For any continuous vector field $h(x)$ in $H$ and every $g \in \Gamma$ we have that $A_{(x,g)}(h(xg))$ is a continuous vector field in $H$.
 \end{enumerate}
 \end{definition}
 
@@ -190,7 +190,7 @@ So we have constructed a map, using only the K-theory long exact sequence, that 
 \begin{conjecture}\label{conj:CBC1}(Coarse Baum-Connes conjecture I)
 Let $X$ be a proper metric space and let $\mu: K_{*}(X) \rightarrow K_{*}(C^{*}(X))$ be boundary map defined above. Then $\mu$ is an isomorphism.
 \end{conjecture}
-This conjecture is slightly naive, as it is not in fact functorial under coarse maps. The left hand side, $K_{*}(X)$ is a topological homology theory, functorial under proper continous maps (see Chapter 5 of \cite{MR1399087}), whilst the right hand side is a coarse invariant. Thus, the class of spaces that naturally fit this conjecture are those whose topology is uniformly controlled, that is \textit{uniformly contractible spaces}
+This conjecture is slightly naive, as it is not in fact functorial under coarse maps. The left hand side, $K_{*}(X)$ is a topological homology theory, functorial under proper continuous maps (see Chapter 5 of \cite{MR1399087}), whilst the right hand side is a coarse invariant. Thus, the class of spaces that naturally fit this conjecture are those whose topology is uniformly controlled, that is \textit{uniformly contractible spaces}
 
 \begin{conjecture}
 Let $X$ be a uniformly contractible simplicial complex of bounded geometry. Then the coarse Baum-Connes conjecture I is true for $X$.
@@ -356,7 +356,7 @@ A $C^{*}$-algebra $A$ is called a $G$-$C^{*}$-algebra if it is a $C_{0}(G^{(0)})
 \item there is a $*$-homomorphism to the centre of the multiplier algebra of $A$, $\theta: C_{0}(G^{(0)}) \rightarrow Z(M(A))$, such that $\overline{\theta(C_{0}(G^{(0)}))A} = A$
 \item there is an isomorphism from $\alpha: s^{*}A \rightarrow r^{*}A$ such that for each $(g,h) \in G^{(2)}$ the morphisms $\alpha(g):A_{s(g)} \rightarrow A_{r(g)}$ satisfy $\alpha(g)\circ \alpha(h) = \alpha(gh)$
 \end{enumerate}
-We are going to be concerned with \textit{proper} $G$-algebras. Let $Z$ be a $G$-space, then under the previous definition a $Z\rtimes G$-algebra is both a $G$-algebra and a $C_{0}(Z)$-algebra, with compatability between the two structures. We then say a $G$-algebra $A$ is proper if there exists a proper $G$-space $Z$ such that $A$ is a $Z\times G$-algebra.
+We are going to be concerned with \textit{proper} $G$-algebras. Let $Z$ be a $G$-space, then under the previous definition a $Z\rtimes G$-algebra is both a $G$-algebra and a $C_{0}(Z)$-algebra, with compatibility between the two structures. We then say a $G$-algebra $A$ is proper if there exists a proper $G$-space $Z$ such that $A$ is a $Z\times G$-algebra.
 \end{definition}
 
 In this context we can also extend the action of the groupoid $G$ from a $G$-algebra $A$ to any Hilbert module $E$ over $A$. See \cite{MR1798599} for more details.
@@ -367,7 +367,7 @@ Let $A$ and $B$ be $G$-algebras. Then a Kasparov $(A,B)$ $G$-equivariant bimodul
 \item $a(F - F^{*}) \in \mathcal{K}(E)$
 \item $a(F^{2}- 1) \in \mathcal{K}(E)$
 \item $[a,F] \in \mathcal{K}(E)$
-\item $a_{1}(V(s^{*}F)V^{*}-r^{*}F) \in r^{*}\mathcal{K}(E)$, where $V$ denotes the unitary operator that impliments the action of $G$ on $E$.
+\item $a_{1}(V(s^{*}F)V^{*}-r^{*}F) \in r^{*}\mathcal{K}(E)$, where $V$ denotes the unitary operator that implements the action of $G$ on $E$.
 \end{enumerate}
 Then we denote by $KK_{G}(A,B)$ the group of homotopy classes of Kasparov $(A,B)$ $G$-equivariant bimodules. 
 \end{definition}
@@ -380,7 +380,7 @@ This theory has many of the same features as the more traditional non-equivarian
 \begin{equation*}
 \sigma_{G^{(0)},D}: KK_{G}(A,B) \rightarrow KK_{G}(A\otimes_{C_{0}(G^{(0)})}D,B\otimes_{C_{0}(G^{(0)})}D).
 \end{equation*}
-\item There is a natural associative product, which is compatable with $\sigma_{G^{(0)},-}$ in the obvious way.
+\item There is a natural associative product, which is comparable with $\sigma_{G^{(0)},-}$ in the obvious way.
 \item There are descent morphisms compatible with the product:
 \begin{eqnarray*}
 \item j_{G,(red)}:KK_{G}(A,B) \rightarrow KK(A\rtimes_{(red)}G,B\rtimes_{(red)}G)
@@ -512,7 +512,7 @@ It is also clear that the image of $\alpha$ is contained in the kernel of $q$, w
 \end{equation*}
 where the rows here are exact. 
 
-As in \cite{MR1911663} we would now choose suitable groupoids $G$ and subsets $F$ of the unit space $G^{(0)}$ that allow us to use the above sequence to analyse the Baum-Connes conjecture for the groupoid $G$. We have in mind the suitation that $G=G(X)$, the coarse groupoid associated to some uniformly discrete bounded geometry metric space $X$.
+As in \cite{MR1911663} we would now choose suitable groupoids $G$ and subsets $F$ of the unit space $G^{(0)}$ that allow us to use the above sequence to analyse the Baum-Connes conjecture for the groupoid $G$. We have in mind the situation that $G=G(X)$, the coarse groupoid associated to some uniformly discrete bounded geometry metric space $X$.
 
 \subsection{The Coarse Groupoid Conjecture}
 Let $X$ be a uniformly discrete bounded geometry metric space. From what was described above we can associate to each closed saturated subset $F$ of the unit space space $\beta X$ a long exact sequence in K-theory. We consider the obvious closed saturated subset: $\partial \beta X \subset G(X)^{(0)}$. This gives us the following commutative diagram (omitting coefficients):
@@ -526,7 +526,7 @@ Let $X$ be a uniformly discrete bounded geometry metric space. From what was des
 We can now properly formulate the boundary conjecture (replacing the coefficients):
 
 \begin{conj}\label{MC:S1} [Boundary Coarse Baum-Connes Conjecture]
-Let $X$ be a unformly discrete bounded geometry metric space. Then the assembly map:
+Let $X$ be a uniformly discrete bounded geometry metric space. Then the assembly map:
 \begin{equation*}
 \mu_{bdry}:K_{*}^{top}(G(X)|_{\partial\beta X}, l^{\infty}(X,\mathcal{K})/C_{0}(X,\mathcal{K})) \rightarrow K_{*}((l^{\infty}(X,\mathcal{K})/C_{0}(X,\mathcal{K}))\rtimes_{r}G(X)|_{\partial\beta X})
 \end{equation*}
@@ -634,7 +634,7 @@ As $X$ is uniformly discrete with bounded geometry and $X \times X$ is equipped 
 I & = & \lbrace f | \forall \epsilon > 0 \exists K \subset X \times X \mbox{ bounded }: \vert f_{xy} \vert \leq \epsilon \mbox{ } \forall (x,y) \in X\times X \setminus K \rbrace & = & I_{G}
 \end{equation}
 \end{proof}
-Recall that the assembly map $\mu_{I_{G}}$ associated to the open saturated subset $X$ is given by the composition of $\mu_{X\timesX}: K^{top}_{*}(X\timesX) \rightarrow K_{*}(\mathcal{K}(\ell^{2}(X))$ with the inclusion $i_{*}K_{*}(\mathcal{K}(\ell^{2}(X)) \rightarrow K_{*}(I_{G})$. So to understand how the assembly map $\mu_{I_{G}}$ behaves, it is enough to consider the behavour of the inclusion $i_{*}$ as the map $\mu_{X\timesX}$ is an isomorphism.
+Recall that the assembly map $\mu_{I_{G}}$ associated to the open saturated subset $X$ is given by the composition of $\mu_{X\timesX}: K^{top}_{*}(X\timesX) \rightarrow K_{*}(\mathcal{K}(\ell^{2}(X))$ with the inclusion $i_{*}K_{*}(\mathcal{K}(\ell^{2}(X)) \rightarrow K_{*}(I_{G})$. So to understand how the assembly map $\mu_{I_{G}}$ behaves, it is enough to consider the behaviour of the inclusion $i_{*}$ as the map $\mu_{X\timesX}$ is an isomorphism.
 
 \begin{proposition}\label{Prop:Ghost}
 Let $\lbrace X_{i} \rbrace_{i\in \mathbb{N}}$ be an expander sequence. Then:
@@ -644,7 +644,7 @@ K_{*}^{top}(X\timesX)\cong K_{*}(\mathcal{K}(\ell^{2}(X)) \rightarrow K_{*}(I_{G
 is not surjective but is injective.
 \end{proposition}
 \begin{proof}
-The proof is an adaption of a well known argument and relies on considering the algebra $C^{*}X_{\infty}$ which is the Roe algebra of the space of graphs with the disjoint union 'metric' and the following exact sequences.
+The proof is an adaptation of a well known argument and relies on considering the algebra $C^{*}X_{\infty}$ which is the Roe algebra of the space of graphs with the disjoint union 'metric' and the following exact sequences.
 \begin{equation*}
 \xymatrix{\bigoplus_{i\in\mathbb{N}}\mathcal{K}(\ell^{2}(X_{i}))\ar@{=}[r] &\bigoplus_{i\in \mathbb{N}}C^{*}X_{i} \ar@{^{(}->}[r]\ar@{^{(}->}[dr] & C^{*}X_{\infty} \ar@{->>}[r]^{q} \ar@{^{(}->}[d] & \frac{C^{*}X_{\infty}}{\bigoplus_{i\in\mathbb{N}}C^{*}X_{i}}\ar@{^{(}->}[d]^{i}\\
 & & \prod_{i\in \mathbb{N}}C^{*}X_{i} \ar@{->>}[r]& \frac{\prod_{i\in\mathbb{N}} C^{*}(X_{i})}{\bigoplus_{i\in\mathbb{N}}C^{*}X_{i}}
@@ -658,7 +658,7 @@ We define the map $d$ to be the compositions of $q$ and the inclusion $i$. The m
 \begin{equation*}
 d|_{G}:I_{G,\infty} \rightarrow \frac{\prod_{i\in\mathbb{N}} C^{*}(X_{i})}{\bigoplus_{i\in\mathbb{N}}C^{*}X_{i}}
 \end{equation*}
-In particular: if $d|_{G,*}([p])\not=0$ then $q_{*}([p])\not=0$. Let $p$ be the ghost projection associated to Laplacians of the $X_{i}s$, defined from the Laplacians in remark \ref{Rem:Ghost}. This lies in $C^{*}X$ as $X$ is an expander, and is clearly an element of $C^{*}(X)_{\infty}$ as it is defined piecewise. $p$ evalutates to a non-trivial class under $d_{G,*}$ so we know that $K_{0}(\frac{I_{G,\infty}}{\bigoplus_{i\in\mathbb{N}}C^{*}X_{i}})\not= 0$. From here we see that $K_{0}(\mathcal{K}) \rightarrow K_{0}(I_{G})$ is not surjective and so $\mu_{I_{G}}$ is not surjective either.
+In particular: if $d|_{G,*}([p])\not=0$ then $q_{*}([p])\not=0$. Let $p$ be the ghost projection associated to Laplacians of the $X_{i}s$, defined from the Laplacians in remark \ref{Rem:Ghost}. This lies in $C^{*}X$ as $X$ is an expander, and is clearly an element of $C^{*}(X)_{\infty}$ as it is defined piecewise. $p$ evaluates to a non-trivial class under $d_{G,*}$ so we know that $K_{0}(\frac{I_{G,\infty}}{\bigoplus_{i\in\mathbb{N}}C^{*}X_{i}})\not= 0$. From here we see that $K_{0}(\mathcal{K}) \rightarrow K_{0}(I_{G})$ is not surjective and so $\mu_{I_{G}}$ is not surjective either.
 
 To see injectivity it suffices to show that $K_{1}(I_{G})\rightarrow K_{0}(\mathcal{K})$ is the zero map. Consider the following diagram:
 \begin{equation*}
@@ -743,7 +743,7 @@ From earlier; we know that $G(X)|_{\partial \beta X}$ is the groupoid constructe
 \begin{equation*}
 G(X)|_{\partial \beta X} = \bigcup_{E\in \mathcal{E}} \overline{E}\setminus E = \bigcup_{R>0} \overline{\Delta_{R}}\setminus\Delta_{R}
 \end{equation*}
-We can also form the groupoid $\partial\beta X\rtimes \Gamma$. In order to check that this groupoid is really the coarse boundary groupoid $G(X)|_{\partial \beta X}$ we need to build maps between them, and then check they are continous. In order to do this, we must first worry about isotropy groups for the action; under the assumption that the action is free on the boundary, we observe that these are all trivial. Now we construct a map locally as follows; making heavy use of the fact that it is always possible, for any subset $U$ in the basis for $\partial \beta X$, to build an entourage such that:
+We can also form the groupoid $\partial\beta X\rtimes \Gamma$. In order to check that this groupoid is really the coarse boundary groupoid $G(X)|_{\partial \beta X}$ we need to build maps between them, and then check they are continuous. In order to do this, we must first worry about isotropy groups for the action; under the assumption that the action is free on the boundary, we observe that these are all trivial. Now we construct a map locally as follows; making heavy use of the fact that it is always possible, for any subset $U$ in the basis for $\partial \beta X$, to build an entourage such that:
 \begin{equation*}
 [g, U] \leftrightarrow U \times U.g \leftrightarrow \overline{E}\setminus E \subset \overline{\Delta_{g}}\setminus\Delta_{g}
 \end{equation*}
@@ -757,7 +757,7 @@ A last remark about the topology here; a basis for $G(X)|_{\partial\beta X}$ is 
 This proposition provides a collection of examples of sequences that we can deal with, and will in general be the conduit we want to pass through to verify the conjecture in the presence of a group action.
 
 \begin{example}
-Let $\Gamma$ be a finitely generated residually finite group and let $\lbrace N_{i}\rbrace$ be a family of finite index normal subgroups such that $N_{i}\leq N_{i+1}$, $\bigcap_{i \in \mathbb{N}}N_{i}=1$ and a fixed generating set $S$. Then the sequence of groups $\lbrace \Gamma/N_{i}\rbrace$ with generating sets $\pi_{i}(S)$ admits an action via quotient maps. Let $\square\Gamma= \sqcup_{i \in \mathbb{N}}\frac{\Gamma}{N_{i}}$, equipped with a metric that restricts to the metric induced from the generating sets $\pi_{i}(S)$ for each $i$, and has the property that $d(\frac{\Gamma}{N_{i}},\frac{\Gamma}{N_{j}})\rightarrow \infty$ as $i+j \rightarrow \infty$. The Stone-Cech boundary admits a free action of the group (either we can see this via the profinite completion $\widehat{\Gamma}$, or via building sets as we will see in the following section) and the metric structure is generated by the quotients maps and the right action of the group via these maps. So we can conlude the boundary groupoid $G(\square\Gamma)|_{\partial \beta \square \Gamma}$ is homeomorphic to $\partial\beta\square\Gamma \rtimes \Gamma$.  
+Let $\Gamma$ be a finitely generated residually finite group and let $\lbrace N_{i}\rbrace$ be a family of finite index normal subgroups such that $N_{i}\leq N_{i+1}$, $\bigcap_{i \in \mathbb{N}}N_{i}=1$ and a fixed generating set $S$. Then the sequence of groups $\lbrace \Gamma/N_{i}\rbrace$ with generating sets $\pi_{i}(S)$ admits an action via quotient maps. Let $\square\Gamma= \sqcup_{i \in \mathbb{N}}\frac{\Gamma}{N_{i}}$, equipped with a metric that restricts to the metric induced from the generating sets $\pi_{i}(S)$ for each $i$, and has the property that $d(\frac{\Gamma}{N_{i}},\frac{\Gamma}{N_{j}})\rightarrow \infty$ as $i+j \rightarrow \infty$. The Stone-Cech boundary admits a free action of the group (either we can see this via the profinite completion $\widehat{\Gamma}$, or via building sets as we will see in the following section) and the metric structure is generated by the quotients maps and the right action of the group via these maps. So we can conclude the boundary groupoid $G(\square\Gamma)|_{\partial \beta \square \Gamma}$ is homeomorphic to $\partial\beta\square\Gamma \rtimes \Gamma$.  
 \end{example}
 
 This gives us some examples of situations where we can immediately verify the conjecture. We remark that a group is said to have the \textit{Strong Baum-Connes property} if it satisfies the Baum-Connes conjecture with arbitrary coefficients. In particular this includes all amenable, a-T-menable \cite{MR1487204} and, by remarkable recent results of Lafforgue \cite{lafforgue2012}, groups that act on weakly geodesic strongly bolic metric spaces.
@@ -846,14 +846,14 @@ The aim of the remainder of the chapter is to prove the following result:
 The boundary coarse Baum-Connes conjecture holds for spaces of graphs with large girth and uniformly bounded vertex degree.
 \end{theorem}
 
-A route to this Theorem is through Propositon \ref{Prop:Crit}, which characterizes the boundary groupoid as a transformation groupoid in the presence of a free boundary action that generates the metric coarse structure. For this we need to cook up a group action on an arbitrary sequence of finite graphs with large girth. Initially we consider some easier cases and for these we work via the universal covering sequence. We recall Pedersens Lemma \cite[Theorem 7, Chapter XI]{MR1035708} from finite graph theory:
+A route to this Theorem is through Proposition \ref{Prop:Crit}, which characterizes the boundary groupoid as a transformation groupoid in the presence of a free boundary action that generates the metric coarse structure. For this we need to cook up a group action on an arbitrary sequence of finite graphs with large girth. Initially we consider some easier cases and for these we work via the universal covering sequence. We recall Pedersens Lemma \cite[Theorem 7, Chapter XI]{MR1035708} from finite graph theory:
 
 \begin{lemma}\label{Lem:PL}
 Let $X$ be a finite graph. If $2k$ edges go into any vertex then all the edges of $X$ can be divided into $k$ classes such that two edges from the same class go into any vertex.\qed
 \end{lemma}
 
 \begin{definition}
-Let $X$ be a finite $2k$-regular graph. A \textit{k-orientation} is a choice of edge orientation and labelling in letters $a_{1},...,a_{k}$ that are compatable in the sense that precisely one edge oriented into and out of a vertex is labelled $a_{i}$ for all $i$.
+Let $X$ be a finite $2k$-regular graph. A \textit{k-orientation} is a choice of edge orientation and labelling in letters $a_{1},...,a_{k}$ that are compatible in the sense that precisely one edge oriented into and out of a vertex is labelled $a_{i}$ for all $i$.
 \end{definition}
 
 Lemma \ref{Lem:PL} provides us an avenue to construct $k$-orientations. We record this in a Lemma below.
@@ -865,7 +865,7 @@ The fact that any finite $2k$-regular graph can be $k$-oriented follows from Lem
 \end{proof}
 
 \begin{remark}
-For the $4-$regular case we can get this result by appealing to the Eulerian tour that exists for all $2k$-regular graphs; we label around any such tour using the letters $a$ and $b$ alternatively. This provides us almost with what we want as from this we then re-label so that every vertex has the orientation of a ball of radius $1$ in the free group \cite[pg 57]{MR1867354}. It is not easy to produce a labelling of an Euler tour that is compatable with the necessary labelling we are after for any $k$ larger than two however.
+For the $4-$regular case we can get this result by appealing to the Eulerian tour that exists for all $2k$-regular graphs; we label around any such tour using the letters $a$ and $b$ alternatively. This provides us almost with what we want as from this we then re-label so that every vertex has the orientation of a ball of radius $1$ in the free group \cite[pg 57]{MR1867354}. It is not easy to produce a labelling of an Euler tour that is compatible with the necessary labelling we are after for any $k$ larger than two however.
 \end{remark}
 
 \begin{comment}
@@ -884,7 +884,7 @@ Let $X$ be a finite $2k$-regular graph. A $k$-orientation can be thought of as p
 Let $\lbrace X_{i} \rbrace$ be a sequence of finite connected graphs that have $\vert X_{i} \vert \rightarrow \infty$ as $i \rightarrow \infty$ and are $2k$-regular and let $X$ be the associated space of graphs. Then the action of $F_{k}$ generates the metric coarse structure on $X$.
 \end{lemma}
 \begin{proof}
-Let $(x,y) \in \Delta_{R}$ with $x,y \in X_{i}$ for some $i$. Then they are joined by a path that as a consequence of a $k$-orientation is labelled in the generators of $F_{k}$ and has assigned orienations. This provides us enough information to read the action of $F_{k}$, whence there is a $w \in F_{k}$ that takes $x$ to $y$. This implies $(x,y) \in \Delta_{w}$. Let $F$ be the finitely many pairs $(x,y) \in \Delta_{R}$ that come from distinct $X_{i}$s. Then $\Delta_{R}$ decomposes as:
+Let $(x,y) \in \Delta_{R}$ with $x,y \in X_{i}$ for some $i$. Then they are joined by a path that as a consequence of a $k$-orientation is labelled in the generators of $F_{k}$ and has assigned orientations. This provides us enough information to read the action of $F_{k}$, whence there is a $w \in F_{k}$ that takes $x$ to $y$. This implies $(x,y) \in \Delta_{w}$. Let $F$ be the finitely many pairs $(x,y) \in \Delta_{R}$ that come from distinct $X_{i}$s. Then $\Delta_{R}$ decomposes as:
 \begin{equation*}
 \Delta_{R} = F \cup \bigcup_{\vert w \vert \leq R} \Delta_{w}
 \end{equation*}
@@ -982,7 +982,7 @@ We want to use this to label any sequence of graphs that have uniformly bounded 
 
 \item Applying the work of Exel in \cite{MR2419901} (or Paterson \cite{MR1724106}) to this inverse monoid we can associate a groupoid over $X$. Combining this with an augmentation of Proposition \ref{Prop:Crit} we can get a description of the boundary groupoid for the space $X$.
 
-\item We utilise properties of the inverse monoid to prove that this groupoid has the Haagerup property. This in turn provides us with the Baum-Connes conjecture being an isomorphism with any coefficents for this groupoid. We use this to conclude the boundary conjecture is an isomorphism for $X$.
+\item We utilise properties of the inverse monoid to prove that this groupoid has the Haagerup property. This in turn provides us with the Baum-Connes conjecture being an isomorphism with any coefficients for this groupoid. We use this to conclude the boundary conjecture is an isomorphism for $X$.
 \end{enumerate}
 
 The remainder of this section is making these ideas precise.
@@ -1106,7 +1106,7 @@ So consider the map $\Phi$ applied to a $\theta_{g}$:
 Now assume that $\Phi(\theta_{g}) = e_{G}$. Then it follows that $\sigma (m (\overline{\theta}^{-1}(\theta_{g})))=e_{G}$. As $\sigma$ is idempotent pure, it follows then that $m(\overline{\theta}^{-1}(\theta_{g}))=1$, hence for any preimage $t\in \theta}^{-1}(\theta_{g})$ we know that $t \leq 1$, and by the property of being 0-E-unitary it then follows that $t \in E(G^{pr})$. Mapping this back onto $\theta_{g}$ we can conclude that $\theta_{g}$ is idempotent, but by assumption this only occurs if $g = e$.\end{proof}
 
 \begin{proposition}\label{Prop:GrpoidHom}
-Let $S = \langle \theta_{g} | g \in G \rangle$ be a strongly 0-F-inverse monoid with maximal elements $Max(S)= \lbrace \theta_{g}:g \in G \rbrace$, where $\theta: G \rightarrow S$ is a dual prehomomorphism. Then the groupoid $G_{\E}$ admits a continous proper groupoid homomorphism onto the group $G$.
+Let $S = \langle \theta_{g} | g \in G \rangle$ be a strongly 0-F-inverse monoid with maximal elements $Max(S)= \lbrace \theta_{g}:g \in G \rbrace$, where $\theta: G \rightarrow S$ is a dual prehomomorphism. Then the groupoid $G_{\E}$ admits a continuous proper groupoid homomorphism onto the group $G$.
 \end{proposition}
 \begin{proof}
 Using the map $\Phi$ we construct a map $\rho: \G_{\E} \rightarrow G$ as follows:
@@ -1123,7 +1123,7 @@ This is certainly open as each $[\theta_{g},D_{\theta^{*}_{g}\theta_{g}}]$ are e
 \end{equation*}
 This is certainly compact as these are open and closed sets in the basis of topology for the groupoid $\G_{\E}$.\end{proof}
 
-As $\G_{\widehat{X}} \subseteq \G_{\E}$ we also get a continous proper groupoid homomorphism from $\G_{\widehat{X}}$ onto a group.  A remark that comes from considering the work of Lawson in \cite{MR1694900} is that we can consider the category of inverse monoids with prehomomorphisms equivalent to the category of ordered groupoids with groupoid homomorphisms, so it is reasonable to consider such maps when we want to understand the structure of the universal groupoid associated to $S$. 
+As $\G_{\widehat{X}} \subseteq \G_{\E}$ we also get a continuous proper groupoid homomorphism from $\G_{\widehat{X}}$ onto a group.  A remark that comes from considering the work of Lawson in \cite{MR1694900} is that we can consider the category of inverse monoids with prehomomorphisms equivalent to the category of ordered groupoids with groupoid homomorphisms, so it is reasonable to consider such maps when we want to understand the structure of the universal groupoid associated to $S$. 
 
 We recall a special case of \cite[Lemme 3.12]{MR1703305}.
 
@@ -1336,7 +1336,7 @@ Consider the inverse monoid $S_{inf}$ as a submonoid of $I(X)$. Then the followi
 \item We construct the maximal elements. Observe that using the dual prehomomorphism it is clear that every non-zero word $s \in S$ lives below a non-zero $\theta_{g}$. So it is enough to prove that for $\theta_{g}, \theta_{h} \not = 0$, $\theta_{g} \leq \theta_{h} \Rightarrow \theta_{g}=\theta_{h}$. Let $\theta_{g} \leq \theta_{h}$. This translates to $\theta_{h}\theta_{g}^{*}\theta_{g} = \theta_{g}$, hence for all $x \in \widehat{D}_{\theta_{g}^{*}\theta_{g}}: \theta_{h}(x) = \theta_{g}(x)$. Hence $\theta_{g}^{*}\theta_{h} \in E(S)$. From here we see that $\theta_{g}^{*}\theta_{h} \leq \theta_{e}$. From (2) we can deduce: $\theta_{g}^{*}\theta_{h}\leq \theta_{g^{-1}h}$ implies $\theta_{g^{-1}h} \in E(S_{inf})$. By (1) this implies $\theta_{g^{-1}h}=\theta_{e}$, and this happens if and only if $g^{-1}h = e$, i.e $g=h$.\end{proof}
 \end{enumerate}
 
-Appealing to the machinery we developed earlier in Propostions \ref{Prop:Strongly} and \ref{Prop:GrpoidHom} we get the following corollary immediately.
+Appealing to the machinery we developed earlier in Propositions \ref{Prop:Strongly} and \ref{Prop:GrpoidHom} we get the following corollary immediately.
 
 \begin{corollary}\label{Cor:MT}
 The inverse monoid $S_{inf}$ is strongly 0-F-inverse.
