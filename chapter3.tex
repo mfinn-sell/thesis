@@ -1,7 +1,7 @@
 %\setstretch{1.6}
 \chapter{Partial Translations and Inverse Semigroups.}
 
-In this chapter we outline the construction of a short exact sequence of $C^{*}$-algebras associated to an F-inverse monoid $S$. This relates the reduced $C^{*}$-algebra of $S$ to the reduced $C^{*}$-algebra of its maximal group homomorphic image, generalising some of the ideas present in the proof of the Pimsner-Voiculescu short exact sequence from \cite{MR670181}. We then make use of this result in a metric context; to any subspace $X$ of a given finitely generated discrete group $G$ we associate an object called a \textit{partial translation structure} to $X$. This has a naturally associated inverse monoid and we investigate precisely when this inverse monoid is F-inverse. In this case, we construct an analogue of the short exact sequence for these inverse monoids. This has applications within K-theory, which we discuss at the beginning of the Chapter 5.
+In this chapter we outline the construction of a short exact sequence of $C^{*}$-algebras associated to an F-inverse monoid $S$. This relates the reduced $C^{*}$-algebra of $S$ to the reduced $C^{*}$-algebra of its maximal group homomorphic image, generalising some of the ideas present in the proof of the Pimsner-Voiculescu short exact sequence from \cite{MR670181}. We then make use of this result in a metric context; to any subspace $X$ of a given finitely generated discrete group $G$ it is possible to associate an object called a \textit{partial translation structure} to $X$ \cite{MR2363428}. This has a naturally associated inverse monoid and we investigate precisely when this inverse monoid is F-inverse. In this case, we construct an analogue of the short exact sequence for these inverse monoids. This has applications within K-theory, which we discuss at the beginning of the Chapter 5.
 
 \section{A Pimsner-Voiculescu short exact sequence for an F-inverse monoid.}\label{sect:S1}
 In this section we construct a sequence of $C^{*}$-algebras that can naturally be associated to an F-inverse monoid and prove that it is exact. The process of doing this requires careful analysis of the representation theory of the universal groupoid associated to the inverse monoid in question. Later in Section \ref{sect:S1-a} of this chapter we utilise this machinery to prove the following result, which is Theorem \ref{thm:PV1} in the text.
@@ -37,7 +37,7 @@ Where $[m,x]=[m_{tu},x]$ is the maximal representative of the element $[tu,x]$ u
 \begin{equation*}
 \lambda_{x}(1_{tt^{*}}\delta_{t})(\delta_{[u,x]})= \delta_{[m_{tu},x]} \mbox{ if } u\in L_{x} \mbox{ and } m_{tu} \in L_{x}
 \end{equation*}
-So $\lambda_{x}(1_{tt^{*}}\delta_{t})$ acts on those elements $[u,x]$ for whom there exists a maximal element $m$ and a $y \in \widehat{E}$ such that $[m,x]=[tu,x]$. 
+So $\lambda_{x}(1_{tt^{*}}\delta_{t})$ acts on those elements $[u,x]$ for which there exists a maximal element $m$ and a $y \in \widehat{E}$ such that $[m,x]=[tu,x]$. 
 
 \begin{figure}\label{fig:F1}
 
@@ -170,31 +170,30 @@ Let $S$ be F-inverse and let $K \subset \text{Max(S)}$ such that $K$ is finite a
 \begin{proof}
 It is immediate that $\Vert T \Vert \geq \Vert qT \Vert$ as $q$ is contractive. We arrive at the other inequality by applying Corollary \ref{cor:C1}.
 \begin{eqnarray*}
-\Vert T \Vert_{L^{2}(\mathcal{G}_{x})} = \Vert \sum_{t \in K} a_{t}\lambda_{x}(1_{tt^{*}}\delta_{t}) \Vert = \Vert \sum_{t \in K} a_{t}Q_{x}\lambda_{\infty}(1_{tt^{*}}\delta_{t})Q_{x}^{*} \Vert \\
-= \Vert Q_{x}(\sum_{t \in K} a_{t}\lambda_{\infty}(1_{tt^{*}}\delta_{t}))Q_{x}^{*} \Vert = \Vert Q_{x}(qT)Q_{x}^{*} \Vert \leq \Vert qT \Vert.
+\Vert T \Vert_{L^{2}(\mathcal{G}_{x})} = \Vert \sum_{t \in K} a_{t}\lambda_{x}(1_{tt^{*}}\delta_{t}) \Vert_{L^{2}(\mathcal{G}_{x})} = \Vert \sum_{t \in K} a_{t}Q_{x}\lambda_{\infty}(1_{tt^{*}}\delta_{t})Q_{x}^{*} \Vert_{L^{2}(\mathcal{G}_{x})} \\
+= \Vert Q_{x}(\sum_{t \in K} a_{t}\lambda_{\infty}(1_{tt^{*}}\delta_{t}))Q_{x}^{*} \Vert_{L^{2}(\mathcal{G}_{x})} = \Vert Q_{x}(qT)Q_{x}^{*} \Vert_{L^{2}(\mathcal{G}_{x})} \leq \Vert qT \Vert_{L^{2}(\mathcal{G}_{\infty})}.
 \end{eqnarray*}
 This holds for every $x \in E$ and so by  $\Vert T \Vert = \Vert \lambda(T) \Vert = \sup \lbrace \Vert \lambda_{x}(T) \Vert : x \in E \rbrace \leq \Vert qT \Vert$. This gives the desired equality.  
 \end{proof}
 
-We remark here that if $S$ is F-inverse then minimal elements do not play a role in the ultrafilters, which was the reason for removing them when $S$ had a zero. Additionally, in this instance the groupoid $\G_{tight}$ just the maximal group homomorphic image $G$. 
+We remark here that if $S$ is F-inverse then minimal elements do not play a role in the ultrafilters, which was the reason for removing them when $S$ had a zero. Additionally, in this instance the groupoid $\G_{tight}$ is just the maximal group homomorphic image $G$. 
 
 \begin{theorem}\label{thm:PV1}
-Let $S$ be an F-inverse monoid, let $\G_{\E}$ be its universal groupoid and let $A=C_{c}(\G_{U})$. Then we have the following short exact sequence of $C^{*}$-algebras:
+Let $S$ be an F-inverse monoid, let $\G_{\E}$ be its universal groupoid, with $U \subset \E$ the compliment of $\E_{tight}$. Let $G$ be its maximal group homomorphic image. Then we have the following short exact sequence of $C^{*}$-algebras:
 \begin{equation*}
-0 \rightarrow \overline{A} \rightarrow C^{*}_{r}(\mathcal{G}) \rightarrow C^{*}_{r}(G) \rightarrow 0
+0 \rightarrow C^{*}_{r}(\G_{U}) \rightarrow C^{*}_{r}(\G_{\E}) \rightarrow C^{*}_{r}(G) \rightarrow 0
 \end{equation*}
 \end{theorem}
 \begin{proof}
+Denote by $A$ the algebra $C_{c}(\G_{U})$. We know that we have a surjective *-homomorphism $q$ from $C^{*}_{r}(\G_{\E})$ to $C^{*}_{r}(G)$, we just need to see that the kernel of this map is $\overline{A}$. The set $\overline{A}$ is contained in the kernel as elements in $A$ are sums of functions with value at $1_{E}=\infty \in \widehat{E}$ of zero and projection onto this value (i.e applying q) will send the entire element to $0 \in C^{*}_{r}(G)$. So it is enough to show that $A$ is dense in the kernel.
 
-We know that we have a surjective *-homomorphism $q$ from $C^{*}_{r}(\G)$ to $C^{*}_{r}(G)$, we just need to see that the kernel of this map is $\overline{A}$. The set $\overline{A}$ is contained in the kernel as elements in $A$ are sums of functions with value at $1_{E}=\infty \in \widehat{E}$ of zero and projection onto this value (i.e applying q) will send the entire element to $0 \in C^{*}_{r}(G)$. So it is enough to show that $A$ is dense in the kernel.
-
-First consider finite sums. Let $f \in C_{c}(\mathcal{G})$. We need to show that if $qf=0$ then $ f \in A$.
+First consider finite sums. Let $f \in C_{c}(\mathcal{G_{\E}})$. We need to show that if $qf=0$ then $ f \in A$.
 
 $f$ has the form:
 \begin{equation*}
 f=\sum_{s \in S} f_{s}\delta_{s} \mbox{ where } f_{s}\in C(D_{ss^{*}})
 \end{equation*}
-With only finitely many non-zero terms. This can be viewed concretely on $L^{2}(\mathcal{G})$ using
+With only finitely many non-zero terms. This can be viewed concretely on $L^{2}(\mathcal{G}_{\E})$ using
 \begin{equation*}
 \lambda(f)=\sum_{s \in S} f_{s}\lambda(1_{ss^{*}}\delta_{s})
 \end{equation*}
@@ -204,7 +203,7 @@ As $S$ is F-inverse we can reduce this sum using the observation that for each $
 \end{equation}
 (\ref{Eq1}) is in the kernel of $q$ if and only if each $f^{'}_{t}(\infty)=0$ for every $t \in \text{Max(S)}$ that is if and only if $\lambda(f) \in A$.
 
-Now let $T$ be an element of $C^{*}_{r}(\G})$ such that $qT=0$. Then we need to show $T$ can be approximated by finite sums that lie in $A$. Let $T_{n}$ be finite sums in $C_{c}(\mathcal{G})$ with $T_{n} \rightarrow T$. Without loss of generality, these $T_{n}$ have the following form for some finite $K_{n} \subset \text{Max(S)}$:
+Now let $T$ be an element of $C^{*}_{r}(\G_{\E})$ such that $qT=0$. Then we need to show $T$ can be approximated by finite sums that lie in $A$. Let $T_{n}$ be finite sums in $C_{c}(\mathcal{G}_{\E})$ with $T_{n} \rightarrow T$. Without loss of generality, these $T_{n}$ have the following form for some finite $K_{n} \subset \text{Max(S)}$:
 \begin{equation*}
 T_{n}=\sum_{t \in K_{n}} f^{n}_{t}\lambda(1_{tt^{*}}\delta_{t})
 \end{equation*}
@@ -221,7 +220,7 @@ Let $U_{n}=(T_{n}-S_{n})$. Then $U_{n} \in A$ and $U_{n}=(T_{n}-S_{n}) \rightarr
 In this section we consider a generalisation of Theorem \ref{thm:PV1} to strongly 0-F-inverse monoids under some light conditions, and we proceed by considering saturated subsets of the unit space as defined in Chapter 2. Clearly, subsets that are invariant under the action of $S$ are also saturated. The following Lemma outlines the connections between saturation and Morita enveloping actions.
 
 \begin{lemma}\label{Lem:Cut}
-Let $\G$ be an \etale locally compact Hausdorff groupoid with a (T,C,F)-cocycle $\rho$ to $\Gamma$. Then relation $\sim$ on $\G^{(0)} \times \Gamma$ preserves saturated subsets of $\G^{(0)}$
+Let $\G$ be a \'etale locally compact Hausdorff groupoid with a (T,C,F)-cocycle $\rho$ to $\Gamma$. Then the relation $\sim$ used in constructing the Morita envelope of $\G^{(0)}$ on $\G^{(0)} \times \Gamma$ preserves saturated subsets of $\G^{(0)}$
 \end{lemma}
 \begin{proof}
 Let $U$ be a saturated subset of $\G^{(0)}$ and let $x \in U$, $y \in U^{c}$. Assume for a contradiction that $(x,g) \sim (y,h)$ in $\G^{(0)} \times \Gamma$. Then there exists a $\gamma$ $\in \G$ such that $s(\gamma)=x$, $r(\gamma)=y$ and $\rho(\gamma)=g^{-1}h$, but as $U$ is saturated no such $\gamma$ exists. 
@@ -230,10 +229,20 @@ Let $U$ be a saturated subset of $\G^{(0)}$ and let $x \in U$, $y \in U^{c}$. As
 Additionally, as we have no obvious group to consider, we introduce a universal one:
 
 \begin{definition}
-Let $S$ be a inverse semigroup. Then the \text{universal group} of $S$, denoted by $U(S)$, is the group generated by the elements of $S$ with relations $s\cdot t = st$ if $st \not = 0$.
+Let $S$ be an inverse semigroup. Then the \text{universal group} of $S$, denoted by $U(S)$, is the group generated by the elements of $S$ with relations $s\cdot t = st$ if $st \not = 0$.
 \end{definition}
 
 The map that sends $s \in S$ to $s \in U(S)$ is a partial homomorphism that is universal for partial homomorphism onto groups. It also induces a prehomomorphism $S \rightarrow U(S)^{0}$. An inverse monoid $S$ is strongly $0$-E-unitary if and only if this prehomomorphism is idempotent pure.
+
+Recall that a group $G$ is said to be \textit{K-exact} if for every short exact sequence of $G$-$C^{*}$-algebras
+\begin{equation*}
+0 \rightarrow A \rightarrow B \rightarrow C \rightarrow 0
+\end{equation*}
+the corresponding sequence:
+\begin{equation*}
+0 \rightarrow A\rtimes_{r}G \rightarrow B\rtimes_{r}G \rightarrow C\rtimes_{r}G \rightarrow 0
+\end{equation*}
+is exact at the level of K-theory groups (i.e gives rise to a long exact sequence in K-theory).
 
 \begin{theorem}\label{thm:PV2}
 Let $S$ be a strongly $0$-F-inverse monoid with universal group $G:=U(S)$. If $G$ is infinite and $K$-exact then the sequence:
@@ -251,7 +260,7 @@ each of which is a $G$-algebra. We now act by the reduced cross product, which p
 \begin{equation*}
 0 \rightarrow C_{0}(Y_{U})\rtimes_{r}G \rightarrow C_{0}(Y_{\E})\rtimes_{r}G \rightarrow C_{0}(Y_{\E_{tight}})\rtimes_{r}G \rightarrow 0.
 \end{equation*}
-This may not be exact in the middle term. However, it is exact at the level of K-theory, so consider the K-theory long exact sequence:
+This may not be exact in the middle term. However by K-exactness of $G$ it is exact at the level of K-theory, so consider exact sequence:
 \begin{equation*}
 \xymatrix@=1em{...\ar[r] & K_{0}(C_{0}(Y_{U})\rtimes_{r} G) \ar[r]& K_{0}(C_{0}(Y_{\E})\rtimes_{r} G) \ar[r]& K_{0}(C_{0}(Y_{\E_{tight}})\rtimes_{r} G)\ar[r] & ...\\
 ...\ar[r] & K_{0}(C^{*}_{r}(\G_{\U})) \ar[r]\ar[u]^{\ucong}& K_{0}(C^{*}_{r}(\G_{\E})) \ar[r]\ar[u]^{\ucong}& K_{0}(C^{*}_{r}(\G_{\E_{tight}})) \ar[r]\ar[u]^{\ucong}& ...}
@@ -264,12 +273,14 @@ where the isomorphisms are induced by the Morita equivalences given by Theorems 
 In this section we outline the definition of a partial translation structure and describe some of the results concerning them from the literature. Focusing on a special case, which we call \textit{grouplike partial translation structures}, we connect uniform embeddability into groups for metric spaces to translation structures.  We then outline an inverse monoid approach to understanding the translation algebra that can be naturally associated to a partial translation structure.
 
 \begin{definition}
-Let $X$ be a metric space and let $t$ be a partial bijection of $X$. $t$ is a \textit{partial translation} if there exists $R>0$ such that for every $x \in Dom(t)$ we have $d(x,t(x))\leq R$. Let $\mathcal{T}$ be a collection of disjoint partial bijections of $X$. Then a partial bijection $u$ of $X$ is a \textit{cotranslation of} $\mathcal{T}$ if for every $t \in \mathcal{T}$ ($x \in Dom(t)$ and $x,t(x) \in Dom(u)$) implies $u(x) \in Dom(t)$ and $t(u(x))=u(t(x))$.
+Let $X$ be a metric space and let $t$ be a partial bijection of $X$. The map $t$ is a \textit{partial translation} if there exists $R>0$ such that for every $x \in Dom(t)$ we have $d(x,t(x))\leq R$. Let $\mathcal{T}$ be a collection of disjoint partial bijections of $X$. Then a partial bijection $u$ of $X$ is a \textit{cotranslation of} $\mathcal{T}$ if for every $t \in \mathcal{T}$ ($x \in Dom(t)$ and $x,t(x) \in Dom(u)$) implies $u(x) \in Dom(t)$ and $t(u(x))=u(t(x))$.
 \end{definition}
 
-These definitions are a rephrasing to the language of inverse semigroups of the definitions in \cite{MR2363428} that better suit our needs. 
-
 The concept of a partial translation structure was first introduced in \cite{MR2363428}. By associating to a metric space this additional information, namely a collection of partial bijections that form entourages in the metric coarse structure, it is possible to use the local symmetries of the space to control the metric. 
+
+These definitions allow for a rephrasing to the language of inverse semigroups of the definitions in \cite{MR2363428}. 
+
+
 
 
 \begin{definition}\label{PT2}
@@ -289,7 +300,7 @@ A partial translation structure on X is said to be \textit{globally controlled} 
 The following is Theorem 19 from \cite{MR2363428}.
 
 \begin{lemma}\label{lem:L10}
-Let $G$ be a group equipped with a proper left invariant metric and let $X \subseteq G$ equipped with the induced metric. Then the restriction of the action of $G$ on itself by right multiplication to $X$ is a partial translation structure that is free and globally controlled, with cotranslations given by the left action by isometries.
+Let $G$ be a group equipped with a proper left invariant metric and let $X \subseteq G$ equipped with the induced metric. Then the restriction of the action of $G$ on itself by right multiplication to $X$ is a partial translation structure on $X$ that is free and globally controlled, with cotranslations given by the left action by isometries.
 \end{lemma}
 
 The intuition for the Definition \ref{PT2} is a metric version of a group action for spaces, with freeness and global control giving conditions that are similar to a free and transitive action of group. 
@@ -299,21 +310,23 @@ Let $\mathcal{T}$ be a partial translation structure. Then we say $\mathcal{T}$ 
 \end{definition}
 We specialize our definition slightly in light of the following proposition, the proof of which can be found in \cite[Proposition 8.1]{rosiesthesis}
 
-\begin{proposition}\label{prop:TFAE} Let $G$ be a countable discrete group and let $X \subseteq G$
+Recall that a subspace $Y$ of a metric space $X$ is said to be \textit{coarsely dense} if there exists $c>0$ such that for every $x \in X$ there is a $y \in Y$ satisfying $d(x,y) < c$.
+
+\begin{proposition}\label{prop:TFAE} Let $G$ be a countable discrete group with a proper left invariant metric and let $X \subseteq G$ be a metric subspace.
 The following are equivalent:
 \begin{enumerate}
 \item $X^{c}$ is not coarsely dense in $G$.
 \item For every $R>0$ there exists $g \in G$ such that $B_{R}(g) \subseteq X$.
-\item The monoid generated by the translations obtained by restriction of the action of $G$ on itself has no zero element.
+\item The monoid generated by the translations obtained by restriction of the right action of $G$ on itself has no zero element.
 \end{enumerate}
 \end{proposition}
 The definition provided below is stronger than the definition provided in \cite{MR2363428}, however this better emulates the situation that arises when you consider a space that is uniformly embedded into a group. 
 
 \begin{definition}\label{Def:PTS}
-Let $X$ be a countable set. A collection of partial bijections $\mathcal{T}$ is a called a \textit{abstract partial translation structure} for $X$ if:
+Let $X$ be a countable set. A collection of partial bijections $\mathcal{T}$ is a called an \textit{abstract partial translation structure} for $X$ if:
 \begin{enumerate}
 \item $\mathcal{T}$ partitions $X\times X$.
-\item $\forall t_{i}, t_{j} \in \mathcal{T}$ $\exists t_{k} \in \mathcal{T}$ we have $t_{i}t_{j} \subseteq t_{k}$ (i.e $\mathcal{T}$ is subclosed).
+\item $\forall t_{i}, t_{j} \in \mathcal{T}$ $\exists t_{k} \in \mathcal{T}$ such that $t_{i}t_{j} \subseteq t_{k}$ (i.e $\mathcal{T}$ is subclosed).
 \item $\forall t \in \mathcal{T}$ we have $t^{*} \in \mathcal{T}$.
 \item $\mathcal{T}$ has a global identity, denote this $t_{0}$.
 \end{definition}
@@ -323,7 +336,7 @@ Additionally if $X$ is equipped with a partial translation structure from Defini
 \end{remark}
 
 \begin{definition}
-A (grouplike) partial translation structure on a metric space $X$ is a abstract partial translation structure $\mathcal{T}$ where:
+A (grouplike) partial translation structure on a metric space $X$ is an abstract partial translation structure $\mathcal{T}$ where:
 \begin{enumerate}
 \item each $t \in \mathcal{T}$ is a partial translation;
 \item for each $R>0$ the $R$-neighbourhood of the diagonal is contained within finitely many distinct elements of $\mathcal{T}$.
@@ -338,8 +351,6 @@ Let $X$ be a metric space equipped with a group-like partial translation structu
 \begin{proof}
 The axioms given in Definition \ref{Def:PTS} include the existence of inverse elements, which proves the subsemigroup is inverse. From these axioms we additionally know that $\mathcal{T}$ includes a global identity, which proves that the subsemigroup is a monoid.
 \end{proof}
-
-We can characterise the monoids generated by partial translation structures:
 
 \begin{lemma}\label{Lem:PTS}
 The inverse monoid $S$ generated by a partial translation structure $\mathcal{T}$ is 0-F-inverse, with maximal element set $\mathcal{T}$. 
@@ -361,7 +372,7 @@ Let $X$ be a countable discrete metric space equipped with a grouplike partial t
 \end{theorem}
 
 \begin{proof}
-Consider the inverse monoid $S = \langle \mathcal{T} \rangle$. $\mathcal{T}$ has no zero divisors implies that $S/\sigma$ is a non-trivial group. Denote that group by $G$. The aim now is to embed $X$ into $G$. The maximal elements in $\mathcal{T}$ generate this group, and $\sigma$ induces an inverse semigroup homomorphism from $S$ into $G$, which is a bijection between the maximal elements and $G$. Denote by $T_{x_{0}}$ the following:
+Consider the inverse monoid $S = \langle \mathcal{T} \rangle$. By Lemma \ref{Lem:PTS} $S$ is $0$-F-inverse, and as $\mathcal{T}$ has no zero divisors we know that in fact it must be F-inverse. As every $t \in \mathcal{T}$, $t\not =1$ is not an idempotent, we can conclude that that $S/\sigma$ is a non-trivial group. Denote that group by $G$. The aim now is to embed $X$ into $G$. The maximal elements in $\mathcal{T}$ generate this group, and $\sigma$ induces an inverse semigroup homomorphism from $S$ into $G$, which is a bijection between the maximal elements and $G$. Denote by $T_{x_{0}}$ the following:
 \begin{equation}
 T_{x_{0}} := \lbrace t \in \mathcal{T} : \exists x \in X \mbox{ with } tx=x_{0} \rbrace
 \end{equation}
@@ -404,7 +415,7 @@ In summary, Theorem \ref{thm:T2} provides us a wealth of examples of F-inverse m
 Let $X$ be a uniformly discrete bounded geometry metric space.
 
 \begin{definition}
-The translation algebra associated with a partial translation structure $\mathcal{T}$ on $X$, denoted by $C^{*}\mathcal{T}$, is the completion as a *-subalgebra of $\mathcal{T}$ viewed as bounded operators on $\ell^{2}(X)$
+The translation algebra associated with a partial translation structure $\mathcal{T}$ on $X$, denoted by $C^{*}\mathcal{T}$, is the $C^{*}$-algebrea generated by $\mathcal{T}$, when each translation is viewed as bounded operator on $\ell^{2}(X)$
 \end{definition}
 
 The aim of this section is to give a description of the partial translation algebra associated to a grouplike partial translation structure $\mathcal{T}$ with no zero divisors as the $C^{*}$-algebra of a groupoid, where the groupoid is related to the inverse monoid generated by the partial translations. We then recast Theorem 8.3 of Brodzki, Niblo, Putwain and Wright \cite{rosiesthesis} outlining a short exact sequence of $C^{*}$-algebras arising from such translation structures. We later consider some examples in Chapter 5.
@@ -416,9 +427,11 @@ Let $\mu$ be a representation of $S$ on a Hilbert Space $H$. Then there exists a
 \end{proposition}
 
 The proof of the above result relies on the spectrum of the commutative $C^{*}$-subalgebra $A=C^{*}_{\pi_{\mu}}(E)$ of $C^{*}_{\pi_{\mu}}(S)$. We denote the spectrum of $A$ by $\X$. The key aspect of the proof of Proposition \ref{prop:P7} is the continuous map $j$ defined by: 
-\begin{equation*}
-j: \psi \in \X \mapsto \phi = \psi \circ \mu \in \E
-\end{equation*}
+\begin{eqnarray*}
+j& : & \widehat{X} \rightarrow \E \\
+& &\psi \mapsto  \phi=\psi \circ \mu
+\end{eqnarray*}
+
 This map is well defined as the elements of $A$ are self adjoint projections on $\ell^{2}(X)$ and certainly injective as two elements $\psi, \phi$ satisfy $j(\phi) = j(\psi)$ if and only if for every $e\in E$ $\psi(\mu(e))=\phi(\mu(e))$, and the $\mu(e)$ are dense in the algebra $A$.
 
 Additionally, we will be interested in describing the elements of $\X$ in terms of filters and ultrafilters of $X$. We restrict now to the case that $\mu$ is a bounded representation and $S$ is a monoid. In this instance $A \subset \ell^{\infty}(X)$, and by considering spectra we get a natural map: $\beta X \twoheadrightarrow \X$.
@@ -451,13 +464,18 @@ We can complete this to an ultrafilter in $\beta X$ in many ways using Zorn's Le
 \item If $M \not\in E(S)$ then add $M$ to $F_{\psi}$
 \item If $M,M^{c} \not \in E(S)$ add either to $F_{\psi}$
 \end{itemize}
-With the case in which both $M$ and $M^{c}$ are contained in $E(S)$ is impossible as $E(S)$ has no zero element.
+It is impossible for both $M$ and $M^{c}$ to be contained in $F_{\psi}$ as $E(S)$ has no zero element.
 
 Now $F_{\psi}$ has the correct property and is an ultrafilter of $\beta X$ that maps onto $\psi$. Observe that the image of $\beta X$ is again compact, and thus closed, hence the map is a quotient.
 
-In the case that $S$ has a zero element, we appeal to universal properties and another result of Exel \cite{MR2419901}. By Proposition 10.10 \cite{MR2419901} the space $\widehat{X}$ is closed and invariant.
+In the case that $S$ has a zero element, we appeal to universal properties and another result of Exel \cite{MR2419901}. First we need a definition, making use of the groupoid $G(X)$ defined in Chapter 2.
+\begin{definition}
+Let $G(X)$ be the coarse groupoid of $X$ as defined in Chapter 2. Then the \textit{uniform Roe algebra}, denoted by $C^{*}_{u}(X)$, is the reduced groupoid $C^{*}$-algebra $C^{*}_{r}(G(X))$.
+\end{definition} 
 
-Recall each $t \in \mathcal{T}$ is an element of $I_{b}(X)$ implies that the algebra $C^{*}_{\pi}(S)$ is a subalgebra of the uniform Roe algebra $C^{*}_{u}X$. We now remark that the representation $\pi_{X}$, when restricted to $C^{*}E$ assigns each idempotent a projection in $C^{*}_{u}X$, that is $C^{*}_{\pi_{\mu}}(E)=\pi_{}(C^{*}E) \subset \ell^{\infty}(X)$. Taking the spectra associated to this inclusion then gives us a map:
+We now finish the proof of Proposition \ref{prop:P9}. By Proposition 10.10 \cite{MR2419901} the space $\widehat{X}$ is closed and invariant.
+
+Recall that since $t \in \mathcal{T}$ is an element of $I_{b}(X)$ the algebra $C^{*}_{\pi}(S)$ is a subalgebra of the uniform Roe algebra $C^{*}_{u}X$. We now remark that the representation $\pi_{X}$, when restricted to $C^{*}E$ assigns each idempotent a projection in $C^{*}_{u}X$, that is $C^{*}_{\pi_{\mu}}(E)=\pi_{}(C^{*}E) \subset \ell^{\infty}(X)$. Taking the spectra associated to this inclusion then gives us a map:
 \begin{equation*}
 r_{\beta X}: \beta X \twoheadrightarrow \widehat{X}
 \end{equation*}
@@ -540,14 +558,14 @@ U_{x}(\sum_{t \in K,y \in Dom(t)}a_{t}\delta_{[tt_{y}, \psi_{x}]}) & = &\sum_{t 
 So both finite sums transform the basis in the same way. This equality holds for each $\psi_{x}$ in $B$, so we can conclude that $\Vert \sum_{t \in K} a_{t}\delta_{t} \Vert_{r} = \sup \lbrace \Vert \lambda_{\psi_{x}}(\sum_{t \in K} a_{t}\delta_{t} ) \Vert : \psi_{x} \in B \rbrace = \Vert \sum_{t \in K} a_{t} \mu(t) \Vert_{\ell^{2}(X)}$.
 \end{proof}
 
-This lets us define a map: 
+This lets us define a map on the basis of $C_{c}(\G_{\widehat{X}})$, which when extended linearly has image $\mu(\mathbb{C}S)$. This map is given by: 
 \begin{equation*}
 \mathcal{Q}: \lambda(1_{tt^{*}}\delta_{t}) \mapsto \mu(t)
 \end{equation*}
 
 Now we can state and prove the main result of this section:
 \begin{theorem}\label{thm:T5}
-Let $X \subset G$, giving us a translation structure $\mathcal{T}_{G}|_{X}$ with no zero divisors and a representation $\mu: S = \langle \mathcal{T}_{G}|_{X} \rangle$. Then we have an isomorphism C^{*}_{r}(\G_{\X}) \cong C^{*}_{\mu}(S) = C^{*}\mathcal{T}. 
+Let $X$ be a subset of a countable discrete group $G$ equipped with the natural partial translation structure $\mathcal{T}_{G}|_{X}$v arising from a proper left invariant metric.  Let $\mu$ denote the representation of $S = \langle \mathcal{T}_{G}|_{X} \rangle$ on $X$. If $\mathcal{T}_{G}|_{X}$ has no zero divisors then we have an isomorphism C^{*}_{r}(\G_{\X}) \cong C^{*}_{\mu}(S) = C^{*}\mathcal{T}. 
 \end{theorem}
 
 \begin{proof}

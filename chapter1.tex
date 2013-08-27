@@ -1,7 +1,7 @@
 %\setstretch{1.6}
 \chapter{Introduction.}
 
-Groups have played a role in geometry, topology and analysis throughout the last century. The overall theme is that to recognise objects one must focus on their symmetries; the set of structure preserving automorphisms of an object form a group that describes the ways to permute the object whilst preserving what makes it interesting \textit{globally}. This idea works well within both geometry and topology; the fundamental group of a manifold plays an important role in both areas, as well as entering the realms of physics through representation theory. This makes groups a natural candidates for study.
+Groups have played a role in geometry, topology and analysis throughout the last century. The overall theme is that to recognise objects one must focus on their symmetries; the set of structure preserving automorphisms of an object form a group that describes the ways to permute the object whilst preserving what makes it interesting \textit{globally}. This idea works well within both geometry and topology; the fundamental group of a manifold plays an important role in both areas, as well as entering the realms of physics through representation theory. This makes group theory a natural candidate for study.
 
 Another possible model with similar behaviour is that of a \textit{groupoid}. An example is the fundamental groupoid that is constructed in algebraic topology similar to the path groupoid of a graph. These objects arise much more generally than groups and are able to play much more subtle roles in classifying structures such as equivalence relations (dealing with non-Hausdorff topological quotient spaces \cite{MR1826266}), group actions and encoding coarse information about metric and topological spaces \cite{MR1905840}. In each instance these groupoids capture local transformational data about the underlying object space.
 
@@ -11,7 +11,7 @@ We have a dictionary between these two views; inverse semigroups admit a groupoi
 
 To illustrate this view we will consider the following very simple but general example:
 \begin{example}\label{Ex:Int1}
-Let $\Gamma$ be a finitely generated discrete group and let $X$ be a subset of the Cayley graph of $\Gamma$. Fix a left invariant metric on $\Gamma$ and then the right action of $\Gamma$ on itself given by multiplcation by inverses gives us a set of translations:
+Let $\Gamma$ be a finitely generated discrete group and let $X$ be a subset of the Cayley graph of $\Gamma$. Fix a left invariant metric on $\Gamma$ and equip $X$ with the subspace metric. The right action of $\Gamma$ on itself given by multiplication by inverses gives us a set of maps:
 \begin{equation*}
 t_{g}: \Gamma \rightarrow \Gamma , x \mapsto xg^{-1}
 \end{equation*}
@@ -19,10 +19,10 @@ We can now restrict these maps to $X$, where they may not be defined everywhere.
 \begin{equation*}
 t_{g}^{X}: D_{g} \rightarrow D_{g^{-1}} , x \mapsto xg^{-1}
 \end{equation*}
-These are partial bijections that move points of $X$ bounded distances. We can then generate an inverse submonoid of all the partial bijections on $X$ using this collection. This inverse monoid captures both the metric data (as the group action determines the metric on $\Gamma$) and the local structure of $X$ (as the $D_{g}$ need not be all of $X$, or even connected, however the collection of partial translations does provide a partition of $X\times X$). This is an example of a \textit{partial} action of $\Gamma$ and the inverse monoid it generates belongs to a very nice combinatorial class known as \textit{strongly 0-F-inverse} monoids that have been well-studied in the literature \cite{MR1721768,MR1798993,Nor-2012}.
+These are partial bijections of $X$, that is maps that are bijections between subsets of $X$, that move points of $X$ bounded distances. We can then generate subsemigroup of all the partial bijections on $X$ using this collection. This monoid belongs to the class of semigroups known as \textit{inverse} semigroups, and it captures both the metric of $X$, as the group action determines the metric on $\Gamma$ via the group action coarse structure. Additionally, it gives information about the local structure of $X$ (as the $D_{g}$ need not be all of $X$, or even connected, however the collection of partial translations does provide a partition of $X\times X$). This is an example of a \textit{partial} action of $\Gamma$ and the inverse monoid it generates belongs to a very nice combinatorial class known as \textit{strongly 0-F-inverse} monoids that have been well-studied in the literature \cite{MR1721768,MR1798993,Nor-2012}.
 \end{example}
 
-The work presented in this document is developing this connection between group theory and inverse semigroup theory on the one hand and topology and geometry on the other by considering the universal groupoid associated to the partial action defined above. Via this groupoid we get access to the much more well developed analytic tools of noncommutative geometry; groupoid $C^{*}$-algebras are much more well studied in comparison to those of an inverse monoid. In particular, we will be interested in constructing a $C^{*}$-algebraic analogue to Example \ref{Ex:Int1}. With that in mind we consider a special case of Example \ref{Ex:Int1}, but add the operator algebra view.
+The work presented in this document develops this connection between group theory and inverse semigroup theory on the one hand and topology and geometry on the other by considering the universal groupoid associated to the partial action defined above. Via this groupoid we get access to the much more well developed analytic tools of noncommutative geometry; groupoid $C^{*}$-algebras are very well studied in comparison to those of an inverse monoid. In particular, we will be interested in constructing a $C^{*}$-algebraic analogue to Example \ref{Ex:Int1}. With that in mind we consider a special case of Example \ref{Ex:Int1}, but add the operator algebra view.
 
 \begin{example}\label{Ex:Int2}
 Let $\Gamma=\mathbb{Z}$ and let $X=\mathbb{N}$. The maps defined above turn into:
@@ -34,7 +34,7 @@ These partial bijections generate an inverse monoid, given by the presentation:
 \begin{equation*}
 S=\langle t_{1},t_{-1} | t_{-1}t_{1}=1 \rangle.
 \end{equation*}
-This is a well-known object in inverse semigroup theory: \textit{the bicyclic monoid}. We can also consider these maps as partial isometry operators inside $\mathcal{B}(\ell^{2}(X))$ in a very natural way and then consider the $C^{*}$-algebra they generate. This algebra is called the translation algebra $C^{*}T$ associated to the set of maps $T$. In this instance it coincides the the inverse semigroup $C^{*}$-algebra $C^{*}_{r}(S)$, which also satisfies the presentation defined above.
+This is a well-known object in inverse semigroup theory: \textit{the bicyclic monoid}. We can also consider these maps as partial isometry operators inside $\mathcal{B}(\ell^{2}(X))$ in a very natural way and then consider the $C^{*}$-algebra they generate. This algebra is called the translation algebra $C^{*}T$ associated to the set of maps $T$. In this instance it coincides the the inverse semigroup $C^{*}$-algebra $C^{*}_{r}(S)$, which is defined using the natural multiplication of $S$ as partial isometries on $\ell^{2}(S)$. This $C^{*}$-algebra also satisfies the presentation defined above.
 
 This is well-known to operator algebraists: $C^{*}(T)\cong C^{*}_{r}(S) \cong \mathcal{T}$: the Toeplitz algebra. This fits into the short exact sequence:
 \begin{equation*}
@@ -44,10 +44,10 @@ This can be translated into semigroup language:
 \begin{equation*}
 0 \rightarrow \mathcal{K}(\ell^{2}(\mathbb{N})) \rightarrow C^{*}_{r}(S) \rightarrow C^{*}_{r}(\mathbb{Z}) \rightarrow 0.
 \end{equation*}
-The last isomorphism arises from Fourier transform, but is recorded combinatorially by the fact that $\mathbb{Z}$ is the maximal group homomorphic image of $S$, i.e is given by $S$ after quotienting by a congruence. 
+The last isomorphism arises from the Fourier transform, but is recorded combinatorially by the fact that $\mathbb{Z}$ is the maximal group homomorphic image of $S$, i.e is given by $S$ after quotienting by a congruence. 
 \end{example}
 
-As we saw in the construction above there is a inverse semigroup with good combinatorial properties capturing the partial action that underlies the translation algebra. Studying representations of inverse monoids within this class one might then wonder how much of this result is true in general. A study of this is performed in Chapter 3 and this is one of the main results:
+As we saw in the construction above there is an inverse semigroup that is $0$-F-inverse capturing the partial action that underlies the translation algebra. Studying representations of inverse monoids within this class one might then wonder how much of this result is true in general. A study of this is performed in Chapter 3 and this is one of the main results:
 
 \begin{thm}\label{Ex:Int3}
 Let $S$ be an F-inverse monoid and let $\G_{\E}$ be its universal groupoid and let $A=C_{c}(\G_{U})$. Then we have the following  short exact sequence of $C^{*}$-algebras:
@@ -80,13 +80,13 @@ Let $X \subset \Gamma$ where $\Gamma$ is K-exact and let $\mathcal{T}=\mathcal{T
 \end{equation*}
 \end{thm}
 
-We explore in chapter 5 the K-theory of the Cuntz algebras $\mathcal{O}_{n}$ from this perspective as well as applying this idea to give an alternative proof that Gromovs monster groups are not K-exact.
+We explore in chapter 5 the K-theory of the Cuntz algebras $\mathcal{O}_{n}$ from this perspective as well as applying this idea to give an alternative proof that Gromov's monster groups \cite{MR1978492,exrangrps} are not K-exact.
 
-Another way to use the ideas of Example \ref{Ex:Int1} is to see what can be said about the coarse geometry of a metric space $X$ given that admits a partial action by a discrete group $\Gamma$. The coarse information we are interested in is captured by the coarse Baum-Connes conjecture; recall that the coarse Baum-Connes conjecture \cite{MR1388312} asks if a certain assembly map:
+Another way to use the ideas of Example \ref{Ex:Int1} is to see what can be said about the coarse geometry of a metric space $X$ given that it admits a partial action by a discrete group $\Gamma$. The coarse information we are interested in is captured by the coarse Baum-Connes conjecture; recall that the coarse Baum-Connes conjecture \cite{MR1388312} asks if a certain assembly map:
 \begin{equation*}
 \mu_{X,red}:KX_{*}(X) \longrightarrow K_{*}(C^{*}(X))
 \end{equation*}
-is an isomorphism for $X$ a uniformly discrete bounded geometry metric space. This conjecture is a geometric intrepretation of the well-known \textit{Baum-Connes conjecture} \cite{MR1292018}, and connects to it via a \textit{descent principle} \cite{MR1399087,MR1817560}; for a finitely generated group $\Gamma$ the associated Cayley graph will be a uniformly discrete space with bounded geometry and a positive result for the coarse Baum-Connes conjecture in such situations has strong implications such as the Strong Novikov conjecture \cite{MR866507} or the existence of metrics with positive scalar curvature for manifolds $M$ that have $\pi_{1}(M)\cong \Gamma$ \cite{MR1817560}.
+is an isomorphism for $X$ a uniformly discrete bounded geometry metric space. This conjecture is a geometric intrepretation of the well-known \textit{Baum-Connes conjecture} \cite{MR1292018}, and connects to it via a \textit{descent principle} \cite{MR1399087,MR1817560}; for a finitely generated group $\Gamma$ the associated Cayley graph will be a uniformly discrete space with bounded geometry and a positive result for the coarse Baum-Connes conjecture in such situations has strong implications such as the Strong Novikov conjecture concerning the homotopy invariance of the higher signatures of a smooth manifold \cite{MR866507} or the existence of metrics with positive scalar curvature for manifolds $M$ that have $\pi_{1}(M)\cong \Gamma$ \cite{MR1817560}.
 
 The Baum-Connes conjecture can be developed in other directions, particularly into the realm of topological groupoids \cite{MR1798599}. It is a well known result from \cite{MR1905840} that the above statement of the coarse Baum-Connes conjecture can be replaced with a conjecture with coefficients for some groupoid $G(X)$ that we can associate to any uniformly discrete bounded geometry metric space $X$.
 
@@ -98,9 +98,9 @@ is an isomorphism.
 
 The beginning of Chapter 4 develops these ideas from considering the basics of coarse geometry through to the groupoid definition of the coarse assembly map. There are two main objectives within the chapter: first to outline the constructions of counterexamples to the conjecture \cite{higsonpreprint,MR1911663,explg1,explg2,MR2568691} and give simplifications via single unified method: the boundary coarse Baum-Connes conjecture. This conjecture, defined via groupoids, tackles the space at infinity:
 \begin{conjecture}
-Let $X$ be a uniformly discrete bounded geometry metric space and let $G(X)$ be the associated coarse groupoid on $X$. Then:
+Let $X$ be a uniformly discrete bounded geometry metric space, let $G(X)$ be the associated coarse groupoid on $X$ and let $A_{\partial}= l^{\infty}(X,\mathcal{K})/C_{0}(X,\mathcal{K})$. Then:
 \begin{equation*}
-\mu_{X,bdry}:K_{*}^{top}(G(X)|_{\partial\beta X}, l^{\infty}(X,\mathcal{K})/C_{0}(X,\mathcal{K})) \rightarrow K_{*}((l^{\infty}(X,\mathcal{K})/C_{0}(X,\mathcal{K}))\rtimes_{r}G(X)|_{\partial\beta X})
+\mu_{bdry}:K_{*}^{top}(G(X)|_{\partial\beta X}, A_{\partial}) \rightarrow K_{*}(A_{\partial}\rtimes_{r}G(X)|_{\partial\beta X})
 \end{equation*}
 is an isomorphism.
 \end{conjecture}
@@ -115,12 +115,10 @@ The process to prove this associates to each such sequence a partial action of s
 
 Finally, in Chapter 5 we tie these ideas together. Firstly, certain examples of the short exact sequences of Chapter 3 and their K-theory are considered. Secondly, a counterexample to the boundary coarse Baum-Connes conjecture is constructed and lastly we show that Gromov monster groups, the groups that coarsely contain large girth expanders, fail to satisfy Baum-Connes with coefficients \cite{MR1978492,exrangrps}, and show that there are coefficients where the conjecture holds.
 
-\section{Outline.}
+In summary, in Chapter 2 we make precise the definitions and properties of inverse semigroups and groupoids that we will use within this thesis, as well as outlining the connections between them that are present in the literature. Following this we define partial actions of groups, which become the primary objects of study in later chapters. Lastly, we give the definition of a $C^{*}$-algebra and develop ideas concerned with $C^{*}$-algebras of groupoids and inverse semigroups as well as introducing the methods of topological K-theory.
 
-In Chapter 2 we make precise the definitions and properties of inverse semigroups and groupoids that we will use within the document, as well as outlining the connections between them that are present in the literature. Following this we define partial actions of groups, which become the primary objects of study in later chapters. Lastly, we give the definition of a $C^{*}$-algebra and develop ideas concerned with $C^{*}$-algebras of groupoids and inverse semigroups as well as introducing the methods of topological K-theory.
+In Chapter 3 the results concerning short exact sequences associated to F-inverse and strongly 0-F-inverse monoids that were outlined above are proved. The connections to coarse geometry are introduced; we introduce the concept of a partial translation structure and then use this to construct a short exact sequence associated to any sufficiently good subset of a finitely generated group. 
 
-In Chapter 3 the results concerning short exact sequences associated to F-inverse and strongly 0-F-inverse monoids that were outlined above are proved. The connections to coarse geometry are introduced; we introduce the concept of a partial translation structure and then use this to construct a short exact sequence associated to any sufficently good subset of a finitely generated group. 
-
-In Chapter 4 the focus changes to metric spaces and coarse geometry. The coarse Baum-Connes conjecture is defined via two different approaches, one analytic and one via a groupoid construction from the literature. In this instance, we focus on the groupoid version and explain how counterexamples to the conjecture are constructed. We then develop a new conjecture, the boundary coarse Baum-Connes conjecture, and prove it for certain sequences of finite graph.
+In Chapter 4 the focus changes to metric spaces and coarse geometry. The coarse Baum-Connes conjecture is defined via two different approaches, one analytic and one via a groupoid construction from the literature. In this instance we focus on the groupoid version and explain how counterexamples to the conjecture are constructed. We then develop a new conjecture, the boundary coarse Baum-Connes conjecture, and prove it for certain sequences of finite graphs.
 
 Lastly, Chapter 5 is devoted to giving examples and connections between the ideas of the previous chapters. We compute some K-theory groups associated to both translation algebras and inverse monoid $C^{*}$-algebras, give a counterexample to the boundary coarse Baum-Connes conjecture and use translation structure ideas and the results of Chapter 4 to prove that Gromov monster groups are not exact.

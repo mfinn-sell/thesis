@@ -1,10 +1,10 @@
 %\setstretch{1.6}
 \chapter{The Basics.}
-As outlined in the introduction inverse semigroups and groupoids play a large role in the development of many aspects of combinatorics, graph theory and analysis. In this section we provide some basics concerning these areas and the connections between them, developing the notion of Paterson and Exel of a \textit{universal groupoid} associated to an inverse semigroup. We then give a brief introduction to operator algebras, focusing on the situation that arises naturally from both inverse semigroups and groupoids. Lastly, we consider topological K-theory of $C^{*}$-algebras and we outline all the tools we need for the later chapters.
+As outlined in the introduction inverse semigroups and groupoids play a large role in the development of many aspects of combinatorics, graph theory and analysis. In this section we provide some basics concerning these areas and the connections between them, developing the notion of Paterson and Exel of a \textit{universal groupoid} associated to an inverse semigroup. We then give a brief introduction to the natural operator algebras that can be constructed from both inverse semigroups and groupoids. Lastly, we consider topological K-theory of $C^{*}$-algebras and we outline all the tools we need for the later chapters.
 
 \section{Semigroup and Groupoid Theory.}
 
-A \textit{semigroup} is a set $S$, together with an associative binary operation. If additionally it has a unit element, then we say it is a \textit{monoid}.
+A \textit{semigroup} is a set $S$, together with an associative binary operation. If additionally it has a unit element, then we say it is a \textit{monoid}. Recall that any $s \in S$ satisfying $s^{2}=s$ is said to be \textit{idempotent}.
 
 \begin{definition}\label{Def:invsemi}
 Let $S$ be a semigroup. We say $S$ is $inverse$ if there exists a unary operation $*:S \rightarrow S$ satisfying the following identities:
@@ -15,7 +15,11 @@ Let $S$ be a semigroup. We say $S$ is $inverse$ if there exists a unary operatio
 \end{enumerate}
 \end{definition}
 
-A very fundamental example of such an object is the \textit{symmetric inverse monoid} on any set $X$. Consider the collection of all partial bijections of $X$ to itself equipped with the  natural composition law associated to functions, which is to find the largest possible domain for the composition makes sense. This is shown below in Figure \ref{Fig:Comp}.
+A very fundamental example of such an object is the \textit{symmetric inverse monoid} on any set $X$, denoted by $I(X)$. This is defined equipping the collection of all partial bijections of $X$ to itself equipped the composition defined on common intersections:
+\begin{equation*}
+f_{2}\circ f_{1}: f_{1}^{-1}(im(f_{1})\cap dom(f_{2})) \rightarrow f_{2}(im(f_{1})\cap dom(f_{2})).
+\end{equation*}
+This is illustrated in Figure \ref{Fig:Comp} below.
 
 
 \begin{figure}[h]
@@ -60,30 +64,29 @@ A very fundamental example of such an object is the \textit{symmetric inverse mo
 \label{Fig:Comp}
 \end{center}
 \end{figure}
-Explicitly:
-\begin{equation*}
-f_{2}\circ f_{1}: f_{1}^{-1}(im(f_{1})\cap dom(f_{2})) \rightarrow f_{2}(im(f_{1})\cap dom(f_{2})).
-\end{equation*}
 
-A key observation that makes connects the combinatorial aspects of inverse semigroup theory to the geometry of partial bijections is the following representation theorem of Wagner and Preston \cite{MR1455373}:
+By the representation theorem of Wagner and Preston \cite{MR1455373}, it is possible to realise every inverse semigroup as a semigroup of partial bijections:
 
 \begin{theorem}\label{Thm:WP}
 Let $S$ be an inverse semigroup. Then there exists a set $X$ such that $S \hookrightarrow I(X)$.\qed
 \end{theorem}
 
-When $X$ is a metric space we can consider a inverse submonoid of $I(X)$ in which every partial bijection that maps elements only a finite distance. We call these partial translations and we denote the submonoid of these by $I_{b}(X)$.
+When $X$ is a metric space we can consider the inverse submonoid of $I(X)$ consisting of those partial bijections that move elements only a bounded distance. We call these partial translations and we denote the submonoid of these by $I_{b}(X)$.
 
 \begin{definition}
-Let $S$ be an inverse monoid. We denote by $E(S)$ the semilattice of idempotents (just by $E$ if the context is clear). This is a meet semilattice, where the meet is given by the product of $S$ restricted to $E$. In this situation we can define the following partial order:
+Let $S$ be an inverse monoid. We denote by $E(S)$ the set of idempotents (just by $E$ if the context is clear). This is a meet semilattice, that is a set in which every element has a greatest lower bound. In this instance, this lower bound is given by the product of $S$ restricted to $E$. In this situation we can define the following partial order:
 \begin{equation*}
 e \leq f \Leftrightarrow ef=e
 \end{equation*}
-In the situation that $E$ consists of subsets of some set $X$, the meet is intersection and this order corresponds to subset inclusion.
+In the situation that $E$ consists of subsets of some set $X$, the meet is intersection and this order corresponds to subset inclusion. This order can naturally by extended to $S$ and should be thought of as restriction:
+\begin{equation*}
+s \leq t \Leftrightarrow (\exists e \in E) \mbox{ such that } s=et.
+\end{equation*}
 \end{definition}
 
-We remark that for a metric space $X$ every idempotent element in $I(X)$ moves elements no distance, and hence $E(I(X))=E(I_{b}(X))$. An inverse submonoid with this property is often called \textit{full}.
+A submonoid $T \subset S$ is said to be \textit{full} if $E(T)=E(S)$. We remark that for a metric space $X$ every idempotent element in $I(X)$ moves elements no distance and hence $I_{b}(X)$ is a full submonoid of $I(X)$.
 
-We want to consider quotient structures of an inverse monoid, and unlike in group theory where we have the concept of a \textit{normal} subgroup our subsemigroups will not in general contain enough structure. One possible choice is to consider \textit{ideals} in $S$. 
+We want to consider quotient structures of an inverse monoid. In semigroup theory, quotients correspond to applying an equivalence relation to $S$ that is compatible with the multiplication. Such relations are called \textit{congruences}.  One possible construction arises for each \textit{ideal} in $S$. 
 
 \begin{definition}
 Let $I$ be a subset of $S$. $I$ is an ideal of $S$ if $SI \cup IS \subset I$.
@@ -92,7 +95,7 @@ Let $I$ be a subset of $S$. $I$ is an ideal of $S$ if $SI \cup IS \subset I$.
 From an ideal we can define a quotient at the cost of a \textit{zero element}, that is an element $0 \in S$ such that $0s=s0=0$ for all $s \in S$.
 
 \begin{definition}
-Let $S$ be an inverse monoid and let $I$ be an ideal of $S$. Then we can define $\frac{S}{I}$ to be the set $(S \setminus I) \cup \lbrace 0 \rbrace$, equipped with the following product:
+Let $S$ be an inverse monoid and let $I$ be an ideal of $S$. Then we can define $S\backslash I$ to be the set $(S \setminus I) \cup \lbrace 0 \rbrace$, equipped with the following product:
 \begin{eqnarray*}
 s \ast t = \left\lbrace \begin{array}[c] $st$ \mbox{if} s \mbox{and} t \not\in I \\ 0 \mbox{ if } s \mbox{ or } t \in I \end{array}
 \end{eqnarray*}
@@ -102,30 +105,26 @@ This is an inverse monoid with 0 called the \textit{Rees quotient} of $S$ by $I$
 General quotients are given by equivalence relations and in order to get an inverse monoid structure on the equivalence classes it is enough to impose a closure condition on the relation. A relation of this type is called a \textit{congruence} on $S$.
 
 \begin{definition}
-An equivalence relation $\sim$ on $S$ is called a \textit{congruence} if for every $u,v,s,t \in S$ such that $s \sim t$, we know that $su\sim tu$ and $vs \sim vt$. This allows us to equip the quotient $\frac{S}{\sim}$ with a product, making it into an inverse monoid.
+An equivalence relation $\sim$ on $S$ is called a \textit{congruence} if for every $u,s,t \in S$ such that $s \sim t$, we know that $su\sim tu$ and $us \sim ut$. This allows us to equip the quotient $S \backslash \sim$ with a product, making it into an inverse monoid.
 \end{definition}
 
-We will be considering a specific congruence on $S$ called the \textit{minimum group congruence}.  This congruence, denoted by $\sigma$, is given by:
+We will be considering a specific congruence on $S$ called the \textit{minimum group congruence}, so called because it is the smallest congruence on $S$ such that the quotient is a group.  This congruence, denoted by $\sigma$, is given by:
 \begin{equation*}
 s \sigma t \Leftrightarrow (\exists e \in E) es = et
 \end{equation*}
-A congruence is \textit{idempotent pure} when $e\in E$ and $e \sim s$ implies $s \in E$. This collects all idempotents into classes when quotienting out. 
+A congruence is \textit{idempotent pure} when $e\in E$ and $e \sim s$ implies $s \in E$. The equivalence class of an idempotent will contain only idempotents in this case.
 \begin{definition}
-An inverse monoid $S$ is called E-unitary if for all $e \in E$ and $s \in S$ if $e \leq s$ then $s \in E$. $S$ is F-inverse if the preimage of each $g \in \frac{S}{\sigma}$ has a maximum element in the order on $S$.
+An inverse monoid $S$ is called \textit{E-unitary} if for all $e \in E$ and $s \in S$ if $e \leq s$ then $s \in E$. $S$ is \textit{F-inverse} if the preimage of each $g \in S \backslash \sigma$ has a maximum element in the order on $S$. and we remark that this is equivalent to asking that for every element $s \in S$ there exists a \textit{unique} maximal element $t \in S$ such that $s \leq t$. We denote the maximal elements of an F-inverse monoid by $Max(S)$
 \end{definition}
+
 The minimum group congruence, on the class of E-unitary inverse monoids, is an example of an idempotent pure congruence. Additionally it is the smallest group congruence on $S$ \cite{MR1694900}.
 
-We denote these maximal elements by $Max(S)$, and we remark that this is equivalent to asking that for every element $s \in S$ there exists a \textit{unique} maximal element $t \in S$ such that $s \leq t$.
-
-For an F-inverse monoid it is possible to study the minimum group congruence by considering all the maximal elements with a new product:
-\begin{equation*}
-(\forall s,t \in Max(S)) s \Xst t = u \mbox{ for } !u \in Max(S) \mbox{ with } st \leq u.
-\end{equation*}
+For an F-inverse monoid it is possible to study the minimum group congruence by considering all the maximal elements with a new product, $*$, which is defined for every $s,t \in Max(S)$ by $s*t=u$, where $u$ is the unique maximal element in $S$ that is above $st$ in the partial order on $S$.
 
 In general the inverse monoids we will construct will not have this property because they will have a zero element. However we can make similar definitions in this case:
 
 \begin{definition}
-We say $S$ is 0-E-unitary if $\forall e \in E\setminus 0, s \in S$ $e \leq s$ implies $s \in E$. We say it is 0-F-inverse if there exists a subset $T \subset S$ such that for every $s \in S$ there exists a unique $t \in T$ such that $s \leq t$ and if $s \leq u$ then $u \leq t$.
+Let $S$ be an inverse monoid. We say $S$ is 0-E-unitary if $\forall e \in E\setminus 0, s \in S$ $e \leq s$ implies $s \in E$. We say it is 0-F-inverse if there exists a subset $T \subset S$ such that for every $s \in S$ there exists a unique $t \in T$ such that $s \leq t$ and if $s \leq u$ then $u \leq t$.
 \end{definition}
 
 As mentioned before, the minimum group congruence on such monoids will return the trivial group. However by working in a category with a more relaxed type of morphism we can still build useful maps to groups. We develop this in Section \ref{Sect:S3} of this Chapter.
@@ -150,7 +149,7 @@ Moreover we ask the following:
 \end{itemize}
 \end{definition}
 
-A groupoid is \textit{principal} if $(r,s): \G \rightarrow \G^{(0)} \times \G^{(0)}$ is injective and \textit{transitive} if $(r,s)$ is surjective. A groupoid $\G$ is a \textit{topological groupoid} if both $\G$ and $\G^{(0)}$ are topological spaces, and the maps $r,s, ^{-1}$ and the composition are all continuous. A Hausdorff, locally compact topological groupoid $\G$ is \textit{proper} if $(r,s)$ is a proper map and \textit{\'etale} or \textit{r-discrete} if the map $r$ is a local homeomorphism. When $\G$ is \'etale, $s$ and the product are also local homeomorphisms, and $\G^{(0)}$ is an open subset of $\G$.
+A groupoid is \textit{principal} if $(r,s): \G \rightarrow \G^{(0)} \times \G^{(0)}$ is injective and \textit{transitive} if $(r,s)$ is surjective. A groupoid $\G$ is a \textit{topological groupoid} if both $\G$ and $\G^{(0)}$ are topological spaces, and the maps $r,s, ^{-1}$ and the composition are all continuous. A Hausdorff, locally compact topological groupoid $\G$ is \textit{proper} if $(r,s)$ is a proper map and \textit{\'etale} or \textit{r-discrete} if the map $r$ is a local homeomorphism. When $\G$ is \'etale, $s$ and the product are also local homeomorphisms, and $\G^{(0)}$ is an open subset of $\G$ \cite[Section 3]{MR2419901}.
 
 \begin{definition}
 Let $\G$ be a groupoid and let $A,B \subset \G^{(0)}$. Set:
@@ -179,11 +178,11 @@ Let $\G$ act on $Z$. The action is said to be \textit{free} if $\gamma.z=z$ impl
 We end this section with some useful examples.
 
 \begin{example}\label{Ex:TransGrp}
-Let $X$ be a topological $\Gamma$-space. Then the \textit{transformation groupoid} associated to this action is given by the data $X \times G \rightrightarrows X$ with $s(x,g)=x$ and $r(x,g)=g.x$. We denote this by $X \rtimes G$. A basis $\lbrace U_{i} \rbrace$ for the topology of $X$ lifts to a basis for the topology of $X \rtimes G$, given by sets $[U_{i},g]:=\lbrace (u,g) | u \in U_{i} \rbrace$. 
+Let $X$ be a topological $\Gamma$-space. Then the \textit{transformation groupoid} associated to this action is given by the data $X \times G \rightrightarrows X$ with $s(x,g)=x$ and $r(x,g)=g.x$. We denote this by $X \rtimes \Gamma$. A basis $\lbrace U_{i} \rbrace$ for the topology of $X$ lifts to a basis for the topology of $X \rtimes \Gamma$, given by sets $[U_{i},g]:=\lbrace (u,g) | u \in U_{i} \rbrace$. 
 \end{example}
 
 \begin{example}
-The construction in the example above can be generalized to actions of \'etale groupoids. We are concerned with the topology here: Given an \'etale groupoid $\G$ and a $\G$-space $X$ as well as a with a basis $\lbrace U_{i} \rbrace$ for $\G^{(0)}$. We can pull this basis back to a basis for $X \rtimes \G$ given by $[r_{z}^{-1}(U_{i}),\gamma]$, where $U_{i} \subseteq s(\gamma)$.
+The construction in the example above can be generalized to actions of \'etale groupoids. We are concerned with the topology here: Given an \'etale groupoid $\G$, a $\G$-space $X$ and a basis $\lbrace U_{i} \rbrace$ for $\G^{(0)}$. We can pull this basis back to a basis for $X \rtimes \G$ given by $[r_{z}^{-1}(U_{i}),\gamma]$, where $U_{i} \subseteq s(\gamma)$.
 \end{example}
 
 Lastly, we consider a extended example that introduces some concepts that are highly relevant in Chapters 3 and 4.
@@ -239,6 +238,7 @@ As we are considering the metric coarse structure we can reduce this to consider
 G(X):=\bigcup_{R>0}\overline{\Delta_{R}}.
 \end{equation*}
 This groupoid, as well as the concept of a coarse structure, will play an important role in Chapters 3 and 4.
+\end{example}
 
 \subsection{Groupoids from inverse monoids.}\label{sect:semitogrpoid}
 In this section we outline the machine of \cite{MR1724106,MR2419901} for producing a groupoid $\G_{\E}$ from an inverse semigroup $S$. The way we proceed involves studying the actions of $S$ on its semilattice $E$. Working with semilattices, being generalisations of Boolean algebras, we still have access to a version of Stone duality; there exists many compactifications of $E$, built from its order structure, that extends the natural conjugation action of $S$. 
@@ -254,7 +254,7 @@ After the construction, we make some remarks about more general groupoids of ger
 \begin{definition}
 
 \begin{enumerate}
-\item Let $D_{e}=\lbrace f \in E | f \leq e \rbrace$. For $ss^{*} \in E$, we can define a map $\rho_{s}(ss^{*})=s^{*}s$, extending to $D_{ss^{*}}$ by $\rho_{s}(e) = s^{*}es$. This defines a partial bijection on $E$ from $D_{ss^{*}}$ to $D_{s^{*}s}$. 
+\item For each $e \in E$ let $D_{e}=\lbrace f \in E | f \leq e \rbrace$. For $ss^{*} \in E$, we can define a map $\rho_{s}(ss^{*})=s^{*}s$, extending to $D_{ss^{*}}$ by $\rho_{s}(e) = s^{*}es$. This defines a partial bijection on $E$ from $D_{ss^{*}}$ to $D_{s^{*}s}$. 
 
 \item We consider a subspace of $\textbf{2}^{E}$ given by the functions $\phi$ such that $\phi(0)=0$ if $S$ has a zero and $\phi(ef)=\phi(e)\phi(f)$. We can topologise this as a subspace of $\textbf{2}^{E}$, where it is closed. This makes it compact Hausdorff, with a base of topology given by $\widehat{D}_{e}= \lbrace \phi \in \E | \phi(e)=1 \rbrace$. This admits a dual action induced from the action of $S$ on $E$. This is given by the pointwise equation for every $\phi \in \widehat{D}_{s^{*}s}$:
 \begin{equation*}
@@ -278,7 +278,7 @@ F_{\psi}= \lbrace e \in E | \psi(e)=1 \rbrace.
 And every filter $F$ provides a character by considering $\chi_{F}$, its characteristic function. This implements a 1-1 correspondence.
 \end{remark}
 
-\item We take the set $S \times \E$, topologise it as a product and consider subset $\Omega:= \lbrace (s, \phi) | \phi \in D_{s^{*}s} \rbrace$ in the subspace topology. We then quotient this space by the relation:
+\item We take the set $S \times \E$, topologise it as a product and consider the subset $\Omega:= \lbrace (s, \phi) | \phi \in D_{s^{*}s} \rbrace$ in the subspace topology. We then quotient this space by the relation:
 \begin{equation*}
 (s, \phi) \sim (t, \phi^{'}) \Leftrightarrow \phi=\phi^{'} \mbox{ and } (\exists e \in E) \mbox{ with } \phi \in \widehat{D}_{e} \mbox{ such that } es=et
 \end{equation*}
@@ -293,9 +293,9 @@ and product and inverse:
 [s,\phi].[t,\phi^{'}]= [st,\phi^{'}] \mbox{ if } ([s,\phi],[t,\phi^{'}]) \in \G_{\E}^{(2)}, [s,\phi]^{-1} = [s^{*},\widehat{\rho}_{s}(\phi)] 
 \end{eqnarray*}
 For all the details of the above, we refer to \cite[Section 4]{MR2419901}. This groupoid is the \textit{universal groupoid} associated to $S$. We collect some information about this groupoid from \cite{MR2419901,MR1724106} in Theorem \ref{Thm:Info}.
-\item Lastly we consider certain subspaces of $\E$ that are closed and saturated and we outline their construction and some associated technicalities below. This subspace arises from the question: what are the ultrafilters on $E$?
+\item Lastly we consider subspaces of $\E$ that are closed and saturated and we outline their construction and some associated technicalities below. These subspace arise from the question: what are the ultrafilters on $E$?
 
-The answer to this question and the technical obstructions that arise form a large part of the papers \cite{MR2419901,MR2672179} of Exel and Lawson. We denote the subspace of ultrafilters $\E_{\infty}$. The main technical point is that, unlike the Boolean algebra case, $\E_{\infty}$ need not be a closed subset of $\E$ when $E$ is a semilattice. This leads Exel to consider what he calls \textit{tight} filters, which we denote by $\E_{tight}$. In \cite{MR2419901} it is shown that tight filters are the closure of the ultrafilters inside $\E$. 
+The answer to this question and the technical obstructions that arise form a large part of the papers \cite{MR2419901,MR2672179} of Exel and Lawson. We denote the subspace of ultrafilters $\E_{\infty}$. The main technical point is that, unlike the Boolean algebra case, $\E_{\infty}$ need not be a closed subset of $\E$ when $E$ is a semilattice. This leads Exel to consider what he calls \textit{tight} filters, which we denote by $\E_{tight}$. In \cite{MR2419901} it is shown that tight filters coincide with the closure of the ultrafilters inside $\E$. 
 
 \end{enumerate}
 \end{definition}
@@ -317,9 +317,9 @@ Using Claim \ref{MainClaim:C1} will be able to forget the non-maximal elements i
 Lastly for this section we make remarks about the more general notion associated to a representation of $S \rightarrow I(X)$ called a \textit{groupoid of germs}.
 
 \begin{remark}
-If we define a topological action of $S$ on a locally compact Hausdorff space $X$ to be a representation of $\pi:S \rightarrow I(X)$ such that each $s \in S$ is continuous and has a open domain, where these domains satisfy $\bigcup_{s \in S}D_{s^{*}s} = X$.
+We define a topological action of $S$ on a locally compact Hausdorff space $X$ to be a representation of $\pi:S \rightarrow I(X)$ such that each $s \in S$ is continuous and has a open domain, where these domains satisfy $\bigcup_{s \in S}D_{s^{*}s} = X$.
 
-From this we can construct a groupoid the recipe of for the universal groupoid. We do this by considering the subset of $S \times X$ given by $K:=\lbrace (s,x) | x \in D_{s^{*}s}\rbrace$. We then quotient by the relation outlined in the construction of the universal groupoid and give it the same product and inverse. This turns the quotient into a groupoid; called the groupoid of germs, denoted by $X \rtimes S$.
+We can construct a groupoid from the the recipe of for the universal groupoid. We do this by considering the subset of $S \times X$ given by $K:=\lbrace (s,x) | x \in D_{s^{*}s}\rbrace$. We then quotient by the relation outlined in the construction of the universal groupoid and give it the same product and inverse. This turns the quotient into a groupoid; called the groupoid of germs, denoted by $X \rtimes S$.
 
 Putting $\E$ into this construction provides $\G_{\E}$ and every other suitable representation gives us a restriction of $\G_{\E}$. This follows from the work of \cite{MR2419901}.
  
@@ -337,15 +337,15 @@ We recall that a congruence is said to be \textit{idempotent pure} if the preima
 \begin{definition}
 Let $S$ be a 0-E-unitary inverse monoid. We say $S$ is \textit{strongly 0-E-unitary} if there exists an idempotent pure, 0-restricted prehomomorphism, $\Phi$ to a group $G$ with a zero element adjoined, that is: $\Phi:S \rightarrow G^{0}$. In this instance the prehomomorphism property translates into: if $s,t \in S$ with $st \not = 0$, we have $\Phi(st)=\Phi(s)\Phi(t)$, as the order structure on $G^{0}$ is simply given by $g \leq h \Leftrightarrow g = 0$ or $g=h$.
 
-We say it is \textit{strongly 0-F-inverse} if it is 0-F-inverse and strongly 0-E-unitary. This is equivalent to the fact that the preimage of each group element under $\Phi$ that is not $0$ contains a maximum element.
+We say $S$ is \textit{strongly 0-F-inverse} if it is 0-F-inverse and strongly 0-E-unitary. This is equivalent to the fact that the preimage of each group element under $\Phi$ that is not $0$ contains a maximum element.
 \end{definition}
 
 This class of inverse monoids is particularly important: the idempotent pure, 0-restricted prehomomorphism onto a group (with 0) can be thought of as a generalisation of the minimum group congruence in the larger category of inverse monoids with prehomomorphisms. We will utilise this technology later to regain some of the information from a group when we cannot quotient out in any meaningful way due to the presence of a zero element.
 
 \begin{example}
-In \cite{MR745358,MR2221438} a inverse monoid was introduced that is universal for dual prehomomorphisms from a general inverse semigroup. In the context of a group $G$ this is called the \textit{prefix expansion}; its elements are given by pairs: $(X,g)$ for $\lbrace 1,g\rbrace \subset X$, where $X$ is a finite subset of $G$. The set of such $(X,g)$ is then equipped with a product and inverse:
+In \cite{MR745358,MR2221438} an inverse monoid was introduced that is universal for dual prehomomorphisms from a general inverse semigroup. In the context of a group $G$ this is called the \textit{prefix expansion}; its elements are given by pairs: $(X,g)$ for $\lbrace 1,g\rbrace \subset X$, where $X$ is a finite subset of $G$ containing $1$. The set of such $(X,g)$ is then equipped with a product and inverse:
 \begin{equation*}
-(X,g)(Y,h) = (X\cup gY,gh)\mbox{ , } (X,g)^{-1}=(g^{-1}X,g^{-1})
+(X,g)(Y,h) = (X\cup gY,gh)\mbox{ , }; (X,g)^{-1}=(g^{-1}X,g^{-1})
 \end{equation*}
 This has maximal group homomorphic image $G$, and it has the universal property that it is the largest such inverse monoid. We denote this by $G^{Pr}$. The partial order on $G^{Pr}$ can be described by reverse inclusion, induced from reverse inclusion on finite subsets of $G$. It is F-inverse, with maximal elements: $\lbrace(\lbrace 1,g \rbrace, g):g \in G \rbrace$.
 \end{example}
@@ -359,7 +359,7 @@ Let $G$ be a finitely generated discrete group and let $X$ be a (locally compact
 \end{enumerate}
 \end{definition}
 
-Given this data we can generate an inverse monoid $S$ using the set of $\theta_{g}$. This would then give a representation of $S$ into $I(X)$. If the space $X$ is a coarse space, then it makes sense to ask if each $\theta_{g}$ is a close to the identity. In this case, we would get a representation into the bounded symmetric inverse monoid $I_{b}(X)$. We call such a $\theta$ a \textit{bounded partial action} of $G$.
+Given this data we can generate an inverse monoid $S$ using the set of $\theta_{g}$. This would then give a representation of $S$ into $I(X)$. If the space $X$ admits a coarse structure, then it makes sense to ask if each $\theta_{g}$ is a close to the identity. In this case, we would get a representation into the bounded symmetric inverse monoid $I_{b}(X)$. We call such a $\theta$ a \textit{bounded partial action} of $G$.
 
 We are going to be interested in turning a partial group action into a full group action; the process of globalisation has been considered in a variety of settings \cite{MR0160848, MR1798993, MR2041539, MR2419858, MR1900993, Milan-Steinberg}, each using the same central theme.
 
@@ -425,10 +425,10 @@ This is complete (Banach) algebra in this norm. Observe it satisfies the followi
 \begin{equation*}
 \Vert f^{*}f \Vert = \Vert f \Vert^{2}
 \end{equation*}
-So it is a $C^{*}$-algebra. Observe also has a commutative product.
+So it is a $C^{*}$-algebra. Observe also that it has a commutative product.
 \end{example}
 
-This example will allow us classify \textit{all} commutative $C^{*}$-algebras using the following result of Gelfand:
+This example will allow us to classify \textit{all} commutative $C^{*}$-algebras using the following result of Gelfand:
 
 \begin{theorem}
 The category of all commutative $C^{*}$-algebras and *-homomorphisms is equivalent to the opposite of the category of locally compact, Hausdorff topological spaces with proper maps.
@@ -459,10 +459,10 @@ The axioms above imply a generalization of the Cauchy-Schwartz inequality and so
 If you put $A= \mathbb{C}$ then the above definition reduces to that of a Hilbert space. A $C^{*}$-algebra $A$ can be thought of as a Hilbert $A$-module over itself using the inner product: $\langle a, a^{'} \rangle = a^{*}a^{'}$. Also we remark that not all the basic facts that apply to Hilbert spaces apply to Hilbert modules - in general the Riesz Representation Theorem fails for Hilbert Modules \cite{MR1077390}.
 \end{remark}
 
-\subsection{Constructions of Groupoid \texorpdfstring{$C^{*}$}{C*}-algebras.}\label{Sect:GVC} The standard technique for a locally compact group $G$ involves considering norm completions associated to representations of the ring of compactly supported functions on the group. We can associate a very natural representation on the space $L^{2}(G,\mu)$, where $\mu$ is the Haar measure on $G$. To extend these ideas to a locally compact groupoid we will need an analogue of this measure in a suitably fibred manner.
+\subsection{Constructions of Groupoid \texorpdfstring{$C^{*}$}{C*}-algebras.}\label{Sect:GVC} The standard technique for constructing a $C^{*}$-algebra from a locally compact group $G$ involves considering norm completions associated to representations of the ring of compactly supported functions on the group. We can associate a very natural representation on the space $L^{2}(G,\mu)$, where $\mu$ is the Haar measure on $G$. To extend these ideas to a locally compact groupoid we will need an analogue of this measure in a suitably fibred manner.
 
 \begin{definition}
-A \textit{left Haar system} for a locally compact groupoid $\G$ is a family $\lbrace \lambda^{u} \rbrace$, where each $\lambda^{u}$ is a positive regular Borel measure on the locally compact Hausdorff $\G^{u}$, such that the following hold:
+A \textit{left Haar system} for a locally compact groupoid $\G$ is a family $\lbrace \lambda^{u} \rbrace$, where each $\lambda^{u}$ is a positive regular Borel measure on the locally compact Hausdorff space $\G^{u}$ such that the following hold:
 \begin{enumerate}
 \item the support of each $\lambda^{u}$ is the whole of $\G^{u}$;
 \item for any $g \in C_{c}(\G)$, the function $g^{0}$, where:
@@ -472,7 +472,7 @@ g^{0}(u)=\int_{\G^{u}}g d\lambda^{u}
 belongs to $C_{c}(\G^{(0)})$.
 \item for any $x \in \G$ and $f \in C_{c}(\G)$,
 \begin{equation*}
-\int_{\G^{d(x)}}f(xz)d\lambda^{d(x)}(z) = \int_{\G^{r(x)}}f(y)d\lambda^{r(x)}(y)
+\int_{\G^{d(x)}}f(xz)d\lambda^{d(x)}(z) = \int_{\G^{r(x)}}f(y)d\lambda^{r(x)}(y).
 \end{equation*}
 \end{enumerate}
 \end{definition}
@@ -550,11 +550,11 @@ We observe that this completion arises by considering a field of Hilbert spaces 
 \end{equation*}
 We observe that for any function $f \in C_{0}(\G^{(0)})$ we can define a right action on $C_{c}(\G)$ by: $(\eta.f)(\gamma) = \eta(\gamma)f(s(\gamma)) $. We can then complete this as a Hilbert module, and we denote this by $L^{2}(\G)$. The algebra $C_{c}(\G)$ represents naturally on this algebra using the representation: $\lambda(f)(\eta)=f \ast \eta$.
 
-It is well known that any Hilbert $C_{0}(\G^{(0)})$-module $\mathcal{M}$ is the space of sections of a continuous field of Hilbert spaces $\lbrace \mathcal{M}_{x} \rbrace_{x \in \G^{(0)}}$, with any bounded adjointable operator $T$ on $\mathcal{M}$ decomposing as a strongly $*$-continuous field $(T_{x})_{x \in \G^{(0)}}$ with, $\Vert T \Vert = \sup_{x \in \G^{(0)}} \Vert T_{x} \Vert$. We use this to get easier access to the norm by explicitly constructing each $\mathcal{M}_{x}$. To do this, we construct an inner product for each $x \in \G^{(0)}$:
+It is well known that any Hilbert $C_{0}(\G^{(0)})$-module $\mathcal{M}$ is the space of sections of a continuous field of Hilbert spaces $\lbrace \mathcal{M}_{x} \rbrace_{x \in \G^{(0)}}$, with any bounded adjointable operator $T$ on $\mathcal{M}$ decomposing as a strongly $*$-continuous field $(T_{x})_{x \in \G^{(0)}}$ with, $\Vert T \Vert = \sup_{x \in \G^{(0)}} \Vert T_{x} \Vert$ \cite{MR1900993}. We use this to get easier access to the norm by explicitly constructing each $\mathcal{M}_{x}$. To do this, we construct an inner product for each $x \in \G^{(0)}$:
 \begin{equation*}
 \langle \zeta, \eta \rangle_{x} = (\zeta^{*}\ast\eta)(x). 
 \end{equation*}
-This defines an inner product on $C_{c}(\G_{x})$, which we can use to complete. We denote this completion by $L^{2}(\G_{x})$. This gives us the natural field of Hilbert spaces we were looking for, namely: $\lbrace L^{2}(\G_{x}) \rbrace_{x \in \G^{(0)}}$. It also gives us a natural representation of $C_{c}(\G)$ given by $\lambda_{x}(f)\eta = (f \ast \eta)(x)$. Hence we can conclude that $\Vert f \Vert = \sup_{x \in \G^{(0)}} \Vert \lambda(f) \Vert = \Vert \lambda(f) \Vert$. From this we can complete $C_{c}(\G)$ in either the norm on $L^{2}(\G)$ or the family of norms $\lbrace L^{2}(\G_{x}) \rbrace_{x \in \G^{(0)}}$, getting the same completion, denoted by $C^{*}_{r}(\G)$. 
+This defines an inner product on $C_{c}(\G_{x})$, which we can use to complete into a Hilbert space which we denote by $L^{2}(\G_{x})$. This gives us the natural field of Hilbert spaces we were looking for, namely: $\lbrace L^{2}(\G_{x}) \rbrace_{x \in \G^{(0)}}$. It also gives us a natural representation of $C_{c}(\G)$ given by $\lambda_{x}(f)\eta = (f \ast \eta)(x)$. Hence we can conclude that $\Vert f \Vert = \sup_{x \in \G^{(0)}} \Vert \lambda(f) \Vert = \Vert \lambda(f) \Vert$. From this we can complete $C_{c}(\G)$ in either the norm on $L^{2}(\G)$ or the family of norms $\lbrace L^{2}(\G_{x}) \rbrace_{x \in \G^{(0)}}$, getting the same completion, denoted by $C^{*}_{r}(\G)$. 
 
 These ideas clearly agree with the more formal construction given at the beginning of this section as the $K_{v}$ are isometrically isomorphic to $L^{2}(\G|_{v})$. 
 
@@ -588,8 +588,8 @@ Let $\G$ be a locally compact groupoid. Then we call a continuous homomorphism f
 \begin{definition}
 Let $\rho: \G \rightarrow S$ be a cocycle. We say it is:
 \begin{enumerate}
-\item \textit{transverse} if the map $S \times \G \rightarrow S \times X$, $(s, \gamma) \mapsto (s\rho(\gamma),s(\gamma))$ is open.
-\item \textit{closed} if the map $\gamma \mapsto ((r(\gamma),\rho(\gamma),s(\gamma))$ is closed.
+\item \textit{transverse} if the map $S \times \G \rightarrow S \times X$, $(s, \gamma) \mapsto (s\rho(\gamma),s(\gamma))$ is open,
+\item \textit{closed} if the map $\gamma \mapsto ((r(\gamma),\rho(\gamma),s(\gamma))$ is closed,
 \item \textit{faithful} if the map $\gamma \mapsto ((r(\gamma),\rho(\gamma),s(\gamma))$ is injective.
 \end{enumerate}
 We call a cocycle $\rho$ with all these properties a \textit{(T,C,F)-cocycle}.
@@ -598,7 +598,7 @@ We call a cocycle $\rho$ with all these properties a \textit{(T,C,F)-cocycle}.
 Below is the main result of \cite{Milan-Steinberg}, a generalisation of the main results of \cite{MR1900993}:
 
 \begin{theorem}\label{Thm:IT2}
-Let $\rho: \G \rightarrow S$ be a continuous, faithful closed transverse cocycle where $\G$ is a locally compact groupoid and $S$ is a countable inverse semigroup. Then there is a locally compact Hausdorff space $X$ equipped with an action of $S$ so that $\G$ is Morita equivalent to the groupoid of germs $X \rtimes S$. Consequently $C^{*}_{max}\G$ is strongly Morita equivalent to $C_{0}(X)\rtimes S$. If $S$ is a group, then the analogous result holds for reduced $C^{*}$-algebras.
+Let $\rho: \G \rightarrow S$ be a continuous, faithful, closed, transverse cocycle where $\G$ is a locally compact groupoid and $S$ is a countable inverse semigroup. Then there is a locally compact Hausdorff space $X$ equipped with an action of $S$ so that $\G$ is Morita equivalent to the groupoid of germs $X \rtimes S$. Consequently $C^{*}_{max}\G$ is strongly Morita equivalent to $C_{0}(X)\rtimes S$. If $S$ is a group, then the analogous result holds for reduced $C^{*}$-algebras.
 \end{theorem}
 
 From an F-inverse monoid $S$ it is possible to construct a (T,C,F)-cocycle onto the maximal group homomorphic image of $G$ \cite{MR1900993}. To prove Theorem \ref{Thm:IT2} in the case that the monoid is $F$-inverse then makes use of the Morita envelope of the partial action that the maximal group homomorphic image $G$ has on the unit space of the universal groupoid $\G_{\E}$. By Lemma 1.7 of \cite{MR1900993} the (T,C,F)  condition on the cocycle is enough to prove that the Morita envelope is  Hausdorff. 
@@ -683,8 +683,8 @@ Consider $(p+q)^{2}=p^{2}+2pq+q^{2}$. This equals $p+q$ if and only if $pq=0$.
 Let $p,q \in A$ be projections. 
 \begin{enumerate}
 \item $p$ is said to be \textit{equivalent} to $q$, written $p \sim q$, if there exists a partial isometry $v \in A$ such that $p=v^{*}v$ and $q=vv^{*}$.
-\item $p$ is said to be \textit{unitarily equivalent} to $q$, $p \sim_{u} q$, if there exists a unitary $u \in A$ such that $p=u^{*}qu$.
-\item $p$ is said to be \textit{homotopic} to $q$, $p \sim_{h} q$, is there exists a norm continuous path of projections $p_{t}$ such that $p_{0}=p$ and $p_{1}=q$.
+\item $p$ is said to be \textit{unitarily equivalent} to $q$, written $p \sim_{u} q$, if there exists a unitary $u \in A$ such that $p=u^{*}qu$.
+\item $p$ is said to be \textit{homotopic} to $q$, written $p \sim_{h} q$, is there exists a norm continuous path of projections $p_{t}$ such that $p_{0}=p$ and $p_{1}=q$.
 \end{enumerate}
 \end{definition}
 
@@ -707,11 +707,13 @@ In defining K-theory, similar to both topological K-theory and algebraic K-theor
 Let $A$ be a $C^{*}$-algebra. We denote by $Proj(A)$ the set of homotopy equivalence classes of projections in $M_{\infty}(A)$. With the sum, $+$ defined above, this is a commutative monoid. 
 \end{definition}
 
-To construct the K-theory group we need a construction that associates to every commutative monoid a commutative group. We do this as follows. Let $M$ be a commutative monoid with operation $+$. Now consider the following equivalence relation on $M\times M$:
+Finally, $K_{0}$ is constructed using a process that associates to every commutative monoid a commutative group. We do this as follows. Let $M$ be a commutative monoid with operation $+$. Now consider the following equivalence relation on $M\times M$:
 \begin{equation*}
-(s,t) \tilde (u,v) \Leftrightarrow (\exists p \in M) \mbox{ such that } s+v+p=u+t+p
+(s,t) \sim (u,v) \Leftrightarrow (\exists p \in M) \mbox{ such that } s+v+p=u+t+p
 \end{equation*} 
-The quotient of $M\times M$ by this relation has a group structure extending the $+$ on $M$ \cite{MR1222415}. This also has a natural injective map from $M$, given by sending $m\in M$ to $[m,1]_{\tilde}$. This process generalises the construction of the integers from the natural numbers and is called taking the \textit{Grothendieck group} of $M$.
+The quotient of $M\times M$ by this relation has a group structure extending the $+$ on $M$ \cite{MR1222415}. This also has a natural injective map from $M$ given by sending $m\in M$ to $[m,1]$.
+
+This process generalises the construction of the integers from the natural numbers and is called taking the \textit{Grothendieck group} of $M$.
 
 \begin{definition}
 Define $K_{0}(A)$ to be the Grothendieck group of $Proj(A)$.
@@ -726,13 +728,13 @@ K_{0}(C) \rightarrow K_{0}(B) \rightarrow K_{0}(\frac{B}{C})
 \end{equation*}
 \end{lemma}
 
-The definition of $K_{1}$ is more technical and is constructed from unitaries instead of projections. We present it tersely here. Let $X$ be a topological space. We denote by $X_{0}$ the set of connected components of $X$.
+The definition of $K_{1}$ is more technical and is constructed from unitaries instead of projections. We present it tersely here.  We denote by $GL(A)_{0}$ the connected component of the identity.
 
 \begin{definition}
 $K_{1}(A):= \frac{GL(A)}{GL(A)_{0}}$.
 \end{definition}
 
-In particular, for a finite invertible matrix $u \in GL_{n}(A)$, the class $[u] \in K_{1}(A)$ is the connected component containing $diag(u,1_{\infty}) \in GL(A)$. Similar to Lemma \ref{lem:ses}:
+In particular, for a finite invertible matrix $u \in GL_{n}(A)$, the class $[u] \in K_{1}(A)$ is the connected component containing $diag(u,1_{\infty}) \in GL(A)$. 
 
 \begin{lemma}\label{lem:ses2}
 To any short exact sequence $0 \rightarrow C \rightarrow B \rightarrow \frac{B}{C} \rightarrow 0$ we get an induced half-exact sequence:
